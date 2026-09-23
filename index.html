@@ -43,7 +43,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='26' fill='%23ff4d6d'/%3E%3Ctext x='50' y='73' font-family='Arial,Helvetica,sans-serif' font-size='68' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E">
 
 <!-- Préchargement de l'image du héro (chargement perçu plus rapide) -->
-<link rel="preload" as="image" href="img-run.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="img-pool.webp" type="image/webp" fetchpriority="high">
 
 <!-- Données structurées (SEO) -->
 <script type="application/ld+json">
@@ -142,7 +142,7 @@ a{color:inherit;text-decoration:none}
   padding:54px 26px 116px;isolation:isolate}
 .hero-media{position:absolute;inset:-14px;z-index:-1;background:var(--bg-soft)}
 .hero-media img,.hero-media video{position:absolute;inset:0;width:100%;height:100%;
-  object-fit:cover;object-position:50% 20%;opacity:.8;transform:scale(1.32);
+  object-fit:cover;object-position:62% 30%;opacity:.8;transform:scale(1.32);
   filter:saturate(1.12) contrast(1.05) brightness(1.02);
   transition:transform 1.1s cubic-bezier(.16,1,.3,1)}
 .hero.wow-in .hero-media img,.hero.wow-in .hero-media video{transform:scale(1.06)}
@@ -179,9 +179,9 @@ a{color:inherit;text-decoration:none}
 /* Cascade d'entrée du texte, synchronisée avec la fin de l'intro */
 .role-line,.scrollcue{opacity:0;transform:translateY(16px);
   transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
-.bigname{opacity:0;transform:translateY(22px) scale(.94);
+.bigname{opacity:0;transform:translateY(22px) scale(.94) rotate(-5deg);
   transition:opacity .8s ease,transform .8s cubic-bezier(.22,1.5,.36,1)}
-.hero.wow-in .bigname{opacity:1;transform:none;transition-delay:.05s}
+.hero.wow-in .bigname{opacity:1;transform:rotate(-5deg);transition-delay:.05s}
 .hero.wow-in .role-line{opacity:1;transform:none;transition-delay:.25s}
 .hero.wow-in .scrollcue{opacity:1;transform:none;transition-delay:.75s}
 .bigname{position:relative;font-weight:800;line-height:.9;letter-spacing:-.045em;
@@ -366,12 +366,12 @@ footer .copy{letter-spacing:.02em}
 }
 @media (max-width:520px){
   .wrap{padding:22px 16px 54px}
-  .hero{padding:40px 18px 108px}
+  .hero{padding:40px 18px 84px}
   .topbar{padding:16px 18px}
   /* Plus d'espace vide au-dessus du sujet sur mobile (cadrage vertical serré
      en portrait) : on révèle plus de haut de la photo et on dézoome un peu,
      pour que le badge/logo du haut ne colle plus contre les cheveux. */
-  .hero-media img,.hero-media video{object-position:50% 0%}
+  .hero-media img,.hero-media video{object-position:68% 0%}
   .hero.wow-in .hero-media img,.hero.wow-in .hero-media video{transform:scale(1)}
   .bigname{font-size:clamp(2rem,13vw,3.6rem)}
   .bio-line{font-size:.96rem}
@@ -897,13 +897,13 @@ body.gate-on{overflow:hidden}
       <span class="status"><span class="dot"></span> En ligne · <span id="clock">--:--</span></span>
     </header>
 
-    <!-- ===== FOND DU HÉRO (image : course au bord de mer) =====
+    <!-- ===== FOND DU HÉRO (image : au bord de la piscine) =====
          ✏️ Pour une VIDÉO à la place : remplace la balise <img> par
-         <video autoplay muted loop playsinline poster="img-run.jpg"><source src="ta-video.mp4" type="video/mp4"></video> -->
+         <video autoplay muted loop playsinline poster="img-pool.jpg"><source src="ta-video.mp4" type="video/mp4"></video> -->
     <div class="hero-media" aria-hidden="true">
       <picture>
-        <source srcset="img-run.webp" type="image/webp">
-        <img src="img-run.jpg" alt="" width="1402" height="1122" fetchpriority="high" decoding="async">
+        <source srcset="img-pool.webp" type="image/webp">
+        <img src="img-pool.jpg" alt="" width="1200" height="960" fetchpriority="high" decoding="async">
       </picture>
       <span class="hero-veil"></span>
     </div>
@@ -912,7 +912,7 @@ body.gate-on{overflow:hidden}
     <span class="hero-sparks" aria-hidden="true"><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i></span>
 
     <!-- ✏️ Le grand nom -->
-    <h1 class="bigname"><span class="fill">Audace</span> <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e7c79b" d="M12 1.6l2.5 1.9 3.1.2.9 3 2.5 1.9-.9 3 .9 3-2.5 1.9-.9 3-3.1.2L12 22.4l-2.5-1.9-3.1-.2-.9-3-2.5-1.9.9-3-.9-3 2.5-1.9.9-3 3.1-.2z"/><path fill="#0a0908" d="M10.5 14.7l-2.1-2.1-1.3 1.3 3.4 3.4 5.9-5.9-1.3-1.3z"/></svg></h1>
+    <h1 class="bigname"><span class="fill">Audace</span> <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0095f6"/><path d="M10.3 15.6l-3.2-3.2 1.3-1.3 1.9 1.9 5.1-5.1 1.3 1.3z" fill="#fff"/></svg></h1>
     <p class="role-line">Coach fitness &amp; créatrice de contenu</p>
     <!-- ✏️ Réseaux + compteurs : remplace les data-link (réglés dans LINKS) et les chiffres -->
     <div class="hero-socials">
@@ -951,11 +951,11 @@ body.gate-on{overflow:hidden}
     <div class="sec-head reveal"><span class="num">01</span><span class="label">Aperçu</span><span class="rule"></span></div>
     <!-- ✏️ Galerie : tes photos. Pour en changer, remplace le src de chaque <img>. -->
     <div class="gallery reveal">
-      <div class="cell full"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="Au bord de la piscine" loading="lazy" decoding="async"></picture></div>
+      <div class="cell full"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="Course au bord de mer" loading="lazy" decoding="async"></picture></div>
       <div class="cell land"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="Beach-volley" loading="lazy" decoding="async"></picture></div>
       <div class="cell land"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="Cyclisme sur la côte" loading="lazy" decoding="async"></picture></div>
       <div class="cell land"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="Séance de musculation" loading="lazy" decoding="async"></picture></div>
-      <div class="cell land"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="Course au bord de mer" loading="lazy" decoding="async"></picture></div>
+      <div class="cell land"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="Au bord de la piscine" loading="lazy" decoding="async"></picture></div>
       <!-- ✏️ Teaser verrouillé : remplace les liens data-link par tes vrais profils (réglés dans LINKS, en haut du fichier) -->
       <div class="cell full lock">
         <!-- ✏️ Image de teaser (floutée). Remplace par tes photos officielles plus tard. -->

@@ -274,10 +274,10 @@ a{color:inherit;text-decoration:none}
   display:grid;place-items:center;font-size:1.7rem;color:var(--muted);
   transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s ease;cursor:pointer}
 .cell:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 16px 40px rgba(0,0,0,.5)}
-.cell img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;
+.cell>picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;
   object-position:50% 22%;  /* favorise le haut (visage) au recadrage */
   transition:transform .6s cubic-bezier(.2,.7,.2,1)}
-.cell:hover img{transform:scale(1.08)}
+.cell:hover>picture img{transform:scale(1.08)}
 .cell::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.35));
   opacity:0;transition:opacity .3s;pointer-events:none}
 .cell:hover::after{opacity:1}
@@ -464,12 +464,12 @@ footer .copy{letter-spacing:.02em}
 .cell.lock{display:block}
 .cell.lock::after{content:"";position:absolute;inset:0;z-index:1;opacity:1;
   background:linear-gradient(180deg,rgba(10,9,8,.25),rgba(10,9,8,.85))}
-.cell.lock img{filter:blur(9px) saturate(.95) brightness(.95);transform:scale(1.14)}
+.cell.lock>picture img{filter:blur(9px) saturate(.95) brightness(.95);transform:scale(1.14)}
 .cell.lock .lk{position:absolute;left:0;right:0;top:0;bottom:78px;z-index:2;display:flex;flex-direction:column;
   align-items:center;justify-content:center;gap:7px;text-align:center;padding:18px;color:#fff;pointer-events:none}
 .cell.lock .lk svg{width:26px;height:26px;fill:#fff}
 .cell.lock .lk b{font-size:.98rem;font-weight:800}
-.cell.lock:hover img{transform:scale(1.18)}
+.cell.lock:hover>picture img{transform:scale(1.18)}
 .lk-btns{position:absolute;left:0;right:0;bottom:0;z-index:3;display:flex;flex-direction:column;gap:8px;padding:12px}
 .lk-btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:11px 14px;border-radius:100px;
   font-weight:800;font-size:.86rem;color:#fff;transition:transform .2s ease,box-shadow .2s ease}
@@ -477,6 +477,7 @@ footer .copy{letter-spacing:.02em}
 .lk-btn.of{background:#00AFF0;box-shadow:0 8px 22px rgba(0,175,240,.4)}
 .lk-btn.of .of-ic{width:17px;height:17px}
 .lk-btn.mym{background:linear-gradient(92deg,#ff3d6e,#ff6a3d);box-shadow:0 8px 22px rgba(255,61,110,.35)}
+.lk-btn.mym .mym-ic{height:15px;width:auto}
 @media(min-width:520px){.lk-btns{flex-direction:row}.lk-btn{flex:1}}
 
 /* Galerie : apparition en cascade au scroll */
@@ -920,7 +921,7 @@ body.gate-on{overflow:hidden}
         <span class="lk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2h-1V6a5 5 0 0 0-5-5zm-3 8V6a3 3 0 0 1 6 0v3H9z"/></svg><b>+50 photos &amp; vidéos exclusives</b></span>
         <span class="lk-btns">
           <a class="lk-btn of" href="#" data-link="onlyfans" target="_blank" rel="noopener"><img class="of-ic" src="onlyfans-icon-white.svg" alt="" aria-hidden="true">Rejoindre sur OnlyFans →</a>
-          <a class="lk-btn mym" href="#" data-link="mym" target="_blank" rel="noopener"><span class="mym-badge">MYM</span>Rejoindre sur MYM →</a>
+          <a class="lk-btn mym" href="#" data-link="mym" target="_blank" rel="noopener"><img class="mym-ic" src="mym-logo-white.svg" alt="" aria-hidden="true">Rejoindre sur MYM →</a>
         </span>
       </div>
     </div>

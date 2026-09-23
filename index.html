@@ -140,7 +140,13 @@ a{color:inherit;text-decoration:none}
   min-height:100vh;min-height:100dvh;
   display:flex;flex-direction:column;justify-content:flex-end;
   padding:54px 26px 116px;isolation:isolate}
-.hero-media{position:absolute;inset:-14px;z-index:-1;background:var(--bg-soft)}
+/* Hauteur figée sur le plus grand viewport possible (lvh, stable, ne bouge
+   jamais avec la barre d'adresse) : le fond ne se redimensionne donc plus
+   jamais (fini le "zoom"), même si .hero (en 100dvh, pour garder le
+   contenu collé en bas) change de hauteur pendant le scroll. Le surplus
+   éventuel est simplement masqué par overflow:hidden sur .hero. */
+.hero-media{position:absolute;top:-14px;left:-14px;right:-14px;
+  height:100vh;height:100lvh;z-index:-1;background:var(--bg-soft)}
 .hero-media img,.hero-media video{position:absolute;inset:0;width:100%;height:100%;
   object-fit:cover;object-position:62% 30%;opacity:.8;transform:scale(1.32);
   filter:saturate(1.12) contrast(1.05) brightness(1.02);

@@ -207,6 +207,8 @@ a{color:inherit;text-decoration:none}
   border:1px solid rgba(255,255,255,.25);color:#fff;
   transition:transform .22s ease,border-color .22s ease,background .22s ease}
 .hs-icons a svg{width:19px;height:19px;fill:currentColor;display:block}
+.hs-icons a img{width:19px;height:19px;display:block;object-fit:contain}
+.hs-icons a.mym img{width:26px;height:auto}
 .hs-icons a:hover{transform:translateY(-3px);border-color:var(--coral);background:rgba(0,0,0,.55)}
 .hs-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:14px;max-width:420px}
 .hs-stat{background:rgba(0,0,0,.4);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
@@ -917,17 +919,16 @@ body.gate-on{overflow:hidden}
     <!-- ✏️ Réseaux + compteurs : remplace les data-link (réglés dans LINKS) et les chiffres -->
     <div class="hero-socials">
       <div class="hs-icons">
-        <a href="#" data-link="instagram" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i1"/></svg></a>
         <a href="#" data-link="tiktok" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i2"/></svg></a>
-        <a href="#" data-link="x" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zM17.6 20.65h2.04L6.49 3.24H4.3z"/></svg></a>
-        <a href="#" data-link="youtube" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i6"/></svg></a>
-        <a href="#" data-link="snapchat" target="_blank" rel="noopener" aria-label="Snapchat"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i7"/></svg></a>
+        <a href="#" data-link="instagram" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i1"/></svg></a>
+        <a href="#" data-link="onlyfans" target="_blank" rel="noopener" aria-label="OnlyFans"><img src="onlyfans-icon-white.svg" alt="" aria-hidden="true"></a>
+        <a href="#" data-link="mym" target="_blank" rel="noopener" aria-label="MYM" class="mym"><img src="mym-logo-white.svg" alt="" aria-hidden="true"></a>
       </div>
       <div class="hs-stats">
-        <div class="hs-stat"><b>12,4K</b><span>Instagram</span></div>
         <div class="hs-stat"><b>38,7K</b><span>TikTok</span></div>
-        <div class="hs-stat"><b>5,2K</b><span>X/Twitter</span></div>
-        <div class="hs-stat"><b>4,6K</b><span>Snapchat</span></div>
+        <div class="hs-stat"><b>12,4K</b><span>Instagram</span></div>
+        <div class="hs-stat"><b>200+</b><span>OnlyFans</span></div>
+        <div class="hs-stat"><b>90+</b><span>MYM</span></div>
       </div>
     </div>
     <span class="scrollcue"><i></i> Fais défiler</span>

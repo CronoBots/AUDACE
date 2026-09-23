@@ -25,16 +25,20 @@
 <!-- ===== Partage social (aperçu Insta / WhatsApp / X / Telegram) =====
      Remplace l'URL og:url quand tu as l'adresse finale. -->
 <meta property="og:type" content="website">
+<meta property="og:locale" content="fr_BE">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:site_name" content="Audace">
 <meta property="og:title" content="Audace — Fitness · Lifestyle">
-<meta property="og:description" content="Fitness, lifestyle & contenu exclusif. Tous mes liens, un seul endroit.">
+<meta property="og:description" content="Fitness, lifestyle & contenu exclusif sur OnlyFans et MYM. Tous mes liens, un seul endroit.">
 <meta property="og:url" content="https://cronobots.github.io/AUDACE/">
-<meta property="og:image" content="https://cronobots.github.io/AUDACE/img-run.jpg">
-<meta property="og:image:width" content="1402">
-<meta property="og:image:height" content="1122">
+<meta property="og:image" content="https://cronobots.github.io/AUDACE/og-image.jpg">
+<meta property="og:image:alt" content="Audace — fitness, lifestyle et contenu exclusif sur OnlyFans et MYM">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Audace — Fitness · Lifestyle">
-<meta name="twitter:description" content="Fitness, lifestyle & contenu exclusif. Tous mes liens, un seul endroit.">
-<meta name="twitter:image" content="https://cronobots.github.io/AUDACE/img-run.jpg">
+<meta name="twitter:description" content="Fitness, lifestyle & contenu exclusif sur OnlyFans et MYM. Tous mes liens, un seul endroit.">
+<meta name="twitter:image" content="https://cronobots.github.io/AUDACE/og-image.jpg">
 
 <!-- Favicon emoji (aucun fichier à uploader) -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='26' fill='%23ff4d6d'/%3E%3Ctext x='50' y='73' font-family='Arial,Helvetica,sans-serif' font-size='68' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E">
@@ -61,6 +65,8 @@
   --coral:     #ff4d6d;   /* accent principal (corail) */
   --coral-2:   #ff7a59;   /* corail chaud */
   --gold:      #e7c79b;   /* champagne (détails premium) */
+  --coral-rgb: 255,77,109;
+  --gold-rgb:  231,199,155;
 
   /* Réglages */
   --maxw:      640px;
@@ -88,15 +94,15 @@ a{color:inherit;text-decoration:none}
 /* ============ TEXTURE & LUMIÈRE DE FOND ============ */
 .bg-fx{position:fixed;inset:0;z-index:-3;
   background:
-    radial-gradient(60% 50% at 50% -10%, rgba(255,77,109,.22), transparent 70%),
-    radial-gradient(45% 40% at 100% 0%, rgba(231,199,155,.10), transparent 70%),
+    radial-gradient(60% 50% at 50% -10%, rgba(var(--coral-rgb),.22), transparent 70%),
+    radial-gradient(45% 40% at 100% 0%, rgba(var(--gold-rgb),.10), transparent 70%),
     radial-gradient(55% 45% at 0% 100%, rgba(255,122,89,.10), transparent 70%);
 }
 .grain{position:fixed;inset:0;z-index:-2;opacity:.05;pointer-events:none;mix-blend-mode:overlay;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
 /* Halo qui suit la souris (desktop) */
 .spotlight{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:0;transition:opacity .6s ease;
-  background:radial-gradient(280px circle at var(--mx,50%) var(--my,30%), rgba(255,77,109,.10), transparent 60%);}
+  background:radial-gradient(280px circle at var(--mx,50%) var(--my,30%), rgba(var(--coral-rgb),.10), transparent 60%);}
 @media (hover:hover){.spotlight{opacity:1}}
 
 /* ============ INTRO ============ */
@@ -156,16 +162,16 @@ a{color:inherit;text-decoration:none}
 
 /* ============ CARTE FEATURED ============ */
 .featured{display:block;position:relative;overflow:hidden;border-radius:var(--radius);
-  padding:30px;background:var(--bg-soft);border:1px solid rgba(255,77,109,.30);
-  box-shadow:0 12px 40px rgba(255,77,109,.14);
+  padding:30px;background:var(--bg-soft);border:1px solid rgba(var(--coral-rgb),.30);
+  box-shadow:0 12px 40px rgba(var(--coral-rgb),.14);
   transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease;
   will-change:transform;animation:pulseGlow 3.4s ease-in-out infinite}
-@keyframes pulseGlow{0%,100%{box-shadow:0 12px 40px rgba(255,77,109,.12)}50%{box-shadow:0 14px 62px rgba(255,77,109,.32)}}
-.featured:hover{transform:translateY(-2px);box-shadow:0 26px 66px rgba(255,77,109,.32)}
+@keyframes pulseGlow{0%,100%{box-shadow:0 12px 40px rgba(var(--coral-rgb),.12)}50%{box-shadow:0 14px 62px rgba(var(--coral-rgb),.32)}}
+.featured:hover{transform:translateY(-2px);box-shadow:0 26px 66px rgba(var(--coral-rgb),.32)}
 .featured .fbg{position:absolute;inset:0;z-index:0}
 .featured .fbg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 26%;opacity:.42}
 .featured .fbg::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(120deg,rgba(10,9,8,.93) 16%,rgba(10,9,8,.55) 58%,rgba(255,77,109,.32))}
+  background:linear-gradient(120deg,rgba(10,9,8,.93) 16%,rgba(10,9,8,.55) 58%,rgba(var(--coral-rgb),.32))}
 .featured>*:not(.fbg):not(.sheen){position:relative;z-index:2}
 .featured .badge-vip{display:inline-flex;align-items:center;gap:6px;margin-bottom:16px;
   background:rgba(0,0,0,.42);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.22);
@@ -204,7 +210,7 @@ a{color:inherit;text-decoration:none}
 .row .meta{margin-left:auto;font-size:.8rem;color:var(--muted);text-align:right}
 .row .arrow{margin-left:14px;font-size:1.1rem;color:var(--muted);transition:transform .3s ease,color .3s ease}
 .row::before{content:"";position:absolute;left:0;top:0;height:100%;width:0;
-  background:linear-gradient(90deg,rgba(255,77,109,.12),transparent);transition:width .35s ease;z-index:-1}
+  background:linear-gradient(90deg,rgba(var(--coral-rgb),.12),transparent);transition:width .35s ease;z-index:-1}
 .row:hover{padding-left:20px}
 .row:hover::before{width:100%}
 .row:hover .arrow{transform:translateX(5px);color:var(--coral)}
@@ -223,7 +229,7 @@ a{color:inherit;text-decoration:none}
 .cell::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.35));
   opacity:0;transition:opacity .3s;pointer-events:none}
 .cell:hover::after{opacity:1}
-.cell.ph{background:radial-gradient(120% 120% at 30% 15%,rgba(255,77,109,.14),var(--bg-soft))}
+.cell.ph{background:radial-gradient(120% 120% at 30% 15%,rgba(var(--coral-rgb),.14),var(--bg-soft))}
 .cell .phlbl{position:absolute;top:10px;left:12px;z-index:2;font-size:.62rem;letter-spacing:.18em;
   text-transform:uppercase;color:var(--gold);font-weight:700}
 .cell.land{grid-column:span 3;aspect-ratio:4/3}
@@ -263,7 +269,7 @@ footer .socials a{width:48px;height:48px;border-radius:50%;display:grid;place-it
   transition:transform .22s ease,color .22s ease,border-color .22s ease,box-shadow .22s ease,background .22s ease}
 footer .socials a svg{width:21px;height:21px;fill:currentColor;display:block}
 footer .socials a:hover{color:#fff;border-color:transparent;transform:translateY(-4px);
-  background:linear-gradient(135deg,var(--coral),var(--coral-2));box-shadow:0 10px 26px rgba(255,77,109,.28)}
+  background:linear-gradient(135deg,var(--coral),var(--coral-2));box-shadow:0 10px 26px rgba(var(--coral-rgb),.28)}
 footer .copy{letter-spacing:.02em}
 .viewcount{display:inline-flex;align-items:center;gap:7px;font-size:.74rem;letter-spacing:.04em;color:var(--muted)}
 .viewcount svg{width:14px;height:14px;fill:currentColor;opacity:.8}
@@ -271,7 +277,7 @@ footer .copy{letter-spacing:.02em}
 
 /* ============ BARRE DE PROGRESSION ============ */
 .progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
-  background:linear-gradient(90deg,var(--coral),var(--gold));box-shadow:0 0 12px rgba(255,77,109,.5)}
+  background:linear-gradient(90deg,var(--coral),var(--gold));box-shadow:0 0 12px rgba(var(--coral-rgb),.5)}
 
 /* ============ BOUTON HAUT ============ */
 .totop{position:fixed;right:18px;bottom:18px;width:46px;height:46px;border-radius:50%;
@@ -289,7 +295,7 @@ footer .copy{letter-spacing:.02em}
 .sound:hover{transform:translateY(-3px);border-color:var(--coral)}
 .sound .bars{display:flex;gap:2.5px;align-items:center;height:16px}
 .sound .bars i{width:3px;height:5px;background:var(--muted);border-radius:2px;transition:background .2s}
-.sound.playing{border-color:var(--coral);box-shadow:0 8px 24px rgba(255,77,109,.3)}
+.sound.playing{border-color:var(--coral);box-shadow:0 8px 24px rgba(var(--coral-rgb),.3)}
 .sound.playing .bars i{background:var(--coral);animation:eq .9s ease-in-out infinite}
 .sound.playing .bars i:nth-child(2){animation-delay:.18s}
 .sound.playing .bars i:nth-child(3){animation-delay:.36s}
@@ -392,7 +398,7 @@ footer .copy{letter-spacing:.02em}
 .sticky-cta a{display:flex;align-items:center;justify-content:space-between;gap:12px;
   max-width:var(--maxw);margin:0 auto;background:linear-gradient(92deg,var(--coral),var(--coral-2));
   color:#fff;font-weight:800;padding:14px 16px 14px 20px;border-radius:100px;
-  box-shadow:0 12px 36px rgba(255,77,109,.42)}
+  box-shadow:0 12px 36px rgba(var(--coral-rgb),.42)}
 .sticky-cta a small{display:block;font-weight:500;font-size:.72rem;opacity:.92}
 .sticky-cta a .c{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.22);
   display:grid;place-items:center;flex-shrink:0}
@@ -701,7 +707,7 @@ footer .copy{letter-spacing:.02em}
 
 /* ============ CODES PROMO & PARTENAIRES ============ */
 .sponsor{position:relative;display:flex;flex-direction:column;gap:6px;overflow:hidden;border-radius:var(--radius);padding:26px;
-  border:1px solid rgba(231,199,155,.35);background:var(--bg-soft);margin-bottom:12px;isolation:isolate;transition:transform .3s ease,box-shadow .3s}
+  border:1px solid rgba(var(--gold-rgb),.35);background:var(--bg-soft);margin-bottom:12px;isolation:isolate;transition:transform .3s ease,box-shadow .3s}
 .sponsor:hover{transform:translateY(-2px);box-shadow:0 18px 44px rgba(0,0,0,.45)}
 .sp-bg{position:absolute;inset:0;z-index:-1}
 .sp-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;opacity:.4}
@@ -717,7 +723,7 @@ footer .copy{letter-spacing:.02em}
 .promos{display:grid;gap:10px;grid-template-columns:1fr 1fr}
 @media(max-width:600px){.promos{grid-template-columns:1fr}}
 .promo{background:var(--bg-soft);border:1px solid var(--line);border-radius:16px;padding:16px;transition:border-color .25s}
-.promo:hover{border-color:rgba(255,77,109,.5)}
+.promo:hover{border-color:rgba(var(--coral-rgb),.5)}
 .pr-top{display:flex;align-items:center;gap:11px}
 .pr-logo{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;color:#fff;font-weight:900;font-size:1.05rem;flex-shrink:0;
   font-family:'Cormorant','Georgia',serif;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
@@ -728,9 +734,9 @@ footer .copy{letter-spacing:.02em}
 .pr-deal{margin:12px 0;font-weight:800;font-size:1.02rem;color:var(--ink)}
 .pr-row{display:flex;gap:8px}
 .pr-code{flex:1;display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;min-width:0;
-  background:rgba(0,0,0,.3);border:1.5px dashed rgba(231,199,155,.55);border-radius:10px;padding:10px 12px;color:var(--gold);
+  background:rgba(0,0,0,.3);border:1.5px dashed rgba(var(--gold-rgb),.55);border-radius:10px;padding:10px 12px;color:var(--gold);
   font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.86rem;font-weight:700;letter-spacing:.06em;transition:background .2s,border-color .2s}
-.pr-code:hover{background:rgba(231,199,155,.08);border-color:var(--gold)}
+.pr-code:hover{background:rgba(var(--gold-rgb),.08);border-color:var(--gold)}
 .pr-code span{overflow:hidden;text-overflow:ellipsis}
 .pr-code i{font-style:normal;font-family:var(--font);font-size:.72rem;letter-spacing:0;color:var(--ink);background:rgba(255,255,255,.08);padding:4px 8px;border-radius:6px;flex-shrink:0}
 .pr-code.ok{border-color:#46e08a;border-style:solid}
@@ -749,11 +755,11 @@ footer .copy{letter-spacing:.02em}
 .ag-lang{position:absolute;top:14px;right:14px}
 .ag-mark{display:block;font-weight:800;font-size:1.1rem;letter-spacing:-.02em}
 .ag-18{display:inline-grid;place-items:center;width:78px;height:78px;border-radius:50%;margin:18px 0 14px;font-weight:900;font-size:1.6rem;
-  border:2px solid var(--coral);color:var(--coral);box-shadow:0 0 30px rgba(255,77,109,.3)}
+  border:2px solid var(--coral);color:var(--coral);box-shadow:0 0 30px rgba(var(--coral-rgb),.3)}
 .ag-card h2{font-family:'Cormorant','Georgia',serif;font-size:1.9rem;font-weight:700;line-height:1.1}
 .ag-card p{color:rgba(244,239,231,.78);font-size:.92rem;margin:10px 0 22px}
 .ag-yes{width:100%;border:none;cursor:pointer;padding:15px;border-radius:100px;font-weight:800;font-size:1rem;color:#fff;
-  background:linear-gradient(92deg,var(--coral),var(--coral-2));box-shadow:0 12px 32px rgba(255,77,109,.38);transition:transform .2s}
+  background:linear-gradient(92deg,var(--coral),var(--coral-2));box-shadow:0 12px 32px rgba(var(--coral-rgb),.38);transition:transform .2s}
 .ag-yes:hover{transform:translateY(-2px)}
 .ag-no{display:block;margin-top:14px;font-size:.86rem;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
 .ag-card small{display:block;margin-top:16px;font-size:.7rem;color:var(--muted);opacity:.8}
@@ -833,9 +839,112 @@ body.gate-on{overflow:hidden}
   .mk-mym .grid{flex:1;min-height:0;grid-template-rows:1fr 1fr}
   .mk-mym .grid a{aspect-ratio:auto;min-height:0}
 }
+
+/* ============ OFFRES GROUPÉES ============ */
+.bundles{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 2px}
+.bd{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;color:rgba(244,239,231,.9);padding:7px 12px;border-radius:100px;
+  background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.14)}
+.bd b{color:#fff}
+.bd em{font-style:normal;font-weight:800;color:var(--bg);background:var(--gold);padding:2px 7px;border-radius:100px;font-size:.7rem}
+.bd.trial{border-color:rgba(var(--gold-rgb),.5);color:var(--gold);font-weight:700}
+
+/* ============ PROGRAMME DE LA SEMAINE ============ */
+.week{margin-top:12px;padding:16px;border-radius:var(--radius);background:var(--bg-soft);border:1px solid var(--line)}
+.wk-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:12px}
+.wk-h span{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.wk-h small{font-size:.7rem;color:var(--muted)}
+.wk-days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.wk{display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 4px;border-radius:12px;border:1px solid var(--line);text-align:center;min-width:0}
+.wk b{font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.wk i{font-style:normal;font-size:1.2rem;line-height:1}
+.wk span{font-size:.7rem;font-weight:600;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.wk.off{opacity:.45}
+.wk.today{border-color:var(--coral);background:rgba(var(--coral-rgb),.12);box-shadow:0 0 0 1px var(--coral) inset}
+.wk.today b{color:var(--coral)}
+@media(max-width:520px){.wk-days{grid-template-columns:repeat(7,minmax(64px,1fr));overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.wk-days::-webkit-scrollbar{display:none}.wk-h small{display:none}}
+
+/* ============ MENU DE TARIFS ============ */
+.menu{margin:0 0 18px;padding:14px 16px;border-radius:14px;background:rgba(0,0,0,.28);border:1px solid var(--line)}
+.mn{display:flex;align-items:baseline;gap:8px;padding:6px 0;font-size:.9rem}
+.mn i{flex:1;border-bottom:1px dotted rgba(244,239,231,.25);transform:translateY(-4px)}
+.mn b{color:var(--gold);white-space:nowrap}
+.menu small{display:block;margin-top:6px;font-size:.72rem;color:var(--muted)}
+
+/* ============ POURBOIRE & WISHLIST ============ */
+.extras{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+@media(max-width:560px){.extras{grid-template-columns:1fr}}
+.xtra{display:flex;align-items:center;gap:13px;padding:16px;border-radius:16px;background:var(--bg-soft);border:1px solid var(--line);transition:transform .25s,border-color .25s}
+.xtra:hover{transform:translateY(-2px);border-color:var(--gold)}
+.xtra i{font-style:normal;font-size:1.6rem;width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:rgba(var(--gold-rgb),.1)}
+.xtra span{flex:1;min-width:0}.xtra b{display:block;font-size:.95rem}.xtra small{display:block;font-size:.78rem;color:var(--muted)}
+.xtra em{font-style:normal;color:var(--gold);font-weight:800}
+
+/* ============ POUR LES MARQUES ============ */
+.press{padding:26px;border-radius:var(--radius);background:radial-gradient(120% 140% at 0% 0%,rgba(var(--gold-rgb),.1),var(--bg-soft) 60%);border:1px solid rgba(var(--gold-rgb),.3)}
+.press h3{font-family:'Cormorant','Georgia',serif;font-size:clamp(1.7rem,6vw,2.2rem);font-weight:700;line-height:1.05}
+.press p{color:var(--muted);font-size:.92rem;margin:6px 0 18px;max-width:56ch}
+.ps-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+@media(max-width:560px){.ps-stats{grid-template-columns:1fr 1fr}}
+.ps{padding:14px 12px;border-radius:14px;background:rgba(0,0,0,.3);border:1px solid var(--line)}
+.ps b{display:block;font-size:1.25rem;font-weight:800;letter-spacing:-.01em}
+.ps span{font-size:.72rem;color:var(--muted)}
+.ps-f{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}
+.ps-f span{font-size:.76rem;font-weight:600;padding:6px 11px;border-radius:100px;border:1px solid var(--line);color:rgba(244,239,231,.85)}
+.ps-cta{display:flex;flex-wrap:wrap;gap:10px}
+.ps-main{padding:13px 22px;border-radius:100px;font-weight:800;color:var(--bg);background:var(--gold);transition:transform .2s}
+.ps-main:hover{transform:translateY(-2px)}
+.ps-sec{padding:13px 22px;border-radius:100px;font-weight:700;border:1px solid var(--line);color:var(--ink)}
+.ps-sec:hover{border-color:var(--gold)}
+@media(max-width:520px){.ps-cta a{width:100%;text-align:center}.press{padding:22px}}
+
+/* ============ SÉLECTEUR DE THÈME ============ */
+.themes{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center}
+.themes small{font-size:.72rem;color:var(--muted);margin-right:4px}
+.themes button{width:22px;height:22px;border-radius:50%;border:2px solid var(--bg);background:var(--c);cursor:pointer;box-shadow:0 0 0 1px var(--line);transition:transform .2s}
+.themes button:hover{transform:scale(1.15)}
+.themes button.on{box-shadow:0 0 0 2px var(--ink)}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i1" viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></symbol><symbol id="i2" viewBox="0 0 24 24"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></symbol><symbol id="i3" viewBox="0 0 24 24"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07z"/></symbol><symbol id="i4" viewBox="0 0 24 24"><path fill="#00aff0" d="M12 1.6l2.5 1.9 3.1.2.9 3 2.5 1.9-.9 3 .9 3-2.5 1.9-.9 3-3.1.2L12 22.4l-2.5-1.9-3.1-.2-.9-3-2.5-1.9.9-3-.9-3 2.5-1.9.9-3 3.1-.2z"/><path fill="#fff" d="M10.5 14.7l-2.1-2.1-1.3 1.3 3.4 3.4 5.9-5.9-1.3-1.3z"/></symbol><symbol id="i5" viewBox="0 0 24 24"><path d="M11.94 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.55 8.16c-.18 1.9-.96 6.5-1.36 8.63-.17.9-.5 1.2-.82 1.23-.7.06-1.23-.46-1.9-.9-1.06-.7-1.66-1.13-2.69-1.81-1.19-.78-.42-1.21.26-1.91.18-.18 3.24-2.97 3.3-3.22.01-.03.01-.15-.06-.21s-.16-.04-.24-.02c-.1.02-1.72 1.09-4.86 3.21-.46.32-.88.47-1.25.46-.41-.01-1.2-.23-1.79-.42-.72-.23-1.3-.36-1.25-.76.03-.21.32-.42.87-.64 3.4-1.48 5.67-2.46 6.8-2.93 3.24-1.35 3.92-1.58 4.35-1.59.1 0 .31.02.45.13.11.09.14.21.16.3.02.13.04.27.02.42z"/></symbol></defs></svg>
+  <script>
+  /* =================================================================
+     ✏️  TES LIENS — tout se règle ici (une seule fois pour toute la page)
+     ================================================================= */
+  var LINKS = {
+    onlyfans:  '#',      // ex. 'https://onlyfans.com/ton-pseudo'
+    mym:       '#',      // ex. 'https://mym.fans/ton-pseudo'
+    instagram: '#',      // ex. 'https://instagram.com/ton-pseudo'
+    tiktok:    '#',      // ex. 'https://tiktok.com/@ton-pseudo'
+    facebook:  '#',
+    x:         '#',
+    telegram:  '#',      // ex. 'https://t.me/ton-canal'
+    tip:       '#',      // lien pourboire (OnlyFans / MYM / autre)
+    wishlist:  '#',      // ex. Throne, Amazon…
+    sponsor:   '#',      // partenaire mis en avant
+    promo1: '#', promo2: '#', promo3: '#', promo4: '#',   // les 4 offres partenaires
+    presskit:  '#',      // kit média (PDF)
+    email:     'contact@audace.be'
+  };
+  /* Thème de couleurs : 'corail' (défaut), 'rose', 'or', 'nuit', 'emeraude' — ou ajoute ?theme=or à l'adresse */
+  var THEME = 'corail';
+  var THEMES = {
+    corail:   {coral:'#ff4d6d', coral2:'#ff7a59', gold:'#e7c79b', bg:'#0a0908', soft:'#121010'},
+    rose:     {coral:'#ff6fa8', coral2:'#ff9ec4', gold:'#f3cfdc', bg:'#0e080b', soft:'#170f13'},
+    or:       {coral:'#d4a24c', coral2:'#efc26e', gold:'#f3dfae', bg:'#0b0907', soft:'#15110c'},
+    nuit:     {coral:'#6c8cff', coral2:'#9aafff', gold:'#c9d4ff', bg:'#07080f', soft:'#0f111b'},
+    emeraude: {coral:'#2fbf8f', coral2:'#6fdcb3', gold:'#dccb98', bg:'#060d0b', soft:'#0d1714'}
+  };
+  function applyTheme(name){
+    var t=THEMES[name]||THEMES.corail, r=document.documentElement.style, rgb=function(h){return [1,3,5].map(function(i){return parseInt(h.substr(i,2),16);}).join(',');};
+    r.setProperty('--coral',t.coral); r.setProperty('--coral-2',t.coral2); r.setProperty('--gold',t.gold);
+    r.setProperty('--bg',t.bg); r.setProperty('--bg-soft',t.soft);
+    r.setProperty('--coral-rgb',rgb(t.coral)); r.setProperty('--gold-rgb',rgb(t.gold));
+    var m=document.querySelector('meta[name=theme-color]'); if(m) m.content=t.bg;
+    document.querySelectorAll('.themes button').forEach(function(b){ b.classList.toggle('on',b.dataset.theme===(THEMES[name]?name:'corail')); });
+  }
+  (function(){ var q=(location.search.match(/[?&]theme=([a-z]+)/)||[])[1]; applyTheme(q||THEME); })();
+  </script>
   <!-- ===== ÉCRAN 18+ (vérification d'âge, mémorisée sur l'appareil) ===== -->
   <div class="agegate" id="agegate" role="dialog" aria-modal="true" aria-labelledby="ag-title" hidden>
     <div class="ag-bg" aria-hidden="true"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt=""></picture></div>
@@ -885,7 +994,7 @@ body.gate-on{overflow:hidden}
 
       <!-- ✏️ Photo de profil : remplace le src par ta vraie photo -->
       <div class="profile">
-        <span class="av"><img src="img-pool.jpg" alt="Photo de profil d'Audace"><span class="liv" title="En ligne"></span></span>
+        <span class="av"><img src="img-avatar.webp" width="120" height="120" alt="Photo de profil d'Audace"><span class="liv" title="En ligne"></span></span>
         <span class="who"><b>Audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e7c79b" d="M12 1.6l2.5 1.9 3.1.2.9 3 2.5 1.9-.9 3 .9 3-2.5 1.9-.9 3-3.1.2L12 22.4l-2.5-1.9-3.1-.2-.9-3-2.5-1.9.9-3-.9-3 2.5-1.9.9-3 3.1-.2z"/><path fill="#0a0908" d="M10.5 14.7l-2.1-2.1-1.3 1.3 3.4 3.4 5.9-5.9-1.3-1.3z"/></svg></b><p>@audace · Bruxelles 🇧🇪</p></span>
       </div>
       <div class="eyebrow">Fitness creator — Belgique</div>
@@ -907,10 +1016,24 @@ body.gate-on{overflow:hidden}
     <!-- ===== COMPTEUR D'ANTICIPATION (prochain drop) ===== -->
     <div class="drop reveal" id="drop" hidden><span class="dt">✦</span> Prochain contenu exclusif <b id="dropIn">…</b></div>
 
+    <!-- ===== PROGRAMME DE LA SEMAINE ✏️ adapte les jours et les contenus ===== -->
+    <div class="week reveal" aria-label="Programme de la semaine">
+      <div class="wk-h"><span>✦ Mon programme</span><small>Le jour en cours est surligné</small></div>
+      <div class="wk-days">
+        <div class="wk" data-d="1"><b>Lun</b><i>📸</i><span>Shooting</span></div>
+        <div class="wk off" data-d="2"><b>Mar</b><i>🌙</i><span>Repos</span></div>
+        <div class="wk" data-d="3"><b>Mer</b><i>🔴</i><span>Live</span></div>
+        <div class="wk" data-d="4"><b>Jeu</b><i>💌</i><span>Messages</span></div>
+        <div class="wk" data-d="5"><b>Ven</b><i>🎬</i><span>Vidéo</span></div>
+        <div class="wk" data-d="6"><b>Sam</b><i>🔥</i><span>Surprise</span></div>
+        <div class="wk" data-d="0"><b>Dim</b><i>❓</i><span>Q&amp;A</span></div>
+      </div>
+    </div>
+
     <!-- ===== 01 · ACCÈS VIP ===== -->
     <div class="sec-head reveal"><span class="num">01</span><span class="label">L'accès privé</span><span class="rule"></span></div>
     <!-- ✏️ Lien principal : remplace le href="#" par le lien de ton abonnement -->
-    <a class="featured reveal" id="magnet" href="#" target="_blank" rel="noopener">
+    <a class="featured reveal" id="magnet" href="#" data-link="onlyfans" target="_blank" rel="noopener">
       <span class="fbg" aria-hidden="true"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture></span>
       <span class="sheen"></span>
       <span class="badge-vip">🔥 Le plus demandé</span>
@@ -927,6 +1050,8 @@ body.gate-on{overflow:hidden}
       </ul>
       <!-- ✏️ Prix : adapte les montants (ou supprime ce bloc) -->
       <div class="price"><span class="now">14€<span>&nbsp;/mois</span></span><span class="was">19€</span><span class="save">Offre de lancement</span></div>
+      <!-- ✏️ Offres groupées & essai : adapte ou supprime -->
+      <div class="bundles"><span class="bd"><b>3 mois</b> 34 € <em>-20 %</em></span><span class="bd"><b>6 mois</b> 59 € <em>-30 %</em></span><span class="bd trial">🎁 7 jours offerts</span></div>
       <!-- ✏️ Rareté : argument honnête (suivi perso limité), pas de faux compteur -->
       <div class="scarcity" data-fill="60">
         <div class="bar"><i></i></div>
@@ -941,7 +1066,7 @@ body.gate-on{overflow:hidden}
       <span class="reassure">🔒 Paiement sécurisé · Sans engagement · Annulation en 1 clic</span>
     </a>
     <!-- ✏️ MYM : remplace href="#" par ton lien MYM -->
-    <a class="alt-mym reveal" id="alt-mym" href="#" target="_blank" rel="noopener"><span class="mym-badge">MYM</span> Aussi disponible sur MYM <small>→</small></a>
+    <a class="alt-mym reveal" id="alt-mym" href="#" data-link="mym" target="_blank" rel="noopener"><span class="mym-badge">MYM</span> Aussi disponible sur MYM <small>→</small></a>
 
     <!-- ===== 02 · RETROUVE-MOI : flux Instagram / TikTok / Facebook (Trustindex) + autres réseaux ===== -->
     <div class="sec-head reveal"><span class="num">02</span><span class="label">Retrouve-moi</span><span class="rule"></span></div>
@@ -955,67 +1080,67 @@ body.gate-on{overflow:hidden}
     <div class="ti-feeds reveal">
       <div class="ti-slot" data-ti="instagram">
         <div class="ti-demo ti-ig">
-          <div class="ti-band ti-band-ig"><span class="ti-band-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></span><b>Instagram</b><span class="ti-band-h">@audace</span></div>
+          <div class="ti-band ti-band-ig"><span class="ti-band-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i1"/></svg></span><b>Instagram</b><span class="ti-band-h">@audace</span></div>
           <div class="ti-head">
-            <span class="ti-av"><img src="img-pool.jpg" alt=""></span>
+            <span class="ti-av"><img src="img-avatar.webp" width="120" height="120" alt=""></span>
             <span class="ti-id"><b>audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0095f6"/><path d="M10.3 15.6l-3.2-3.2 1.3-1.3 1.9 1.9 5.1-5.1 1.3 1.3z" fill="#fff"/></svg></b><small>@audace</small><span class="ti-st"><span><strong>214</strong> publications</span><span><strong>12,4 k</strong> abonnés</span></span></span>
-            <a class="ti-follow" href="#" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></i>Suivre</a>
+            <a class="ti-follow" href="#" data-link="instagram" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i1"/></svg></i>Suivre</a>
           </div>
           <div class="ti-grid">
-            <button class="ti-post ig-post" type="button" data-src="img-run" data-net="ig" data-cap="Sortie du matin au bord de mer 🌊" data-likes="2 481" data-com="96" aria-label="Publication Instagram : Sortie du matin au bord de mer 🌊"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></span><span class="ti-ov"><span>♥ 2 481</span><span>💬 96</span></span></button>
-            <button class="ti-post ig-post" type="button" data-src="img-pool" data-net="ig" data-cap="Pause soleil bien méritée ☀️" data-likes="3 912" data-com="184" aria-label="Publication Instagram : Pause soleil bien méritée ☀️"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></span><span class="ti-ov"><span>♥ 3 912</span><span>💬 184</span></span></button>
-            <button class="ti-post ig-post" type="button" data-src="img-gym" data-net="ig" data-cap="Leg day, pas de négociation 💪" data-likes="1 876" data-com="73" aria-label="Publication Instagram : Leg day, pas de négociation 💪"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></span><span class="ti-ov"><span>♥ 1 876</span><span>💬 73</span></span></button>
-            <button class="ti-post ig-post" type="button" data-src="img-volley" data-net="ig" data-cap="Beach-volley entre copines 🏐" data-likes="2 204" data-com="88" aria-label="Publication Instagram : Beach-volley entre copines 🏐"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></span><span class="ti-ov"><span>♥ 2 204</span><span>💬 88</span></span></button>
-            <button class="ti-post ig-post" type="button" data-src="img-cycle" data-net="ig" data-cap="60 km sur la côte ce week-end 🚴‍♀️" data-likes="1 540" data-com="61" aria-label="Publication Instagram : 60 km sur la côte ce week-end 🚴‍♀️"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></span><span class="ti-ov"><span>♥ 1 540</span><span>💬 61</span></span></button>
-            <button class="ti-post ig-post" type="button" data-src="img-run" data-net="ig" data-cap="Golden hour après l'entraînement ✨" data-likes="2 012" data-com="77" aria-label="Publication Instagram : Golden hour après l'entraînement ✨"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></span><span class="ti-ov"><span>♥ 2 012</span><span>💬 77</span></span></button>
-            <button class="ti-post ig-post" type="button" data-src="img-pool" data-net="ig" data-cap="Summer mood 🌴" data-likes="3 108" data-com="142" aria-label="Publication Instagram : Summer mood 🌴"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></span><span class="ti-ov"><span>♥ 3 108</span><span>💬 142</span></span></button>
-            <button class="ti-post ig-post" type="button" data-src="img-gym" data-net="ig" data-cap="Nouveau record au squat 🏋️‍♀️" data-likes="1 694" data-com="58" aria-label="Publication Instagram : Nouveau record au squat 🏋️‍♀️"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></span><span class="ti-ov"><span>♥ 1 694</span><span>💬 58</span></span></button>
+            <button class="ti-post ig-post" type="button" data-src="img-run" data-net="ig" data-cap="Sortie du matin au bord de mer 🌊" data-likes="2 481" data-com="96" aria-label="Publication Instagram : Sortie du matin au bord de mer 🌊"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i1"/></svg></span><span class="ti-ov"><span>♥ 2 481</span><span>💬 96</span></span></button>
+            <button class="ti-post ig-post" type="button" data-src="img-pool" data-net="ig" data-cap="Pause soleil bien méritée ☀️" data-likes="3 912" data-com="184" aria-label="Publication Instagram : Pause soleil bien méritée ☀️"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i1"/></svg></span><span class="ti-ov"><span>♥ 3 912</span><span>💬 184</span></span></button>
+            <button class="ti-post ig-post" type="button" data-src="img-gym" data-net="ig" data-cap="Leg day, pas de négociation 💪" data-likes="1 876" data-com="73" aria-label="Publication Instagram : Leg day, pas de négociation 💪"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i1"/></svg></span><span class="ti-ov"><span>♥ 1 876</span><span>💬 73</span></span></button>
+            <button class="ti-post ig-post" type="button" data-src="img-volley" data-net="ig" data-cap="Beach-volley entre copines 🏐" data-likes="2 204" data-com="88" aria-label="Publication Instagram : Beach-volley entre copines 🏐"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i1"/></svg></span><span class="ti-ov"><span>♥ 2 204</span><span>💬 88</span></span></button>
+            <button class="ti-post ig-post" type="button" data-src="img-cycle" data-net="ig" data-cap="60 km sur la côte ce week-end 🚴‍♀️" data-likes="1 540" data-com="61" aria-label="Publication Instagram : 60 km sur la côte ce week-end 🚴‍♀️"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i1"/></svg></span><span class="ti-ov"><span>♥ 1 540</span><span>💬 61</span></span></button>
+            <button class="ti-post ig-post" type="button" data-src="img-run" data-net="ig" data-cap="Golden hour après l'entraînement ✨" data-likes="2 012" data-com="77" aria-label="Publication Instagram : Golden hour après l'entraînement ✨"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i1"/></svg></span><span class="ti-ov"><span>♥ 2 012</span><span>💬 77</span></span></button>
+            <button class="ti-post ig-post" type="button" data-src="img-pool" data-net="ig" data-cap="Summer mood 🌴" data-likes="3 108" data-com="142" aria-label="Publication Instagram : Summer mood 🌴"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i1"/></svg></span><span class="ti-ov"><span>♥ 3 108</span><span>💬 142</span></span></button>
+            <button class="ti-post ig-post" type="button" data-src="img-gym" data-net="ig" data-cap="Nouveau record au squat 🏋️‍♀️" data-likes="1 694" data-com="58" aria-label="Publication Instagram : Nouveau record au squat 🏋️‍♀️"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i1"/></svg></span><span class="ti-ov"><span>♥ 1 694</span><span>💬 58</span></span></button>
           </div>
-          <a class="ti-more" href="#" target="_blank" rel="noopener">Charger plus</a>
+          <a class="ti-more" href="#" data-link="instagram" target="_blank" rel="noopener">Charger plus</a>
         </div>
       </div>
 
       <div class="ti-slot" data-ti="tiktok">
         <div class="ti-demo ti-tt">
-          <div class="ti-band ti-band-tt"><span class="ti-band-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></span><b>TikTok</b><span class="ti-band-h">@audace</span></div>
+          <div class="ti-band ti-band-tt"><span class="ti-band-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i2"/></svg></span><b>TikTok</b><span class="ti-band-h">@audace</span></div>
           <div class="ti-head">
-            <span class="ti-av"><img src="img-pool.jpg" alt=""></span>
+            <span class="ti-av"><img src="img-avatar.webp" width="120" height="120" alt=""></span>
             <span class="ti-id"><b>Audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0095f6"/><path d="M10.3 15.6l-3.2-3.2 1.3-1.3 1.9 1.9 5.1-5.1 1.3 1.3z" fill="#fff"/></svg></b><small>@audace</small><span class="ti-st"><span><strong>38,7 k</strong> abonnés</span><span><strong>1,2 M</strong> j’aime</span></span></span>
-            <a class="ti-follow" href="#" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></i>Suivre</a>
+            <a class="ti-follow" href="#" data-link="tiktok" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i2"/></svg></i>Suivre</a>
           </div>
           <div class="ti-slider">
-            <button class="ti-vid tt-vid" type="button" data-src="img-gym" data-net="tt" data-cap="Ma routine fessiers en 4 exos 🍑" data-likes="128,4 k" aria-label="Vidéo TikTok : Ma routine fessiers en 4 exos 🍑"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></span><span class="ti-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span><span class="ti-cap"><b>▶ 128,4 k</b>Ma routine fessiers en 4 exos 🍑</span></button>
-            <button class="ti-vid tt-vid" type="button" data-src="img-volley" data-net="tt" data-cap="Quand le smash part tout seul 😂" data-likes="214,9 k" aria-label="Vidéo TikTok : Quand le smash part tout seul 😂"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></span><span class="ti-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span><span class="ti-cap"><b>▶ 214,9 k</b>Quand le smash part tout seul 😂</span></button>
-            <button class="ti-vid tt-vid" type="button" data-src="img-run" data-net="tt" data-cap="5 km avant le café ☕" data-likes="86,1 k" aria-label="Vidéo TikTok : 5 km avant le café ☕"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></span><span class="ti-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span><span class="ti-cap"><b>▶ 86,1 k</b>5 km avant le café ☕</span></button>
-            <button class="ti-vid tt-vid" type="button" data-src="img-pool" data-net="tt" data-cap="Get ready with me · piscine" data-likes="97,3 k" aria-label="Vidéo TikTok : Get ready with me · piscine"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></span><span class="ti-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span><span class="ti-cap"><b>▶ 97,3 k</b>Get ready with me · piscine</span></button>
-            <button class="ti-vid tt-vid" type="button" data-src="img-cycle" data-net="tt" data-cap="Vlog vélo sur la côte" data-likes="41,6 k" aria-label="Vidéo TikTok : Vlog vélo sur la côte"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></span><span class="ti-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span><span class="ti-cap"><b>▶ 41,6 k</b>Vlog vélo sur la côte</span></button>
+            <button class="ti-vid tt-vid" type="button" data-src="img-gym" data-net="tt" data-cap="Ma routine fessiers en 4 exos 🍑" data-likes="128,4 k" aria-label="Vidéo TikTok : Ma routine fessiers en 4 exos 🍑"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i2"/></svg></span><span class="ti-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span><span class="ti-cap"><b>▶ 128,4 k</b>Ma routine fessiers en 4 exos 🍑</span></button>
+            <button class="ti-vid tt-vid" type="button" data-src="img-volley" data-net="tt" data-cap="Quand le smash part tout seul 😂" data-likes="214,9 k" aria-label="Vidéo TikTok : Quand le smash part tout seul 😂"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i2"/></svg></span><span class="ti-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span><span class="ti-cap"><b>▶ 214,9 k</b>Quand le smash part tout seul 😂</span></button>
+            <button class="ti-vid tt-vid" type="button" data-src="img-run" data-net="tt" data-cap="5 km avant le café ☕" data-likes="86,1 k" aria-label="Vidéo TikTok : 5 km avant le café ☕"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i2"/></svg></span><span class="ti-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span><span class="ti-cap"><b>▶ 86,1 k</b>5 km avant le café ☕</span></button>
+            <button class="ti-vid tt-vid" type="button" data-src="img-pool" data-net="tt" data-cap="Get ready with me · piscine" data-likes="97,3 k" aria-label="Vidéo TikTok : Get ready with me · piscine"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i2"/></svg></span><span class="ti-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span><span class="ti-cap"><b>▶ 97,3 k</b>Get ready with me · piscine</span></button>
+            <button class="ti-vid tt-vid" type="button" data-src="img-cycle" data-net="tt" data-cap="Vlog vélo sur la côte" data-likes="41,6 k" aria-label="Vidéo TikTok : Vlog vélo sur la côte"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i2"/></svg></span><span class="ti-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span><span class="ti-cap"><b>▶ 41,6 k</b>Vlog vélo sur la côte</span></button>
           </div>
         </div>
       </div>
 
       <div class="ti-slot" data-ti="facebook">
         <div class="ti-demo ti-fbw">
-          <div class="ti-band ti-band-fb"><span class="ti-band-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07z"/></svg></span><b>Facebook</b><span class="ti-band-h">@audace</span></div>
+          <div class="ti-band ti-band-fb"><span class="ti-band-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i3"/></svg></span><b>Facebook</b><span class="ti-band-h">@audace</span></div>
           <div class="ti-head">
-            <span class="ti-av"><img src="img-pool.jpg" alt=""></span>
+            <span class="ti-av"><img src="img-avatar.webp" width="120" height="120" alt=""></span>
             <span class="ti-id"><b>Audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0095f6"/><path d="M10.3 15.6l-3.2-3.2 1.3-1.3 1.9 1.9 5.1-5.1 1.3 1.3z" fill="#fff"/></svg></b><small>Créatrice de contenu · Bruxelles</small><span class="ti-st"><span><strong>9,8 k</strong> j’aime</span><span><strong>11,2 k</strong> followers</span></span></span>
-            <a class="ti-follow" href="#" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07z"/></svg></i>Suivre</a>
+            <a class="ti-follow" href="#" data-link="facebook" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i3"/></svg></i>Suivre</a>
           </div>
           <div class="ti-fbs">
-            <a class="ti-fb" href="#" target="_blank" rel="noopener">
-              <span class="who"><img src="img-pool.jpg" alt=""><span><b>Audace</b><small>il y a 2 jours · 🌍</small></span><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07z"/></svg></span></span>
+            <a class="ti-fb" href="#" data-link="facebook" target="_blank" rel="noopener">
+              <span class="who"><img src="img-avatar.webp" width="120" height="120" alt=""><span><b>Audace</b><small>il y a 2 jours · 🌍</small></span><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i3"/></svg></span></span>
               <span class="tx">60 km le long de la côte ce week-end 🚴‍♀️ Qui veut que je partage mon parcours ?</span>
               <span class="im"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy" decoding="async"></picture></span>
               <span class="ft"><span>👍❤️ 342</span><span>28 commentaires</span></span>
             </a>
-            <a class="ti-fb" href="#" target="_blank" rel="noopener">
-              <span class="who"><img src="img-pool.jpg" alt=""><span><b>Audace</b><small>il y a 5 jours · 🌍</small></span><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07z"/></svg></span></span>
+            <a class="ti-fb" href="#" data-link="facebook" target="_blank" rel="noopener">
+              <span class="who"><img src="img-avatar.webp" width="120" height="120" alt=""><span><b>Audace</b><small>il y a 5 jours · 🌍</small></span><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i3"/></svg></span></span>
               <span class="tx">Tournoi de beach-volley entre copines, on a tout donné 🏐☀️</span>
               <span class="im"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture></span>
               <span class="ft"><span>👍❤️ 518</span><span>41 commentaires</span></span>
             </a>
-            <a class="ti-fb" href="#" target="_blank" rel="noopener">
-              <span class="who"><img src="img-pool.jpg" alt=""><span><b>Audace</b><small>il y a 1 semaine · 🌍</small></span><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07z"/></svg></span></span>
+            <a class="ti-fb" href="#" data-link="facebook" target="_blank" rel="noopener">
+              <span class="who"><img src="img-avatar.webp" width="120" height="120" alt=""><span><b>Audace</b><small>il y a 1 semaine · 🌍</small></span><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i3"/></svg></span></span>
               <span class="tx">Ma séance jambes complète est dispo, dis-moi en commentaire si tu la testes 💪</span>
               <span class="im"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture></span>
               <span class="ft"><span>👍❤️ 276</span><span>19 commentaires</span></span>
@@ -1027,13 +1152,13 @@ body.gate-on{overflow:hidden}
 
     <div class="rows reveal">
       <!-- ✏️ Réseaux : remplace chaque href="#" -->
-      <a class="row" href="#" target="_blank" rel="noopener">
+      <a class="row" href="#" data-link="x" target="_blank" rel="noopener">
         <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zM17.6 20.65h2.04L6.49 3.24H4.3z"/></svg></span>
         <span class="name">Twitter / X</span>
         <span class="meta">Actus &amp; teasers</span><span class="arrow">↗</span>
       </a>
-      <a class="row" href="#" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.94 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.55 8.16c-.18 1.9-.96 6.5-1.36 8.63-.17.9-.5 1.2-.82 1.23-.7.06-1.23-.46-1.9-.9-1.06-.7-1.66-1.13-2.69-1.81-1.19-.78-.42-1.21.26-1.91.18-.18 3.24-2.97 3.3-3.22.01-.03.01-.15-.06-.21s-.16-.04-.24-.02c-.1.02-1.72 1.09-4.86 3.21-.46.32-.88.47-1.25.46-.41-.01-1.2-.23-1.79-.42-.72-.23-1.3-.36-1.25-.76.03-.21.32-.42.87-.64 3.4-1.48 5.67-2.46 6.8-2.93 3.24-1.35 3.92-1.58 4.35-1.59.1 0 .31.02.45.13.11.09.14.21.16.3.02.13.04.27.02.42z"/></svg></span>
+      <a class="row" href="#" data-link="telegram" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i5"/></svg></span>
         <span class="name">Telegram</span>
         <span class="meta">Communauté privée</span><span class="arrow">↗</span>
       </a>
@@ -1045,7 +1170,7 @@ body.gate-on{overflow:hidden}
       <div class="lbx-card">
         <img id="lbxImg" src="" alt="">
         <div class="lbx-body">
-          <div class="who"><img src="img-pool.jpg" alt="">@audace</div>
+          <div class="who"><img src="img-avatar.webp" width="120" height="120" alt="">@audace</div>
           <p id="lbxCap"></p>
           <div class="meta" id="lbxMeta"></div>
           <a class="open-on" id="lbxOpen" href="#" target="_blank" rel="noopener"></a>
@@ -1063,7 +1188,7 @@ body.gate-on{overflow:hidden}
       <div class="cell land"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="Séance de musculation" loading="lazy" decoding="async"></picture></div>
       <div class="cell land"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="Course au bord de mer" loading="lazy" decoding="async"></picture></div>
       <!-- ✏️ Teaser verrouillé : remplace href="#" par ton lien OnlyFans -->
-      <a class="cell full lock" href="#" target="_blank" rel="noopener" aria-label="Débloquer le contenu exclusif sur OnlyFans">
+      <a class="cell full lock" href="#" data-link="onlyfans" target="_blank" rel="noopener" aria-label="Débloquer le contenu exclusif sur OnlyFans">
         <!-- ✏️ Image de teaser (floutée). Remplace par tes photos officielles plus tard. -->
         <picture><source srcset="IMG_1380.webp" type="image/webp"><img src="IMG_1380.jpeg" alt="" loading="lazy" decoding="async"></picture>
         <span class="lk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2h-1V6a5 5 0 0 0-5-5zm-3 8V6a3 3 0 0 1 6 0v3H9z"/></svg><b>+50 photos &amp; vidéos exclusives</b><span>Débloquer sur OnlyFans →</span></span>
@@ -1076,23 +1201,23 @@ body.gate-on{overflow:hidden}
       <div class="mk mk-of">
         <div class="mk-url"><span class="lbl">OnlyFans</span><span class="pill"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 0-5 5v3H6v12h12V10h-1V7a5 5 0 0 0-5-5zm-3 8V7a3 3 0 0 1 6 0v3z"/></svg>onlyfans.com/audace</span></div>
         <div class="ban"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy" decoding="async"></picture>
-          <div class="bar"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg><div><div class="n">Audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><path fill="#00aff0" d="M12 1.6l2.5 1.9 3.1.2.9 3 2.5 1.9-.9 3 .9 3-2.5 1.9-.9 3-3.1.2L12 22.4l-2.5-1.9-3.1-.2-.9-3-2.5-1.9.9-3-.9-3 2.5-1.9.9-3 3.1-.2z"/><path fill="#fff" d="M10.5 14.7l-2.1-2.1-1.3 1.3 3.4 3.4 5.9-5.9-1.3-1.3z"/></svg></div>
+          <div class="bar"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg><div><div class="n">Audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><use href="#i4"/></svg></div>
             <div class="c"><span><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 14l3-3 3 3 2-2 4 4H4z"/></svg>312</span><span><svg viewBox="0 0 24 24"><path d="M4 6h12v12H4zM16 10l5-3v10l-5-3z"/></svg>86</span><span><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9-8.5C1.6 8.4 3.6 5 7 5c2 0 3.3 1.2 5 3 1.7-1.8 3-3 5-3 3.4 0 5.4 3.4 4 6.5-2 4.1-9 8.5-9 8.5z"/></svg>48,2K</span></div></div></div>
         </div>
         <div class="hd">
-          <div class="av"><img src="img-pool.jpg" alt=""></div><span class="on"></span>
+          <div class="av"><img src="img-avatar.webp" width="120" height="120" alt=""></div><span class="on"></span>
           <div class="acts"><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M16.5 7.5c-.6-1.5-2.3-2.5-4.5-2.5-2.5 0-4.5 1.3-4.5 3.3 0 4.7 9 2.5 9 7.2 0 2-2 3.5-4.5 3.5-2.4 0-4.2-1.1-4.8-2.8"/></svg></span><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></span><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v7h16v-7M12 3v12M7 8l5-5 5 5"/></svg></span></div>
         </div>
-        <div class="nm">Audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><path fill="#00aff0" d="M12 1.6l2.5 1.9 3.1.2.9 3 2.5 1.9-.9 3 .9 3-2.5 1.9-.9 3-3.1.2L12 22.4l-2.5-1.9-3.1-.2-.9-3-2.5-1.9.9-3-.9-3 2.5-1.9.9-3 3.1-.2z"/><path fill="#fff" d="M10.5 14.7l-2.1-2.1-1.3 1.3 3.4 3.4 5.9-5.9-1.3-1.3z"/></svg></div>
+        <div class="nm">Audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><use href="#i4"/></svg></div>
         <div class="hn">@audace · Disponible</div>
-        <div class="bio">Créatrice fitness &amp; lifestyle 🇧🇪 Coulisses sans filtre, photos exclusives et je réponds à tous tes messages 💌 <a href="#">Plus d'infos</a></div>
+        <div class="bio">Créatrice fitness &amp; lifestyle 🇧🇪 Coulisses sans filtre, photos exclusives et je réponds à tous tes messages 💌 <a href="#" data-link="onlyfans">Plus d'infos</a></div>
         <div class="sec">Abonnement</div>
-        <a class="sub" href="#" target="_blank" rel="noopener"><span>S'abonner</span><span>14 € par mois</span></a>
+        <a class="sub" href="#" data-link="onlyfans" target="_blank" rel="noopener"><span>S'abonner</span><span>14 € par mois</span></a>
         <div class="tabs"><span class="on">312 publications</span><span>398 médias</span></div>
         <div class="post">
-          <div class="who"><img src="img-pool.jpg" alt=""><div><b>Audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><path fill="#00aff0" d="M12 1.6l2.5 1.9 3.1.2.9 3 2.5 1.9-.9 3 .9 3-2.5 1.9-.9 3-3.1.2L12 22.4l-2.5-1.9-3.1-.2-.9-3-2.5-1.9.9-3-.9-3 2.5-1.9.9-3 3.1-.2z"/><path fill="#fff" d="M10.5 14.7l-2.1-2.1-1.3 1.3 3.4 3.4 5.9-5.9-1.3-1.3z"/></svg></b><small>@audace</small></div><span class="t">Hier</span></div>
+          <div class="who"><img src="img-avatar.webp" width="120" height="120" alt=""><div><b>Audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><use href="#i4"/></svg></b><small>@audace</small></div><span class="t">Hier</span></div>
           <p>Nouvelle séance photo au bord de la piscine 🔥 la suite en privé…</p>
-          <a class="lock" href="#" target="_blank" rel="noopener" aria-label="Débloquer la publication"><picture><source srcset="IMG_1380.webp" type="image/webp"><img src="IMG_1380.jpeg" alt="" loading="lazy" decoding="async"></picture>
+          <a class="lock" href="#" data-link="onlyfans" target="_blank" rel="noopener" aria-label="Débloquer la publication"><picture><source srcset="IMG_1380.webp" type="image/webp"><img src="IMG_1380.jpeg" alt="" loading="lazy" decoding="async"></picture>
             <span class="ov"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
             <span class="ub">S'abonner pour voir les publications</span></a>
         </div>
@@ -1103,20 +1228,20 @@ body.gate-on{overflow:hidden}
         <div class="mk-url"><span class="lbl">MYM</span><span class="pill"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 0-5 5v3H6v12h12V10h-1V7a5 5 0 0 0-5-5zm-3 8V7a3 3 0 0 1 6 0v3z"/></svg>mym.fans/audace</span></div>
         <div class="top"><span class="logo">MYM</span><span class="r"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span></div>
         <div class="ban"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture></div>
-        <div class="av"><img src="img-pool.jpg" alt=""></div>
+        <div class="av"><img src="img-avatar.webp" width="120" height="120" alt=""></div>
         <div class="nm">Audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><path fill="#ff3d6e" d="M12 1.6l2.5 1.9 3.1.2.9 3 2.5 1.9-.9 3 .9 3-2.5 1.9-.9 3-3.1.2L12 22.4l-2.5-1.9-3.1-.2-.9-3-2.5-1.9.9-3-.9-3 2.5-1.9.9-3 3.1-.2z"/><path fill="#fff" d="M10.5 14.7l-2.1-2.1-1.3 1.3 3.4 3.4 5.9-5.9-1.3-1.3z"/></svg></div>
         <div class="hn">@audace</div>
         <div class="st"><div><b>240</b><span>Médias</span></div><div><b>1,9K</b><span>Abonnés</span></div><div><b>52K</b><span>J'aime</span></div></div>
         <div class="bio">Fitness girl de Bruxelles 🏐 Contenus privés, médias à la demande et réponses perso en DM 🔥</div>
-        <div class="mcta"><a class="s" href="#" target="_blank" rel="noopener">S'abonner<small>14 € / mois · sans engagement</small></a><span class="m"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3L10 14M21 3l-7 18-4-7-7-4z"/></svg></span></div>
+        <div class="mcta"><a class="s" href="#" data-link="mym" target="_blank" rel="noopener">S'abonner<small>14 € / mois · sans engagement</small></a><span class="m"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3L10 14M21 3l-7 18-4-7-7-4z"/></svg></span></div>
         <div class="tabs"><span class="on">Abonnement</span><span>Médias privés</span></div>
         <div class="grid">
-          <a href="#" target="_blank" rel="noopener"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Photo</span></a>
-          <a href="#" target="_blank" rel="noopener"><picture><source srcset="IMG_1380.webp" type="image/webp"><img src="IMG_1380.jpeg" alt="" loading="lazy" decoding="async"></picture><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Vidéo</span><span class="pr">2:48</span></a>
-          <a href="#" target="_blank" rel="noopener"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Photo</span></a>
-          <a href="#" target="_blank" rel="noopener"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Vidéo</span><span class="pr">1:15</span></a>
-          <a href="#" target="_blank" rel="noopener"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy" decoding="async"></picture><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Photo</span></a>
-          <a href="#" target="_blank" rel="noopener"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Push</span></a>
+          <a href="#" data-link="mym" target="_blank" rel="noopener"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Photo</span></a>
+          <a href="#" data-link="mym" target="_blank" rel="noopener"><picture><source srcset="IMG_1380.webp" type="image/webp"><img src="IMG_1380.jpeg" alt="" loading="lazy" decoding="async"></picture><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Vidéo</span><span class="pr">2:48</span></a>
+          <a href="#" data-link="mym" target="_blank" rel="noopener"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Photo</span></a>
+          <a href="#" data-link="mym" target="_blank" rel="noopener"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Vidéo</span><span class="pr">1:15</span></a>
+          <a href="#" data-link="mym" target="_blank" rel="noopener"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy" decoding="async"></picture><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Photo</span></a>
+          <a href="#" data-link="mym" target="_blank" rel="noopener"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Push</span></a>
         </div>
       </div>
     </div>
@@ -1130,6 +1255,14 @@ body.gate-on{overflow:hidden}
       <div class="cu-head">
         <h3>Un contenu rien que pour toi</h3>
         <p>Photo, vidéo, audio ou petit mot perso : décris ton envie, je te réponds en privé avec le tarif.</p>
+      </div>
+      <!-- ✏️ Menu de tarifs indicatifs -->
+      <div class="menu">
+        <div class="mn"><span>📸 Photo perso</span><i></i><b>dès 15 €</b></div>
+        <div class="mn"><span>🎬 Vidéo perso · 1 min</span><i></i><b>dès 35 €</b></div>
+        <div class="mn"><span>🎧 Audio perso</span><i></i><b>dès 12 €</b></div>
+        <div class="mn"><span>💌 Message / dédicace</span><i></i><b>dès 8 €</b></div>
+        <small>Tarifs indicatifs, confirmés en privé selon ta demande.</small>
       </div>
       <fieldset class="cu-f">
         <legend>Type de contenu</legend>
@@ -1177,6 +1310,12 @@ body.gate-on{overflow:hidden}
       <p class="cu-note">🔒 Rien n'est envoyé ni enregistré depuis cette page.</p>
     </form>
 
+    <!-- ✏️ Pourboire & wishlist : liens dans LINKS.tip et LINKS.wishlist -->
+    <div class="extras reveal">
+      <a class="xtra tip" href="#" data-link="tip" target="_blank" rel="noopener"><i>☕</i><span><b>Offre-moi un café</b><small>Un petit pourboire pour me soutenir</small></span><em>→</em></a>
+      <a class="xtra wish" href="#" data-link="wishlist" target="_blank" rel="noopener"><i>🎁</i><span><b>Ma wishlist</b><small>Les petits cadeaux qui me font plaisir</small></span><em>→</em></a>
+    </div>
+
     <!-- ===== 05 · CODES PROMO & PARTENAIRES =====
          ✏️ Exemples : remplace les marques, les codes et les liens (href="#") par tes vrais partenariats.
          Les liens gardent rel="sponsored" (bonne pratique pour les liens payants / affiliés). -->
@@ -1184,7 +1323,7 @@ body.gate-on{overflow:hidden}
     <p class="essentials-intro reveal">Les marques que j'utilise vraiment — avec des réductions rien que pour toi.</p>
 
     <!-- Sponsor mis en avant -->
-    <a class="sponsor reveal" href="#" target="_blank" rel="noopener sponsored">
+    <a class="sponsor reveal" href="#" data-link="sponsor" target="_blank" rel="noopener sponsored">
       <span class="sp-bg" aria-hidden="true"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture></span>
       <span class="sp-tag">Partenariat rémunéré</span>
       <span class="sp-k">En collaboration avec</span>
@@ -1199,7 +1338,7 @@ body.gate-on{overflow:hidden}
         <div class="pr-deal">-15 % sur tout le site</div>
         <div class="pr-row">
           <button class="pr-code" type="button" data-code="AUDACE15" aria-label="Copier le code AUDACE15"><span>AUDACE15</span><i>Copier</i></button>
-          <a class="pr-go" href="#" target="_blank" rel="noopener sponsored">Voir l'offre →</a>
+          <a class="pr-go" href="#" data-link="promo1" target="_blank" rel="noopener sponsored">Voir l'offre →</a>
         </div>
       </div>
       <div class="promo">
@@ -1207,7 +1346,7 @@ body.gate-on{overflow:hidden}
         <div class="pr-deal">-20 % sur ta 1ʳᵉ commande</div>
         <div class="pr-row">
           <button class="pr-code" type="button" data-code="AUDACE20" aria-label="Copier le code AUDACE20"><span>AUDACE20</span><i>Copier</i></button>
-          <a class="pr-go" href="#" target="_blank" rel="noopener sponsored">Voir l'offre →</a>
+          <a class="pr-go" href="#" data-link="promo2" target="_blank" rel="noopener sponsored">Voir l'offre →</a>
         </div>
       </div>
       <div class="promo">
@@ -1215,7 +1354,7 @@ body.gate-on{overflow:hidden}
         <div class="pr-deal">1 soin offert dès 40 €</div>
         <div class="pr-row">
           <button class="pr-code" type="button" data-code="GLOWAUDACE" aria-label="Copier le code GLOWAUDACE"><span>GLOWAUDACE</span><i>Copier</i></button>
-          <a class="pr-go" href="#" target="_blank" rel="noopener sponsored">Voir l'offre →</a>
+          <a class="pr-go" href="#" data-link="promo3" target="_blank" rel="noopener sponsored">Voir l'offre →</a>
         </div>
       </div>
       <div class="promo">
@@ -1223,14 +1362,35 @@ body.gate-on{overflow:hidden}
         <div class="pr-deal">Livraison offerte + échantillons</div>
         <div class="pr-row">
           <button class="pr-code" type="button" data-code="AUDACE" aria-label="Copier le code AUDACE"><span>AUDACE</span><i>Copier</i></button>
-          <a class="pr-go" href="#" target="_blank" rel="noopener sponsored">Voir l'offre →</a>
+          <a class="pr-go" href="#" data-link="promo4" target="_blank" rel="noopener sponsored">Voir l'offre →</a>
         </div>
       </div>
     </div>
     <p class="pr-disc reveal">#pub · Certains liens sont affiliés ou sponsorisés : je peux toucher une commission, sans surcoût pour toi.</p>
 
-    <!-- ===== 05 · TÉMOIGNAGES ✏️ Remplace par de VRAIS avis ===== -->
-    <div class="sec-head reveal"><span class="num">06</span><span class="label">Ils ont rejoint</span><span class="rule"></span></div>
+    <!-- ===== 06 · POUR LES MARQUES (kit presse) ✏️ mets tes vrais chiffres ===== -->
+    <div class="sec-head reveal"><span class="num">06</span><span class="label">Pour les marques</span><span class="rule"></span></div>
+    <div class="press reveal">
+      <div class="ps-top">
+        <div><h3>Travaillons ensemble</h3><p>Une communauté fitness &amp; lifestyle engagée, surtout en Belgique et en France. Je ne présente que des marques que j'utilise vraiment.</p></div>
+      </div>
+      <div class="ps-stats">
+        <div class="ps"><b>12,4 k</b><span>Abonnés Instagram</span></div>
+        <div class="ps"><b>38,7 k</b><span>Abonnés TikTok</span></div>
+        <div class="ps"><b>11,2 k</b><span>Abonnés Facebook</span></div>
+        <div class="ps"><b>6,2 %</b><span>Engagement moyen</span></div>
+        <div class="ps"><b>71 %</b><span>Audience 18–34 ans</span></div>
+        <div class="ps"><b>BE · FR · CH</b><span>Pays principaux</span></div>
+      </div>
+      <div class="ps-f"><span>Post Instagram</span><span>Story</span><span>Reel / TikTok</span><span>Code promo dédié</span><span>Ambassadrice</span></div>
+      <div class="ps-cta">
+        <a class="ps-main" id="pressMail" href="mailto:contact@audace.be?subject=Partenariat">Proposer un partenariat →</a>
+        <a class="ps-sec" href="#" data-link="presskit" target="_blank" rel="noopener">Télécharger le kit média</a>
+      </div>
+    </div>
+
+    <!-- ===== 07 · TÉMOIGNAGES ✏️ Remplace par de VRAIS avis ===== -->
+    <div class="sec-head reveal"><span class="num">07</span><span class="label">Ils ont rejoint</span><span class="rule"></span></div>
     <div class="testi reveal">
       <div class="tcard">
         <span class="stars">★★★★★</span>
@@ -1245,7 +1405,7 @@ body.gate-on{overflow:hidden}
     </div>
 
     <!-- ===== 06 · FAQ ===== -->
-    <div class="sec-head reveal"><span class="num">07</span><span class="label">Questions fréquentes</span><span class="rule"></span></div>
+    <div class="sec-head reveal"><span class="num">08</span><span class="label">Questions fréquentes</span><span class="rule"></span></div>
     <div class="faq reveal">
       <details><summary>Qu'est-ce que je reçois en m'abonnant&nbsp;?</summary><div class="a">Un accès privé à mes photos et vidéos exclusives, du nouveau contenu chaque semaine, et la possibilité de m'écrire en direct.</div></details>
       <details><summary>La facturation est-elle discrète&nbsp;?</summary><div class="a">Oui — le paiement passe par OnlyFans ou MYM, de façon sécurisée et discrète. Rien d'explicite n'apparaît sur ton relevé.</div></details>
@@ -1259,8 +1419,8 @@ body.gate-on{overflow:hidden}
     <div class="finalcta reveal">
       <h3>Prêt à me rejoindre&nbsp;?</h3>
       <p>Tout mon contenu exclusif t'attend, sur OnlyFans ou MYM — rien que pour toi.</p>
-      <div class="btns2"><a class="ofbtn" href="#" target="_blank" rel="noopener"><img src="onlyfans-icon-white.svg" alt="" aria-hidden="true">Rejoindre sur OnlyFans →</a>
-        <a class="mymbtn" href="#" target="_blank" rel="noopener"><span class="mym-badge">MYM</span>Rejoindre sur MYM →</a></div>
+      <div class="btns2"><a class="ofbtn" href="#" data-link="onlyfans" target="_blank" rel="noopener"><img src="onlyfans-icon-white.svg" alt="" aria-hidden="true">Rejoindre sur OnlyFans →</a>
+        <a class="mymbtn" href="#" data-link="mym" target="_blank" rel="noopener"><span class="mym-badge">MYM</span>Rejoindre sur MYM →</a></div>
       <span class="reassure2">🔒 Paiement sécurisé · Sans engagement · 18+</span>
     </div>
 
@@ -1277,22 +1437,22 @@ body.gate-on{overflow:hidden}
       <!-- ✏️ Mets tes liens dans href="..." (chaque logo est cliquable) -->
       <nav class="socials" aria-label="Réseaux sociaux">
         <!-- ✏️ OnlyFans : remplace href="#" par ton lien OnlyFans -->
-        <a class="of-link" href="#" target="_blank" rel="noopener" aria-label="OnlyFans" title="OnlyFans">
+        <a class="of-link" href="#" data-link="onlyfans" target="_blank" rel="noopener" aria-label="OnlyFans" title="OnlyFans">
           <img src="onlyfans-icon-white.svg" alt="OnlyFans">
         </a>
         <!-- ✏️ MYM : remplace href="#" par ton lien MYM -->
-        <a class="mym-link" href="#" target="_blank" rel="noopener" aria-label="MYM" title="MYM"><span>MYM</span></a>
-        <a href="#" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>
+        <a class="mym-link" href="#" data-link="mym" target="_blank" rel="noopener" aria-label="MYM" title="MYM"><span>MYM</span></a>
+        <a href="#" data-link="instagram" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i1"/></svg>
         </a>
-        <a href="#" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        <a href="#" data-link="tiktok" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i2"/></svg>
         </a>
-        <a href="#" target="_blank" rel="noopener" aria-label="X (Twitter)" title="X">
+        <a href="#" data-link="x" target="_blank" rel="noopener" aria-label="X (Twitter)" title="X">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zM17.6 20.65h2.04L6.49 3.24H4.3z"/></svg>
         </a>
-        <a href="#" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.94 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.55 8.16c-.18 1.9-.96 6.5-1.36 8.63-.17.9-.5 1.2-.82 1.23-.7.06-1.23-.46-1.9-.9-1.06-.7-1.66-1.13-2.69-1.81-1.19-.78-.42-1.21.26-1.91.18-.18 3.24-2.97 3.3-3.22.01-.03.01-.15-.06-.21s-.16-.04-.24-.02c-.1.02-1.72 1.09-4.86 3.21-.46.32-.88.47-1.25.46-.41-.01-1.2-.23-1.79-.42-.72-.23-1.3-.36-1.25-.76.03-.21.32-.42.87-.64 3.4-1.48 5.67-2.46 6.8-2.93 3.24-1.35 3.92-1.58 4.35-1.59.1 0 .31.02.45.13.11.09.14.21.16.3.02.13.04.27.02.42z"/></svg>
+        <a href="#" data-link="telegram" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i5"/></svg>
         </a>
       </nav>
       <span class="age">🔞 <b>18+</b> · Contenu réservé aux adultes</span>
@@ -1302,6 +1462,9 @@ body.gate-on{overflow:hidden}
         <a href="confidentialite.html">Confidentialité</a>
         <a href="mailto:contact@audace.be">Contact</a>
       </nav>
+      <div class="themes" role="group" aria-label="Thème de couleurs"><small>Essaie un autre thème</small>
+        <button type="button" data-theme="corail" style="--c:#ff4d6d" aria-label="Corail"></button><button type="button" data-theme="rose" style="--c:#ff6fa8" aria-label="Rose"></button><button type="button" data-theme="or" style="--c:#d4a24c" aria-label="Or"></button><button type="button" data-theme="nuit" style="--c:#6c8cff" aria-label="Nuit"></button><button type="button" data-theme="emeraude" style="--c:#2fbf8f" aria-label="Émeraude"></button>
+      </div>
       <span class="copy">© <span id="year"></span> Audace — Tous droits réservés</span>
       <span class="demo-note">Page d'exemple réalisée par AUDACE — noms, photos, chiffres et avis fictifs.</span>
       <span class="viewcount" id="viewcount" hidden>
@@ -1546,7 +1709,7 @@ body.gate-on{overflow:hidden}
       var en=document.documentElement.lang==='en';
       meta.textContent=ig?('♥ '+el.dataset.likes+'   💬 '+el.dataset.com):('▶ '+el.dataset.likes+(en?' views':' vues'));
       open.textContent=(en?'View on ':'Voir sur ')+(ig?'Instagram':'TikTok');
-      open.style.background=ig?'linear-gradient(92deg,#dd2a7b,#8134af)':'#fe2c55';
+      open.href=LINKS[ig?'instagram':'tiktok']||'#'; open.style.background=ig?'linear-gradient(92deg,#dd2a7b,#8134af)':'#fe2c55';
       box.hidden=false; box.classList.add('open'); document.getElementById('lbxClose').focus();
     }
     function hide(){ box.classList.remove('open'); box.hidden=true; if(last) last.focus(); }
@@ -1811,7 +1974,63 @@ body.gate-on{overflow:hidden}
 "Beach-volley entre copines 🏐": "Beach volleyball with the girls 🏐",
 "60 km sur la côte ce week-end 🚴‍♀️": "60 km on the coast this weekend 🚴‍♀️",
 "Golden hour après l'entraînement ✨": "Golden hour after training ✨",
-"Nouveau record au squat 🏋️‍♀️": "New squat PR 🏋️‍♀️"
+"Nouveau record au squat 🏋️‍♀️": "New squat PR 🏋️‍♀️",
+"✦ Mon programme": "✦ My schedule",
+"Le jour en cours est surligné": "Today is highlighted",
+"Lun": "Mon",
+"Mar": "Tue",
+"Mer": "Wed",
+"Jeu": "Thu",
+"Ven": "Fri",
+"Sam": "Sat",
+"Dim": "Sun",
+"Shooting": "Photo shoot",
+"Repos": "Rest day",
+"Live": "Live",
+"Messages": "Messages",
+"Surprise": "Surprise",
+"3 mois": "3 months",
+"6 mois": "6 months",
+"34 €": "€34",
+"59 €": "€59",
+"-20 %": "-20%",
+"-30 %": "-30%",
+"🎁 7 jours offerts": "🎁 7-day free trial",
+"📸 Photo perso": "📸 Custom photo",
+"🎬 Vidéo perso · 1 min": "🎬 Custom video · 1 min",
+"🎧 Audio perso": "🎧 Custom audio",
+"💌 Message / dédicace": "💌 Message / shout-out",
+"dès 15 €": "from €15",
+"dès 35 €": "from €35",
+"dès 12 €": "from €12",
+"dès 8 €": "from €8",
+"Tarifs indicatifs, confirmés en privé selon ta demande.": "Indicative prices, confirmed in private depending on your request.",
+"Offre-moi un café": "Buy me a coffee",
+"Un petit pourboire pour me soutenir": "A small tip to support me",
+"Ma wishlist": "My wishlist",
+"Les petits cadeaux qui me font plaisir": "Little gifts that make me happy",
+"Pour les marques": "For brands",
+"Travaillons ensemble": "Let's work together",
+"Une communauté fitness & lifestyle engagée, surtout en Belgique et en France. Je ne présente que des marques que j'utilise vraiment.": "An engaged fitness & lifestyle community, mainly in Belgium and France. I only feature brands I actually use.",
+"Abonnés Instagram": "Instagram followers",
+"Abonnés TikTok": "TikTok followers",
+"Abonnés Facebook": "Facebook followers",
+"Engagement moyen": "Average engagement",
+"Audience 18–34 ans": "Audience aged 18–34",
+"Pays principaux": "Top countries",
+"Post Instagram": "Instagram post",
+"Code promo dédié": "Dedicated promo code",
+"Ambassadrice": "Brand ambassador",
+"Proposer un partenariat →": "Propose a partnership →",
+"Télécharger le kit média": "Download media kit",
+"Essaie un autre thème": "Try another theme",
+"Programme de la semaine": "Weekly schedule",
+"Thème de couleurs": "Colour theme",
+"Corail": "Coral",
+"Or": "Gold",
+"Nuit": "Night",
+"Émeraude": "Emerald",
+"Beach-volley": "Beach volleyball"
 };
   (function(){
     var KEY='audace-lang', ATTRS=['placeholder','aria-label','title','alt','data-cap'], texts=[], attrs=[];
@@ -1841,6 +2060,17 @@ body.gate-on{overflow:hidden}
     document.querySelectorAll('.lang-switch button').forEach(function(b){ b.addEventListener('click',function(){ setLang(b.dataset.lang); }); });
     var saved=null; try{ saved=localStorage.getItem(KEY); }catch(e){}
     setLang(saved || ((navigator.language||'fr').toLowerCase().indexOf('fr')===0 ? 'fr' : 'en'));
+  })();
+  </script>
+  <!-- Applique LINKS à tous les liens marqués data-link -->
+  <script>
+  (function(){
+    document.querySelectorAll('[data-link]').forEach(function(a){ var u=LINKS[a.dataset.link]; if(u) a.href=u; });
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function(a){ var q=a.getAttribute('href').split('?')[1]; a.href='mailto:'+LINKS.email+(q?'?'+q:''); if(a.textContent.indexOf('@')>-1) a.textContent=LINKS.email; });
+    document.querySelectorAll('.themes button').forEach(function(b){ b.addEventListener('click',function(){ applyTheme(b.dataset.theme); }); });
+    var today=new Date().getDay(); document.querySelectorAll('.wk').forEach(function(d){ if(+d.dataset.d===today) d.classList.add('today'); });
+    applyTheme((location.search.match(/[?&]theme=([a-z]+)/)||[])[1]||THEME);
+    var f=document.getElementById('customForm'); if(f){ f.dataset.of=LINKS.onlyfans; f.dataset.mym=LINKS.mym; }
   })();
   </script>
 </body>

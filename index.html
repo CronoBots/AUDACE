@@ -897,23 +897,6 @@ body.gate-on{overflow:hidden}
       <div class="stat"><div class="n" data-target="3" data-suffix="×">0</div><div class="l">Contenu / semaine</div></div>
     </div>
 
-    <!-- ===== COMPTEUR D'ANTICIPATION (prochain drop) ===== -->
-    <div class="drop reveal" id="drop" hidden><span class="dt">✦</span> Prochain contenu exclusif <b id="dropIn">…</b></div>
-
-    <!-- ===== PROGRAMME DE LA SEMAINE ✏️ adapte les jours et les contenus ===== -->
-    <div class="week reveal" aria-label="Programme de la semaine">
-      <div class="wk-h"><span>✦ Mon programme</span><small>Le jour en cours est surligné</small></div>
-      <div class="wk-days">
-        <div class="wk" data-d="1"><b>Lun</b><i>📸</i><span>Shooting</span></div>
-        <div class="wk off" data-d="2"><b>Mar</b><i>🌙</i><span>Repos</span></div>
-        <div class="wk" data-d="3"><b>Mer</b><i>🔴</i><span>Live</span></div>
-        <div class="wk" data-d="4"><b>Jeu</b><i>💌</i><span>Messages</span></div>
-        <div class="wk" data-d="5"><b>Ven</b><i>🎬</i><span>Vidéo</span></div>
-        <div class="wk" data-d="6"><b>Sam</b><i>🔥</i><span>Surprise</span></div>
-        <div class="wk" data-d="0"><b>Dim</b><i>❓</i><span>Q&amp;A</span></div>
-      </div>
-    </div>
-
     <!-- ===== 01 · APERÇU : galerie + teaser verrouillé ===== -->
     <div class="sec-head reveal"><span class="num">01</span><span class="label">Aperçu</span><span class="rule"></span></div>
     <!-- ✏️ Galerie : tes photos. Pour en changer, remplace le src de chaque <img>. -->
@@ -963,6 +946,8 @@ body.gate-on{overflow:hidden}
         <div class="bar"><i></i></div>
         <div class="txt">✦ Places limitées chaque mois — pour garder un vrai suivi en privé</div>
       </div>
+      <!-- ===== COMPTEUR D'ANTICIPATION (prochain drop) ===== -->
+      <div class="drop" id="drop" hidden><span class="dt">✦</span> Prochain contenu exclusif <b id="dropIn">…</b></div>
       <!-- ✏️ Témoignage : remplace par un vrai avis -->
       <div class="microquote">
         <span class="av">L</span>
@@ -973,6 +958,20 @@ body.gate-on{overflow:hidden}
     </a>
     <!-- ✏️ MYM : remplace href="#" par ton lien MYM -->
     <a class="alt-mym reveal" id="alt-mym" href="#" data-link="mym" target="_blank" rel="noopener"><span class="mym-badge">MYM</span> Aussi disponible sur MYM <small>→</small></a>
+
+    <!-- ===== PROGRAMME DE LA SEMAINE ✏️ adapte les jours et les contenus ===== -->
+    <div class="week reveal" aria-label="Programme de la semaine">
+      <div class="wk-h"><span>✦ Mon programme</span><small>Le jour en cours est surligné</small></div>
+      <div class="wk-days">
+        <div class="wk" data-d="1"><b>Lun</b><i>📸</i><span>Shooting</span></div>
+        <div class="wk off" data-d="2"><b>Mar</b><i>🌙</i><span>Repos</span></div>
+        <div class="wk" data-d="3"><b>Mer</b><i>🔴</i><span>Live</span></div>
+        <div class="wk" data-d="4"><b>Jeu</b><i>💌</i><span>Messages</span></div>
+        <div class="wk" data-d="5"><b>Ven</b><i>🎬</i><span>Vidéo</span></div>
+        <div class="wk" data-d="6"><b>Sam</b><i>🔥</i><span>Surprise</span></div>
+        <div class="wk" data-d="0"><b>Dim</b><i>❓</i><span>Q&amp;A</span></div>
+      </div>
+    </div>
 
     <!-- ===== 03 · RETROUVE-MOI : flux Instagram / TikTok (Trustindex) + autres réseaux ===== -->
     <div class="sec-head reveal"><span class="num">03</span><span class="label">Retrouve-moi</span><span class="rule"></span></div>

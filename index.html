@@ -370,6 +370,11 @@ footer .copy{letter-spacing:.02em}
   .wrap{padding:22px 16px 54px}
   .hero{padding:40px 18px 108px}
   .topbar{padding:16px 18px}
+  /* Plus d'espace vide au-dessus du sujet sur mobile (cadrage vertical serré
+     en portrait) : on révèle plus de haut de la photo et on dézoome un peu,
+     pour que le badge/logo du haut ne colle plus contre les cheveux. */
+  .hero-media img,.hero-media video{object-position:50% 0%}
+  .hero.wow-in .hero-media img,.hero.wow-in .hero-media video{transform:scale(1)}
   .bigname{font-size:clamp(2rem,13vw,3.6rem)}
   .hero .lede{font-size:.96rem}
   .featured{padding:24px}
@@ -817,13 +822,22 @@ body.gate-on{overflow:hidden}
   <script>
   /* Hauteur du héros figée en pixels réels : évite que la barre d'adresse
      du mobile qui se cache/réapparaît au scroll ne fasse "grandir/rétrécir"
-     (donc zoomer visuellement) l'image de fond. Recalculée seulement au
-     redimensionnement/à la rotation de l'écran, jamais au scroll. */
+     (donc zoomer visuellement) l'image de fond. Recalculée seulement quand
+     la LARGEUR change (vrai redimensionnement/rotation) : sur mobile, cacher
+     la barre d'adresse déclenche aussi un évènement "resize" (hauteur seule,
+     largeur inchangée) — on l'ignore exprès pour ne jamais retoucher la
+     hauteur pendant un simple scroll. */
   (function(){
+    var lastW=window.innerWidth;
     var setVh=function(){ document.documentElement.style.setProperty('--vh',(window.innerHeight*0.01)+'px'); };
     setVh();
-    var t; addEventListener('resize',function(){ clearTimeout(t); t=setTimeout(setVh,150); },{passive:true});
-    addEventListener('orientationchange',setVh);
+    var t;
+    addEventListener('resize',function(){
+      if(window.innerWidth===lastW) return;
+      lastW=window.innerWidth;
+      clearTimeout(t); t=setTimeout(setVh,150);
+    },{passive:true});
+    addEventListener('orientationchange',function(){ lastW=window.innerWidth; setTimeout(setVh,150); });
   })();
   /* =================================================================
      ✏️  TES LIENS — tout se règle ici (une seule fois pour toute la page)

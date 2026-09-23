@@ -265,7 +265,9 @@ footer .socials a{width:48px;height:48px;border-radius:50%;display:grid;place-it
   color:var(--muted);background:var(--bg-soft);border:1px solid var(--line);
   transition:transform .22s ease,color .22s ease,border-color .22s ease,box-shadow .22s ease,background .22s ease}
 footer .socials a svg{width:21px;height:21px;fill:currentColor;display:block}
-@media(max-width:360px){footer .socials{gap:10px}footer .socials a{width:42px;height:42px}}
+/* Mobile : 3 icônes par ligne, bien réparties (au lieu d'une dernière ligne clairsemée) */
+@media(max-width:520px){footer .socials{max-width:172px;margin:0 auto}}
+@media(max-width:360px){footer .socials{gap:10px;max-width:146px}footer .socials a{width:42px;height:42px}}
 footer .socials a:hover{color:#fff;border-color:transparent;transform:translateY(-4px);
   background:linear-gradient(135deg,var(--coral),var(--coral-2));box-shadow:0 10px 26px rgba(var(--coral-rgb),.28)}
 footer .copy{letter-spacing:.02em}
@@ -628,7 +630,6 @@ body.gate-on{overflow:hidden}
 .ti-av img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 18%;border:2px solid #fff}
 .ti-ig .ti-av{background:conic-gradient(from 200deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75)}
 .ti-tt .ti-av{background:linear-gradient(135deg,#25f4ee,#fe2c55)}
-.ti-yt .ti-av{background:#ff0000}
 .ti-id{flex:1;min-width:0}
 .ti-id b{display:flex;align-items:center;gap:5px;font-size:16px}
 .ti-id b .vf{width:15px;height:15px;flex-shrink:0}
@@ -640,7 +641,6 @@ body.gate-on{overflow:hidden}
 .ti-follow i{display:flex}.ti-follow svg{width:16px;height:16px;fill:#fff}
 .ti-ig .ti-follow{background:linear-gradient(45deg,#f58529,#dd2a7b 55%,#8134af)}
 .ti-tt .ti-follow{background:#fe2c55}
-.ti-yt .ti-follow{background:#ff0000}
 .ti-net{position:absolute;top:8px;right:8px;z-index:2;width:22px;height:22px;border-radius:6px;display:grid;place-items:center;background:rgba(255,255,255,.92)}
 .ti-net svg{width:13px;height:13px;fill:#000}
 .ti-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
@@ -655,12 +655,7 @@ body.gate-on{overflow:hidden}
 .ti-slider{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 32px)/5);gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
 .ti-slider::-webkit-scrollbar{display:none}
 .ti-vid{position:relative;aspect-ratio:9/16;overflow:hidden;border:0;padding:0;cursor:pointer;border-radius:8px;background:#000;color:#fff;text-align:left;scroll-snap-align:start}
-.ti-vid::after,.yt-vid::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.8))}
-.yt-slider{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 24px)/3);gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
-.yt-slider::-webkit-scrollbar{display:none}
-.yt-vid{position:relative;aspect-ratio:16/9;overflow:hidden;border:0;padding:0;cursor:pointer;border-radius:8px;background:#000;color:#fff;text-align:left;scroll-snap-align:start}
-.yt-vid img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-.yt-vid:hover img{transform:scale(1.06)}
+.ti-vid::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.8))}
 .ti-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;width:40px;height:40px;border-radius:50%;
   background:rgba(0,0,0,.35);display:grid;place-items:center}
 .ti-play svg{width:15px;height:15px;fill:#fff;margin-left:2px}
@@ -673,7 +668,6 @@ body.gate-on{overflow:hidden}
   .ti-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
   .ti-grid .ti-post:nth-child(n+7){display:none}
   .ti-slider{grid-auto-columns:42%}
-  .yt-slider{grid-auto-columns:72%}
 }
 
 /* Bandeaux aux couleurs de chaque plateforme (en tête des flux) */
@@ -690,9 +684,6 @@ body.gate-on{overflow:hidden}
 .ti-band-tt .ti-band-ic{background:none}
 .ti-band-tt .ti-band-ic svg{fill:#fff;filter:drop-shadow(1.5px 1px 0 #fe2c55) drop-shadow(-1.5px -1px 0 #25f4ee)}
 .ti-band-tt b{text-shadow:1.5px 1px 0 #fe2c55,-1.5px -1px 0 #25f4ee}
-.ti-band-yt{background:#ff0000}
-.ti-band-yt .ti-band-ic{background:#fff}
-.ti-band-yt .ti-band-ic svg{fill:#ff0000}
 @media(max-width:700px){.ti-demo{--pad:12px;padding:16px 12px 14px}.ti-band{margin-top:-16px}}
 
 /* ============ OFFRES GROUPÉES ============ */
@@ -998,23 +989,9 @@ body.gate-on{overflow:hidden}
         </div>
       </div>
 
-      <div class="ti-slot" data-ti="youtube">
-        <div class="ti-demo ti-yt">
-          <div class="ti-band ti-band-yt"><span class="ti-band-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i6"/></svg></span><b>YouTube</b><span class="ti-band-h">Audace</span></div>
-          <div class="ti-head">
-            <span class="ti-av"><picture><source srcset="img-avatar.webp" type="image/webp"><img src="img-avatar.jpg" width="120" height="120" alt="" loading="lazy" decoding="async"></picture></span>
-            <span class="ti-id"><b>Audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0095f6"/><path d="M10.3 15.6l-3.2-3.2 1.3-1.3 1.9 1.9 5.1-5.1 1.3 1.3z" fill="#fff"/></svg></b><small>@audace</small><span class="ti-st"><span><strong>6,4 k</strong> abonnés</span><span><strong>412 k</strong> vues</span></span></span>
-            <a class="ti-follow" href="#" data-link="youtube" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i6"/></svg></i>S'abonner</a>
-          </div>
-          <div class="yt-slider">
-            <button class="yt-vid" type="button" data-src="img-run" data-net="yt" data-cap="Vlog : mon 10 km au lever du soleil" data-likes="18 k" aria-label="Vidéo YouTube : Vlog : mon 10 km au lever du soleil"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i6"/></svg></span><span class="ti-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span><span class="ti-cap"><b>▶ 18 k vues</b>Vlog : mon 10 km au lever du soleil</span></button>
-            <button class="yt-vid" type="button" data-src="img-gym" data-net="yt" data-cap="Ma séance jambes complète (30 min)" data-likes="27 k" aria-label="Vidéo YouTube : Ma séance jambes complète (30 min)"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i6"/></svg></span><span class="ti-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span><span class="ti-cap"><b>▶ 27 k vues</b>Ma séance jambes complète (30 min)</span></button>
-            <button class="yt-vid" type="button" data-src="img-cycle" data-net="yt" data-cap="Une semaine avec moi à Knokke" data-likes="9,2 k" aria-label="Vidéo YouTube : Une semaine avec moi à Knokke"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i6"/></svg></span><span class="ti-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span><span class="ti-cap"><b>▶ 9,2 k vues</b>Une semaine avec moi à Knokke</span></button>
-            <button class="yt-vid" type="button" data-src="img-volley" data-net="yt" data-cap="Q&amp;A : vos questions les plus posées" data-likes="14 k" aria-label="Vidéo YouTube : Q&A : vos questions les plus posées"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i6"/></svg></span><span class="ti-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span><span class="ti-cap"><b>▶ 14 k vues</b>Q&amp;A : vos questions les plus posées</span></button>
-          </div>
-          <a class="ti-more" href="#" data-link="youtube" target="_blank" rel="noopener">Voir la chaîne</a>
-        </div>
-      </div>
+      
+
+
     </div>
 
     <div class="rows reveal">
@@ -1523,8 +1500,7 @@ body.gate-on{overflow:hidden}
         meta=document.getElementById('lbxMeta'), open=document.getElementById('lbxOpen'), last=null;
     var NET = {
       ig: {name:'Instagram', link:'instagram', bg:'linear-gradient(92deg,#dd2a7b,#8134af)', vert:false},
-      tt: {name:'TikTok',    link:'tiktok',    bg:'#fe2c55', vert:true},
-      yt: {name:'YouTube',   link:'youtube',   bg:'#ff0000', vert:false}
+      tt: {name:'TikTok',    link:'tiktok',    bg:'#fe2c55', vert:true}
     };
     function show(el){
       last=el; var net=NET[el.dataset.net]||NET.ig, src=el.dataset.src;
@@ -1536,7 +1512,7 @@ body.gate-on{overflow:hidden}
       box.hidden=false; box.classList.add('open'); document.getElementById('lbxClose').focus();
     }
     function hide(){ box.classList.remove('open'); box.hidden=true; if(last) last.focus(); }
-    document.querySelectorAll('.ig-post,.tt-vid,.yt-vid').forEach(function(el){ el.addEventListener('click',function(){show(el);}); });
+    document.querySelectorAll('.ig-post,.tt-vid').forEach(function(el){ el.addEventListener('click',function(){show(el);}); });
     document.getElementById('lbxClose').addEventListener('click',hide);
     box.addEventListener('click',function(e){ if(e.target===box) hide(); });
     addEventListener('keydown',function(e){ if(e.key==='Escape'&&box.classList.contains('open')) hide(); });
@@ -1546,8 +1522,7 @@ body.gate-on{overflow:hidden}
   <script>
   var TRUSTINDEX = {
     instagram: '',   // ex. 'a1b2c3d4e5f6g7h8i9j0'
-    tiktok:    '',
-    youtube:   ''
+    tiktok:    ''
   };
   (function(){
     document.querySelectorAll('.ti-slot').forEach(function(slot){

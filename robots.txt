@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cronobots.github.io/ELAUDACE/sitemap.xml
+Sitemap: https://cronobots.github.io/EXCLUSIF/sitemap.xml

@@ -228,7 +228,8 @@ a{color:inherit;text-decoration:none}
 .cell::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.35));
   opacity:0;transition:opacity .3s;pointer-events:none}
 .cell:hover::after{opacity:1}
-
+.cell.land{grid-column:span 3;aspect-ratio:4/3}
+.cell.full{grid-column:span 6;aspect-ratio:16/8}
 
 /* ============ MARQUEE + FOOTER ============ */
 .marquee{margin-top:60px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
@@ -404,12 +405,19 @@ footer .copy{letter-spacing:.02em}
 .cell.lock::after{content:"";position:absolute;inset:0;z-index:1;opacity:1;
   background:linear-gradient(180deg,rgba(10,9,8,.25),rgba(10,9,8,.85))}
 .cell.lock img{filter:blur(9px) saturate(.95) brightness(.95);transform:scale(1.14)}
-.cell.lock .lk{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;gap:7px;text-align:center;padding:18px;color:#fff}
+.cell.lock .lk{position:absolute;left:0;right:0;top:0;bottom:78px;z-index:2;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:7px;text-align:center;padding:18px;color:#fff;pointer-events:none}
 .cell.lock .lk svg{width:26px;height:26px;fill:#fff}
 .cell.lock .lk b{font-size:.98rem;font-weight:800}
-.cell.lock .lk span{font-size:.76rem;color:#fff;font-weight:700;background:var(--of);padding:6px 12px;border-radius:100px;margin-top:4px}
 .cell.lock:hover img{transform:scale(1.18)}
+.lk-btns{position:absolute;left:0;right:0;bottom:0;z-index:3;display:flex;flex-direction:column;gap:8px;padding:12px}
+.lk-btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:11px 14px;border-radius:100px;
+  font-weight:800;font-size:.86rem;color:#fff;transition:transform .2s ease,box-shadow .2s ease}
+.lk-btn:hover{transform:translateY(-2px)}
+.lk-btn.of{background:#00AFF0;box-shadow:0 8px 22px rgba(0,175,240,.4)}
+.lk-btn.of .of-ic{width:17px;height:17px}
+.lk-btn.mym{background:linear-gradient(92deg,#ff3d6e,#ff6a3d);box-shadow:0 8px 22px rgba(255,61,110,.35)}
+@media(min-width:520px){.lk-btns{flex-direction:row}.lk-btn{flex:1}}
 
 /* Galerie : apparition en cascade au scroll */
 @keyframes cellIn{from{opacity:0;transform:translateY(26px) scale(.96)}to{opacity:1;transform:none}}
@@ -451,143 +459,7 @@ footer .copy{letter-spacing:.02em}
 .finalcta .ofbtn img{width:23px;height:23px}
 .finalcta .reassure2{display:block;margin-top:14px;font-size:.78rem;color:var(--muted)}
 
-/* ============ ✦ APERÇUS RÉSEAUX — reproductions des pages Instagram, TikTok, OnlyFans, MYM ============ */
-.feeds{display:grid;gap:18px}
-@media(min-width:900px){.feeds{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}}
-/* Cadre « navigateur mobile » commun */
-.mk{border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:0 20px 50px rgba(0,0,0,.45);
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.35;
-  -webkit-font-smoothing:antialiased}
-.mk-url{display:flex;align-items:center;gap:8px;padding:9px 12px;background:#1c1b1b;color:#b9b2aa;font-size:12px}
-.mk-url .pill{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;background:#2b2929;border-radius:9px;padding:6px 10px;color:#e8e2da}
-.mk-url .pill svg{width:10px;height:10px;fill:#9a938b}
-.mk-url .lbl{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
-.mk svg.i{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;display:block}
-.mk button{font:inherit;color:inherit}
-
-/* ---- Aperçus façon widgets Trustindex (Instagram, TikTok) ---- */
-.ti-feeds{display:grid;gap:18px;margin-bottom:18px}
-.ti-slot{min-width:0}
-.ti-demo{position:relative;background:#fff;color:#1c1e21;border-radius:14px;padding:18px;box-shadow:0 20px 50px rgba(0,0,0,.4);
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.35}
-.ti-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-.ti-av{width:54px;height:54px;border-radius:50%;padding:2px;flex-shrink:0}
-.ti-av img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 18%;border:2px solid #fff}
-.ti-ig .ti-av{background:conic-gradient(from 200deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75)}
-.ti-tt .ti-av{background:linear-gradient(135deg,#25f4ee,#fe2c55)}
-.ti-id{flex:1;min-width:0}
-.ti-id b{display:flex;align-items:center;gap:5px;font-size:16px}
-.ti-id b .vf{width:15px;height:15px;flex-shrink:0}
-.ti-id small{display:block;color:#65676b;font-size:13px}
-.ti-st{display:flex;flex-wrap:wrap;gap:2px 12px;font-size:13px;color:#65676b;margin-top:2px}
-.ti-st strong{color:#1c1e21}
-.ti-follow{display:inline-flex;align-items:center;justify-content:center;gap:7px;flex-shrink:0;color:#fff;font-weight:700;font-size:14px;min-height:40px;padding:9px 15px;border-radius:8px;transition:filter .2s}
-.ti-follow:hover{filter:brightness(1.08)}
-.ti-follow i{display:flex}.ti-follow svg{width:16px;height:16px;fill:#fff}
-.ti-ig .ti-follow{background:linear-gradient(45deg,#f58529,#dd2a7b 55%,#8134af)}
-.ti-tt .ti-follow{background:#fe2c55}
-.ti-net{position:absolute;top:8px;right:8px;z-index:2;width:22px;height:22px;border-radius:6px;display:grid;place-items:center;background:rgba(255,255,255,.92)}
-.ti-net svg{width:13px;height:13px;fill:#000}
-.ti-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
-.ti-post{position:relative;aspect-ratio:1/1;overflow:hidden;border:0;padding:0;cursor:pointer;border-radius:6px;background:#eee}
-.ti-post img,.ti-vid img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;transition:transform .5s ease}
-.ti-post:hover img,.ti-vid:hover img{transform:scale(1.06)}
-.ti-ov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:14px;background:rgba(0,0,0,.45);
-  color:#fff;font-weight:700;font-size:14px;opacity:0;transition:opacity .25s}
-.ti-post:hover .ti-ov,.ti-post:focus-visible .ti-ov{opacity:1}
-.ti-more{display:block;width:max-content;margin:14px auto 0;min-height:40px;padding:9px 22px;border-radius:8px;border:1px solid #ccd0d5;font-weight:600;color:#1c1e21}
-.ti-more:hover{background:#f2f3f5}
-.ti-slider{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 32px)/5);gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
-.ti-slider::-webkit-scrollbar{display:none}
-.ti-vid{position:relative;aspect-ratio:9/16;overflow:hidden;border:0;padding:0;cursor:pointer;border-radius:8px;background:#000;color:#fff;text-align:left;scroll-snap-align:start}
-.ti-vid::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.8))}
-.ti-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;width:40px;height:40px;border-radius:50%;
-  background:rgba(0,0,0,.35);display:grid;place-items:center}
-.ti-play svg{width:15px;height:15px;fill:#fff;margin-left:2px}
-.ti-cap{position:absolute;left:8px;right:8px;bottom:8px;z-index:1;font-size:12px;line-height:1.3}
-.ti-cap b{display:block;font-size:12px;margin-bottom:2px}
-@media(max-width:700px){
-  .ti-demo{padding:16px 12px 14px}
-  .ti-head{flex-wrap:wrap}
-  .ti-follow{order:3;width:100%;justify-content:center}
-  .ti-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
-  .ti-grid .ti-post:nth-child(n+7){display:none}
-  .ti-slider{grid-auto-columns:42%}
-}
-
-/* ---- OnlyFans ---- */
-.mk-of{background:#fff;color:#000}
-.mk-of .ban{position:relative;height:150px;background:#8a96a3}
-.mk-of .ban img{width:100%;height:100%;object-fit:cover;object-position:50% 45%}
-.mk-of .ban::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55),transparent 60%)}
-.mk-of .ban .bar{position:absolute;top:10px;left:12px;right:12px;z-index:1;display:flex;align-items:center;gap:14px;color:#fff}
-.mk-of .ban .bar .n{font-weight:700;font-size:17px;display:flex;align-items:center;gap:5px}
-.mk-of .ban .bar .c{font-size:12px;display:flex;gap:12px;margin-top:1px;opacity:.95}
-.mk-of .ban .bar .c svg{width:13px;height:13px;fill:#fff;vertical-align:-2px;margin-right:3px}
-.mk-of .vf{width:16px;height:16px;flex-shrink:0}
-.mk-of .hd{position:relative;padding:1px 14px 0}
-.mk-of .hd .av{position:relative;width:88px;height:88px;border-radius:50%;border:3px solid #fff;overflow:hidden;margin-top:-44px;background:#fff}
-.mk-of .hd .av img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
-.mk-of .hd .on{position:absolute;left:84px;top:22px;width:14px;height:14px;border-radius:50%;background:#00d664;border:2px solid #fff}
-.mk-of .hd .acts{position:absolute;right:14px;top:10px;display:flex;gap:8px}
-.mk-of .hd .acts span{width:40px;height:40px;border-radius:50%;border:1px solid #d7dde3;display:grid;place-items:center;color:#00aff0}
-.mk-of .hd .acts svg.i{width:20px;height:20px}
-.mk-of .nm{padding:8px 14px 0;font-weight:700;font-size:19px;display:flex;align-items:center;gap:5px}
-.mk-of .hn{padding:0 14px;color:#8a96a3;font-size:14px}
-.mk-of .bio{padding:10px 14px 0;font-size:14px}
-.mk-of .bio a{color:#00aff0;font-weight:600}
-.mk-of .sec{padding:14px 14px 0;font-size:12px;font-weight:600;letter-spacing:.04em;color:#8a96a3;text-transform:uppercase}
-.mk-of .sub{display:flex;justify-content:space-between;align-items:center;margin:8px 14px 0;padding:12px 18px;border-radius:1000px;
-  background:#00aff0;color:#fff;font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.02em}
-.mk-of .tabs{display:flex;margin-top:16px;border-bottom:1px solid #eaeef1}
-.mk-of .tabs span{flex:1;text-align:center;padding:12px 0;font-size:13px;font-weight:600;color:#8a96a3;text-transform:uppercase}
-.mk-of .tabs span.on{color:#000;box-shadow:inset 0 -2px 0 #000}
-.mk-of .post{padding:12px 14px 14px}
-.mk-of .post .who{display:flex;align-items:center;gap:8px}
-.mk-of .post .who img{width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:50% 18%}
-.mk-of .post .who b{font-size:14px;display:flex;align-items:center;gap:4px}
-.mk-of .post .who small{color:#8a96a3;font-size:13px;font-weight:400}
-.mk-of .post .who .t{margin-left:auto;color:#8a96a3;font-size:13px}
-.mk-of .post p{margin:8px 0}
-.mk-of .lock{position:relative;display:block;border-radius:6px;overflow:hidden;aspect-ratio:4/3;background:#f2f5f7}
-.mk-of .lock img{width:100%;height:100%;object-fit:cover;filter:blur(18px) saturate(.6);opacity:.45;transform:scale(1.2)}
-.mk-of .lock .ov{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#8a96a3}
-.mk-of .lock .ov svg.i{width:34px;height:34px}
-.mk-of .lock .ub{position:absolute;left:10px;right:10px;bottom:10px;background:#00aff0;color:#fff;text-align:center;font-weight:600;
-  text-transform:uppercase;font-size:13px;padding:10px;border-radius:1000px}
-
-/* ---- MYM ---- */
-.mk-mym{background:#fff;color:#1a1a1a}
-.mk-mym .top{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid #eee}
-.mk-mym .logo{font-weight:900;font-size:20px;letter-spacing:-.04em;background:#000;color:#fff;padding:3px 7px;border-radius:6px}
-.mk-mym .top .r{display:flex;gap:14px;color:#1a1a1a}
-.mk-mym .ban{height:120px;overflow:hidden}
-.mk-mym .ban img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
-.mk-mym .av{width:92px;height:92px;border-radius:50%;border:4px solid #fff;overflow:hidden;margin:-46px auto 0;position:relative;background:#fff}
-.mk-mym .av img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
-.mk-mym .nm{text-align:center;font-weight:700;font-size:19px;margin-top:6px;display:flex;justify-content:center;align-items:center;gap:5px}
-.mk-mym .nm svg{width:16px;height:16px}
-.mk-mym .hn{text-align:center;color:#8c8c8c;font-size:14px}
-.mk-mym .st{display:flex;justify-content:center;gap:26px;margin:12px 0 4px;text-align:center}
-.mk-mym .st b{display:block;font-size:16px}
-.mk-mym .st span{font-size:12px;color:#8c8c8c}
-.mk-mym .bio{text-align:center;padding:8px 22px 0;font-size:14px}
-.mk-mym .mcta{display:flex;gap:8px;padding:14px 14px 0}
-.mk-mym .mcta .s{flex:1;text-align:center;padding:12px;border-radius:12px;font-weight:700;color:#fff;background:linear-gradient(90deg,#ff3d6e,#ff6a3d)}
-.mk-mym .mcta .s small{display:block;font-weight:500;font-size:12px;opacity:.9}
-.mk-mym .mcta .m{width:50px;border-radius:12px;border:1px solid #e5e5e5;display:grid;place-items:center}
-.mk-mym .tabs{display:flex;margin-top:14px;border-bottom:1px solid #eee}
-.mk-mym .tabs span{flex:1;text-align:center;padding:11px 0;font-size:14px;font-weight:600;color:#8c8c8c}
-.mk-mym .tabs span.on{color:#1a1a1a;box-shadow:inset 0 -2px 0 #ff3d6e}
-.mk-mym .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;padding:3px}
-.mk-mym .grid a{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:6px;background:#eee;display:block}
-.mk-mym .grid img{width:100%;height:100%;object-fit:cover;filter:blur(12px);transform:scale(1.2)}
-.mk-mym .grid a span{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#fff;font-size:12px;font-weight:700;text-shadow:0 0 4px rgba(0,0,0,.5)}
-.mk-mym .grid a span svg.i{width:22px;height:22px}
-.mk-mym .grid a .pr{position:absolute;right:5px;bottom:5px;left:auto;top:auto;inset:auto 5px 5px auto;background:rgba(0,0,0,.6);padding:2px 7px;border-radius:100px;font-size:11px}
-.gallery+.feeds{margin-top:18px}
 .ti-feeds+.rows{margin-top:4px}
-.mk-note{display:block;text-align:center;font-size:.72rem;color:var(--muted);margin-top:14px}
 
 /* Visionneuse (clic sur une publication) */
 .lbx{position:fixed;inset:0;z-index:120;display:none;align-items:center;justify-content:center;padding:18px;
@@ -727,6 +599,56 @@ body.gate-on{overflow:hidden}
 .cu-open.of{background:linear-gradient(92deg,#00AFF0,#0093d6)}
 .cu-note{text-align:center;font-size:.74rem;color:var(--muted);margin-top:14px}
 
+/* ---- Aperçus façon widgets Trustindex (Instagram, TikTok) ---- */
+.ti-feeds{display:grid;gap:18px;margin-bottom:18px}
+.ti-slot{min-width:0}
+.ti-demo{position:relative;background:#fff;color:#1c1e21;border-radius:14px;padding:18px;box-shadow:0 20px 50px rgba(0,0,0,.4);
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.35}
+.ti-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.ti-av{width:54px;height:54px;border-radius:50%;padding:2px;flex-shrink:0}
+.ti-av img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 18%;border:2px solid #fff}
+.ti-ig .ti-av{background:conic-gradient(from 200deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75)}
+.ti-tt .ti-av{background:linear-gradient(135deg,#25f4ee,#fe2c55)}
+.ti-id{flex:1;min-width:0}
+.ti-id b{display:flex;align-items:center;gap:5px;font-size:16px}
+.ti-id b .vf{width:15px;height:15px;flex-shrink:0}
+.ti-id small{display:block;color:#65676b;font-size:13px}
+.ti-st{display:flex;flex-wrap:wrap;gap:2px 12px;font-size:13px;color:#65676b;margin-top:2px}
+.ti-st strong{color:#1c1e21}
+.ti-follow{display:inline-flex;align-items:center;justify-content:center;gap:7px;flex-shrink:0;color:#fff;font-weight:700;font-size:14px;min-height:40px;padding:9px 15px;border-radius:8px;transition:filter .2s}
+.ti-follow:hover{filter:brightness(1.08)}
+.ti-follow i{display:flex}.ti-follow svg{width:16px;height:16px;fill:#fff}
+.ti-ig .ti-follow{background:linear-gradient(45deg,#f58529,#dd2a7b 55%,#8134af)}
+.ti-tt .ti-follow{background:#fe2c55}
+.ti-net{position:absolute;top:8px;right:8px;z-index:2;width:22px;height:22px;border-radius:6px;display:grid;place-items:center;background:rgba(255,255,255,.92)}
+.ti-net svg{width:13px;height:13px;fill:#000}
+.ti-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.ti-post{position:relative;aspect-ratio:1/1;overflow:hidden;border:0;padding:0;cursor:pointer;border-radius:6px;background:#eee}
+.ti-post img,.ti-vid img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;transition:transform .5s ease}
+.ti-post:hover img,.ti-vid:hover img{transform:scale(1.06)}
+.ti-ov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:14px;background:rgba(0,0,0,.45);
+  color:#fff;font-weight:700;font-size:14px;opacity:0;transition:opacity .25s}
+.ti-post:hover .ti-ov,.ti-post:focus-visible .ti-ov{opacity:1}
+.ti-more{display:block;width:max-content;margin:14px auto 0;min-height:40px;padding:9px 22px;border-radius:8px;border:1px solid #ccd0d5;font-weight:600;color:#1c1e21}
+.ti-more:hover{background:#f2f3f5}
+.ti-slider{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 32px)/5);gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.ti-slider::-webkit-scrollbar{display:none}
+.ti-vid{position:relative;aspect-ratio:9/16;overflow:hidden;border:0;padding:0;cursor:pointer;border-radius:8px;background:#000;color:#fff;text-align:left;scroll-snap-align:start}
+.ti-vid::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.8))}
+.ti-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;width:40px;height:40px;border-radius:50%;
+  background:rgba(0,0,0,.35);display:grid;place-items:center}
+.ti-play svg{width:15px;height:15px;fill:#fff;margin-left:2px}
+.ti-cap{position:absolute;left:8px;right:8px;bottom:8px;z-index:1;font-size:12px;line-height:1.3}
+.ti-cap b{display:block;font-size:12px;margin-bottom:2px}
+@media(max-width:700px){
+  .ti-demo{padding:16px 12px 14px}
+  .ti-head{flex-wrap:wrap}
+  .ti-follow{order:3;width:100%;justify-content:center}
+  .ti-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+  .ti-grid .ti-post:nth-child(n+7){display:none}
+  .ti-slider{grid-auto-columns:42%}
+}
+
 /* Bandeaux aux couleurs de chaque plateforme (en tête des flux) */
 .ti-demo{--pad:18px;padding:var(--pad)}
 .ti-band{display:flex;align-items:center;gap:10px;margin:calc(-1*var(--pad)) calc(-1*var(--pad)) 16px;padding:11px var(--pad);
@@ -742,17 +664,6 @@ body.gate-on{overflow:hidden}
 .ti-band-tt .ti-band-ic svg{fill:#fff;filter:drop-shadow(1.5px 1px 0 #fe2c55) drop-shadow(-1.5px -1px 0 #25f4ee)}
 .ti-band-tt b{text-shadow:1.5px 1px 0 #fe2c55,-1.5px -1px 0 #25f4ee}
 @media(max-width:700px){.ti-demo{--pad:12px;padding:16px 12px 14px}.ti-band{margin-top:-16px}}
-/* Cadres OnlyFans et MYM : même hauteur, format compact (grand écran) */
-@media(max-width:899px){.mk-of .lock{aspect-ratio:16/10}}
-@media(min-width:900px){
-  .feeds{align-items:stretch}
-  .feeds .mk{display:flex;flex-direction:column;height:760px}
-  .mk-of .post{flex:1;min-height:0;display:flex;flex-direction:column}
-  .mk-of .post p{margin:6px 0}
-  .mk-of .lock{flex:1;min-height:0;aspect-ratio:auto}
-  .mk-mym .grid{flex:1;min-height:0;grid-template-rows:1fr 1fr}
-  .mk-mym .grid a{aspect-ratio:auto;min-height:0}
-}
 
 /* ============ OFFRES GROUPÉES ============ */
 .bundles{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 2px}
@@ -981,8 +892,30 @@ body.gate-on{overflow:hidden}
     <!-- ✏️ MYM : remplace href="#" par ton lien MYM -->
     <a class="alt-mym reveal" id="alt-mym" href="#" data-link="mym" target="_blank" rel="noopener"><span class="mym-badge">MYM</span> Aussi disponible sur MYM <small>→</small></a>
 
-    <!-- ===== 02 · RETROUVE-MOI : flux Instagram / TikTok (Trustindex) + autres réseaux ===== -->
-    <div class="sec-head reveal"><span class="num">02</span><span class="label">Retrouve-moi</span><span class="rule"></span></div>
+    <!-- ===== 02 · APERÇU : galerie + teaser verrouillé ===== -->
+    <div class="sec-head reveal"><span class="num">02</span><span class="label">Aperçu</span><span class="rule"></span></div>
+    <!-- ✏️ Galerie : tes photos. Pour en changer, remplace le src de chaque <img>. -->
+    <div class="gallery reveal">
+      <div class="cell full"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="Au bord de la piscine" loading="lazy" decoding="async"></picture></div>
+      <div class="cell land"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="Beach-volley" loading="lazy" decoding="async"></picture></div>
+      <div class="cell land"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="Cyclisme sur la côte" loading="lazy" decoding="async"></picture></div>
+      <div class="cell land"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="Séance de musculation" loading="lazy" decoding="async"></picture></div>
+      <div class="cell land"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="Course au bord de mer" loading="lazy" decoding="async"></picture></div>
+      <!-- ✏️ Teaser verrouillé : remplace les liens data-link par tes vrais profils (réglés dans LINKS, en haut du fichier) -->
+      <div class="cell full lock">
+        <!-- ✏️ Image de teaser (floutée). Remplace par tes photos officielles plus tard. -->
+        <picture><source srcset="IMG_1380.webp" type="image/webp"><img src="IMG_1380.jpeg" alt="" loading="lazy" decoding="async"></picture>
+        <span class="lk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2h-1V6a5 5 0 0 0-5-5zm-3 8V6a3 3 0 0 1 6 0v3H9z"/></svg><b>+50 photos &amp; vidéos exclusives</b></span>
+        <span class="lk-btns">
+          <a class="lk-btn of" href="#" data-link="onlyfans" target="_blank" rel="noopener"><img class="of-ic" src="onlyfans-icon-white.svg" alt="" aria-hidden="true">Rejoindre sur OnlyFans →</a>
+          <a class="lk-btn mym" href="#" data-link="mym" target="_blank" rel="noopener"><span class="mym-badge">MYM</span>Rejoindre sur MYM →</a>
+        </span>
+      </div>
+    </div>
+
+
+    <!-- ===== 03 · RETROUVE-MOI : flux Instagram / TikTok (Trustindex) + autres réseaux ===== -->
+    <div class="sec-head reveal"><span class="num">03</span><span class="label">Retrouve-moi</span><span class="rule"></span></div>
     <!-- =================================================================
          ✏️ FLUX INSTAGRAM / TIKTOK — widgets Trustindex
          1. Crée un « Social feed widget » par réseau sur admin.trustindex.io
@@ -1066,75 +999,6 @@ body.gate-on{overflow:hidden}
         </div>
       </div>
     </div>
-
-    <!-- ===== 03 · APERÇU : galerie + profils OnlyFans & MYM ===== -->
-    <div class="sec-head reveal"><span class="num">03</span><span class="label">Aperçu</span><span class="rule"></span></div>
-    <!-- ✏️ Galerie : tes photos. Pour en changer, remplace le src de chaque <img>. -->
-    <div class="gallery reveal">
-      <div class="cell full"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="Au bord de la piscine" loading="lazy" decoding="async"></picture></div>
-      <div class="cell land"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="Beach-volley" loading="lazy" decoding="async"></picture></div>
-      <div class="cell land"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="Cyclisme sur la côte" loading="lazy" decoding="async"></picture></div>
-      <div class="cell land"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="Séance de musculation" loading="lazy" decoding="async"></picture></div>
-      <div class="cell land"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="Course au bord de mer" loading="lazy" decoding="async"></picture></div>
-      <!-- ✏️ Teaser verrouillé : remplace href="#" par ton lien OnlyFans -->
-      <a class="cell full lock" href="#" data-link="onlyfans" target="_blank" rel="noopener" aria-label="Débloquer le contenu exclusif sur OnlyFans">
-        <!-- ✏️ Image de teaser (floutée). Remplace par tes photos officielles plus tard. -->
-        <picture><source srcset="IMG_1380.webp" type="image/webp"><img src="IMG_1380.jpeg" alt="" loading="lazy" decoding="async"></picture>
-        <span class="lk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2h-1V6a5 5 0 0 0-5-5zm-3 8V6a3 3 0 0 1 6 0v3H9z"/></svg><b>+50 photos &amp; vidéos exclusives</b><span>Débloquer sur OnlyFans →</span></span>
-      </a>
-    </div>
-
-    <!-- ✏️ Profils OnlyFans & MYM (pas de widget Trustindex pour ces plateformes) : chiffres à remplacer, liens href="#" → ton profil -->
-    <div class="feeds reveal">
-      <!-- ONLYFANS -->
-      <div class="mk mk-of">
-        <div class="mk-url"><span class="lbl">OnlyFans</span><span class="pill"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 0-5 5v3H6v12h12V10h-1V7a5 5 0 0 0-5-5zm-3 8V7a3 3 0 0 1 6 0v3z"/></svg>onlyfans.com/audace</span></div>
-        <div class="ban"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy" decoding="async"></picture>
-          <div class="bar"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg><div><div class="n">Audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><use href="#i4"/></svg></div>
-            <div class="c"><span><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 14l3-3 3 3 2-2 4 4H4z"/></svg>312</span><span><svg viewBox="0 0 24 24"><path d="M4 6h12v12H4zM16 10l5-3v10l-5-3z"/></svg>86</span><span><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9-8.5C1.6 8.4 3.6 5 7 5c2 0 3.3 1.2 5 3 1.7-1.8 3-3 5-3 3.4 0 5.4 3.4 4 6.5-2 4.1-9 8.5-9 8.5z"/></svg>48,2K</span></div></div></div>
-        </div>
-        <div class="hd">
-          <div class="av"><picture><source srcset="img-avatar.webp" type="image/webp"><img src="img-avatar.jpg" width="120" height="120" alt="" loading="lazy" decoding="async"></picture></div><span class="on"></span>
-          <div class="acts"><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M16.5 7.5c-.6-1.5-2.3-2.5-4.5-2.5-2.5 0-4.5 1.3-4.5 3.3 0 4.7 9 2.5 9 7.2 0 2-2 3.5-4.5 3.5-2.4 0-4.2-1.1-4.8-2.8"/></svg></span><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></span><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v7h16v-7M12 3v12M7 8l5-5 5 5"/></svg></span></div>
-        </div>
-        <div class="nm">Audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><use href="#i4"/></svg></div>
-        <div class="hn">@audace · Disponible</div>
-        <div class="bio">Créatrice fitness &amp; lifestyle 🇧🇪 Coulisses sans filtre, photos exclusives et je réponds à tous tes messages 💌 <a href="#" data-link="onlyfans">Plus d'infos</a></div>
-        <div class="sec">Abonnement</div>
-        <a class="sub" href="#" data-link="onlyfans" target="_blank" rel="noopener"><span>S'abonner</span><span>14 € par mois</span></a>
-        <div class="tabs"><span class="on">312 publications</span><span>398 médias</span></div>
-        <div class="post">
-          <div class="who"><picture><source srcset="img-avatar.webp" type="image/webp"><img src="img-avatar.jpg" width="120" height="120" alt="" loading="lazy" decoding="async"></picture><div><b>Audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><use href="#i4"/></svg></b><small>@audace</small></div><span class="t">Hier</span></div>
-          <p>Nouvelle séance photo au bord de la piscine 🔥 la suite en privé…</p>
-          <a class="lock" href="#" data-link="onlyfans" target="_blank" rel="noopener" aria-label="Débloquer la publication"><picture><source srcset="IMG_1380.webp" type="image/webp"><img src="IMG_1380.jpeg" alt="" loading="lazy" decoding="async"></picture>
-            <span class="ov"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
-            <span class="ub">S'abonner pour voir les publications</span></a>
-        </div>
-      </div>
-
-      <!-- MYM -->
-      <div class="mk mk-mym">
-        <div class="mk-url"><span class="lbl">MYM</span><span class="pill"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 0-5 5v3H6v12h12V10h-1V7a5 5 0 0 0-5-5zm-3 8V7a3 3 0 0 1 6 0v3z"/></svg>mym.fans/audace</span></div>
-        <div class="top"><span class="logo">MYM</span><span class="r"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span></div>
-        <div class="ban"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture></div>
-        <div class="av"><picture><source srcset="img-avatar.webp" type="image/webp"><img src="img-avatar.jpg" width="120" height="120" alt="" loading="lazy" decoding="async"></picture></div>
-        <div class="nm">Audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><path fill="#ff3d6e" d="M12 1.6l2.5 1.9 3.1.2.9 3 2.5 1.9-.9 3 .9 3-2.5 1.9-.9 3-3.1.2L12 22.4l-2.5-1.9-3.1-.2-.9-3-2.5-1.9.9-3-.9-3 2.5-1.9.9-3 3.1-.2z"/><path fill="#fff" d="M10.5 14.7l-2.1-2.1-1.3 1.3 3.4 3.4 5.9-5.9-1.3-1.3z"/></svg></div>
-        <div class="hn">@audace</div>
-        <div class="st"><div><b>240</b><span>Médias</span></div><div><b>1,9K</b><span>Abonnés</span></div><div><b>52K</b><span>J'aime</span></div></div>
-        <div class="bio">Fitness girl de Bruxelles 🏐 Contenus privés, médias à la demande et réponses perso en DM 🔥</div>
-        <div class="mcta"><a class="s" href="#" data-link="mym" target="_blank" rel="noopener">S'abonner<small>14 € / mois · sans engagement</small></a><span class="m"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3L10 14M21 3l-7 18-4-7-7-4z"/></svg></span></div>
-        <div class="tabs"><span class="on">Abonnement</span><span>Médias privés</span></div>
-        <div class="grid">
-          <a href="#" data-link="mym" target="_blank" rel="noopener"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Photo</span></a>
-          <a href="#" data-link="mym" target="_blank" rel="noopener"><picture><source srcset="IMG_1380.webp" type="image/webp"><img src="IMG_1380.jpeg" alt="" loading="lazy" decoding="async"></picture><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Vidéo</span><span class="pr">2:48</span></a>
-          <a href="#" data-link="mym" target="_blank" rel="noopener"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Photo</span></a>
-          <a href="#" data-link="mym" target="_blank" rel="noopener"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Vidéo</span><span class="pr">1:15</span></a>
-          <a href="#" data-link="mym" target="_blank" rel="noopener"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy" decoding="async"></picture><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Photo</span></a>
-          <a href="#" data-link="mym" target="_blank" rel="noopener"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Push</span></a>
-        </div>
-      </div>
-    </div>
-    <span class="mk-note">Aperçus d'exemple — les chiffres et publications sont fictifs.</span>
 
     <!-- ===== 04 · DEMANDE PERSONNALISÉE =====
          ✏️ Pas de serveur : la demande est mise en forme puis copiée, la fan la colle en message privé sur MYM ou OnlyFans.

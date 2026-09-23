@@ -503,57 +503,153 @@ footer .copy{letter-spacing:.02em}
 .finalcta .ofbtn img{width:23px;height:23px}
 .finalcta .reassure2{display:block;margin-top:14px;font-size:.78rem;color:var(--muted)}
 
-/* ============ ✦ WIDGETS RÉSEAUX (style Trustindex : flux Instagram & TikTok) ============ */
-.feeds{display:grid;gap:14px}
-@media(min-width:900px){.feeds{grid-template-columns:1.25fr 1fr;align-items:start}}
-.wdg{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:18px;overflow:hidden}
-.wdg-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-.wdg-av{width:48px;height:48px;border-radius:50%;padding:2px;flex-shrink:0}
-.wdg-av img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 18%;border:2px solid var(--bg-soft)}
-.ig .wdg-av{background:linear-gradient(45deg,#f58529,#dd2a7b 55%,#8134af)}
-.tt .wdg-av{background:linear-gradient(135deg,#25f4ee,#fe2c55)}
-.wdg-id{flex:1;min-width:0}
-.wdg-id b{display:flex;align-items:center;gap:6px;font-size:.95rem;font-weight:800}
-.wdg-id b svg{width:14px;height:14px;flex-shrink:0}
-.wdg-id .st{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.74rem;color:var(--muted);margin-top:3px}
-.wdg-id .st strong{color:var(--ink);font-weight:700}
-.wdg-follow{flex-shrink:0;font-size:.8rem;font-weight:800;color:#fff;padding:9px 16px;border-radius:10px;transition:filter .2s,transform .2s}
-.wdg-follow:hover{filter:brightness(1.1);transform:translateY(-1px)}
-.ig .wdg-follow{background:linear-gradient(92deg,#dd2a7b,#8134af)}
-.tt .wdg-follow{background:#fe2c55}
-.wdg-plat{display:flex;align-items:center;gap:7px;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
-.wdg-plat svg{width:14px;height:14px;fill:currentColor}
-/* Grille Instagram */
-.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;border-radius:12px;overflow:hidden}
-.ig-post{position:relative;aspect-ratio:1/1;overflow:hidden;cursor:pointer;border:0;padding:0;background:#000;display:block}
-.ig-post img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
-.ig-post:hover img{transform:scale(1.07)}
-.ig-post .ov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:14px;
-  background:rgba(0,0,0,.45);color:#fff;font-weight:800;font-size:.82rem;opacity:0;transition:opacity .25s}
-.ig-post:hover .ov,.ig-post:focus-visible .ov{opacity:1}
-.ig-post .multi{position:absolute;top:7px;right:7px;width:16px;height:16px;fill:#fff;filter:drop-shadow(0 1px 2px rgba(0,0,0,.5))}
-/* Carrousel TikTok */
-.tt-row{display:grid;grid-auto-flow:column;grid-auto-columns:44%;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;
-  padding-bottom:6px;scrollbar-width:none}
-.tt-row::-webkit-scrollbar{display:none}
-@media(min-width:900px){.tt-row{grid-auto-columns:47%}}
-.tt-vid{position:relative;aspect-ratio:9/16;border-radius:12px;overflow:hidden;cursor:pointer;scroll-snap-align:start;border:0;padding:0;background:#000;text-align:left;color:#fff}
-.tt-vid img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
-.tt-vid:hover img{transform:scale(1.06)}
-.tt-vid::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.8))}
-.tt-vid .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;width:42px;height:42px;border-radius:50%;
-  background:rgba(0,0,0,.35);backdrop-filter:blur(4px);display:grid;place-items:center;transition:transform .25s}
-.tt-vid:hover .play{transform:translate(-50%,-50%) scale(1.12)}
-.tt-vid .play svg{width:16px;height:16px;fill:#fff;margin-left:2px}
-.tt-vid .cap{position:absolute;left:10px;right:10px;bottom:9px;z-index:1;font-size:.72rem;line-height:1.3}
-.tt-vid .cap b{display:block;font-size:.7rem;margin-bottom:3px;opacity:.9}
-.tt-vid .views{position:absolute;top:8px;left:8px;z-index:1;font-size:.68rem;font-weight:800;display:flex;align-items:center;gap:4px;
-  background:rgba(0,0,0,.4);padding:4px 8px;border-radius:100px}
-.tt-vid .views svg{width:10px;height:10px;fill:#fff}
-.wdg-more{display:block;text-align:center;margin-top:14px;font-size:.8rem;font-weight:700;color:var(--muted);
-  border:1px solid var(--line);border-radius:10px;padding:10px;transition:color .2s,border-color .2s}
-.wdg-more:hover{color:var(--ink);border-color:var(--gold)}
-.wdg-by{display:block;text-align:right;font-size:.6rem;letter-spacing:.08em;color:var(--muted);opacity:.6;margin-top:8px}
+/* ============ ✦ APERÇUS RÉSEAUX — reproductions des pages Instagram, TikTok, OnlyFans, MYM ============ */
+.feeds{display:grid;gap:18px}
+@media(min-width:900px){.feeds{grid-template-columns:1fr 1fr;align-items:start}}
+/* Cadre « navigateur mobile » commun */
+.mk{border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:0 20px 50px rgba(0,0,0,.45);
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.35;
+  -webkit-font-smoothing:antialiased}
+.mk-url{display:flex;align-items:center;gap:8px;padding:9px 12px;background:#1c1b1b;color:#b9b2aa;font-size:12px}
+.mk-url .pill{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;background:#2b2929;border-radius:9px;padding:6px 10px;color:#e8e2da}
+.mk-url .pill svg{width:10px;height:10px;fill:#9a938b}
+.mk-url .lbl{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+.mk svg.i{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;display:block}
+.mk button{font:inherit;color:inherit}
+.mk .gi{position:relative;display:block;overflow:hidden;border:0;padding:0;cursor:pointer;background:#ddd;width:100%}
+.mk .gi img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;transition:transform .5s ease}
+.mk .gi:hover img{transform:scale(1.05)}
+
+/* ---- Instagram (thème clair) ---- */
+.mk-ig{background:#fff;color:#000}
+.mk-ig .top{display:flex;align-items:center;gap:6px;padding:10px 14px;font-weight:700;font-size:17px}
+.mk-ig .top .sp{flex:1}
+.mk-ig .top .vf{width:15px;height:15px}
+.mk-ig .row1{display:flex;align-items:center;gap:22px;padding:4px 14px 10px}
+.mk-ig .ring{width:84px;height:84px;border-radius:50%;padding:3px;flex-shrink:0;
+  background:conic-gradient(from 200deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75)}
+.mk-ig .ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 18%;border:3px solid #fff}
+.mk-ig .stats{flex:1;display:flex;justify-content:space-around;text-align:center}
+.mk-ig .stats b{display:block;font-size:16px;font-weight:700}
+.mk-ig .stats span{font-size:13px}
+.mk-ig .bio{padding:0 14px}
+.mk-ig .bio b{font-weight:600}
+.mk-ig .bio .cat{color:#737373}
+.mk-ig .bio a{color:#00376b;font-weight:600}
+.mk-ig .btns{display:flex;gap:6px;padding:12px 14px}
+.mk-ig .btns span{flex:1;text-align:center;font-weight:600;font-size:14px;padding:7px 0;border-radius:8px;background:#efefef}
+.mk-ig .btns .f{background:#0095f6;color:#fff}
+.mk-ig .btns .sq{flex:0 0 34px}
+.mk-ig .hl{display:flex;gap:16px;padding:4px 14px 12px;overflow:hidden}
+.mk-ig .hl div{text-align:center;font-size:12px;flex-shrink:0}
+.mk-ig .hl i{display:block;width:62px;height:62px;border-radius:50%;border:1px solid #dbdbdb;padding:3px;margin-bottom:4px}
+.mk-ig .hl i img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+.mk-ig .tabs{display:flex;border-top:1px solid #dbdbdb}
+.mk-ig .tabs span{flex:1;display:flex;justify-content:center;padding:10px 0;color:#8e8e8e}
+.mk-ig .tabs span.on{color:#000;border-bottom:1.5px solid #000}
+.mk-ig .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.mk-ig .grid .gi{aspect-ratio:3/4}
+.mk-ig .grid .ic{position:absolute;top:6px;right:6px;width:16px;height:16px;fill:#fff;filter:drop-shadow(0 0 2px rgba(0,0,0,.5))}
+
+/* ---- TikTok (thème clair) ---- */
+.mk-tt{background:#fff;color:#161823}
+.mk-tt .top{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;font-weight:700;font-size:16px}
+.mk-tt .av{width:96px;height:96px;border-radius:50%;overflow:hidden;margin:6px auto 10px}
+.mk-tt .av img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.mk-tt .h{text-align:center;font-weight:600;font-size:16px;display:flex;align-items:center;justify-content:center;gap:5px}
+.mk-tt .h svg{width:15px;height:15px}
+.mk-tt .st{display:flex;justify-content:center;margin:14px 0}
+.mk-tt .st div{text-align:center;padding:0 16px;position:relative}
+.mk-tt .st div+div::before{content:"";position:absolute;left:0;top:25%;height:50%;width:1px;background:#e3e3e4}
+.mk-tt .st b{display:block;font-size:17px;font-weight:700}
+.mk-tt .st span{font-size:13px;color:rgba(22,24,35,.6)}
+.mk-tt .btns{display:flex;justify-content:center;gap:6px}
+.mk-tt .btns span{font-weight:600;padding:10px 0;border-radius:4px;background:#f1f1f2;font-size:15px}
+.mk-tt .btns .f{background:#fe2c55;color:#fff;width:150px;text-align:center}
+.mk-tt .btns .m{width:44px;display:flex;justify-content:center}
+.mk-tt .bio{text-align:center;padding:12px 24px 12px;font-size:14px}
+.mk-tt .tabs{display:flex;border-bottom:1px solid #e3e3e4}
+.mk-tt .tabs span{flex:1;display:flex;justify-content:center;padding:10px 0;color:rgba(22,24,35,.4)}
+.mk-tt .tabs span.on{color:#161823;box-shadow:inset 0 -2px 0 #161823}
+.mk-tt .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px}
+.mk-tt .grid .gi{aspect-ratio:3/4}
+.mk-tt .grid .v{position:absolute;left:5px;bottom:4px;display:flex;align-items:center;gap:3px;color:#fff;font-size:12px;font-weight:600;text-shadow:0 0 3px rgba(0,0,0,.6)}
+.mk-tt .grid .v svg{width:12px;height:12px;fill:none;stroke:#fff;stroke-width:2.4}
+.mk-tt .grid .pin{position:absolute;left:5px;top:5px;background:#fe2c55;color:#fff;font-size:11px;font-weight:600;padding:2px 5px;border-radius:3px}
+
+/* ---- OnlyFans ---- */
+.mk-of{background:#fff;color:#000}
+.mk-of .ban{position:relative;height:150px;background:#8a96a3}
+.mk-of .ban img{width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.mk-of .ban::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55),transparent 60%)}
+.mk-of .ban .bar{position:absolute;top:10px;left:12px;right:12px;z-index:1;display:flex;align-items:center;gap:14px;color:#fff}
+.mk-of .ban .bar .n{font-weight:700;font-size:17px;display:flex;align-items:center;gap:5px}
+.mk-of .ban .bar .c{font-size:12px;display:flex;gap:12px;margin-top:1px;opacity:.95}
+.mk-of .ban .bar .c svg{width:13px;height:13px;fill:#fff;vertical-align:-2px;margin-right:3px}
+.mk-of .vf{width:16px;height:16px;flex-shrink:0}
+.mk-of .hd{position:relative;padding:1px 14px 0}
+.mk-of .hd .av{position:relative;width:88px;height:88px;border-radius:50%;border:3px solid #fff;overflow:hidden;margin-top:-44px;background:#fff}
+.mk-of .hd .av img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.mk-of .hd .on{position:absolute;left:84px;top:22px;width:14px;height:14px;border-radius:50%;background:#00d664;border:2px solid #fff}
+.mk-of .hd .acts{position:absolute;right:14px;top:10px;display:flex;gap:8px}
+.mk-of .hd .acts span{width:40px;height:40px;border-radius:50%;border:1px solid #d7dde3;display:grid;place-items:center;color:#00aff0}
+.mk-of .hd .acts svg.i{width:20px;height:20px}
+.mk-of .nm{padding:8px 14px 0;font-weight:700;font-size:19px;display:flex;align-items:center;gap:5px}
+.mk-of .hn{padding:0 14px;color:#8a96a3;font-size:14px}
+.mk-of .bio{padding:10px 14px 0;font-size:14px}
+.mk-of .bio a{color:#00aff0;font-weight:600}
+.mk-of .sec{padding:14px 14px 0;font-size:12px;font-weight:600;letter-spacing:.04em;color:#8a96a3;text-transform:uppercase}
+.mk-of .sub{display:flex;justify-content:space-between;align-items:center;margin:8px 14px 0;padding:12px 18px;border-radius:1000px;
+  background:#00aff0;color:#fff;font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.02em}
+.mk-of .tabs{display:flex;margin-top:16px;border-bottom:1px solid #eaeef1}
+.mk-of .tabs span{flex:1;text-align:center;padding:12px 0;font-size:13px;font-weight:600;color:#8a96a3;text-transform:uppercase}
+.mk-of .tabs span.on{color:#000;box-shadow:inset 0 -2px 0 #000}
+.mk-of .post{padding:12px 14px 14px}
+.mk-of .post .who{display:flex;align-items:center;gap:8px}
+.mk-of .post .who img{width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:50% 18%}
+.mk-of .post .who b{font-size:14px;display:flex;align-items:center;gap:4px}
+.mk-of .post .who small{color:#8a96a3;font-size:13px;font-weight:400}
+.mk-of .post .who .t{margin-left:auto;color:#8a96a3;font-size:13px}
+.mk-of .post p{margin:8px 0}
+.mk-of .lock{position:relative;display:block;border-radius:6px;overflow:hidden;aspect-ratio:4/3;background:#f2f5f7}
+.mk-of .lock img{width:100%;height:100%;object-fit:cover;filter:blur(18px) saturate(.6);opacity:.45;transform:scale(1.2)}
+.mk-of .lock .ov{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#8a96a3}
+.mk-of .lock .ov svg.i{width:34px;height:34px}
+.mk-of .lock .cnt{position:absolute;left:10px;bottom:10px;display:flex;gap:10px;font-size:13px;color:#8a96a3;font-weight:600}
+.mk-of .lock .ub{position:absolute;left:10px;right:10px;bottom:10px;background:#00aff0;color:#fff;text-align:center;font-weight:600;
+  text-transform:uppercase;font-size:13px;padding:10px;border-radius:1000px}
+
+/* ---- MYM ---- */
+.mk-mym{background:#fff;color:#1a1a1a}
+.mk-mym .top{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid #eee}
+.mk-mym .logo{font-weight:900;font-size:20px;letter-spacing:-.04em;background:#000;color:#fff;padding:3px 7px;border-radius:6px}
+.mk-mym .top .r{display:flex;gap:14px;color:#1a1a1a}
+.mk-mym .ban{height:120px;overflow:hidden}
+.mk-mym .ban img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.mk-mym .av{width:92px;height:92px;border-radius:50%;border:4px solid #fff;overflow:hidden;margin:-46px auto 0;position:relative;background:#fff}
+.mk-mym .av img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.mk-mym .nm{text-align:center;font-weight:700;font-size:19px;margin-top:6px;display:flex;justify-content:center;align-items:center;gap:5px}
+.mk-mym .nm svg{width:16px;height:16px}
+.mk-mym .hn{text-align:center;color:#8c8c8c;font-size:14px}
+.mk-mym .st{display:flex;justify-content:center;gap:26px;margin:12px 0 4px;text-align:center}
+.mk-mym .st b{display:block;font-size:16px}
+.mk-mym .st span{font-size:12px;color:#8c8c8c}
+.mk-mym .bio{text-align:center;padding:8px 22px 0;font-size:14px}
+.mk-mym .mcta{display:flex;gap:8px;padding:14px 14px 0}
+.mk-mym .mcta .s{flex:1;text-align:center;padding:12px;border-radius:12px;font-weight:700;color:#fff;background:linear-gradient(90deg,#ff3d6e,#ff6a3d)}
+.mk-mym .mcta .s small{display:block;font-weight:500;font-size:12px;opacity:.9}
+.mk-mym .mcta .m{width:50px;border-radius:12px;border:1px solid #e5e5e5;display:grid;place-items:center}
+.mk-mym .tabs{display:flex;margin-top:14px;border-bottom:1px solid #eee}
+.mk-mym .tabs span{flex:1;text-align:center;padding:11px 0;font-size:14px;font-weight:600;color:#8c8c8c}
+.mk-mym .tabs span.on{color:#1a1a1a;box-shadow:inset 0 -2px 0 #ff3d6e}
+.mk-mym .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;padding:3px}
+.mk-mym .grid a{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:6px;background:#eee;display:block}
+.mk-mym .grid img{width:100%;height:100%;object-fit:cover;filter:blur(12px);transform:scale(1.2)}
+.mk-mym .grid a span{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#fff;font-size:12px;font-weight:700;text-shadow:0 0 4px rgba(0,0,0,.5)}
+.mk-mym .grid a span svg.i{width:22px;height:22px}
+.mk-mym .grid a .pr{position:absolute;right:5px;bottom:5px;left:auto;top:auto;inset:auto 5px 5px auto;background:rgba(0,0,0,.6);padding:2px 7px;border-radius:100px;font-size:11px}
+.mk-note{display:block;text-align:center;font-size:.72rem;color:var(--muted);margin-top:14px}
+
 /* Visionneuse (clic sur une publication) */
 .lbx{position:fixed;inset:0;z-index:120;display:none;align-items:center;justify-content:center;padding:18px;
   background:rgba(0,0,0,.82);backdrop-filter:blur(8px)}
@@ -570,35 +666,6 @@ footer .copy{letter-spacing:.02em}
 .lbx-close{position:absolute;top:14px;right:14px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);
   background:var(--bg-soft);color:var(--ink);font-size:1.1rem;cursor:pointer}
 
-/* Profils OnlyFans & MYM (aperçu d'abonnement, contenus verrouillés) */
-@media(min-width:900px){.feeds{grid-template-columns:1fr 1fr}}
-.sub{padding:0}
-.sub .banner{position:relative;height:110px;overflow:hidden}
-.sub .banner img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
-.sub .banner::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1),rgba(18,16,16,.9))}
-.sub .banner .wdg-plat{position:absolute;top:12px;left:14px;z-index:1;color:#fff;margin:0}
-.sub .inner{padding:0 18px 18px}
-.sub .wdg-head{margin-top:-26px;position:relative;z-index:1;align-items:flex-end}
-.sub .wdg-av{width:64px;height:64px}
-.of .wdg-av{background:#00AFF0}
-.mym .wdg-av{background:linear-gradient(135deg,#ff2f7d,#ff8a3d)}
-.sub .counts{display:flex;gap:16px;font-size:.76rem;color:var(--muted);margin:2px 0 14px}
-.sub .counts strong{color:var(--ink)}
-.sub .bio{font-size:.84rem;color:rgba(244,239,231,.8);margin-bottom:14px}
-.locked{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;border-radius:12px;overflow:hidden}
-.locked a{position:relative;aspect-ratio:3/4;overflow:hidden;display:block;background:#000}
-.locked img{width:100%;height:100%;object-fit:cover;filter:blur(10px) brightness(.8);transform:scale(1.2)}
-.locked a span{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
-  color:#fff;font-size:.64rem;font-weight:700;text-align:center}
-.locked a span svg{width:20px;height:20px;fill:#fff}
-.sub-btn{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;padding:13px 16px;border-radius:12px;
-  color:#fff;font-weight:800;font-size:.9rem;transition:filter .2s,transform .2s}
-.sub-btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
-.sub-btn small{font-weight:600;opacity:.9;font-size:.78rem}
-.of .sub-btn{background:linear-gradient(92deg,#00AFF0,#0093d6)}
-.mym .sub-btn{background:linear-gradient(92deg,#ff2f7d,#ff8a3d)}
-.mym-logo{font-weight:900;letter-spacing:-.02em;font-size:.8rem;color:#fff;background:#000;border:1px solid rgba(255,255,255,.4);
-  padding:2px 5px;border-radius:5px;line-height:1}
 </style>
 </head>
 <body>
@@ -723,121 +790,99 @@ footer .copy{letter-spacing:.02em}
          Pour un vrai flux automatique, remplace ces blocs par le code d'intégration de ton widget (Trustindex, Elfsight, Behold…). -->
     <div class="sec-head reveal"><span class="num">03</span><span class="label">Sur mes réseaux</span><span class="rule"></span></div>
     <div class="feeds reveal">
-      <div class="wdg ig">
-        <div class="wdg-plat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg> Flux Instagram</div>
-        <div class="wdg-head">
-          <span class="wdg-av"><img src="img-pool.jpg" alt=""></span>
-          <span class="wdg-id"><b>audace <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#3897f0"/><path d="M10.3 15.6l-3.2-3.2 1.3-1.3 1.9 1.9 5.1-5.1 1.3 1.3z" fill="#fff"/></svg></b>
-            <span class="st"><span><strong>214</strong> publications</span><span><strong>12,4 k</strong> abonnés</span></span></span>
-          <a class="wdg-follow" href="#" target="_blank" rel="noopener">Suivre</a>
+      <!-- ✏️ Aperçus : reproductions des profils (chiffres, légendes et photos à remplacer). Chaque lien href="#" → ton vrai profil. -->
+
+      <!-- INSTAGRAM -->
+      <div class="mk mk-ig">
+        <div class="mk-url"><span class="lbl">Instagram</span><span class="pill"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 0-5 5v3H6v12h12V10h-1V7a5 5 0 0 0-5-5zm-3 8V7a3 3 0 0 1 6 0v3z"/></svg>instagram.com/audace</span></div>
+        <div class="top"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg><span>audace</span><svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><path fill="#0095f6" d="M12 1.6l2.5 1.9 3.1.2.9 3 2.5 1.9-.9 3 .9 3-2.5 1.9-.9 3-3.1.2L12 22.4l-2.5-1.9-3.1-.2-.9-3-2.5-1.9.9-3-.9-3 2.5-1.9.9-3 3.1-.2z"/><path fill="#fff" d="M10.5 14.7l-2.1-2.1-1.3 1.3 3.4 3.4 5.9-5.9-1.3-1.3z"/></svg><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 10l4 4 4-4"/></svg><span class="sp"></span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 8v8M8 12h8"/></svg><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></div>
+        <div class="row1">
+          <span class="ring"><img src="img-pool.jpg" alt=""></span>
+          <div class="stats"><div><b>214</b><span>publications</span></div><div><b>12,4 k</b><span>followers</span></div><div><b>386</b><span>suivi(e)s</span></div></div>
         </div>
-        <div class="ig-grid">
-          <button class="ig-post" type="button" data-src="img-run" data-net="ig" data-cap="Sortie du matin au bord de mer 🌊 Qui me rejoint demain ?" data-likes="2 481" data-com="96" aria-label="Publication Instagram : Sortie du matin au bord de mer 🌊 Qui me rejoint demain ?">
-            <picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture>
-            <span class="ov"><span>♥ 2 481</span><span>💬 96</span></span>
-          </button>
-          <button class="ig-post" type="button" data-src="img-pool" data-net="ig" data-cap="Pause soleil bien méritée ☀️" data-likes="3 912" data-com="184" aria-label="Publication Instagram : Pause soleil bien méritée ☀️">
-            <picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture>
-            <svg class="multi" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h11a3 3 0 0 1 3 3v11h-2V6a1 1 0 0 0-1-1H7z"/><rect x="3" y="7" width="14" height="14" rx="2.5"/></svg><span class="ov"><span>♥ 3 912</span><span>💬 184</span></span>
-          </button>
-          <button class="ig-post" type="button" data-src="img-gym" data-net="ig" data-cap="Leg day, pas de négociation 💪" data-likes="1 876" data-com="73" aria-label="Publication Instagram : Leg day, pas de négociation 💪">
-            <picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture>
-            <span class="ov"><span>♥ 1 876</span><span>💬 73</span></span>
-          </button>
-          <button class="ig-post" type="button" data-src="img-volley" data-net="ig" data-cap="Beach-volley entre copines 🏐" data-likes="2 204" data-com="88" aria-label="Publication Instagram : Beach-volley entre copines 🏐">
-            <picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture>
-            <svg class="multi" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h11a3 3 0 0 1 3 3v11h-2V6a1 1 0 0 0-1-1H7z"/><rect x="3" y="7" width="14" height="14" rx="2.5"/></svg><span class="ov"><span>♥ 2 204</span><span>💬 88</span></span>
-          </button>
-          <button class="ig-post" type="button" data-src="img-cycle" data-net="ig" data-cap="60 km sur la côte ce week-end 🚴‍♀️" data-likes="1 540" data-com="61" aria-label="Publication Instagram : 60 km sur la côte ce week-end 🚴‍♀️">
-            <picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy" decoding="async"></picture>
-            <span class="ov"><span>♥ 1 540</span><span>💬 61</span></span>
-          </button>
-          <button class="ig-post" type="button" data-src="IMG_1380" data-net="ig" data-cap="Petit aperçu de ce qui t'attend 😏" data-likes="4 318" data-com="227" aria-label="Publication Instagram : Petit aperçu de ce qui t'attend 😏">
-            <picture><source srcset="IMG_1380.webp" type="image/webp"><img src="IMG_1380.jpeg" alt="" loading="lazy" decoding="async"></picture>
-            <span class="ov"><span>♥ 4 318</span><span>💬 227</span></span>
-          </button>
+        <div class="bio"><b>Audace</b><br><span class="cat">Créateur de contenu digital</span><br>Fitness · Lifestyle · Bruxelles 🇧🇪<br>Mon côté privé 👇<br><a href="#">cronobots.github.io/AUDACE</a></div>
+        <div class="btns"><a href="#" target="_blank" rel="noopener" style="display:contents"><span class="f">Suivre</span></a><span>Message</span><span class="sq">▾</span></div>
+        <div class="hl"><div><i><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture></i>Training</div><div><i><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture></i>Run</div><div><i><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture></i>Beach</div><div><i><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy" decoding="async"></picture></i>Vélo</div><div><i><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture></i>Summer</div></div>
+        <div class="tabs"><span class="on"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16"/><path d="M9.3 4v16M14.7 4v16M4 9.3h16M4 14.7h16"/></svg></span><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M4 9h16M9 4l2 5M14 4l2 5"/><path d="M10.5 12.5v4l3.5-2z"/></svg></span><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="12" cy="10" r="2.5"/><path d="M7.5 18a5 5 0 0 1 9 0"/></svg></span></div>
+        <div class="grid">
+          <button class="gi ig-post" type="button" data-src="img-run" data-net="ig" data-cap="Sortie du matin au bord de mer 🌊 Qui me rejoint demain ?" data-likes="2 481" data-com="96" aria-label="Publication : Sortie du matin au bord de mer 🌊 Qui me rejoint demain ?"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture></button>
+          <button class="gi ig-post" type="button" data-src="img-pool" data-net="ig" data-cap="Pause soleil bien méritée ☀️" data-likes="3 912" data-com="184" aria-label="Publication : Pause soleil bien méritée ☀️"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture><svg class="ic" viewBox="0 0 24 24"><path d="M7 3h11a3 3 0 0 1 3 3v11h-2V6a1 1 0 0 0-1-1H7z"/><rect x="3" y="7" width="14" height="14" rx="2.5"/></svg></button>
+          <button class="gi ig-post" type="button" data-src="img-gym" data-net="ig" data-cap="Leg day, pas de négociation 💪" data-likes="1 876" data-com="73" aria-label="Publication : Leg day, pas de négociation 💪"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture><svg class="ic" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z"/></svg></button>
+          <button class="gi ig-post" type="button" data-src="img-volley" data-net="ig" data-cap="Beach-volley entre copines 🏐" data-likes="2 204" data-com="88" aria-label="Publication : Beach-volley entre copines 🏐"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture><svg class="ic" viewBox="0 0 24 24"><path d="M7 3h11a3 3 0 0 1 3 3v11h-2V6a1 1 0 0 0-1-1H7z"/><rect x="3" y="7" width="14" height="14" rx="2.5"/></svg></button>
+          <button class="gi ig-post" type="button" data-src="img-cycle" data-net="ig" data-cap="60 km sur la côte ce week-end 🚴‍♀️" data-likes="1 540" data-com="61" aria-label="Publication : 60 km sur la côte ce week-end 🚴‍♀️"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy" decoding="async"></picture></button>
+          <button class="gi ig-post" type="button" data-src="img-run" data-net="ig" data-cap="Golden hour après l'entraînement ✨" data-likes="4 318" data-com="227" aria-label="Publication : Petit aperçu de ce qui t'attend 😏"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture><svg class="ic" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z"/></svg></button>
         </div>
-        <a class="wdg-more" href="#" target="_blank" rel="noopener">Voir plus sur Instagram →</a>
-        <span class="wdg-by">Widget flux social · exemple</span>
       </div>
 
-      <div class="wdg tt">
-        <div class="wdg-plat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg> Flux TikTok</div>
-        <div class="wdg-head">
-          <span class="wdg-av"><img src="img-pool.jpg" alt=""></span>
-          <span class="wdg-id"><b>@audace <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#3897f0"/><path d="M10.3 15.6l-3.2-3.2 1.3-1.3 1.9 1.9 5.1-5.1 1.3 1.3z" fill="#fff"/></svg></b>
-            <span class="st"><span><strong>38,7 k</strong> abonnés</span><span><strong>1,2 M</strong> j'aime</span></span></span>
-          <a class="wdg-follow" href="#" target="_blank" rel="noopener">Suivre</a>
+      <!-- TIKTOK -->
+      <div class="mk mk-tt">
+        <div class="mk-url"><span class="lbl">TikTok</span><span class="pill"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 0-5 5v3H6v12h12V10h-1V7a5 5 0 0 0-5-5zm-3 8V7a3 3 0 0 1 6 0v3z"/></svg>tiktok.com/@audace</span></div>
+        <div class="top"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg><span>Audace</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v7h16v-7M12 3v12M7 8l5-5 5 5"/></svg></div>
+        <div class="av"><img src="img-pool.jpg" alt=""></div>
+        <div class="h">@audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><path fill="#20d5ec" d="M12 1.6l2.5 1.9 3.1.2.9 3 2.5 1.9-.9 3 .9 3-2.5 1.9-.9 3-3.1.2L12 22.4l-2.5-1.9-3.1-.2-.9-3-2.5-1.9.9-3-.9-3 2.5-1.9.9-3 3.1-.2z"/><path fill="#fff" d="M10.5 14.7l-2.1-2.1-1.3 1.3 3.4 3.4 5.9-5.9-1.3-1.3z"/></svg></div>
+        <div class="st"><div><b>386</b><span>Abonnements</span></div><div><b>38,7 k</b><span>Followers</span></div><div><b>1,2 M</b><span>J'aime</span></div></div>
+        <div class="btns"><a href="#" target="_blank" rel="noopener" style="display:contents"><span class="f">Suivre</span></a><span class="m"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3L10 14M21 3l-7 18-4-7-7-4z"/></svg></span><span class="m"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 10l4 4 4-4"/></svg></span></div>
+        <div class="bio">Fitness &amp; lifestyle 🏋️‍♀️ Bruxelles<br>🔗 Tout mon contenu privé ⬇️</div>
+        <div class="tabs"><span class="on"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16"/><path d="M9.3 4v16M14.7 4v16M4 9.3h16M4 14.7h16"/></svg></span><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-9-8.5C1.6 8.4 3.6 5 7 5c2 0 3.3 1.2 5 3 1.7-1.8 3-3 5-3 3.4 0 5.4 3.4 4 6.5-2 4.1-9 8.5-9 8.5z"/></svg></span></div>
+        <div class="grid">
+          <button class="gi tt-vid" type="button" data-src="img-gym" data-net="tt" data-cap="Ma routine fessiers en 4 exos 🍑" data-likes="128,4 k" aria-label="Vidéo : Ma routine fessiers en 4 exos 🍑"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture><span class="pin">Épinglé</span><span class="v"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z"/></svg>128,4 k</span></button>
+          <button class="gi tt-vid" type="button" data-src="img-volley" data-net="tt" data-cap="Quand le smash part tout seul 😂" data-likes="214,9 k" aria-label="Vidéo : Quand le smash part tout seul 😂"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture><span class="pin">Épinglé</span><span class="v"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z"/></svg>214,9 k</span></button>
+          <button class="gi tt-vid" type="button" data-src="img-run" data-net="tt" data-cap="5 km avant le café ☕" data-likes="86,1 k" aria-label="Vidéo : 5 km avant le café ☕"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture><span class="v"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z"/></svg>86,1 k</span></button>
+          <button class="gi tt-vid" type="button" data-src="img-pool" data-net="tt" data-cap="Get ready with me · piscine" data-likes="97,3 k" aria-label="Vidéo : Get ready with me · piscine"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture><span class="v"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z"/></svg>97,3 k</span></button>
+          <button class="gi tt-vid" type="button" data-src="img-cycle" data-net="tt" data-cap="Vlog vélo sur la côte" data-likes="41,6 k" aria-label="Vidéo : Vlog vélo sur la côte"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy" decoding="async"></picture><span class="v"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z"/></svg>41,6 k</span></button>
+          <button class="gi tt-vid" type="button" data-src="img-volley" data-net="tt" data-cap="Tu veux la suite ? 😏" data-likes="302,5 k" aria-label="Vidéo : Tu veux la suite ? 😏"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture><span class="v"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z"/></svg>302,5 k</span></button>
         </div>
-        <div class="tt-row">
-          <button class="tt-vid" type="button" data-src="img-gym" data-net="tt" data-cap="Ma routine fessiers en 4 exos 🍑" data-likes="128,4 k" aria-label="Vidéo TikTok : Ma routine fessiers en 4 exos 🍑">
-            <picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture>
-            <span class="views"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg>128,4 k</span>
-            <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span>
-            <span class="cap"><b>@audace</b>Ma routine fessiers en 4 exos 🍑</span>
-          </button>
-          <button class="tt-vid" type="button" data-src="img-run" data-net="tt" data-cap="5 km avant le café ☕" data-likes="86,1 k" aria-label="Vidéo TikTok : 5 km avant le café ☕">
-            <picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture>
-            <span class="views"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg>86,1 k</span>
-            <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span>
-            <span class="cap"><b>@audace</b>5 km avant le café ☕</span>
-          </button>
-          <button class="tt-vid" type="button" data-src="img-volley" data-net="tt" data-cap="Quand le smash part tout seul 😂" data-likes="214,9 k" aria-label="Vidéo TikTok : Quand le smash part tout seul 😂">
-            <picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture>
-            <span class="views"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg>214,9 k</span>
-            <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span>
-            <span class="cap"><b>@audace</b>Quand le smash part tout seul 😂</span>
-          </button>
-          <button class="tt-vid" type="button" data-src="img-pool" data-net="tt" data-cap="Get ready with me · piscine" data-likes="97,3 k" aria-label="Vidéo TikTok : Get ready with me · piscine">
-            <picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture>
-            <span class="views"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg>97,3 k</span>
-            <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span>
-            <span class="cap"><b>@audace</b>Get ready with me · piscine</span>
-          </button>
-        </div>
-        <a class="wdg-more" href="#" target="_blank" rel="noopener">Voir plus sur TikTok →</a>
-        <span class="wdg-by">Widget flux social · exemple</span>
       </div>
 
-      <!-- ✏️ OnlyFans : remplace chaque href="#" par ton lien OnlyFans -->
-      <div class="wdg sub of">
-        <div class="banner"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy"></picture>
-          <div class="wdg-plat"><img src="onlyfans-icon-white.svg" alt="" style="width:16px;height:16px"> Profil OnlyFans</div></div>
-        <div class="inner">
-          <div class="wdg-head">
-            <span class="wdg-av"><img src="img-pool.jpg" alt=""></span>
-            <span class="wdg-id"><b>Audace <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#00AFF0"/><path d="M10.3 15.6l-3.2-3.2 1.3-1.3 1.9 1.9 5.1-5.1 1.3 1.3z" fill="#fff"/></svg></b><span class="st"><span>@audace · En ligne</span></span></span>
-          </div>
-          <div class="counts"><span><strong>312</strong> photos</span><span><strong>86</strong> vidéos</span><span><strong>48,2 k</strong> j'aime</span></div>
-          <p class="bio">Mon côté le plus intime, des coulisses sans filtre et des réponses perso à tes messages 💌</p>
-          <div class="locked">
-            <a href="#" target="_blank" rel="noopener" aria-label="Contenu verrouillé"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 5a3 3 0 0 1 6 0v3H9z"/></svg>Photo</span></a>
-            <a href="#" target="_blank" rel="noopener" aria-label="Contenu verrouillé"><picture><source srcset="IMG_1380.webp" type="image/webp"><img src="IMG_1380.jpeg" alt="" loading="lazy" decoding="async"></picture><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 5a3 3 0 0 1 6 0v3H9z"/></svg>Vidéo · 4:12</span></a>
-            <a href="#" target="_blank" rel="noopener" aria-label="Contenu verrouillé"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 5a3 3 0 0 1 6 0v3H9z"/></svg>Photo</span></a>
-          </div>
-          <a class="sub-btn" href="#" target="_blank" rel="noopener"><span>S'abonner sur OnlyFans</span><small>14 € / mois →</small></a>
+      <!-- ONLYFANS -->
+      <div class="mk mk-of">
+        <div class="mk-url"><span class="lbl">OnlyFans</span><span class="pill"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 0-5 5v3H6v12h12V10h-1V7a5 5 0 0 0-5-5zm-3 8V7a3 3 0 0 1 6 0v3z"/></svg>onlyfans.com/audace</span></div>
+        <div class="ban"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy" decoding="async"></picture>
+          <div class="bar"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg><div><div class="n">Audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><path fill="#00aff0" d="M12 1.6l2.5 1.9 3.1.2.9 3 2.5 1.9-.9 3 .9 3-2.5 1.9-.9 3-3.1.2L12 22.4l-2.5-1.9-3.1-.2-.9-3-2.5-1.9.9-3-.9-3 2.5-1.9.9-3 3.1-.2z"/><path fill="#fff" d="M10.5 14.7l-2.1-2.1-1.3 1.3 3.4 3.4 5.9-5.9-1.3-1.3z"/></svg></div>
+            <div class="c"><span><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 14l3-3 3 3 2-2 4 4H4z"/></svg>312</span><span><svg viewBox="0 0 24 24"><path d="M4 6h12v12H4zM16 10l5-3v10l-5-3z"/></svg>86</span><span><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9-8.5C1.6 8.4 3.6 5 7 5c2 0 3.3 1.2 5 3 1.7-1.8 3-3 5-3 3.4 0 5.4 3.4 4 6.5-2 4.1-9 8.5-9 8.5z"/></svg>48,2K</span></div></div></div>
+        </div>
+        <div class="hd">
+          <div class="av"><img src="img-pool.jpg" alt=""></div><span class="on"></span>
+          <div class="acts"><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M16.5 7.5c-.6-1.5-2.3-2.5-4.5-2.5-2.5 0-4.5 1.3-4.5 3.3 0 4.7 9 2.5 9 7.2 0 2-2 3.5-4.5 3.5-2.4 0-4.2-1.1-4.8-2.8"/></svg></span><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></span><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v7h16v-7M12 3v12M7 8l5-5 5 5"/></svg></span></div>
+        </div>
+        <div class="nm">Audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><path fill="#00aff0" d="M12 1.6l2.5 1.9 3.1.2.9 3 2.5 1.9-.9 3 .9 3-2.5 1.9-.9 3-3.1.2L12 22.4l-2.5-1.9-3.1-.2-.9-3-2.5-1.9.9-3-.9-3 2.5-1.9.9-3 3.1-.2z"/><path fill="#fff" d="M10.5 14.7l-2.1-2.1-1.3 1.3 3.4 3.4 5.9-5.9-1.3-1.3z"/></svg></div>
+        <div class="hn">@audace · Disponible</div>
+        <div class="bio">Créatrice fitness &amp; lifestyle 🇧🇪 Coulisses sans filtre, photos exclusives et je réponds à tous tes messages 💌 <a href="#">Plus d'infos</a></div>
+        <div class="sec">Abonnement</div>
+        <a class="sub" href="#" target="_blank" rel="noopener"><span>S'abonner</span><span>14 € par mois</span></a>
+        <div class="tabs"><span class="on">312 publications</span><span>398 médias</span></div>
+        <div class="post">
+          <div class="who"><img src="img-pool.jpg" alt=""><div><b>Audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><path fill="#00aff0" d="M12 1.6l2.5 1.9 3.1.2.9 3 2.5 1.9-.9 3 .9 3-2.5 1.9-.9 3-3.1.2L12 22.4l-2.5-1.9-3.1-.2-.9-3-2.5-1.9.9-3-.9-3 2.5-1.9.9-3 3.1-.2z"/><path fill="#fff" d="M10.5 14.7l-2.1-2.1-1.3 1.3 3.4 3.4 5.9-5.9-1.3-1.3z"/></svg></b><small>@audace</small></div><span class="t">Hier</span></div>
+          <p>Nouvelle séance photo au bord de la piscine 🔥 la suite en privé…</p>
+          <a class="lock" href="#" target="_blank" rel="noopener" aria-label="Débloquer la publication"><picture><source srcset="IMG_1380.webp" type="image/webp"><img src="IMG_1380.jpeg" alt="" loading="lazy" decoding="async"></picture>
+            <span class="ov"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+            <span class="ub">S'abonner pour voir les publications</span></a>
         </div>
       </div>
-      <!-- ✏️ MYM : remplace chaque href="#" par ton lien MYM -->
-      <div class="wdg sub mym">
-        <div class="banner"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy"></picture>
-          <div class="wdg-plat"><span class="mym-logo">MYM</span> Profil MYM</div></div>
-        <div class="inner">
-          <div class="wdg-head">
-            <span class="wdg-av"><img src="img-pool.jpg" alt=""></span>
-            <span class="wdg-id"><b>Audace <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#ff2f7d"/><path d="M10.3 15.6l-3.2-3.2 1.3-1.3 1.9 1.9 5.1-5.1 1.3 1.3z" fill="#fff"/></svg></b><span class="st"><span>@audace · Répond vite</span></span></span>
-          </div>
-          <div class="counts"><span><strong>240</strong> médias</span><span><strong>Push</strong> privés</span><span><strong>Live</strong> chaque semaine</span></div>
-          <p class="bio">Contenus privés, médias à la demande et échanges en direct avec moi 🔥</p>
-          <div class="locked">
-            <a href="#" target="_blank" rel="noopener" aria-label="Contenu verrouillé"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 5a3 3 0 0 1 6 0v3H9z"/></svg>Média privé</span></a>
-            <a href="#" target="_blank" rel="noopener" aria-label="Contenu verrouillé"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 5a3 3 0 0 1 6 0v3H9z"/></svg>Vidéo · 2:48</span></a>
-            <a href="#" target="_blank" rel="noopener" aria-label="Contenu verrouillé"><picture><source srcset="IMG_1380.webp" type="image/webp"><img src="IMG_1380.jpeg" alt="" loading="lazy" decoding="async"></picture><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 5a3 3 0 0 1 6 0v3H9z"/></svg>Push</span></a>
-          </div>
-          <a class="sub-btn" href="#" target="_blank" rel="noopener"><span>Rejoindre sur MYM</span><small>Voir l'offre →</small></a>
+
+      <!-- MYM -->
+      <div class="mk mk-mym">
+        <div class="mk-url"><span class="lbl">MYM</span><span class="pill"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 0-5 5v3H6v12h12V10h-1V7a5 5 0 0 0-5-5zm-3 8V7a3 3 0 0 1 6 0v3z"/></svg>mym.fans/audace</span></div>
+        <div class="top"><span class="logo">MYM</span><span class="r"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span></div>
+        <div class="ban"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="av"><img src="img-pool.jpg" alt=""></div>
+        <div class="nm">Audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><path fill="#ff3d6e" d="M12 1.6l2.5 1.9 3.1.2.9 3 2.5 1.9-.9 3 .9 3-2.5 1.9-.9 3-3.1.2L12 22.4l-2.5-1.9-3.1-.2-.9-3-2.5-1.9.9-3-.9-3 2.5-1.9.9-3 3.1-.2z"/><path fill="#fff" d="M10.5 14.7l-2.1-2.1-1.3 1.3 3.4 3.4 5.9-5.9-1.3-1.3z"/></svg></div>
+        <div class="hn">@audace</div>
+        <div class="st"><div><b>240</b><span>Médias</span></div><div><b>1,9K</b><span>Abonnés</span></div><div><b>52K</b><span>J'aime</span></div></div>
+        <div class="bio">Fitness girl de Bruxelles 🏐 Contenus privés, médias à la demande et réponses perso en DM 🔥</div>
+        <div class="mcta"><a class="s" href="#" target="_blank" rel="noopener">S'abonner<small>14 € / mois · sans engagement</small></a><span class="m"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3L10 14M21 3l-7 18-4-7-7-4z"/></svg></span></div>
+        <div class="tabs"><span class="on">Abonnement</span><span>Médias privés</span></div>
+        <div class="grid">
+          <a href="#" target="_blank" rel="noopener"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Photo</span></a>
+          <a href="#" target="_blank" rel="noopener"><picture><source srcset="IMG_1380.webp" type="image/webp"><img src="IMG_1380.jpeg" alt="" loading="lazy" decoding="async"></picture><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Vidéo</span><span class="pr">2:48</span></a>
+          <a href="#" target="_blank" rel="noopener"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Photo</span></a>
+          <a href="#" target="_blank" rel="noopener"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Vidéo</span><span class="pr">1:15</span></a>
+          <a href="#" target="_blank" rel="noopener"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy" decoding="async"></picture><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Photo</span></a>
+          <a href="#" target="_blank" rel="noopener"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Push</span></a>
         </div>
       </div>
     </div>
+    <span class="mk-note">Aperçus d'exemple — les chiffres et publications sont fictifs.</span>
 
     <!-- Visionneuse des publications -->
     <div class="lbx" id="lbx" role="dialog" aria-modal="true" aria-label="Publication" hidden>

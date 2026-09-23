@@ -121,20 +121,23 @@ a{color:inherit;text-decoration:none}
 /* ============ CONTENEUR ============ */
 .wrap{max-width:var(--maxw);margin:0 auto;padding:26px 22px 60px}
 
-/* ============ BARRE HAUTE ============ */
-.topbar{display:flex;align-items:center;justify-content:space-between;
-  font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+/* ============ BARRE HAUTE (en surimpression sur le héros plein écran) ============ */
+.topbar{position:absolute;top:0;left:0;right:0;z-index:5;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 22px;
+  font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+  text-shadow:0 1px 4px rgba(0,0,0,.55)}
 .topbar .mono{font-weight:800;color:var(--ink);letter-spacing:-.02em;font-size:1.2rem;text-transform:none}
 .status{display:inline-flex;align-items:center;gap:7px}
 .status .dot{width:7px;height:7px;border-radius:50%;background:#46e08a;
   box-shadow:0 0 0 0 rgba(70,224,138,.6);animation:ping 2.2s ease-out infinite}
 @keyframes ping{0%{box-shadow:0 0 0 0 rgba(70,224,138,.5)}70%,100%{box-shadow:0 0 0 7px rgba(70,224,138,0)}}
 
-/* ============ HÉRO ============ */
-.hero{position:relative;overflow:hidden;border-radius:var(--radius);
-  min-height:min(76vh,660px);display:flex;flex-direction:column;justify-content:flex-end;
-  padding:54px 26px 40px;margin-top:14px;border:1px solid var(--line);isolation:isolate;
-  box-shadow:0 40px 90px -30px rgba(0,0,0,.7)}
+/* ============ HÉRO : plein écran (toute la largeur et toute la hauteur visible) ============ */
+.hero{position:relative;overflow:hidden;width:100%;
+  min-height:100vh;min-height:100svh;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:54px 26px 116px;isolation:isolate}
 .hero-media{position:absolute;inset:-14px;z-index:-1;background:var(--bg-soft);
   transform:translate(var(--px,0px),var(--py,0px));transition:transform .3s ease}
 .hero-media img,.hero-media video{position:absolute;inset:0;width:100%;height:100%;
@@ -341,13 +344,15 @@ footer .copy{letter-spacing:.02em}
 /* ============ RESPONSIVE ============ */
 @media (min-width:1000px){
   .wrap{max-width:980px;padding:30px 28px 70px}
-  .hero{padding:64px 44px 48px}
+  .hero{padding:64px 44px 124px}
+  .topbar{padding:26px 44px}
   .featured{padding:38px}
   .gallery{gap:12px}
 }
 @media (max-width:520px){
   .wrap{padding:22px 16px 54px}
-  .hero{padding:40px 18px 32px}
+  .hero{padding:40px 18px 108px}
+  .topbar{padding:16px 18px}
   .bigname{font-size:clamp(2rem,13vw,3.6rem)}
   .hero .lede{font-size:.96rem}
   .featured{padding:24px}
@@ -854,43 +859,43 @@ body.gate-on{overflow:hidden}
     <div class="bar"></div>
   </div>
 
-  <main class="wrap">
-
-    <!-- ===== BARRE HAUTE ===== -->
+  <!-- ===== HÉRO : plein écran (toute la largeur et toute la hauteur visible) ===== -->
+  <section class="hero">
+    <!-- ===== BARRE HAUTE (en surimpression sur le héros) ===== -->
     <header class="topbar">
       <span class="mono">✦ Audace</span>
       <span class="status"><span class="dot"></span> En ligne · <span id="clock">--:--</span> Knokke</span>
     </header>
 
-    <!-- ===== HÉRO ===== -->
-    <section class="hero">
-      <!-- ===== FOND DU HÉRO (image : course au bord de mer) =====
-           ✏️ Pour une VIDÉO à la place : remplace la balise <img> par
-           <video autoplay muted loop playsinline poster="img-run.jpg"><source src="ta-video.mp4" type="video/mp4"></video> -->
-      <div class="hero-media" aria-hidden="true">
-        <picture>
-          <source srcset="img-run.webp" type="image/webp">
-          <img src="img-run.jpg" alt="" width="1402" height="1122" fetchpriority="high" decoding="async">
-        </picture>
-        <span class="hero-veil"></span>
-      </div>
-      <span class="hero-flash" aria-hidden="true"></span>
-      <span class="hero-vignette" aria-hidden="true"></span>
-      <span class="hero-sparks" aria-hidden="true"><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i></span>
+    <!-- ===== FOND DU HÉRO (image : course au bord de mer) =====
+         ✏️ Pour une VIDÉO à la place : remplace la balise <img> par
+         <video autoplay muted loop playsinline poster="img-run.jpg"><source src="ta-video.mp4" type="video/mp4"></video> -->
+    <div class="hero-media" aria-hidden="true">
+      <picture>
+        <source srcset="img-run.webp" type="image/webp">
+        <img src="img-run.jpg" alt="" width="1402" height="1122" fetchpriority="high" decoding="async">
+      </picture>
+      <span class="hero-veil"></span>
+    </div>
+    <span class="hero-flash" aria-hidden="true"></span>
+    <span class="hero-vignette" aria-hidden="true"></span>
+    <span class="hero-sparks" aria-hidden="true"><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i></span>
 
-      <!-- ✏️ Photo de profil : remplace le src par ta vraie photo -->
-      <div class="profile">
-        <span class="av"><picture><source srcset="img-avatar.webp" type="image/webp"><img src="img-avatar.jpg" width="120" height="120" alt="Photo de profil d'Audace" decoding="async"></picture><span class="liv" title="En ligne"></span></span>
-        <span class="who"><b>Audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e7c79b" d="M12 1.6l2.5 1.9 3.1.2.9 3 2.5 1.9-.9 3 .9 3-2.5 1.9-.9 3-3.1.2L12 22.4l-2.5-1.9-3.1-.2-.9-3-2.5-1.9.9-3-.9-3 2.5-1.9.9-3 3.1-.2z"/><path fill="#0a0908" d="M10.5 14.7l-2.1-2.1-1.3 1.3 3.4 3.4 5.9-5.9-1.3-1.3z"/></svg></b><p>@audace · Knokke 🇧🇪</p></span>
-      </div>
-      <div class="eyebrow">Fitness creator — Belgique</div>
-      <!-- ✏️ Le grand nom -->
-      <h1 class="bigname"><span class="fill">Audace</span></h1>
-      <p class="lede">
-        Créatrice <b>fitness &amp; lifestyle</b> à Knokke. Je te partage mon quotidien, <span class="rotator" id="rotator">mon énergie</span>…<br class="lede-br"> et mon côté plus intime, rien que pour toi 😏
-      </p>
-      <span class="scrollcue"><i></i> Fais défiler</span>
-    </section>
+    <!-- ✏️ Photo de profil : remplace le src par ta vraie photo -->
+    <div class="profile">
+      <span class="av"><picture><source srcset="img-avatar.webp" type="image/webp"><img src="img-avatar.jpg" width="120" height="120" alt="Photo de profil d'Audace" decoding="async"></picture><span class="liv" title="En ligne"></span></span>
+      <span class="who"><b>Audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e7c79b" d="M12 1.6l2.5 1.9 3.1.2.9 3 2.5 1.9-.9 3 .9 3-2.5 1.9-.9 3-3.1.2L12 22.4l-2.5-1.9-3.1-.2-.9-3-2.5-1.9.9-3-.9-3 2.5-1.9.9-3 3.1-.2z"/><path fill="#0a0908" d="M10.5 14.7l-2.1-2.1-1.3 1.3 3.4 3.4 5.9-5.9-1.3-1.3z"/></svg></b><p>@audace · Knokke 🇧🇪</p></span>
+    </div>
+    <div class="eyebrow">Fitness creator — Belgique</div>
+    <!-- ✏️ Le grand nom -->
+    <h1 class="bigname"><span class="fill">Audace</span></h1>
+    <p class="lede">
+      Créatrice <b>fitness &amp; lifestyle</b> à Knokke. Je te partage mon quotidien, <span class="rotator" id="rotator">mon énergie</span>…<br class="lede-br"> et mon côté plus intime, rien que pour toi 😏
+    </p>
+    <span class="scrollcue"><i></i> Fais défiler</span>
+  </section>
+
+  <main class="wrap">
 
     <!-- ===== PREUVE SOCIALE ✏️ Remplace par tes VRAIS chiffres (sinon laisse vide) ===== -->
     <div class="proof reveal" aria-label="Quelques chiffres">

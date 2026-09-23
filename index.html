@@ -1411,11 +1411,17 @@ body.gate-on{overflow:hidden}
       const setOn=on=>{ btn.classList.toggle('playing',on);
         btn.setAttribute('aria-pressed',on?'true':'false');
         btn.setAttribute('aria-label',on?'Couper la musique':'Activer la musique'); };
+      /* Le contexte peut être créé sans geste (il démarre "suspended", c'est autorisé) :
+         on précharge et décode le fichier tout de suite pour que le premier geste n'ait
+         plus qu'à faire resume()+start(), sans attendre le réseau/décodage (sinon, sur
+         mobile/connexion lente, la fenêtre d'activation du navigateur expire avant que
+         le son ne soit prêt, et la musique ne démarre jamais). */
+      if(!ctx){ ctx=new AC(); gain=ctx.createGain(); gain.gain.value=0.32; gain.connect(ctx.destination); }
       const load=()=>{ if(buffer) return Promise.resolve();
         if(!fetching) fetching=fetch('audace.mp3').then(r=>r.arrayBuffer()).then(a=>ctx.decodeAudioData(a)).then(b=>{buffer=b;});
         return fetching; };
+      load();
       const ensure=async()=>{
-        if(!ctx){ ctx=new AC(); gain=ctx.createGain(); gain.gain.value=0.32; gain.connect(ctx.destination); }
         try{ if(ctx.state==='suspended') await ctx.resume(); }catch(e){}
         if(!started){ try{ await load(); const s=ctx.createBufferSource(); s.buffer=buffer; s.loop=true; s.connect(gain); s.start(0); started=true; }catch(e){ return false; } }
         return true;
@@ -1430,9 +1436,12 @@ body.gate-on{overflow:hidden}
       const turnOff=()=>{ enabled=false; if(ctx && ctx.state==='running') ctx.suspend(); setOn(false); };
       /* Bouton : bascule fiable marche/arrêt */
       btn.addEventListener('click',e=>{ e.stopPropagation(); enabled ? turnOff() : turnOn(); });
-      /* Démarrage au premier geste (obligatoire pour l'audio sur mobile) */
+      /* Démarrage au premier vrai geste (clic/tap/touche) — mousemove/scroll ne comptent
+         pas comme un geste utilisateur valide pour débloquer l'audio sur la plupart des
+         navigateurs, ce qui empêchait le démarrage automatique pour les visiteurs de retour
+         (qui ne passent plus par le bouton "18 ans"). */
       const first=()=>{ if(!enabled) turnOn(); };
-      ['pointerdown','touchstart','keydown','mousemove','scroll'].forEach(ev=>addEventListener(ev,first,{once:true,passive:true}));
+      ['pointerdown','touchend','keydown','click'].forEach(ev=>addEventListener(ev,first,{once:true,passive:true}));
       /* Pause auto quand la page n'est plus visible/active ; reprise si l'utilisateur ne l'a pas coupée */
       const autoSuspend=()=>{ if(ctx && ctx.state==='running'){ ctx.suspend(); setOn(false); } };
       const autoResume=()=>{ if(enabled && ctx && ctx.state==='suspended'){ ctx.resume(); setOn(true); } };

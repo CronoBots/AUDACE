@@ -822,14 +822,16 @@ body.gate-on{overflow:hidden}
 .ti-band-fb .ti-band-ic svg{fill:#1877f2;width:18px;height:18px}
 .ti-band-fb b{font-size:19px;letter-spacing:-.02em;text-transform:lowercase}
 @media(max-width:700px){.ti-demo{--pad:12px;padding:16px 12px 14px}.ti-band{margin-top:-16px}}
-/* Cadres OnlyFans et MYM de même hauteur (côte à côte sur grand écran) */
+/* Cadres OnlyFans et MYM : même hauteur, format compact (grand écran) */
+@media(max-width:899px){.mk-of .lock{aspect-ratio:16/10}}
 @media(min-width:900px){
   .feeds{align-items:stretch}
-  .feeds .mk{display:flex;flex-direction:column}
-  .mk-of .post{flex:1;display:flex;flex-direction:column}
-  .mk-of .lock{flex:1;aspect-ratio:auto;min-height:220px}
-  .mk-mym .grid{flex:1;grid-auto-rows:1fr}
-  .mk-mym .grid a{aspect-ratio:auto;min-height:110px}
+  .feeds .mk{display:flex;flex-direction:column;height:760px}
+  .mk-of .post{flex:1;min-height:0;display:flex;flex-direction:column}
+  .mk-of .post p{margin:6px 0}
+  .mk-of .lock{flex:1;min-height:0;aspect-ratio:auto}
+  .mk-mym .grid{flex:1;min-height:0;grid-template-rows:1fr 1fr}
+  .mk-mym .grid a{aspect-ratio:auto;min-height:0}
 }
 </style>
 </head>

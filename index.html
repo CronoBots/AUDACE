@@ -265,9 +265,9 @@ footer .socials a{width:48px;height:48px;border-radius:50%;display:grid;place-it
   color:var(--muted);background:var(--bg-soft);border:1px solid var(--line);
   transition:transform .22s ease,color .22s ease,border-color .22s ease,box-shadow .22s ease,background .22s ease}
 footer .socials a svg{width:21px;height:21px;fill:currentColor;display:block}
-/* Mobile : 3 icônes par ligne, bien réparties (au lieu d'une dernière ligne clairsemée) */
-@media(max-width:520px){footer .socials{max-width:172px;margin:0 auto}}
-@media(max-width:360px){footer .socials{gap:10px;max-width:146px}footer .socials a{width:42px;height:42px}}
+/* Mobile : 2 lignes bien réparties (5 puis 4) ; une seule ligne sur ordinateur */
+@media(max-width:520px){footer .socials{max-width:296px;margin:0 auto}}
+@media(max-width:360px){footer .socials{gap:10px;max-width:250px}footer .socials a{width:42px;height:42px}}
 footer .socials a:hover{color:#fff;border-color:transparent;transform:translateY(-4px);
   background:linear-gradient(135deg,var(--coral),var(--coral-2));box-shadow:0 10px 26px rgba(var(--coral-rgb),.28)}
 footer .copy{letter-spacing:.02em}

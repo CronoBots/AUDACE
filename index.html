@@ -475,8 +475,8 @@ footer .copy{letter-spacing:.02em}
 .age{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;color:var(--muted);
   border:1px solid var(--line);border-radius:100px;padding:6px 13px}
 .age b{color:var(--ink)}
-.legal{display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:center;font-size:.74rem}
-.legal a{color:var(--muted)}.legal a:hover{color:var(--ink)}
+.legal{display:flex;flex-wrap:wrap;gap:0 8px;justify-content:center;font-size:.74rem}
+.legal a{color:var(--muted);padding:12px 8px;display:inline-block}.legal a:hover{color:var(--ink)}
 
 .cell.lock{display:block}
 .cell.lock::after{content:"";position:absolute;inset:0;z-index:1;opacity:1;
@@ -805,8 +805,8 @@ body.gate-on{overflow:hidden}
 /* ============ SÉLECTEUR DE THÈME ============ */
 .themes{display:flex;align-items:center;gap:2px;flex-wrap:wrap;justify-content:center}
 .themes small{font-size:.72rem;color:var(--muted);margin-right:6px}
-.themes button{position:relative;width:36px;height:36px;border-radius:50%;border:0;background:none;cursor:pointer;padding:0}
-.themes button::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--c);
+.themes button{position:relative;width:44px;height:44px;border-radius:50%;border:0;background:none;cursor:pointer;padding:0}
+.themes button::after{content:"";position:absolute;inset:13px;border-radius:50%;background:var(--c);
   box-shadow:0 0 0 1px var(--line);transition:transform .2s}
 .themes button:hover::after{transform:scale(1.2)}
 .themes button.on::after{box-shadow:0 0 0 2px var(--ink)}
@@ -1028,7 +1028,7 @@ body.gate-on{overflow:hidden}
           <div class="ti-band ti-band-tt"><span class="ti-band-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i2"/></svg></span><b>TikTok</b><span class="ti-band-h">@audace</span></div>
           <div class="ti-head">
             <span class="ti-av"><picture><source srcset="img-avatar.webp" type="image/webp"><img src="img-avatar.jpg" width="120" height="120" alt="" loading="lazy" decoding="async"></picture></span>
-            <span class="ti-id"><b>Audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0095f6"/><path d="M10.3 15.6l-3.2-3.2 1.3-1.3 1.9 1.9 5.1-5.1 1.3 1.3z" fill="#fff"/></svg></b><small>@audace</small><span class="ti-st"><span><strong>38,7 k</strong> abonnés</span><span><strong>1,2 M</strong> j’aime</span></span></span>
+            <span class="ti-id"><b>Audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0095f6"/><path d="M10.3 15.6l-3.2-3.2 1.3-1.3 1.9 1.9 5.1-5.1 1.3 1.3z" fill="#fff"/></svg></b><small>@audace</small><span class="ti-st"><span><strong>2 M</strong> abonnés</span><span><strong>48,6 M</strong> j’aime</span></span></span>
             <a class="ti-follow" href="#" data-link="tiktok" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i2"/></svg></i>Suivre</a>
           </div>
           <div class="ti-slider">
@@ -1046,7 +1046,7 @@ body.gate-on{overflow:hidden}
           <div class="ti-band ti-band-ig"><span class="ti-band-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i1"/></svg></span><b>Instagram</b><span class="ti-band-h">@audace</span></div>
           <div class="ti-head">
             <span class="ti-av"><picture><source srcset="img-avatar.webp" type="image/webp"><img src="img-avatar.jpg" width="120" height="120" alt="" loading="lazy" decoding="async"></picture></span>
-            <span class="ti-id"><b>audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0095f6"/><path d="M10.3 15.6l-3.2-3.2 1.3-1.3 1.9 1.9 5.1-5.1 1.3 1.3z" fill="#fff"/></svg></b><small>@audace</small><span class="ti-st"><span><strong>214</strong> publications</span><span><strong>12,4 k</strong> abonnés</span></span></span>
+            <span class="ti-id"><b>audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0095f6"/><path d="M10.3 15.6l-3.2-3.2 1.3-1.3 1.9 1.9 5.1-5.1 1.3 1.3z" fill="#fff"/></svg></b><small>@audace</small><span class="ti-st"><span><strong>214</strong> publications</span><span><strong>304 k</strong> abonnés</span></span></span>
             <a class="ti-follow" href="#" data-link="instagram" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i1"/></svg></i>Suivre</a>
           </div>
           <div class="ti-grid">
@@ -1239,9 +1239,9 @@ body.gate-on{overflow:hidden}
         <div><h3>Travaillons ensemble</h3><p>Une communauté fitness &amp; lifestyle engagée, surtout en Belgique et en France. Je ne présente que des marques que j'utilise vraiment.</p></div>
       </div>
       <div class="ps-stats">
-        <div class="ps"><b>12,4 k</b><span>Abonnés Instagram</span></div>
-        <div class="ps"><b>38,7 k</b><span>Abonnés TikTok</span></div>
-        <div class="ps"><b>11,2 k</b><span>Abonnés Facebook</span></div>
+        <div class="ps"><b>304 k</b><span>Abonnés Instagram</span></div>
+        <div class="ps"><b>2 M</b><span>Abonnés TikTok</span></div>
+        <div class="ps"><b>22 k</b><span>Abonnés YouTube</span></div>
         <div class="ps"><b>6,2 %</b><span>Engagement moyen</span></div>
         <div class="ps"><b>71 %</b><span>Audience 18–34 ans</span></div>
         <div class="ps"><b>BE · FR · CH</b><span>Pays principaux</span></div>

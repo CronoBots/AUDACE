@@ -1,9 +1,9 @@
 /* Service Worker — Audace
-   Stratégie : network-first pour la page (mises à jour visibles), cache-first pour les assets.
+   Stratégie : network-first pour les pages (mises à jour visibles), cache-first pour les assets.
    IMPORTANT : on NE touche PAS aux médias (audio/vidéo) ni aux requêtes Range,
    sinon la lecture de la musique se casse (notamment sur Safari/iOS). */
-const CACHE = 'audace-v2';
-const ASSETS = ['./', './index.html', './img-run.webp', './onlyfans-logo.svg', './icon-192.png'];
+const CACHE = 'audace-v3';
+const ASSETS = ['./', './index.html', './demo.html', './img-run.webp', './img-pool.webp', './onlyfans-logo.svg', './icon-192.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));
@@ -27,12 +27,12 @@ self.addEventListener('fetch', e => {
   const url = new URL(req.url);
   if (/\.(mp3|mp4|m4a|aac|ogg|oga|wav|webm|mov)$/i.test(url.pathname)) return;
 
-  // Page HTML : network-first (on voit toujours la dernière version en ligne)
+  // Pages HTML : network-first, chaque page est mise en cache sous sa propre adresse
   if (req.mode === 'navigate') {
     e.respondWith(
       fetch(req)
-        .then(r => { const cp = r.clone(); caches.open(CACHE).then(c => c.put('./index.html', cp)); return r; })
-        .catch(() => caches.match('./index.html'))
+        .then(r => { const cp = r.clone(); caches.open(CACHE).then(c => c.put(req, cp)); return r; })
+        .catch(() => caches.match(req, { ignoreSearch: true }).then(r => r || caches.match('./index.html')))
     );
     return;
   }

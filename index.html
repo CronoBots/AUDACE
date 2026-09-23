@@ -69,6 +69,7 @@
 }
 
 /* ============ BASE ============ */
+[hidden]{display:none!important}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
@@ -680,6 +681,64 @@ footer .copy{letter-spacing:.02em}
 .lbx-close{position:absolute;top:14px;right:14px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);
   background:var(--bg-soft);color:var(--ink);font-size:1.1rem;cursor:pointer}
 
+
+/* MYM : bouton secondaire sous la carte principale, dans l'appel final et le pied de page */
+:root{--mym:#ff3d6e}
+.alt-mym{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:10px;padding:13px 18px;border-radius:100px;
+  border:1px solid rgba(255,61,110,.45);background:rgba(255,61,110,.08);color:var(--ink);font-weight:700;font-size:.92rem;
+  transition:background .2s,border-color .2s,transform .2s}
+.alt-mym:hover{background:rgba(255,61,110,.16);border-color:var(--mym);transform:translateY(-1px)}
+.alt-mym small{font-weight:500;color:var(--muted)}
+.mym-badge{font-weight:900;letter-spacing:-.03em;font-size:.78rem;line-height:1;color:#fff;background:#000;border:1px solid rgba(255,255,255,.35);padding:3px 6px;border-radius:5px}
+.finalcta .btns2{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.finalcta .mymbtn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(92deg,#ff3d6e,#ff6a3d);color:#fff;font-weight:800;
+  font-size:1.02rem;padding:15px 26px;border-radius:100px;box-shadow:0 12px 34px rgba(255,61,110,.35);transition:transform .2s,box-shadow .2s}
+.finalcta .mymbtn:hover{transform:translateY(-2px);box-shadow:0 16px 44px rgba(255,61,110,.5)}
+@media(max-width:520px){.finalcta .btns2 a{width:100%;justify-content:center}}
+.socials a.mym-link span{font-weight:900;font-size:.72rem;letter-spacing:-.03em}
+.demo-note{font-size:.7rem;color:var(--muted);opacity:.75;text-align:center}
+@media(max-width:759px){footer{padding-bottom:64px}}
+
+/* ============ CODES PROMO & PARTENAIRES ============ */
+.sponsor{position:relative;display:flex;flex-direction:column;gap:6px;overflow:hidden;border-radius:var(--radius);padding:26px;
+  border:1px solid rgba(231,199,155,.35);background:var(--bg-soft);margin-bottom:12px;isolation:isolate;transition:transform .3s ease,box-shadow .3s}
+.sponsor:hover{transform:translateY(-2px);box-shadow:0 18px 44px rgba(0,0,0,.45)}
+.sp-bg{position:absolute;inset:0;z-index:-1}
+.sp-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;opacity:.4}
+.sp-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(10,9,8,.95) 30%,rgba(10,9,8,.5))}
+.sp-tag{align-self:flex-start;font-size:.64rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+  border:1px solid var(--line);padding:4px 9px;border-radius:100px;margin-bottom:6px}
+.sp-k{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.sp-brand{font-weight:900;font-size:clamp(1.6rem,6vw,2.2rem);letter-spacing:.02em;line-height:1}
+.sp-brand em{font-family:'Cormorant','Georgia',serif;font-weight:600;font-style:italic;color:var(--gold);letter-spacing:0}
+.sp-tx{color:rgba(244,239,231,.82);font-size:.92rem;max-width:40ch}
+.sp-cta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:10px;font-weight:800;font-size:.92rem}
+.sp-code{font-family:ui-monospace,Menlo,Consolas,monospace;letter-spacing:.08em;padding:9px 14px;border-radius:10px;border:1.5px dashed var(--gold);color:var(--gold)}
+.promos{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+@media(max-width:600px){.promos{grid-template-columns:1fr}}
+.promo{background:var(--bg-soft);border:1px solid var(--line);border-radius:16px;padding:16px;transition:border-color .25s}
+.promo:hover{border-color:rgba(255,77,109,.5)}
+.pr-top{display:flex;align-items:center;gap:11px}
+.pr-logo{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;color:#fff;font-weight:900;font-size:1.05rem;flex-shrink:0;
+  font-family:'Cormorant','Georgia',serif;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
+.pr-nm{flex:1;min-width:0}
+.pr-nm b{display:block;font-size:.93rem}
+.pr-nm small{display:block;font-size:.76rem;color:var(--muted)}
+.pr-tag{font-size:.6rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);padding:4px 8px;border-radius:100px;white-space:nowrap}
+.pr-deal{margin:12px 0;font-weight:800;font-size:1.02rem;color:var(--ink)}
+.pr-row{display:flex;gap:8px}
+.pr-code{flex:1;display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;min-width:0;
+  background:rgba(0,0,0,.3);border:1.5px dashed rgba(231,199,155,.55);border-radius:10px;padding:10px 12px;color:var(--gold);
+  font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.86rem;font-weight:700;letter-spacing:.06em;transition:background .2s,border-color .2s}
+.pr-code:hover{background:rgba(231,199,155,.08);border-color:var(--gold)}
+.pr-code span{overflow:hidden;text-overflow:ellipsis}
+.pr-code i{font-style:normal;font-family:var(--font);font-size:.72rem;letter-spacing:0;color:var(--ink);background:rgba(255,255,255,.08);padding:4px 8px;border-radius:6px;flex-shrink:0}
+.pr-code.ok{border-color:#46e08a;border-style:solid}
+.pr-code.ok i{background:#46e08a;color:#0a0908}
+.pr-go{display:flex;align-items:center;padding:0 14px;border-radius:10px;font-weight:700;font-size:.82rem;color:#fff;white-space:nowrap;
+  background:linear-gradient(92deg,var(--coral),var(--coral-2))}
+.pr-go:hover{filter:brightness(1.08)}
+.pr-disc{font-size:.74rem;color:var(--muted);margin-top:12px;text-align:center}
 </style>
 </head>
 <body>
@@ -772,6 +831,8 @@ footer .copy{letter-spacing:.02em}
       <span class="go of"><img class="of-ic" src="onlyfans-icon-white.svg" alt="" aria-hidden="true">Rejoindre sur OnlyFans <span class="circle">↗</span></span>
       <span class="reassure">🔒 Paiement sécurisé · Sans engagement · Annulation en 1 clic</span>
     </a>
+    <!-- ✏️ MYM : remplace href="#" par ton lien MYM -->
+    <a class="alt-mym reveal" id="alt-mym" href="#" target="_blank" rel="noopener"><span class="mym-badge">MYM</span> Aussi disponible sur MYM <small>→</small></a>
 
     <!-- ===== 02 · RETROUVE-MOI : flux Instagram / TikTok / Facebook (Trustindex) + autres réseaux ===== -->
     <div class="sec-head reveal"><span class="num">02</span><span class="label">Retrouve-moi</span><span class="rule"></span></div>
@@ -952,15 +1013,57 @@ footer .copy{letter-spacing:.02em}
     </div>
     <span class="mk-note">Aperçus d'exemple — les chiffres et publications sont fictifs.</span>
 
-    <!-- ===== 04 · MES ESSENTIELS ✏️ Liens d'affiliation à compléter ===== -->
-    <div class="sec-head reveal"><span class="num">04</span><span class="label">Mes essentiels</span><span class="rule"></span></div>
-    <p class="essentials-intro reveal">Les marques &amp; objets que j'utilise au quotidien — mes coups de cœur.</p>
-    <div class="essentials reveal">
-      <a class="ess" href="#" target="_blank" rel="noopener"><span class="ic">👙</span><span class="nm">Ma lingerie préférée<small>Mes pièces favorites</small></span><span class="go2">Voir →</span></a>
-      <a class="ess" href="#" target="_blank" rel="noopener"><span class="ic">💎</span><span class="nm">Mes accessoires<small>Bijoux &amp; détails qui changent tout</small></span><span class="go2">Voir →</span></a>
-      <a class="ess" href="#" target="_blank" rel="noopener"><span class="ic">🧴</span><span class="nm">Mon parfum signature<small>Mon odeur du quotidien</small></span><span class="go2">Voir →</span></a>
-      <a class="ess" href="#" target="_blank" rel="noopener"><span class="ic">💄</span><span class="nm">Ma routine beauté<small>Mes indispensables</small></span><span class="go2">Voir →</span></a>
+    <!-- ===== 04 · CODES PROMO & PARTENAIRES =====
+         ✏️ Exemples : remplace les marques, les codes et les liens (href="#") par tes vrais partenariats.
+         Les liens gardent rel="sponsored" (bonne pratique pour les liens payants / affiliés). -->
+    <div class="sec-head reveal"><span class="num">04</span><span class="label">Codes promo &amp; partenaires</span><span class="rule"></span></div>
+    <p class="essentials-intro reveal">Les marques que j'utilise vraiment — avec des réductions rien que pour toi.</p>
+
+    <!-- Sponsor mis en avant -->
+    <a class="sponsor reveal" href="#" target="_blank" rel="noopener sponsored">
+      <span class="sp-bg" aria-hidden="true"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture></span>
+      <span class="sp-tag">Partenariat rémunéré</span>
+      <span class="sp-k">En collaboration avec</span>
+      <span class="sp-brand">IRONLAB <em>Gym Club</em></span>
+      <span class="sp-tx">1 mois d'abonnement offert dans toutes les salles, avec mon code</span>
+      <span class="sp-cta"><span class="sp-code">AUDACEGYM</span><span>J'en profite →</span></span>
+    </a>
+
+    <div class="promos reveal">
+      <div class="promo">
+        <div class="pr-top"><span class="pr-logo" style="background:#2f6d4f">N</span><span class="pr-nm"><b>NOVA Nutrition</b><small>Protéines &amp; compléments</small></span><span class="pr-tag">Code promo</span></div>
+        <div class="pr-deal">-15 % sur tout le site</div>
+        <div class="pr-row">
+          <button class="pr-code" type="button" data-code="AUDACE15" aria-label="Copier le code AUDACE15"><span>AUDACE15</span><i>Copier</i></button>
+          <a class="pr-go" href="#" target="_blank" rel="noopener sponsored">Voir l'offre →</a>
+        </div>
+      </div>
+      <div class="promo">
+        <div class="pr-top"><span class="pr-logo" style="background:#1d1d1f">É</span><span class="pr-nm"><b>Élan Activewear</b><small>Leggings &amp; brassières</small></span><span class="pr-tag">Lien affilié</span></div>
+        <div class="pr-deal">-20 % sur ta 1ʳᵉ commande</div>
+        <div class="pr-row">
+          <button class="pr-code" type="button" data-code="AUDACE20" aria-label="Copier le code AUDACE20"><span>AUDACE20</span><i>Copier</i></button>
+          <a class="pr-go" href="#" target="_blank" rel="noopener sponsored">Voir l'offre →</a>
+        </div>
+      </div>
+      <div class="promo">
+        <div class="pr-top"><span class="pr-logo" style="background:#b5654a">L</span><span class="pr-nm"><b>Lumière Skin</b><small>Soins &amp; routine beauté</small></span><span class="pr-tag">Code promo</span></div>
+        <div class="pr-deal">1 soin offert dès 40 €</div>
+        <div class="pr-row">
+          <button class="pr-code" type="button" data-code="GLOWAUDACE" aria-label="Copier le code GLOWAUDACE"><span>GLOWAUDACE</span><i>Copier</i></button>
+          <a class="pr-go" href="#" target="_blank" rel="noopener sponsored">Voir l'offre →</a>
+        </div>
+      </div>
+      <div class="promo">
+        <div class="pr-top"><span class="pr-logo" style="background:#6b4bb8">S</span><span class="pr-nm"><b>Sillage Paris</b><small>Mon parfum signature</small></span><span class="pr-tag">Lien affilié</span></div>
+        <div class="pr-deal">Livraison offerte + échantillons</div>
+        <div class="pr-row">
+          <button class="pr-code" type="button" data-code="AUDACE" aria-label="Copier le code AUDACE"><span>AUDACE</span><i>Copier</i></button>
+          <a class="pr-go" href="#" target="_blank" rel="noopener sponsored">Voir l'offre →</a>
+        </div>
+      </div>
     </div>
+    <p class="pr-disc reveal">#pub · Certains liens sont affiliés ou sponsorisés : je peux toucher une commission, sans surcoût pour toi.</p>
 
     <!-- ===== 05 · TÉMOIGNAGES ✏️ Remplace par de VRAIS avis ===== -->
     <div class="sec-head reveal"><span class="num">05</span><span class="label">Ils ont rejoint</span><span class="rule"></span></div>
@@ -981,8 +1084,9 @@ footer .copy{letter-spacing:.02em}
     <div class="sec-head reveal"><span class="num">06</span><span class="label">Questions fréquentes</span><span class="rule"></span></div>
     <div class="faq reveal">
       <details><summary>Qu'est-ce que je reçois en m'abonnant&nbsp;?</summary><div class="a">Un accès privé à mes photos et vidéos exclusives, du nouveau contenu chaque semaine, et la possibilité de m'écrire en direct.</div></details>
-      <details><summary>La facturation est-elle discrète&nbsp;?</summary><div class="a">Oui — le paiement passe par OnlyFans, de façon sécurisée et discrète. Rien d'explicite n'apparaît sur ton relevé.</div></details>
-      <details><summary>Puis-je annuler quand je veux&nbsp;?</summary><div class="a">Sans engagement : tu peux résilier en un clic à tout moment, directement depuis OnlyFans.</div></details>
+      <details><summary>La facturation est-elle discrète&nbsp;?</summary><div class="a">Oui — le paiement passe par OnlyFans ou MYM, de façon sécurisée et discrète. Rien d'explicite n'apparaît sur ton relevé.</div></details>
+      <details><summary>Puis-je annuler quand je veux&nbsp;?</summary><div class="a">Sans engagement : tu peux résilier en un clic à tout moment, directement depuis OnlyFans ou MYM.</div></details>
+      <details><summary>OnlyFans ou MYM&nbsp;: lequel choisir&nbsp;?</summary><div class="a">Le même univers sur les deux, au même prix. Choisis la plateforme que tu utilises déjà&nbsp;: tu retrouveras mes photos, mes vidéos et nos échanges en privé.</div></details>
       <details><summary>Est-ce confidentiel&nbsp;?</summary><div class="a">Totalement. Ton abonnement reste privé et tes informations ne sont jamais partagées.</div></details>
       <details><summary>Sur quels appareils&nbsp;?</summary><div class="a">Partout : ordinateur, tablette et mobile, directement depuis ton navigateur.</div></details>
     </div>
@@ -990,8 +1094,9 @@ footer .copy{letter-spacing:.02em}
     <!-- ===== APPEL FINAL (conversion) ✏️ Remplace href="#" par ton lien OnlyFans ===== -->
     <div class="finalcta reveal">
       <h3>Prêt à me rejoindre&nbsp;?</h3>
-      <p>Tout mon contenu exclusif t'attend, rien que pour toi.</p>
-      <a class="ofbtn" href="#" target="_blank" rel="noopener"><img src="onlyfans-icon-white.svg" alt="" aria-hidden="true">Rejoindre sur OnlyFans →</a>
+      <p>Tout mon contenu exclusif t'attend, sur OnlyFans ou MYM — rien que pour toi.</p>
+      <div class="btns2"><a class="ofbtn" href="#" target="_blank" rel="noopener"><img src="onlyfans-icon-white.svg" alt="" aria-hidden="true">Rejoindre sur OnlyFans →</a>
+        <a class="mymbtn" href="#" target="_blank" rel="noopener"><span class="mym-badge">MYM</span>Rejoindre sur MYM →</a></div>
       <span class="reassure2">🔒 Paiement sécurisé · Sans engagement · 18+</span>
     </div>
 
@@ -1011,6 +1116,8 @@ footer .copy{letter-spacing:.02em}
         <a class="of-link" href="#" target="_blank" rel="noopener" aria-label="OnlyFans" title="OnlyFans">
           <img src="onlyfans-icon-white.svg" alt="OnlyFans">
         </a>
+        <!-- ✏️ MYM : remplace href="#" par ton lien MYM -->
+        <a class="mym-link" href="#" target="_blank" rel="noopener" aria-label="MYM" title="MYM"><span>MYM</span></a>
         <a href="#" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>
         </a>
@@ -1032,6 +1139,7 @@ footer .copy{letter-spacing:.02em}
         <a href="mailto:contact@audace.be">Contact</a>
       </nav>
       <span class="copy">© <span id="year"></span> Audace — Tous droits réservés</span>
+      <span class="demo-note">Page d'exemple réalisée par AUDACE — noms, chiffres et avis fictifs.</span>
       <span class="viewcount" id="viewcount" hidden>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5C6.5 5 2.7 8.3 1 12c1.7 3.7 5.5 7 11 7s9.3-3.3 11-7c-1.7-3.7-5.5-7-11-7zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-8a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>
         <span><b id="viewcount-n">—</b> visites</span>
@@ -1296,6 +1404,18 @@ footer .copy{letter-spacing:.02em}
       slot.appendChild(sc);
     });
   })();
+  </script>
+  <!-- Codes promo : copie en un clic -->
+  <script>
+  document.querySelectorAll('.pr-code').forEach(function(b){
+    b.addEventListener('click',function(){
+      var code=b.dataset.code, lbl=b.querySelector('i');
+      function done(){ b.classList.add('ok'); lbl.textContent='Copié !'; setTimeout(function(){b.classList.remove('ok');lbl.textContent='Copier';},1800); }
+      if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(code).then(done,function(){prompt('Ton code :',code);}); }
+      else { prompt('Ton code :',code); }
+      if(window.goatcounter&&window.goatcounter.count){ window.goatcounter.count({path:'code-'+code.toLowerCase(),title:'Copie code '+code,event:true}); }
+    });
+  });
   </script>
 </body>
 </html>

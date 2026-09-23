@@ -26,7 +26,6 @@
      Remplace l'URL og:url quand tu as l'adresse finale. -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_BE">
-<meta property="og:locale:alternate" content="en_GB">
 <meta property="og:site_name" content="Audace">
 <meta property="og:title" content="Audace — Fitness · Lifestyle">
 <meta property="og:description" content="Fitness, lifestyle & contenu exclusif sur OnlyFans et MYM. Tous mes liens, un seul endroit.">
@@ -466,7 +465,7 @@ footer .copy{letter-spacing:.02em}
 .mk svg.i{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;display:block}
 .mk button{font:inherit;color:inherit}
 
-/* ---- Aperçus façon widgets Trustindex (Instagram, TikTok, Facebook) ---- */
+/* ---- Aperçus façon widgets Trustindex (Instagram, TikTok) ---- */
 .ti-feeds{display:grid;gap:18px;margin-bottom:18px}
 .ti-slot{min-width:0}
 .ti-demo{position:relative;background:#fff;color:#1c1e21;border-radius:14px;padding:18px;box-shadow:0 20px 50px rgba(0,0,0,.4);
@@ -476,7 +475,6 @@ footer .copy{letter-spacing:.02em}
 .ti-av img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 18%;border:2px solid #fff}
 .ti-ig .ti-av{background:conic-gradient(from 200deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75)}
 .ti-tt .ti-av{background:linear-gradient(135deg,#25f4ee,#fe2c55)}
-.ti-fbw .ti-av{background:#1877f2}
 .ti-id{flex:1;min-width:0}
 .ti-id b{display:flex;align-items:center;gap:5px;font-size:16px}
 .ti-id b .vf{width:15px;height:15px;flex-shrink:0}
@@ -488,10 +486,8 @@ footer .copy{letter-spacing:.02em}
 .ti-follow i{display:flex}.ti-follow svg{width:16px;height:16px;fill:#fff}
 .ti-ig .ti-follow{background:linear-gradient(45deg,#f58529,#dd2a7b 55%,#8134af)}
 .ti-tt .ti-follow{background:#fe2c55}
-.ti-fbw .ti-follow{background:#1877f2}
 .ti-net{position:absolute;top:8px;right:8px;z-index:2;width:22px;height:22px;border-radius:6px;display:grid;place-items:center;background:rgba(255,255,255,.92)}
 .ti-net svg{width:13px;height:13px;fill:#000}
-.ti-fbw .ti-net svg{fill:#1877f2}
 .ti-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
 .ti-post{position:relative;aspect-ratio:1/1;overflow:hidden;border:0;padding:0;cursor:pointer;border-radius:6px;background:#eee}
 .ti-post img,.ti-vid img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;transition:transform .5s ease}
@@ -510,18 +506,6 @@ footer .copy{letter-spacing:.02em}
 .ti-play svg{width:15px;height:15px;fill:#fff;margin-left:2px}
 .ti-cap{position:absolute;left:8px;right:8px;bottom:8px;z-index:1;font-size:12px;line-height:1.3}
 .ti-cap b{display:block;font-size:12px;margin-bottom:2px}
-.ti-fbs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.ti-fb{position:relative;display:flex;flex-direction:column;border:1px solid #e4e6eb;border-radius:10px;overflow:hidden;background:#fff;transition:box-shadow .2s}
-.ti-fb:hover{box-shadow:0 6px 20px rgba(0,0,0,.12)}
-.ti-fb .who{display:flex;align-items:center;gap:8px;padding:10px 12px}
-.ti-fb .who img{width:36px;height:36px;border-radius:50%;object-fit:cover;object-position:50% 18%}
-.ti-fb .who b{display:block;font-size:14px}.ti-fb .who small{color:#65676b;font-size:12px}
-.ti-fb .who .ti-net{position:static;margin-left:auto;background:none}
-.ti-fb .who .ti-net svg{width:18px;height:18px}
-.ti-fb .tx{padding:0 12px 10px;font-size:14px;flex:1}
-.ti-fb .im{display:block;aspect-ratio:4/3;overflow:hidden}
-.ti-fb .im img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
-.ti-fb .ft{display:flex;justify-content:space-between;padding:9px 12px;font-size:13px;color:#65676b;border-top:1px solid #e4e6eb}
 @media(max-width:700px){
   .ti-demo{padding:16px 12px 14px}
   .ti-head{flex-wrap:wrap}
@@ -529,8 +513,6 @@ footer .copy{letter-spacing:.02em}
   .ti-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
   .ti-grid .ti-post:nth-child(n+7){display:none}
   .ti-slider{grid-auto-columns:42%}
-  .ti-fbs{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:82%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
-  .ti-fb{scroll-snap-align:start}
 }
 
 /* ---- OnlyFans ---- */
@@ -688,7 +670,6 @@ footer .copy{letter-spacing:.02em}
 .ag-bg img{width:100%;height:100%;object-fit:cover;filter:blur(22px) brightness(.45);transform:scale(1.15)}
 .ag-card{position:relative;width:min(420px,100%);text-align:center;padding:34px 26px 24px;border-radius:24px;
   background:rgba(18,16,16,.78);backdrop-filter:blur(10px);border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.6)}
-.ag-lang{position:absolute;top:14px;right:14px}
 .ag-mark{display:block;font-weight:800;font-size:1.1rem;letter-spacing:-.02em}
 .ag-18{display:inline-grid;place-items:center;width:78px;height:78px;border-radius:50%;margin:18px 0 14px;font-weight:900;font-size:1.6rem;
   border:2px solid var(--coral);color:var(--coral);box-shadow:0 0 30px rgba(var(--coral-rgb),.3)}
@@ -700,13 +681,6 @@ footer .copy{letter-spacing:.02em}
 .ag-no{display:block;margin-top:14px;font-size:.86rem;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
 .ag-card small{display:block;margin-top:16px;font-size:.7rem;color:var(--muted);opacity:.8}
 body.gate-on{overflow:hidden}
-/* Sélecteur de langue */
-.lang-switch{display:inline-flex;border:1px solid var(--line);border-radius:100px;padding:2px;background:rgba(0,0,0,.25)}
-.lang-switch button{border:0;background:none;color:var(--muted);font:inherit;font-size:.7rem;font-weight:700;letter-spacing:.06em;
-  padding:5px 9px;min-width:38px;min-height:32px;border-radius:100px;cursor:pointer}
-.lang-switch button.on{background:var(--ink);color:var(--bg)}
-.topbar{flex-wrap:wrap;gap:8px}
-.top-lang{order:3}
 @media(max-width:520px){.topbar .status{font-size:.66rem}}
 
 /* ============ DEMANDE PERSONNALISÉE ============ */
@@ -767,10 +741,6 @@ body.gate-on{overflow:hidden}
 .ti-band-tt .ti-band-ic{background:none}
 .ti-band-tt .ti-band-ic svg{fill:#fff;filter:drop-shadow(1.5px 1px 0 #fe2c55) drop-shadow(-1.5px -1px 0 #25f4ee)}
 .ti-band-tt b{text-shadow:1.5px 1px 0 #fe2c55,-1.5px -1px 0 #25f4ee}
-.ti-band-fb{background:#1877f2}
-.ti-band-fb .ti-band-ic{background:#fff;border-radius:50%}
-.ti-band-fb .ti-band-ic svg{fill:#1877f2;width:18px;height:18px}
-.ti-band-fb b{font-size:19px;letter-spacing:-.02em;text-transform:lowercase}
 @media(max-width:700px){.ti-demo{--pad:12px;padding:16px 12px 14px}.ti-band{margin-top:-16px}}
 /* Cadres OnlyFans et MYM : même hauteur, format compact (grand écran) */
 @media(max-width:899px){.mk-of .lock{aspect-ratio:16/10}}
@@ -862,7 +832,6 @@ body.gate-on{overflow:hidden}
     mym:       '#',      // ex. 'https://mym.fans/ton-pseudo'
     instagram: '#',      // ex. 'https://instagram.com/ton-pseudo'
     tiktok:    '#',      // ex. 'https://tiktok.com/@ton-pseudo'
-    facebook:  '#',
     x:         '#',
     telegram:  '#',      // ex. 'https://t.me/ton-canal'
     tip:       '#',      // lien pourboire (OnlyFans / MYM / autre)
@@ -895,7 +864,6 @@ body.gate-on{overflow:hidden}
   <div class="agegate" id="agegate" role="dialog" aria-modal="true" aria-labelledby="ag-title" hidden>
     <div class="ag-bg" aria-hidden="true"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt=""></picture></div>
     <div class="ag-card">
-      <div class="ag-lang lang-switch" role="group" aria-label="Langue"><button type="button" data-lang="fr">FR</button><button type="button" data-lang="en">EN</button></div>
       <span class="ag-mark">✦ Audace</span>
       <span class="ag-18">18+</span>
       <h2 id="ag-title">Contenu réservé aux adultes</h2>
@@ -922,7 +890,6 @@ body.gate-on{overflow:hidden}
     <header class="topbar">
       <span class="mono">✦ Audace</span>
       <span class="status"><span class="dot"></span> En ligne · <span id="clock">--:--</span> Bruxelles</span>
-      <span class="lang-switch top-lang" role="group" aria-label="Langue"><button type="button" data-lang="fr">FR</button><button type="button" data-lang="en">EN</button></span>
     </header>
 
     <!-- ===== HÉRO ===== -->
@@ -1014,10 +981,10 @@ body.gate-on{overflow:hidden}
     <!-- ✏️ MYM : remplace href="#" par ton lien MYM -->
     <a class="alt-mym reveal" id="alt-mym" href="#" data-link="mym" target="_blank" rel="noopener"><span class="mym-badge">MYM</span> Aussi disponible sur MYM <small>→</small></a>
 
-    <!-- ===== 02 · RETROUVE-MOI : flux Instagram / TikTok / Facebook (Trustindex) + autres réseaux ===== -->
+    <!-- ===== 02 · RETROUVE-MOI : flux Instagram / TikTok (Trustindex) + autres réseaux ===== -->
     <div class="sec-head reveal"><span class="num">02</span><span class="label">Retrouve-moi</span><span class="rule"></span></div>
     <!-- =================================================================
-         ✏️ FLUX INSTAGRAM / TIKTOK / FACEBOOK — widgets Trustindex
+         ✏️ FLUX INSTAGRAM / TIKTOK — widgets Trustindex
          1. Crée un « Social feed widget » par réseau sur admin.trustindex.io
          2. Trustindex te donne un code : <script ... src='https://cdn.trustindex.io/loader-feed.js?XXXX'></script>
          3. Copie uniquement la partie après le « ? » (XXXX) dans TRUSTINDEX, en bas de la page.
@@ -1064,40 +1031,16 @@ body.gate-on{overflow:hidden}
         </div>
       </div>
 
-      <div class="ti-slot" data-ti="facebook">
-        <div class="ti-demo ti-fbw">
-          <div class="ti-band ti-band-fb"><span class="ti-band-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i3"/></svg></span><b>Facebook</b><span class="ti-band-h">@audace</span></div>
-          <div class="ti-head">
-            <span class="ti-av"><picture><source srcset="img-avatar.webp" type="image/webp"><img src="img-avatar.jpg" width="120" height="120" alt="" loading="lazy" decoding="async"></picture></span>
-            <span class="ti-id"><b>Audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0095f6"/><path d="M10.3 15.6l-3.2-3.2 1.3-1.3 1.9 1.9 5.1-5.1 1.3 1.3z" fill="#fff"/></svg></b><small>Créatrice de contenu · Bruxelles</small><span class="ti-st"><span><strong>9,8 k</strong> j’aime</span><span><strong>11,2 k</strong> followers</span></span></span>
-            <a class="ti-follow" href="#" data-link="facebook" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i3"/></svg></i>Suivre</a>
-          </div>
-          <div class="ti-fbs">
-            <a class="ti-fb" href="#" data-link="facebook" target="_blank" rel="noopener">
-              <span class="who"><picture><source srcset="img-avatar.webp" type="image/webp"><img src="img-avatar.jpg" width="120" height="120" alt="" loading="lazy" decoding="async"></picture><span><b>Audace</b><small>il y a 2 jours · 🌍</small></span><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i3"/></svg></span></span>
-              <span class="tx">60 km le long de la côte ce week-end 🚴‍♀️ Qui veut que je partage mon parcours ?</span>
-              <span class="im"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy" decoding="async"></picture></span>
-              <span class="ft"><span>👍❤️ 342</span><span>28 commentaires</span></span>
-            </a>
-            <a class="ti-fb" href="#" data-link="facebook" target="_blank" rel="noopener">
-              <span class="who"><picture><source srcset="img-avatar.webp" type="image/webp"><img src="img-avatar.jpg" width="120" height="120" alt="" loading="lazy" decoding="async"></picture><span><b>Audace</b><small>il y a 5 jours · 🌍</small></span><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i3"/></svg></span></span>
-              <span class="tx">Tournoi de beach-volley entre copines, on a tout donné 🏐☀️</span>
-              <span class="im"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture></span>
-              <span class="ft"><span>👍❤️ 518</span><span>41 commentaires</span></span>
-            </a>
-            <a class="ti-fb" href="#" data-link="facebook" target="_blank" rel="noopener">
-              <span class="who"><picture><source srcset="img-avatar.webp" type="image/webp"><img src="img-avatar.jpg" width="120" height="120" alt="" loading="lazy" decoding="async"></picture><span><b>Audace</b><small>il y a 1 semaine · 🌍</small></span><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i3"/></svg></span></span>
-              <span class="tx">Ma séance jambes complète est dispo, dis-moi en commentaire si tu la testes 💪</span>
-              <span class="im"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture></span>
-              <span class="ft"><span>👍❤️ 276</span><span>19 commentaires</span></span>
-            </a>
-          </div>
-        </div>
-      </div>
+      
     </div>
 
     <div class="rows reveal">
       <!-- ✏️ Réseaux : remplace chaque href="#" -->
+      <a class="row" href="#" data-link="facebook" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i3"/></svg></span>
+        <span class="name">Facebook</span>
+        <span class="meta">Ma page</span><span class="arrow">↗</span>
+      </a>
       <a class="row" href="#" data-link="x" target="_blank" rel="noopener">
         <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zM17.6 20.65h2.04L6.49 3.24H4.3z"/></svg></span>
         <span class="name">Twitter / X</span>
@@ -1459,16 +1402,14 @@ body.gate-on{overflow:hidden}
     (function(){
       if(reduce) return;
       const el=document.getElementById('rotator');
-      const WORDS={fr:['mon énergie','ma complicité','ma sensualité','mon exclusivité','mes coulisses'],en:['my energy','my playful side','my sensuality','my exclusives','my behind-the-scenes']};
-      const words={get length(){return WORDS.fr.length;}}; const wd=i=>WORDS[document.documentElement.lang==='en'?'en':'fr'][i];
+      const words=['mon énergie','ma complicité','ma sensualité','mon exclusivité','mes coulisses'];
       let i=0;
       setInterval(()=>{
         i=(i+1)%words.length;
         el.style.opacity=0;
-        setTimeout(()=>{el.textContent=wd(i);el.style.opacity=1;},250);
+        setTimeout(()=>{el.textContent=words[i];el.style.opacity=1;},250);
       },2200);
       el.style.transition='opacity .25s ease';
-      document.addEventListener('langchange',()=>{el.textContent=wd(i);});
     })();
 
     /* Révélation au scroll */
@@ -1517,7 +1458,7 @@ body.gate-on{overflow:hidden}
       let ctx, gain, buffer, fetching, started=false, enabled=false;
       const setOn=on=>{ btn.classList.toggle('playing',on);
         btn.setAttribute('aria-pressed',on?'true':'false');
-        var en=document.documentElement.lang==='en'; btn.setAttribute('aria-label',on?(en?'Turn music off':'Couper la musique'):(en?'Turn music on':'Activer la musique')); };
+        btn.setAttribute('aria-label',on?'Couper la musique':'Activer la musique'); };
       const load=()=>{ if(buffer) return Promise.resolve();
         if(!fetching) fetching=fetch('audace.mp3').then(r=>r.arrayBuffer()).then(a=>ctx.decodeAudioData(a)).then(b=>{buffer=b;});
         return fetching; };
@@ -1599,11 +1540,10 @@ body.gate-on{overflow:hidden}
       var diff=nextDrop().getTime()-Date.now();
       if(diff<=0){ out.textContent="aujourd'hui ✨"; el.hidden=false; return; }
       var days=Math.floor(diff/864e5), h=Math.floor(diff/36e5)%24, m=Math.floor(diff/6e4)%60;
-      var en=document.documentElement.lang==='en';
-      out.textContent = days>0 ? ((en?'in ':'dans ')+days+(en?' d ':' j ')+h+' h') : ((en?'in ':'dans ')+h+' h '+m+' min');
+      out.textContent = days>0 ? ('dans '+days+' j '+h+' h') : ('dans '+h+' h '+m+' min');
       el.hidden=false;
     }
-    tick(); setInterval(tick,30000); document.addEventListener('langchange',tick);
+    tick(); setInterval(tick,30000);
   })();
   </script>
 
@@ -1652,9 +1592,8 @@ body.gate-on{overflow:hidden}
       last=el; var ig=el.dataset.net==='ig', src=el.dataset.src;
       img.src=(src==='IMG_1380'?src+'.jpeg':src+'.jpg'); img.className=ig?'':'vert';
       cap.textContent=el.dataset.cap;
-      var en=document.documentElement.lang==='en';
-      meta.textContent=ig?('♥ '+el.dataset.likes+'   💬 '+el.dataset.com):('▶ '+el.dataset.likes+(en?' views':' vues'));
-      open.textContent=(en?'View on ':'Voir sur ')+(ig?'Instagram':'TikTok');
+      meta.textContent=ig?('♥ '+el.dataset.likes+'   💬 '+el.dataset.com):('▶ '+el.dataset.likes+' vues');
+      open.textContent='Voir sur '+(ig?'Instagram':'TikTok');
       open.href=LINKS[ig?'instagram':'tiktok']||'#'; open.style.background=ig?'linear-gradient(92deg,#dd2a7b,#8134af)':'#fe2c55';
       box.hidden=false; box.classList.add('open'); document.getElementById('lbxClose').focus();
     }
@@ -1670,7 +1609,6 @@ body.gate-on{overflow:hidden}
   var TRUSTINDEX = {
     instagram: '',   // ex. 'a1b2c3d4e5f6g7h8i9j0'
     tiktok:    '',
-    facebook:  ''
   };
   (function(){
     document.querySelectorAll('.ti-slot').forEach(function(slot){
@@ -1687,10 +1625,9 @@ body.gate-on{overflow:hidden}
   document.querySelectorAll('.pr-code').forEach(function(b){
     b.addEventListener('click',function(){
       var code=b.dataset.code, lbl=b.querySelector('i');
-      var en=document.documentElement.lang==='en';
-      function done(){ b.classList.add('ok'); lbl.textContent=en?'Copied!':'Copié !'; setTimeout(function(){b.classList.remove('ok');lbl.textContent=en?'Copy':'Copier';},1800); }
-      if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(code).then(done,function(){prompt(en?'Your code:':'Ton code :',code);}); }
-      else { prompt(en?'Your code:':'Ton code :',code); }
+      function done(){ b.classList.add('ok'); lbl.textContent='Copié !'; setTimeout(function(){b.classList.remove('ok');lbl.textContent='Copier';},1800); }
+      if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(code).then(done,function(){prompt('Ton code :',code);}); }
+      else { prompt('Ton code :',code); }
       if(window.goatcounter&&window.goatcounter.count){ window.goatcounter.count({path:'code-'+code.toLowerCase(),title:'Copie code '+code,event:true}); }
     });
   });
@@ -1728,295 +1665,23 @@ body.gate-on{overflow:hidden}
     msg.addEventListener('input',function(){ cnt.textContent=msg.value.length; });
     f.addEventListener('submit',function(e){
       e.preventDefault(); err.textContent='';
-      var en=document.documentElement.lang==='en';
-      if(msg.value.trim().length<10){ err.textContent=en?'Describe your request in a few words (10 characters minimum).':'Décris ta demande en quelques mots (10 caractères minimum).'; msg.focus(); return; }
-      if(!document.getElementById('cuOk').checked){ err.textContent=en?'Please confirm you are 18 or older.':'Confirme que tu as 18 ans ou plus.'; return; }
+      if(msg.value.trim().length<10){ err.textContent='Décris ta demande en quelques mots (10 caractères minimum).'; msg.focus(); return; }
+      if(!document.getElementById('cuOk').checked){ err.textContent='Confirme que tu as 18 ans ou plus.'; return; }
       var type=f.querySelector('input[name=type]:checked').value, plat=f.querySelector('input[name=plat]:checked').value,
           delay=document.getElementById('cuDelay').value, nick=document.getElementById('cuNick').value.trim();
-      var txt=(en?'Hi! Custom request':'Coucou ! Demande personnalisée')+' ✨\n'+
-        (en?'Type: ':'Type : ')+type+'\n'+(en?'Timing: ':'Délai : ')+delay+(nick?'\n'+(en?'Username: ':'Pseudo : ')+nick:'')+
+      var txt='Coucou ! Demande personnalisée ✨\n'+
+        'Type : '+type+'\nDélai : '+delay+(nick?'\nPseudo : '+nick:'')+
         '\n\n'+msg.value.trim();
       document.getElementById('cuPreview').textContent=txt;
       document.getElementById('cuPlat').textContent=plat;
       var open=document.getElementById('cuOpen');
       open.href=plat==='MYM'?f.dataset.mym:f.dataset.of; open.className='cu-open'+(plat==='MYM'?'':' of');
-      open.textContent=(en?'Open ':'Ouvrir ')+plat+' →';
+      open.textContent='Ouvrir '+plat+' →';
       document.getElementById('cuDone').hidden=false;
       if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).catch(function(){}); }
       if(window.goatcounter&&window.goatcounter.count){ window.goatcounter.count({path:'demande-perso-'+plat.toLowerCase(),title:'Demande perso '+plat,event:true}); }
       document.getElementById('cuDone').scrollIntoView({behavior:'smooth',block:'nearest'});
     });
-  })();
-  </script>
-  <!-- ===== LANGUE FR / EN =====
-       ✏️ Les traductions anglaises sont dans I18N_EN (texte français exact → texte anglais). -->
-  <script>
-  var I18N_EN = {
-"Contenu réservé aux adultes": "Adults only",
-"Cette page contient des liens vers du contenu réservé aux personnes majeures. Confirme que tu as 18 ans ou plus pour continuer.": "This page contains links to content for adults only. Please confirm you are 18 or older to continue.",
-"J'ai 18 ans ou plus — Entrer": "I am 18 or older — Enter",
-"Non, quitter la page": "No, leave this page",
-"En entrant, tu confirmes avoir l'âge légal de la majorité dans ton pays.": "By entering, you confirm you are of legal age in your country.",
-"En ligne ·": "Online ·",
-"Bruxelles": "Brussels",
-"@audace · Bruxelles 🇧🇪": "@audace · Brussels 🇧🇪",
-"Fitness creator — Belgique": "Fitness creator — Belgium",
-"Créatrice": "",
-"fitness & lifestyle": "Fitness & lifestyle",
-"à Bruxelles. Je te partage mon quotidien,": "creator in Brussels. I share my daily life with you,",
-"… et mon côté plus intime, rien que pour toi 😏": "… and my more intimate side, just for you 😏",
-"Fais défiler": "Scroll down",
-"Communauté": "Community",
-"Note membres": "Member rating",
-"Contenu / semaine": "Content / week",
-"Prochain contenu exclusif": "Next exclusive drop",
-"L'accès privé": "Private access",
-"🔥 Le plus demandé": "🔥 Most popular",
-"· Accès privé": "· Private access",
-"Mon contenu exclusif": "My exclusive content",
-"· déjà 200+ membres": "· 200+ members already",
-"Le meilleur de mon univers, en accès direct et privé — rien que pour toi.": "The best of my world, with direct and private access — just for you.",
-"Photos & vidéos exclusives, jamais publiées ailleurs": "Exclusive photos & videos, never posted anywhere else",
-"Du nouveau contenu chaque semaine": "New content every week",
-"Messages en privé, direct avec moi": "Private messages, directly with me",
-"Offres & avantages réservés aux membres": "Members-only offers & perks",
-"/mois": "/month",
-"Offre de lancement": "Launch offer",
-"✦ Places limitées chaque mois — pour garder un vrai suivi en privé": "✦ Limited spots each month — so I can keep a real one-to-one connection",
-"« Du contenu exclusif vraiment unique, et un contact direct en privé. »": "“Truly unique exclusive content, and direct private contact.”",
-"— Lucas, membre depuis 6 mois": "— Lucas, member for 6 months",
-"Rejoindre sur OnlyFans": "Join on OnlyFans",
-"🔒 Paiement sécurisé · Sans engagement · Annulation en 1 clic": "🔒 Secure payment · No commitment · Cancel in 1 click",
-"Aussi disponible sur MYM": "Also available on MYM",
-"Retrouve-moi": "Find me",
-"Aperçu · widget Trustindex Instagram": "Preview · Trustindex Instagram widget",
-"publications": "posts",
-"abonnés": "followers",
-"Suivre": "Follow",
-"Charger plus": "Load more",
-"Aperçu · widget Trustindex TikTok": "Preview · Trustindex TikTok widget",
-"j’aime": "likes",
-"Ma routine fessiers en 4 exos 🍑": "My 4-move glute routine 🍑",
-"Quand le smash part tout seul 😂": "When the spike just happens 😂",
-"5 km avant le café ☕": "5 km before coffee ☕",
-"Get ready with me · piscine": "Get ready with me · pool day",
-"Vlog vélo sur la côte": "Coastal bike vlog",
-"Aperçu · widget Trustindex Facebook": "Preview · Trustindex Facebook widget",
-"Créatrice de contenu · Bruxelles": "Content creator · Brussels",
-"il y a 2 jours · 🌍": "2 days ago · 🌍",
-"60 km le long de la côte ce week-end 🚴‍♀️ Qui veut que je partage mon parcours ?": "60 km along the coast this weekend 🚴‍♀️ Who wants me to share my route?",
-"28 commentaires": "28 comments",
-"il y a 5 jours · 🌍": "5 days ago · 🌍",
-"Tournoi de beach-volley entre copines, on a tout donné 🏐☀️": "Beach volleyball tournament with the girls, we gave it everything 🏐☀️",
-"41 commentaires": "41 comments",
-"il y a 1 semaine · 🌍": "1 week ago · 🌍",
-"Ma séance jambes complète est dispo, dis-moi en commentaire si tu la testes 💪": "My full leg workout is out, tell me in the comments if you try it 💪",
-"19 commentaires": "19 comments",
-"Actus & teasers": "News & teasers",
-"Communauté privée": "Private community",
-"Aperçu": "Preview",
-"+50 photos & vidéos exclusives": "50+ exclusive photos & videos",
-"Débloquer sur OnlyFans →": "Unlock on OnlyFans →",
-"@audace · Disponible": "@audace · Available",
-"Créatrice fitness & lifestyle 🇧🇪 Coulisses sans filtre, photos exclusives et je réponds à tous tes messages 💌": "Fitness & lifestyle creator 🇧🇪 Unfiltered behind the scenes, exclusive photos and I answer all your messages 💌",
-"Plus d'infos": "More info",
-"Abonnement": "Subscription",
-"S'abonner": "Subscribe",
-"14 € par mois": "€14 per month",
-"312 publications": "312 posts",
-"398 médias": "398 media",
-"Hier": "Yesterday",
-"Nouvelle séance photo au bord de la piscine 🔥 la suite en privé…": "New poolside photo shoot 🔥 the rest in private…",
-"S'abonner pour voir les publications": "Subscribe to see posts",
-"Médias": "Media",
-"Abonnés": "Subscribers",
-"J'aime": "Likes",
-"Fitness girl de Bruxelles 🏐 Contenus privés, médias à la demande et réponses perso en DM 🔥": "Fitness girl from Brussels 🏐 Private content, media on demand and personal replies in DM 🔥",
-"14 € / mois · sans engagement": "€14 / month · no commitment",
-"Médias privés": "Private media",
-"Vidéo": "Video",
-"Aperçus d'exemple — les chiffres et publications sont fictifs.": "Example previews — numbers and posts are fictional.",
-"Demande personnalisée": "Custom request",
-"Un contenu rien que pour toi": "Content made just for you",
-"Photo, vidéo, audio ou petit mot perso : décris ton envie, je te réponds en privé avec le tarif.": "Photo, video, audio or a personal note: tell me what you'd like and I'll reply privately with the price.",
-"Type de contenu": "Content type",
-"🎬 Vidéo": "🎬 Video",
-"💌 Message perso": "💌 Personal message",
-"✨ Autre": "✨ Other",
-"Sur quelle plateforme ?": "Which platform?",
-"Ta demande": "Your request",
-"Délai souhaité": "Preferred timing",
-"Pas pressé(e)": "No rush",
-"Sous 1 semaine": "Within 1 week",
-"Sous 48 h": "Within 48 h",
-"Ton pseudo sur la plateforme": "Your username on the platform",
-"(facultatif)": "(optional)",
-"Je confirme avoir 18 ans ou plus et que ma demande respecte les règles de la plateforme.": "I confirm I am 18 or older and that my request follows the platform's rules.",
-"Préparer ma demande →": "Prepare my request →",
-"✓ Ta demande est prête et copiée": "✓ Your request is ready and copied",
-"Colle-la dans un message privé sur": "Paste it in a private message on",
-": je te réponds avec le tarif.": "and I'll reply with the price.",
-"Ouvrir MYM →": "Open MYM →",
-"🔒 Rien n'est envoyé ni enregistré depuis cette page.": "🔒 Nothing is sent or stored from this page.",
-"Codes promo & partenaires": "Promo codes & partners",
-"Les marques que j'utilise vraiment — avec des réductions rien que pour toi.": "The brands I actually use — with discounts just for you.",
-"Partenariat rémunéré": "Paid partnership",
-"En collaboration avec": "In collaboration with",
-"1 mois d'abonnement offert dans toutes les salles, avec mon code": "1 free month of membership at every gym, with my code",
-"J'en profite →": "Claim it →",
-"Protéines & compléments": "Protein & supplements",
-"Code promo": "Promo code",
-"-15 % sur tout le site": "15% off sitewide",
-"Copier": "Copy",
-"Voir l'offre →": "See offer →",
-"Leggings & brassières": "Leggings & sports bras",
-"Lien affilié": "Affiliate link",
-"-20 % sur ta 1ʳᵉ commande": "20% off your first order",
-"Soins & routine beauté": "Skincare & beauty routine",
-"1 soin offert dès 40 €": "Free treatment on orders over €40",
-"Mon parfum signature": "My signature scent",
-"Livraison offerte + échantillons": "Free shipping + samples",
-"#pub · Certains liens sont affiliés ou sponsorisés : je peux toucher une commission, sans surcoût pour toi.": "#ad · Some links are affiliate or sponsored: I may earn a commission, at no extra cost to you.",
-"Ils ont rejoint": "They joined",
-"« Des photos et vidéos exclusives au top, et elle répond vraiment en privé. »": "“Amazing exclusive photos and videos, and she really replies in private.”",
-"Membre VIP": "VIP member",
-"« Du nouveau contenu privé chaque semaine, je ne suis jamais déçu. »": "“New private content every week, I'm never disappointed.”",
-"Membre depuis 1 an": "Member for 1 year",
-"Questions fréquentes": "FAQ",
-"Qu'est-ce que je reçois en m'abonnant ?": "What do I get when I subscribe?",
-"Un accès privé à mes photos et vidéos exclusives, du nouveau contenu chaque semaine, et la possibilité de m'écrire en direct.": "Private access to my exclusive photos and videos, new content every week, and the chance to message me directly.",
-"La facturation est-elle discrète ?": "Is billing discreet?",
-"Oui — le paiement passe par OnlyFans ou MYM, de façon sécurisée et discrète. Rien d'explicite n'apparaît sur ton relevé.": "Yes — payment goes through OnlyFans or MYM, securely and discreetly. Nothing explicit appears on your statement.",
-"Puis-je annuler quand je veux ?": "Can I cancel anytime?",
-"Sans engagement : tu peux résilier en un clic à tout moment, directement depuis OnlyFans ou MYM.": "No commitment: you can cancel in one click at any time, directly on OnlyFans or MYM.",
-"OnlyFans ou MYM : lequel choisir ?": "OnlyFans or MYM: which one?",
-"Le même univers sur les deux, au même prix. Choisis la plateforme que tu utilises déjà : tu retrouveras mes photos, mes vidéos et nos échanges en privé.": "The same world on both, at the same price. Pick the platform you already use: you'll find my photos, my videos and our private chats.",
-"Est-ce confidentiel ?": "Is it confidential?",
-"Totalement. Ton abonnement reste privé et tes informations ne sont jamais partagées.": "Completely. Your subscription stays private and your information is never shared.",
-"Sur quels appareils ?": "On which devices?",
-"Partout : ordinateur, tablette et mobile, directement depuis ton navigateur.": "Everywhere: computer, tablet and phone, right from your browser.",
-"Prêt à me rejoindre ?": "Ready to join me?",
-"Tout mon contenu exclusif t'attend, sur OnlyFans ou MYM — rien que pour toi.": "All my exclusive content is waiting for you, on OnlyFans or MYM — just for you.",
-"Rejoindre sur OnlyFans →": "Join on OnlyFans →",
-"Rejoindre sur MYM →": "Join on MYM →",
-"🔒 Paiement sécurisé · Sans engagement · 18+": "🔒 Secure payment · No commitment · 18+",
-"· Contenu réservé aux adultes": "· Adults only",
-"Mentions légales": "Legal notice",
-"Confidentialité": "Privacy",
-"Audace — Tous droits réservés": "Audace — All rights reserved",
-"Page d'exemple réalisée par AUDACE — noms, photos, chiffres et avis fictifs.": "Example page made by AUDACE — names, photos, numbers and reviews are fictional.",
-"visites": "visits",
-"Langue": "Language",
-"Photo de profil d'Audace": "Audace profile photo",
-"En ligne": "Online",
-"Quelques chiffres": "Key numbers",
-"Publication": "Post",
-"Fermer": "Close",
-"Au bord de la piscine": "By the pool",
-"Cyclisme sur la côte": "Cycling on the coast",
-"Séance de musculation": "Strength workout",
-"Course au bord de mer": "Seaside run",
-"Débloquer le contenu exclusif sur OnlyFans": "Unlock exclusive content on OnlyFans",
-"Débloquer la publication": "Unlock post",
-"Décris ce que tu aimerais : tenue, ambiance, durée, prénom pour une dédicace…": "Describe what you'd like: outfit, mood, length, a name for a shout-out…",
-"@toi": "@you",
-"Réseaux sociaux": "Social networks",
-"Liens légaux": "Legal links",
-"Haut de page": "Back to top",
-"Activer la musique": "Turn music on",
-"Couper la musique": "Turn music off",
-"Sortie du matin au bord de mer 🌊": "Morning run by the sea 🌊",
-"Pause soleil bien méritée ☀️": "Well-earned sun break ☀️",
-"Leg day, pas de négociation 💪": "Leg day, no excuses 💪",
-"Beach-volley entre copines 🏐": "Beach volleyball with the girls 🏐",
-"60 km sur la côte ce week-end 🚴‍♀️": "60 km on the coast this weekend 🚴‍♀️",
-"Golden hour après l'entraînement ✨": "Golden hour after training ✨",
-"Nouveau record au squat 🏋️‍♀️": "New squat PR 🏋️‍♀️",
-"✦ Mon programme": "✦ My schedule",
-"Le jour en cours est surligné": "Today is highlighted",
-"Lun": "Mon",
-"Mar": "Tue",
-"Mer": "Wed",
-"Jeu": "Thu",
-"Ven": "Fri",
-"Sam": "Sat",
-"Dim": "Sun",
-"Shooting": "Photo shoot",
-"Repos": "Rest day",
-"Live": "Live",
-"Messages": "Messages",
-"Surprise": "Surprise",
-"3 mois": "3 months",
-"6 mois": "6 months",
-"34 €": "€34",
-"59 €": "€59",
-"-20 %": "-20%",
-"-30 %": "-30%",
-"🎁 7 jours offerts": "🎁 7-day free trial",
-"📸 Photo perso": "📸 Custom photo",
-"🎬 Vidéo perso · 1 min": "🎬 Custom video · 1 min",
-"🎧 Audio perso": "🎧 Custom audio",
-"💌 Message / dédicace": "💌 Message / shout-out",
-"dès 15 €": "from €15",
-"dès 35 €": "from €35",
-"dès 12 €": "from €12",
-"dès 8 €": "from €8",
-"Tarifs indicatifs, confirmés en privé selon ta demande.": "Indicative prices, confirmed in private depending on your request.",
-"Offre-moi un café": "Buy me a coffee",
-"Un petit pourboire pour me soutenir": "A small tip to support me",
-"Ma wishlist": "My wishlist",
-"Les petits cadeaux qui me font plaisir": "Little gifts that make me happy",
-"Pour les marques": "For brands",
-"Travaillons ensemble": "Let's work together",
-"Une communauté fitness & lifestyle engagée, surtout en Belgique et en France. Je ne présente que des marques que j'utilise vraiment.": "An engaged fitness & lifestyle community, mainly in Belgium and France. I only feature brands I actually use.",
-"Abonnés Instagram": "Instagram followers",
-"Abonnés TikTok": "TikTok followers",
-"Abonnés Facebook": "Facebook followers",
-"Engagement moyen": "Average engagement",
-"Audience 18–34 ans": "Audience aged 18–34",
-"Pays principaux": "Top countries",
-"Post Instagram": "Instagram post",
-"Code promo dédié": "Dedicated promo code",
-"Ambassadrice": "Brand ambassador",
-"Proposer un partenariat →": "Propose a partnership →",
-"Télécharger le kit média": "Download media kit",
-"Essaie un autre thème": "Try another theme",
-"Programme de la semaine": "Weekly schedule",
-"Thème de couleurs": "Colour theme",
-"Corail": "Coral",
-"Or": "Gold",
-"Nuit": "Night",
-"Émeraude": "Emerald",
-"Beach-volley": "Beach volleyball"
-};
-  (function(){
-    var KEY='audace-lang', ATTRS=['placeholder','aria-label','title','alt','data-cap'], texts=[], attrs=[];
-    var norm=function(t){return t.replace(/\s+/g,' ').trim();};
-    var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:function(n){return n.parentElement.closest('script,style')?2:1;}});
-    var n; while((n=w.nextNode())){ var k=norm(n.nodeValue); if(k && I18N_EN.hasOwnProperty(k)) texts.push({n:n,fr:n.nodeValue,k:k}); }
-    document.querySelectorAll('['+ATTRS.join('],[')+']').forEach(function(el){
-      ATTRS.forEach(function(a){ var v=el.getAttribute(a); if(v){ var k=norm(v);
-        var en=I18N_EN[k]; if(en===undefined){ var m=k.match(/^(Publication Instagram|Vidéo TikTok|Copier le code) : ?(.*)$/)||k.match(/^(Copier le code) (.*)$/);
-          if(m){ var pre={'Publication Instagram':'Instagram post: ','Vidéo TikTok':'TikTok video: ','Copier le code':'Copy code '}[m[1]]; en=pre+(I18N_EN[m[2]]||m[2]); } }
-        if(en!==undefined) attrs.push({el:el,a:a,fr:v,en:en}); } });
-    });
-    var TITLE={fr:document.title,en:'Audace — Fitness · Lifestyle · Exclusive content'};
-    window.setLang=function(l){
-      if(l!=='en') l='fr';
-      document.documentElement.lang=l; document.title=TITLE[l];
-      texts.forEach(function(t){
-        if(l==='fr'){ t.n.nodeValue=t.fr; return; }
-        var lead=t.fr.match(/^\s*/)[0], trail=t.fr.match(/\s*$/)[0], en=I18N_EN[t.k];
-        t.n.nodeValue=en===''?'':lead+en+trail;
-      });
-      attrs.forEach(function(x){ x.el.setAttribute(x.a,l==='en'?x.en:x.fr); });
-      document.querySelectorAll('.lang-switch button').forEach(function(b){ b.classList.toggle('on',b.dataset.lang===l); b.setAttribute('aria-pressed',b.dataset.lang===l); });
-      try{ localStorage.setItem(KEY,l); }catch(e){}
-      document.dispatchEvent(new CustomEvent('langchange',{detail:l}));
-    };
-    document.querySelectorAll('.lang-switch button').forEach(function(b){ b.addEventListener('click',function(){ setLang(b.dataset.lang); }); });
-    var saved=null; try{ saved=localStorage.getItem(KEY); }catch(e){}
-    setLang(saved || ((navigator.language||'fr').toLowerCase().indexOf('fr')===0 ? 'fr' : 'en'));
   })();
   </script>
   <!-- Applique LINKS à tous les liens marqués data-link -->

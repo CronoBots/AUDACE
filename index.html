@@ -520,62 +520,74 @@ footer .copy{letter-spacing:.02em}
 .mk .gi img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;transition:transform .5s ease}
 .mk .gi:hover img{transform:scale(1.05)}
 
-/* ---- Instagram (thème clair) ---- */
-.mk-ig{background:#fff;color:#000}
-.mk-ig .top{display:flex;align-items:center;gap:6px;padding:10px 14px;font-weight:700;font-size:17px}
-.mk-ig .top .sp{flex:1}
-.mk-ig .top .vf{width:15px;height:15px}
-.mk-ig .row1{display:flex;align-items:center;gap:22px;padding:4px 14px 10px}
-.mk-ig .ring{width:84px;height:84px;border-radius:50%;padding:3px;flex-shrink:0;
-  background:conic-gradient(from 200deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75)}
-.mk-ig .ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 18%;border:3px solid #fff}
-.mk-ig .stats{flex:1;display:flex;justify-content:space-around;text-align:center}
-.mk-ig .stats b{display:block;font-size:16px;font-weight:700}
-.mk-ig .stats span{font-size:13px}
-.mk-ig .bio{padding:0 14px}
-.mk-ig .bio b{font-weight:600}
-.mk-ig .bio .cat{color:#737373}
-.mk-ig .bio a{color:#00376b;font-weight:600}
-.mk-ig .btns{display:flex;gap:6px;padding:12px 14px}
-.mk-ig .btns span{flex:1;text-align:center;font-weight:600;font-size:14px;padding:7px 0;border-radius:8px;background:#efefef}
-.mk-ig .btns .f{background:#0095f6;color:#fff}
-.mk-ig .btns .sq{flex:0 0 34px}
-.mk-ig .hl{display:flex;gap:16px;padding:4px 14px 12px;overflow:hidden}
-.mk-ig .hl div{text-align:center;font-size:12px;flex-shrink:0}
-.mk-ig .hl i{display:block;width:62px;height:62px;border-radius:50%;border:1px solid #dbdbdb;padding:3px;margin-bottom:4px}
-.mk-ig .hl i img{width:100%;height:100%;border-radius:50%;object-fit:cover}
-.mk-ig .tabs{display:flex;border-top:1px solid #dbdbdb}
-.mk-ig .tabs span{flex:1;display:flex;justify-content:center;padding:10px 0;color:#8e8e8e}
-.mk-ig .tabs span.on{color:#000;border-bottom:1.5px solid #000}
-.mk-ig .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
-.mk-ig .grid .gi{aspect-ratio:3/4}
-.mk-ig .grid .ic{position:absolute;top:6px;right:6px;width:16px;height:16px;fill:#fff;filter:drop-shadow(0 0 2px rgba(0,0,0,.5))}
-
-/* ---- TikTok (thème clair) ---- */
-.mk-tt{background:#fff;color:#161823}
-.mk-tt .top{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;font-weight:700;font-size:16px}
-.mk-tt .av{width:96px;height:96px;border-radius:50%;overflow:hidden;margin:6px auto 10px}
-.mk-tt .av img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
-.mk-tt .h{text-align:center;font-weight:600;font-size:16px;display:flex;align-items:center;justify-content:center;gap:5px}
-.mk-tt .h svg{width:15px;height:15px}
-.mk-tt .st{display:flex;justify-content:center;margin:14px 0}
-.mk-tt .st div{text-align:center;padding:0 16px;position:relative}
-.mk-tt .st div+div::before{content:"";position:absolute;left:0;top:25%;height:50%;width:1px;background:#e3e3e4}
-.mk-tt .st b{display:block;font-size:17px;font-weight:700}
-.mk-tt .st span{font-size:13px;color:rgba(22,24,35,.6)}
-.mk-tt .btns{display:flex;justify-content:center;gap:6px}
-.mk-tt .btns span{font-weight:600;padding:10px 0;border-radius:4px;background:#f1f1f2;font-size:15px}
-.mk-tt .btns .f{background:#fe2c55;color:#fff;width:150px;text-align:center}
-.mk-tt .btns .m{width:44px;display:flex;justify-content:center}
-.mk-tt .bio{text-align:center;padding:12px 24px 12px;font-size:14px}
-.mk-tt .tabs{display:flex;border-bottom:1px solid #e3e3e4}
-.mk-tt .tabs span{flex:1;display:flex;justify-content:center;padding:10px 0;color:rgba(22,24,35,.4)}
-.mk-tt .tabs span.on{color:#161823;box-shadow:inset 0 -2px 0 #161823}
-.mk-tt .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px}
-.mk-tt .grid .gi{aspect-ratio:3/4}
-.mk-tt .grid .v{position:absolute;left:5px;bottom:4px;display:flex;align-items:center;gap:3px;color:#fff;font-size:12px;font-weight:600;text-shadow:0 0 3px rgba(0,0,0,.6)}
-.mk-tt .grid .v svg{width:12px;height:12px;fill:none;stroke:#fff;stroke-width:2.4}
-.mk-tt .grid .pin{position:absolute;left:5px;top:5px;background:#fe2c55;color:#fff;font-size:11px;font-weight:600;padding:2px 5px;border-radius:3px}
+/* ---- Aperçus façon widgets Trustindex (Instagram, TikTok, Facebook) ---- */
+.ti-feeds{display:grid;gap:18px;margin-bottom:18px}
+.ti-slot{min-width:0}
+.ti-demo{position:relative;background:#fff;color:#1c1e21;border-radius:14px;padding:18px;box-shadow:0 20px 50px rgba(0,0,0,.4);
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.35}
+.ti-tag{position:absolute;top:-10px;left:16px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--bg);background:var(--gold);padding:4px 9px;border-radius:100px}
+.ti-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.ti-av{width:54px;height:54px;border-radius:50%;padding:2px;flex-shrink:0}
+.ti-av img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 18%;border:2px solid #fff}
+.ti-ig .ti-av{background:conic-gradient(from 200deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75)}
+.ti-tt .ti-av{background:linear-gradient(135deg,#25f4ee,#fe2c55)}
+.ti-fbw .ti-av{background:#1877f2}
+.ti-id{flex:1;min-width:0}
+.ti-id b{display:flex;align-items:center;gap:5px;font-size:16px}
+.ti-id b .vf{width:15px;height:15px;flex-shrink:0}
+.ti-id small{display:block;color:#65676b;font-size:13px}
+.ti-st{display:flex;flex-wrap:wrap;gap:2px 12px;font-size:13px;color:#65676b;margin-top:2px}
+.ti-st strong{color:#1c1e21}
+.ti-follow{display:inline-flex;align-items:center;gap:7px;flex-shrink:0;color:#fff;font-weight:700;font-size:14px;padding:9px 15px;border-radius:8px;transition:filter .2s}
+.ti-follow:hover{filter:brightness(1.08)}
+.ti-follow i{display:flex}.ti-follow svg{width:16px;height:16px;fill:#fff}
+.ti-ig .ti-follow{background:linear-gradient(45deg,#f58529,#dd2a7b 55%,#8134af)}
+.ti-tt .ti-follow{background:#fe2c55}
+.ti-fbw .ti-follow{background:#1877f2}
+.ti-net{position:absolute;top:8px;right:8px;z-index:2;width:22px;height:22px;border-radius:6px;display:grid;place-items:center;background:rgba(255,255,255,.92)}
+.ti-net svg{width:13px;height:13px;fill:#000}
+.ti-fbw .ti-net svg{fill:#1877f2}
+.ti-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.ti-post{position:relative;aspect-ratio:1/1;overflow:hidden;border:0;padding:0;cursor:pointer;border-radius:6px;background:#eee}
+.ti-post img,.ti-vid img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;transition:transform .5s ease}
+.ti-post:hover img,.ti-vid:hover img{transform:scale(1.06)}
+.ti-ov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:14px;background:rgba(0,0,0,.45);
+  color:#fff;font-weight:700;font-size:14px;opacity:0;transition:opacity .25s}
+.ti-post:hover .ti-ov,.ti-post:focus-visible .ti-ov{opacity:1}
+.ti-more{display:block;width:max-content;margin:14px auto 0;padding:9px 22px;border-radius:8px;border:1px solid #ccd0d5;font-weight:600;color:#1c1e21}
+.ti-more:hover{background:#f2f3f5}
+.ti-slider{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 32px)/5);gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.ti-slider::-webkit-scrollbar{display:none}
+.ti-vid{position:relative;aspect-ratio:9/16;overflow:hidden;border:0;padding:0;cursor:pointer;border-radius:8px;background:#000;color:#fff;text-align:left;scroll-snap-align:start}
+.ti-vid::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.8))}
+.ti-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;width:40px;height:40px;border-radius:50%;
+  background:rgba(0,0,0,.35);display:grid;place-items:center}
+.ti-play svg{width:15px;height:15px;fill:#fff;margin-left:2px}
+.ti-cap{position:absolute;left:8px;right:8px;bottom:8px;z-index:1;font-size:12px;line-height:1.3}
+.ti-cap b{display:block;font-size:12px;margin-bottom:2px}
+.ti-fbs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.ti-fb{position:relative;display:flex;flex-direction:column;border:1px solid #e4e6eb;border-radius:10px;overflow:hidden;background:#fff;transition:box-shadow .2s}
+.ti-fb:hover{box-shadow:0 6px 20px rgba(0,0,0,.12)}
+.ti-fb .who{display:flex;align-items:center;gap:8px;padding:10px 12px}
+.ti-fb .who img{width:36px;height:36px;border-radius:50%;object-fit:cover;object-position:50% 18%}
+.ti-fb .who b{display:block;font-size:14px}.ti-fb .who small{color:#65676b;font-size:12px}
+.ti-fb .who .ti-net{position:static;margin-left:auto;background:none}
+.ti-fb .who .ti-net svg{width:18px;height:18px}
+.ti-fb .tx{padding:0 12px 10px;font-size:14px;flex:1}
+.ti-fb .im{display:block;aspect-ratio:4/3;overflow:hidden}
+.ti-fb .im img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.ti-fb .ft{display:flex;justify-content:space-between;padding:9px 12px;font-size:13px;color:#65676b;border-top:1px solid #e4e6eb}
+@media(max-width:700px){
+  .ti-demo{padding:16px 12px 14px}
+  .ti-head{flex-wrap:wrap}
+  .ti-follow{order:3;width:100%;justify-content:center}
+  .ti-grid{grid-template-columns:repeat(3,1fr);gap:4px}
+  .ti-grid .ti-post:nth-child(n+7){display:none}
+  .ti-slider{grid-auto-columns:42%}
+  .ti-fbs{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:82%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+  .ti-fb{scroll-snap-align:start}
+}
 
 /* ---- OnlyFans ---- */
 .mk-of{background:#fff;color:#000}
@@ -789,51 +801,88 @@ footer .copy{letter-spacing:.02em}
          ✏️ Exemple de flux : photos, légendes et chiffres sont à remplacer.
          Pour un vrai flux automatique, remplace ces blocs par le code d'intégration de ton widget (Trustindex, Elfsight, Behold…). -->
     <div class="sec-head reveal"><span class="num">03</span><span class="label">Sur mes réseaux</span><span class="rule"></span></div>
+    <!-- =================================================================
+         ✏️ FLUX INSTAGRAM / TIKTOK / FACEBOOK — widgets Trustindex
+         1. Crée un « Social feed widget » par réseau sur admin.trustindex.io
+         2. Trustindex te donne un code : <script ... src='https://cdn.trustindex.io/loader-feed.js?XXXX'></script>
+         3. Copie uniquement la partie après le « ? » (XXXX) dans TRUSTINDEX, en bas de la page.
+         Tant qu'un identifiant est vide, l'aperçu ci-dessous est affiché à la place.
+         ================================================================= -->
+    <div class="ti-feeds reveal">
+      <div class="ti-slot" data-ti="instagram">
+        <div class="ti-demo ti-ig">
+          <span class="ti-tag">Aperçu · widget Trustindex Instagram</span>
+          <div class="ti-head">
+            <span class="ti-av"><img src="img-pool.jpg" alt=""></span>
+            <span class="ti-id"><b>audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0095f6"/><path d="M10.3 15.6l-3.2-3.2 1.3-1.3 1.9 1.9 5.1-5.1 1.3 1.3z" fill="#fff"/></svg></b><small>@audace</small><span class="ti-st"><span><strong>214</strong> publications</span><span><strong>12,4 k</strong> abonnés</span></span></span>
+            <a class="ti-follow" href="#" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></i>Suivre</a>
+          </div>
+          <div class="ti-grid">
+            <button class="ti-post ig-post" type="button" data-src="img-run" data-net="ig" data-cap="Sortie du matin au bord de mer 🌊" data-likes="2 481" data-com="96" aria-label="Publication Instagram : Sortie du matin au bord de mer 🌊"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></span><span class="ti-ov"><span>♥ 2 481</span><span>💬 96</span></span></button>
+            <button class="ti-post ig-post" type="button" data-src="img-pool" data-net="ig" data-cap="Pause soleil bien méritée ☀️" data-likes="3 912" data-com="184" aria-label="Publication Instagram : Pause soleil bien méritée ☀️"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></span><span class="ti-ov"><span>♥ 3 912</span><span>💬 184</span></span></button>
+            <button class="ti-post ig-post" type="button" data-src="img-gym" data-net="ig" data-cap="Leg day, pas de négociation 💪" data-likes="1 876" data-com="73" aria-label="Publication Instagram : Leg day, pas de négociation 💪"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></span><span class="ti-ov"><span>♥ 1 876</span><span>💬 73</span></span></button>
+            <button class="ti-post ig-post" type="button" data-src="img-volley" data-net="ig" data-cap="Beach-volley entre copines 🏐" data-likes="2 204" data-com="88" aria-label="Publication Instagram : Beach-volley entre copines 🏐"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></span><span class="ti-ov"><span>♥ 2 204</span><span>💬 88</span></span></button>
+            <button class="ti-post ig-post" type="button" data-src="img-cycle" data-net="ig" data-cap="60 km sur la côte ce week-end 🚴‍♀️" data-likes="1 540" data-com="61" aria-label="Publication Instagram : 60 km sur la côte ce week-end 🚴‍♀️"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></span><span class="ti-ov"><span>♥ 1 540</span><span>💬 61</span></span></button>
+            <button class="ti-post ig-post" type="button" data-src="img-run" data-net="ig" data-cap="Golden hour après l'entraînement ✨" data-likes="2 012" data-com="77" aria-label="Publication Instagram : Golden hour après l'entraînement ✨"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></span><span class="ti-ov"><span>♥ 2 012</span><span>💬 77</span></span></button>
+            <button class="ti-post ig-post" type="button" data-src="img-pool" data-net="ig" data-cap="Summer mood 🌴" data-likes="3 108" data-com="142" aria-label="Publication Instagram : Summer mood 🌴"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></span><span class="ti-ov"><span>♥ 3 108</span><span>💬 142</span></span></button>
+            <button class="ti-post ig-post" type="button" data-src="img-gym" data-net="ig" data-cap="Nouveau record au squat 🏋️‍♀️" data-likes="1 694" data-com="58" aria-label="Publication Instagram : Nouveau record au squat 🏋️‍♀️"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></span><span class="ti-ov"><span>♥ 1 694</span><span>💬 58</span></span></button>
+          </div>
+          <a class="ti-more" href="#" target="_blank" rel="noopener">Charger plus</a>
+        </div>
+      </div>
+
+      <div class="ti-slot" data-ti="tiktok">
+        <div class="ti-demo ti-tt">
+          <span class="ti-tag">Aperçu · widget Trustindex TikTok</span>
+          <div class="ti-head">
+            <span class="ti-av"><img src="img-pool.jpg" alt=""></span>
+            <span class="ti-id"><b>Audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0095f6"/><path d="M10.3 15.6l-3.2-3.2 1.3-1.3 1.9 1.9 5.1-5.1 1.3 1.3z" fill="#fff"/></svg></b><small>@audace</small><span class="ti-st"><span><strong>38,7 k</strong> abonnés</span><span><strong>1,2 M</strong> j’aime</span></span></span>
+            <a class="ti-follow" href="#" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></i>Suivre</a>
+          </div>
+          <div class="ti-slider">
+            <button class="ti-vid tt-vid" type="button" data-src="img-gym" data-net="tt" data-cap="Ma routine fessiers en 4 exos 🍑" data-likes="128,4 k" aria-label="Vidéo TikTok : Ma routine fessiers en 4 exos 🍑"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></span><span class="ti-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span><span class="ti-cap"><b>▶ 128,4 k</b>Ma routine fessiers en 4 exos 🍑</span></button>
+            <button class="ti-vid tt-vid" type="button" data-src="img-volley" data-net="tt" data-cap="Quand le smash part tout seul 😂" data-likes="214,9 k" aria-label="Vidéo TikTok : Quand le smash part tout seul 😂"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></span><span class="ti-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span><span class="ti-cap"><b>▶ 214,9 k</b>Quand le smash part tout seul 😂</span></button>
+            <button class="ti-vid tt-vid" type="button" data-src="img-run" data-net="tt" data-cap="5 km avant le café ☕" data-likes="86,1 k" aria-label="Vidéo TikTok : 5 km avant le café ☕"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></span><span class="ti-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span><span class="ti-cap"><b>▶ 86,1 k</b>5 km avant le café ☕</span></button>
+            <button class="ti-vid tt-vid" type="button" data-src="img-pool" data-net="tt" data-cap="Get ready with me · piscine" data-likes="97,3 k" aria-label="Vidéo TikTok : Get ready with me · piscine"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></span><span class="ti-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span><span class="ti-cap"><b>▶ 97,3 k</b>Get ready with me · piscine</span></button>
+            <button class="ti-vid tt-vid" type="button" data-src="img-cycle" data-net="tt" data-cap="Vlog vélo sur la côte" data-likes="41,6 k" aria-label="Vidéo TikTok : Vlog vélo sur la côte"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></span><span class="ti-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span><span class="ti-cap"><b>▶ 41,6 k</b>Vlog vélo sur la côte</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="ti-slot" data-ti="facebook">
+        <div class="ti-demo ti-fbw">
+          <span class="ti-tag">Aperçu · widget Trustindex Facebook</span>
+          <div class="ti-head">
+            <span class="ti-av"><img src="img-pool.jpg" alt=""></span>
+            <span class="ti-id"><b>Audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0095f6"/><path d="M10.3 15.6l-3.2-3.2 1.3-1.3 1.9 1.9 5.1-5.1 1.3 1.3z" fill="#fff"/></svg></b><small>Créatrice de contenu · Bruxelles</small><span class="ti-st"><span><strong>9,8 k</strong> j’aime</span><span><strong>11,2 k</strong> followers</span></span></span>
+            <a class="ti-follow" href="#" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07z"/></svg></i>Suivre</a>
+          </div>
+          <div class="ti-fbs">
+            <a class="ti-fb" href="#" target="_blank" rel="noopener">
+              <span class="who"><img src="img-pool.jpg" alt=""><span><b>Audace</b><small>il y a 2 jours · 🌍</small></span><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07z"/></svg></span></span>
+              <span class="tx">60 km le long de la côte ce week-end 🚴‍♀️ Qui veut que je partage mon parcours ?</span>
+              <span class="im"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy" decoding="async"></picture></span>
+              <span class="ft"><span>👍❤️ 342</span><span>28 commentaires</span></span>
+            </a>
+            <a class="ti-fb" href="#" target="_blank" rel="noopener">
+              <span class="who"><img src="img-pool.jpg" alt=""><span><b>Audace</b><small>il y a 5 jours · 🌍</small></span><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07z"/></svg></span></span>
+              <span class="tx">Tournoi de beach-volley entre copines, on a tout donné 🏐☀️</span>
+              <span class="im"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture></span>
+              <span class="ft"><span>👍❤️ 518</span><span>41 commentaires</span></span>
+            </a>
+            <a class="ti-fb" href="#" target="_blank" rel="noopener">
+              <span class="who"><img src="img-pool.jpg" alt=""><span><b>Audace</b><small>il y a 1 semaine · 🌍</small></span><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07z"/></svg></span></span>
+              <span class="tx">Ma séance jambes complète est dispo, dis-moi en commentaire si tu la testes 💪</span>
+              <span class="im"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture></span>
+              <span class="ft"><span>👍❤️ 276</span><span>19 commentaires</span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ✏️ Profils OnlyFans & MYM (pas de widget Trustindex pour ces plateformes) : chiffres à remplacer, liens href="#" → ton profil -->
     <div class="feeds reveal">
-      <!-- ✏️ Aperçus : reproductions des profils (chiffres, légendes et photos à remplacer). Chaque lien href="#" → ton vrai profil. -->
-
-      <!-- INSTAGRAM -->
-      <div class="mk mk-ig">
-        <div class="mk-url"><span class="lbl">Instagram</span><span class="pill"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 0-5 5v3H6v12h12V10h-1V7a5 5 0 0 0-5-5zm-3 8V7a3 3 0 0 1 6 0v3z"/></svg>instagram.com/audace</span></div>
-        <div class="top"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg><span>audace</span><svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><path fill="#0095f6" d="M12 1.6l2.5 1.9 3.1.2.9 3 2.5 1.9-.9 3 .9 3-2.5 1.9-.9 3-3.1.2L12 22.4l-2.5-1.9-3.1-.2-.9-3-2.5-1.9.9-3-.9-3 2.5-1.9.9-3 3.1-.2z"/><path fill="#fff" d="M10.5 14.7l-2.1-2.1-1.3 1.3 3.4 3.4 5.9-5.9-1.3-1.3z"/></svg><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 10l4 4 4-4"/></svg><span class="sp"></span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 8v8M8 12h8"/></svg><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></div>
-        <div class="row1">
-          <span class="ring"><img src="img-pool.jpg" alt=""></span>
-          <div class="stats"><div><b>214</b><span>publications</span></div><div><b>12,4 k</b><span>followers</span></div><div><b>386</b><span>suivi(e)s</span></div></div>
-        </div>
-        <div class="bio"><b>Audace</b><br><span class="cat">Créateur de contenu digital</span><br>Fitness · Lifestyle · Bruxelles 🇧🇪<br>Mon côté privé 👇<br><a href="#">cronobots.github.io/AUDACE</a></div>
-        <div class="btns"><a href="#" target="_blank" rel="noopener" style="display:contents"><span class="f">Suivre</span></a><span>Message</span><span class="sq">▾</span></div>
-        <div class="hl"><div><i><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture></i>Training</div><div><i><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture></i>Run</div><div><i><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture></i>Beach</div><div><i><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy" decoding="async"></picture></i>Vélo</div><div><i><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture></i>Summer</div></div>
-        <div class="tabs"><span class="on"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16"/><path d="M9.3 4v16M14.7 4v16M4 9.3h16M4 14.7h16"/></svg></span><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M4 9h16M9 4l2 5M14 4l2 5"/><path d="M10.5 12.5v4l3.5-2z"/></svg></span><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="12" cy="10" r="2.5"/><path d="M7.5 18a5 5 0 0 1 9 0"/></svg></span></div>
-        <div class="grid">
-          <button class="gi ig-post" type="button" data-src="img-run" data-net="ig" data-cap="Sortie du matin au bord de mer 🌊 Qui me rejoint demain ?" data-likes="2 481" data-com="96" aria-label="Publication : Sortie du matin au bord de mer 🌊 Qui me rejoint demain ?"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture></button>
-          <button class="gi ig-post" type="button" data-src="img-pool" data-net="ig" data-cap="Pause soleil bien méritée ☀️" data-likes="3 912" data-com="184" aria-label="Publication : Pause soleil bien méritée ☀️"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture><svg class="ic" viewBox="0 0 24 24"><path d="M7 3h11a3 3 0 0 1 3 3v11h-2V6a1 1 0 0 0-1-1H7z"/><rect x="3" y="7" width="14" height="14" rx="2.5"/></svg></button>
-          <button class="gi ig-post" type="button" data-src="img-gym" data-net="ig" data-cap="Leg day, pas de négociation 💪" data-likes="1 876" data-com="73" aria-label="Publication : Leg day, pas de négociation 💪"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture><svg class="ic" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z"/></svg></button>
-          <button class="gi ig-post" type="button" data-src="img-volley" data-net="ig" data-cap="Beach-volley entre copines 🏐" data-likes="2 204" data-com="88" aria-label="Publication : Beach-volley entre copines 🏐"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture><svg class="ic" viewBox="0 0 24 24"><path d="M7 3h11a3 3 0 0 1 3 3v11h-2V6a1 1 0 0 0-1-1H7z"/><rect x="3" y="7" width="14" height="14" rx="2.5"/></svg></button>
-          <button class="gi ig-post" type="button" data-src="img-cycle" data-net="ig" data-cap="60 km sur la côte ce week-end 🚴‍♀️" data-likes="1 540" data-com="61" aria-label="Publication : 60 km sur la côte ce week-end 🚴‍♀️"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy" decoding="async"></picture></button>
-          <button class="gi ig-post" type="button" data-src="img-run" data-net="ig" data-cap="Golden hour après l'entraînement ✨" data-likes="4 318" data-com="227" aria-label="Publication : Petit aperçu de ce qui t'attend 😏"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture><svg class="ic" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z"/></svg></button>
-        </div>
-      </div>
-
-      <!-- TIKTOK -->
-      <div class="mk mk-tt">
-        <div class="mk-url"><span class="lbl">TikTok</span><span class="pill"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 0-5 5v3H6v12h12V10h-1V7a5 5 0 0 0-5-5zm-3 8V7a3 3 0 0 1 6 0v3z"/></svg>tiktok.com/@audace</span></div>
-        <div class="top"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg><span>Audace</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v7h16v-7M12 3v12M7 8l5-5 5 5"/></svg></div>
-        <div class="av"><img src="img-pool.jpg" alt=""></div>
-        <div class="h">@audace <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><path fill="#20d5ec" d="M12 1.6l2.5 1.9 3.1.2.9 3 2.5 1.9-.9 3 .9 3-2.5 1.9-.9 3-3.1.2L12 22.4l-2.5-1.9-3.1-.2-.9-3-2.5-1.9.9-3-.9-3 2.5-1.9.9-3 3.1-.2z"/><path fill="#fff" d="M10.5 14.7l-2.1-2.1-1.3 1.3 3.4 3.4 5.9-5.9-1.3-1.3z"/></svg></div>
-        <div class="st"><div><b>386</b><span>Abonnements</span></div><div><b>38,7 k</b><span>Followers</span></div><div><b>1,2 M</b><span>J'aime</span></div></div>
-        <div class="btns"><a href="#" target="_blank" rel="noopener" style="display:contents"><span class="f">Suivre</span></a><span class="m"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3L10 14M21 3l-7 18-4-7-7-4z"/></svg></span><span class="m"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 10l4 4 4-4"/></svg></span></div>
-        <div class="bio">Fitness &amp; lifestyle 🏋️‍♀️ Bruxelles<br>🔗 Tout mon contenu privé ⬇️</div>
-        <div class="tabs"><span class="on"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16"/><path d="M9.3 4v16M14.7 4v16M4 9.3h16M4 14.7h16"/></svg></span><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-9-8.5C1.6 8.4 3.6 5 7 5c2 0 3.3 1.2 5 3 1.7-1.8 3-3 5-3 3.4 0 5.4 3.4 4 6.5-2 4.1-9 8.5-9 8.5z"/></svg></span></div>
-        <div class="grid">
-          <button class="gi tt-vid" type="button" data-src="img-gym" data-net="tt" data-cap="Ma routine fessiers en 4 exos 🍑" data-likes="128,4 k" aria-label="Vidéo : Ma routine fessiers en 4 exos 🍑"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture><span class="pin">Épinglé</span><span class="v"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z"/></svg>128,4 k</span></button>
-          <button class="gi tt-vid" type="button" data-src="img-volley" data-net="tt" data-cap="Quand le smash part tout seul 😂" data-likes="214,9 k" aria-label="Vidéo : Quand le smash part tout seul 😂"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture><span class="pin">Épinglé</span><span class="v"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z"/></svg>214,9 k</span></button>
-          <button class="gi tt-vid" type="button" data-src="img-run" data-net="tt" data-cap="5 km avant le café ☕" data-likes="86,1 k" aria-label="Vidéo : 5 km avant le café ☕"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture><span class="v"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z"/></svg>86,1 k</span></button>
-          <button class="gi tt-vid" type="button" data-src="img-pool" data-net="tt" data-cap="Get ready with me · piscine" data-likes="97,3 k" aria-label="Vidéo : Get ready with me · piscine"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture><span class="v"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z"/></svg>97,3 k</span></button>
-          <button class="gi tt-vid" type="button" data-src="img-cycle" data-net="tt" data-cap="Vlog vélo sur la côte" data-likes="41,6 k" aria-label="Vidéo : Vlog vélo sur la côte"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy" decoding="async"></picture><span class="v"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z"/></svg>41,6 k</span></button>
-          <button class="gi tt-vid" type="button" data-src="img-volley" data-net="tt" data-cap="Tu veux la suite ? 😏" data-likes="302,5 k" aria-label="Vidéo : Tu veux la suite ? 😏"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture><span class="v"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z"/></svg>302,5 k</span></button>
-        </div>
-      </div>
-
       <!-- ONLYFANS -->
       <div class="mk mk-of">
         <div class="mk-url"><span class="lbl">OnlyFans</span><span class="pill"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 0-5 5v3H6v12h12V10h-1V7a5 5 0 0 0-5-5zm-3 8V7a3 3 0 0 1 6 0v3z"/></svg>onlyfans.com/audace</span></div>
@@ -1241,6 +1290,23 @@ footer .copy{letter-spacing:.02em}
     document.getElementById('lbxClose').addEventListener('click',hide);
     box.addEventListener('click',function(e){ if(e.target===box) hide(); });
     addEventListener('keydown',function(e){ if(e.key==='Escape'&&box.classList.contains('open')) hide(); });
+  })();
+  </script>
+  <!-- ===== ✏️ TRUSTINDEX — colle ici l'identifiant de chaque widget (la partie après « ? » dans le code fourni) ===== -->
+  <script>
+  var TRUSTINDEX = {
+    instagram: '',   // ex. 'a1b2c3d4e5f6g7h8i9j0'
+    tiktok:    '',
+    facebook:  ''
+  };
+  (function(){
+    document.querySelectorAll('.ti-slot').forEach(function(slot){
+      var id=(TRUSTINDEX[slot.dataset.ti]||'').trim(); if(!id) return;   // pas d'identifiant : on garde l'aperçu
+      var demo=slot.querySelector('.ti-demo'); if(demo) demo.remove();
+      var sc=document.createElement('script'); sc.defer=true; sc.async=true;
+      sc.src='https://cdn.trustindex.io/loader-feed.js?'+encodeURIComponent(id);
+      slot.appendChild(sc);
+    });
   })();
   </script>
 </body>

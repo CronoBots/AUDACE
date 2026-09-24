@@ -163,8 +163,8 @@ a{color:inherit;text-decoration:none}
     rgba(10,9,8,.10) 0,
     rgba(10,9,8,.10) calc(100% - 440px),
     rgba(10,9,8,.55) calc(100% - 320px),
-    rgba(10,9,8,.88) calc(100% - 180px),
-    rgba(10,9,8,.99) calc(100% - 20px),
+    rgba(10,9,8,.88) calc(100% - 200px),
+    rgba(10,9,8,.97) calc(100% - 100px),
     var(--bg) 100%);}
 /* Vignette douce sur les bords pour concentrer le regard */
 .hero-vignette{position:absolute;inset:0;pointer-events:none;
@@ -349,11 +349,11 @@ footer .copy{letter-spacing:.02em}
 .sound{position:fixed;left:18px;bottom:18px;width:46px;height:46px;border-radius:50%;
   background:var(--bg-soft);border:1px solid var(--line);color:var(--ink);cursor:pointer;
   display:grid;place-items:center;z-index:20;box-shadow:0 8px 24px rgba(0,0,0,.5);
-  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
-.sound:hover{transform:translateY(-3px);border-color:var(--coral)}
+  opacity:.5;transition:opacity .25s ease,transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.sound:hover,.sound:focus-visible{opacity:1;transform:translateY(-3px);border-color:var(--coral)}
 .sound .bars{display:flex;gap:2.5px;align-items:center;height:16px}
 .sound .bars i{width:3px;height:5px;background:var(--muted);border-radius:2px;transition:background .2s}
-.sound.playing{border-color:var(--coral);box-shadow:0 8px 24px rgba(var(--coral-rgb),.3)}
+.sound.playing{opacity:1;border-color:var(--coral);box-shadow:0 8px 24px rgba(var(--coral-rgb),.3)}
 .sound.playing .bars i{background:var(--coral);animation:eq .9s ease-in-out infinite}
 .sound.playing .bars i:nth-child(2){animation-delay:.18s}
 .sound.playing .bars i:nth-child(3){animation-delay:.36s}

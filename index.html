@@ -490,20 +490,13 @@ footer .copy{letter-spacing:.02em}
 /* Galerie : apparition en cascade au scroll */
 @keyframes cellIn{from{opacity:0;transform:translateY(34px) scale(.94)}to{opacity:1;transform:none}}
 @keyframes cellImgIn{from{transform:scale(1.18);filter:saturate(.6) brightness(.8)}to{transform:scale(1);filter:saturate(1) brightness(1)}}
-.gallery .cell{opacity:0}
-.gallery .cell>picture img{transition:transform .6s cubic-bezier(.2,.7,.2,1),filter .6s ease}
-.gallery.in .cell{opacity:1;animation:cellIn .85s cubic-bezier(.16,1,.3,1) backwards}
-.gallery.in .cell>picture img{animation:cellImgIn 1.05s cubic-bezier(.16,1,.3,1) backwards}
-.gallery.in .cell:nth-child(2){animation-delay:.1s}
-.gallery.in .cell:nth-child(2)>picture img{animation-delay:.1s}
-.gallery.in .cell:nth-child(3){animation-delay:.2s}
-.gallery.in .cell:nth-child(3)>picture img{animation-delay:.2s}
-.gallery.in .cell:nth-child(4){animation-delay:.3s}
-.gallery.in .cell:nth-child(4)>picture img{animation-delay:.3s}
-.gallery.in .cell:nth-child(5){animation-delay:.4s}
-.gallery.in .cell:nth-child(5)>picture img{animation-delay:.4s}
-.gallery.in .cell:nth-child(6){animation-delay:.5s}
-.gallery.in .cell:nth-child(6)>picture img{animation-delay:.5s}
+.cell.reveal{opacity:0;transform:none}
+.cell.reveal>picture img{transition:transform .6s cubic-bezier(.2,.7,.2,1),filter .6s ease}
+.cell.reveal.in{opacity:1;animation:cellIn .85s cubic-bezier(.16,1,.3,1) backwards}
+.cell.reveal.in>picture img{animation:cellImgIn 1.05s cubic-bezier(.16,1,.3,1) backwards}
+/* léger décalage entre les deux photos d'une même rangée, qui entrent en vue ensemble */
+.cell.reveal.land:nth-child(odd){animation-delay:.12s}
+.cell.reveal.land:nth-child(odd)>picture img{animation-delay:.12s}
 
 /* Police signature — Cormorant (serif fin, romantique & sensuel) pour le nom & la marque */
 .featured h3{font-family:'Cormorant','Georgia',serif}
@@ -953,14 +946,14 @@ body.gate-on{overflow:hidden}
     <!-- ===== 01 · APERÇU : galerie + teaser verrouillé ===== -->
     <div class="sec-head reveal"><span class="num">01</span><span class="label">Aperçu</span><span class="rule"></span></div>
     <!-- ✏️ Galerie : tes photos. Pour en changer, remplace le src de chaque <img>. -->
-    <div class="gallery reveal">
-      <div class="cell full"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="Course au bord de mer" loading="lazy" decoding="async"></picture></div>
-      <div class="cell land"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="Beach-volley" loading="lazy" decoding="async"></picture></div>
-      <div class="cell land"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="Cyclisme sur la côte" loading="lazy" decoding="async"></picture></div>
-      <div class="cell land"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="Séance de musculation" loading="lazy" decoding="async"></picture></div>
-      <div class="cell land"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="Au bord de la piscine" loading="lazy" decoding="async"></picture></div>
+    <div class="gallery">
+      <div class="cell reveal full"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="Course au bord de mer" loading="lazy" decoding="async"></picture></div>
+      <div class="cell reveal land"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="Beach-volley" loading="lazy" decoding="async"></picture></div>
+      <div class="cell reveal land"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="Cyclisme sur la côte" loading="lazy" decoding="async"></picture></div>
+      <div class="cell reveal land"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="Séance de musculation" loading="lazy" decoding="async"></picture></div>
+      <div class="cell reveal land"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="Au bord de la piscine" loading="lazy" decoding="async"></picture></div>
       <!-- ✏️ Teaser verrouillé : remplace les liens data-link par tes vrais profils (réglés dans LINKS, en haut du fichier) -->
-      <div class="cell full lock">
+      <div class="cell reveal full lock">
         <!-- ✏️ Image de teaser (floutée). Remplace par tes photos officielles plus tard. -->
         <picture><source srcset="IMG_1380.webp" type="image/webp"><img src="IMG_1380.jpeg" alt="" loading="lazy" decoding="async"></picture>
         <span class="lk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2h-1V6a5 5 0 0 0-5-5zm-3 8V6a3 3 0 0 1 6 0v3H9z"/></svg><b>+50 photos &amp; vidéos exclusives</b></span>

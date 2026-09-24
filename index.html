@@ -146,12 +146,12 @@ a{color:inherit;text-decoration:none}
    scroll, un très léger espace (de la même couleur de fond) peut
    apparaître sous le héros — invisible en pratique, et largement
    préférable à un contenu qui bouge ou une photo qui zoome. */
-.hero{position:relative;overflow:hidden;width:100%;
+.hero{position:relative;overflow:hidden;width:100%;background:var(--bg);
   min-height:100vh;min-height:var(--hero-h,100vh);
   display:flex;flex-direction:column;justify-content:flex-end;
   padding:54px 26px 21px;isolation:isolate}
 .hero-media{position:absolute;top:0;left:0;right:0;
-  height:var(--hero-h,100vh);z-index:-1;background:var(--bg-soft)}
+  height:var(--hero-h,100vh);z-index:-1;background:var(--bg)}
 .hero-media img,.hero-media video{position:absolute;inset:0;width:100%;height:100%;
   object-fit:cover;object-position:62% 30%;opacity:.8;
   filter:saturate(1.12) contrast(1.05) brightness(1.02)}
@@ -186,19 +186,20 @@ a{color:inherit;text-decoration:none}
 .hero.wow-in .hero-flash{animation:heroFlash 1.1s ease-out .05s forwards}
 @keyframes heroFlash{0%{opacity:0}18%{opacity:1}100%{opacity:0}}
 /* Cascade d'entrée du texte, synchronisée avec la fin de l'intro */
-.role-line,.scrollcue{opacity:0;transform:translateY(16px);
+.role-line,.hero-bio,.scrollcue{opacity:0;transform:translateY(16px);
   transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
 .bigname{opacity:0;transform:translateY(22px) scale(.94);
   transition:opacity .8s ease,transform .8s cubic-bezier(.22,1.5,.36,1)}
 .hero.wow-in .bigname{opacity:1;transform:none;transition-delay:.05s}
 .hero.wow-in .role-line{opacity:1;transform:none;transition-delay:.25s}
+.hero.wow-in .hero-bio{opacity:1;transform:none;transition-delay:.4s}
 .hero.wow-in .scrollcue{opacity:1;transform:none;transition-delay:.75s}
 .bigname{position:relative;font-weight:800;line-height:.9;letter-spacing:-.045em;
   font-size:clamp(2.2rem,13vw,5.4rem);text-transform:uppercase;max-width:100%;white-space:nowrap}
 .bigname .fill{color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.35)}
 .bigname .vf{width:.3em;height:.3em;vertical-align:middle;margin-left:.05em;flex-shrink:0}
 .role-line{margin-top:2px;color:rgba(245,239,231,.85);font-size:1.02rem;font-weight:500}
-.bio-line{margin:0;max-width:60ch;color:var(--muted);font-size:1.02rem;line-height:1.6}
+.hero-bio{margin-top:10px;max-width:46ch;color:rgba(245,239,231,.55);font-size:.82rem;line-height:1.5}
 .rotator{color:var(--ink);font-weight:600}
 .lede-br{display:none}
 @media(max-width:520px){.lede-br{display:block;content:""}}
@@ -380,7 +381,7 @@ footer .copy{letter-spacing:.02em}
      du haut ne colle plus contre les cheveux. */
   .hero-media img,.hero-media video{object-position:68% 0%}
   .bigname{font-size:clamp(2rem,13vw,3.6rem)}
-  .bio-line{font-size:.96rem}
+  .hero-bio{font-size:.78rem}
   .featured{padding:24px}
   .sec-head{margin:34px 0 16px}
   .row .name{font-size:1.15rem}
@@ -399,14 +400,6 @@ footer .copy{letter-spacing:.02em}
 }
 
 /* ============ ✦ PREMIUM ============ */
-/* Bandeau de preuve sociale */
-.proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:16px}
-.proof .stat{background:linear-gradient(180deg,var(--bg-soft),rgba(18,16,16,.5));
-  border:1px solid var(--line);border-radius:16px;padding:18px 10px;text-align:center}
-.proof .stat .n{font-size:clamp(1.4rem,6vw,1.7rem);font-weight:800;letter-spacing:-.02em;
-  background:linear-gradient(92deg,var(--ink),var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.proof .stat .l{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:5px}
-
 /* Étoiles */
 .stars{display:inline-flex;color:var(--gold);font-size:.95rem;letter-spacing:1px}
 
@@ -458,7 +451,7 @@ footer .copy{letter-spacing:.02em}
 .totop,.sound{transition:opacity .25s ease,transform .2s ease,background .2s ease,border-color .2s ease,box-shadow .2s ease,bottom .4s cubic-bezier(.2,.7,.2,1)}
 
 /* ============ ✦ PRO (bio, FAQ, 18+, teaser) ============ */
-.bio-line b{color:var(--ink);font-weight:600}
+.hero-bio b{color:rgba(245,239,231,.85);font-weight:600}
 
 .faq{display:grid;gap:10px}
 .faq details{background:var(--bg-soft);border:1px solid var(--line);border-radius:14px;overflow:hidden}
@@ -925,6 +918,9 @@ body.gate-on{overflow:hidden}
     <!-- ✏️ Le grand nom -->
     <h1 class="bigname"><span class="fill">Valentina</span> <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0095f6"/><path d="M10.3 15.6l-3.2-3.2 1.3-1.3 1.9 1.9 5.1-5.1 1.3 1.3z" fill="#fff"/></svg></h1>
     <p class="role-line">Coach fitness &amp; créatrice de contenu</p>
+    <p class="hero-bio">
+      Créatrice <b>fitness &amp; lifestyle</b> à Knokke. Je te partage mon quotidien, <span class="rotator" id="rotator">mon énergie</span>…<br class="lede-br"> et mon côté plus intime, rien que pour toi 😏
+    </p>
     <!-- ✏️ Réseaux + compteurs : remplace les data-link (réglés dans LINKS) et les chiffres -->
     <div class="hero-socials">
       <div class="hs-icons">
@@ -946,18 +942,6 @@ body.gate-on{overflow:hidden}
   </section>
 
   <main class="wrap">
-
-    <!-- ✏️ Petite bio sous le héros -->
-    <p class="bio-line reveal">
-      Créatrice <b>fitness &amp; lifestyle</b> à Knokke. Je te partage mon quotidien, <span class="rotator" id="rotator">mon énergie</span>…<br class="lede-br"> et mon côté plus intime, rien que pour toi 😏
-    </p>
-
-    <!-- ===== PREUVE SOCIALE ✏️ Remplace par tes VRAIS chiffres (sinon laisse vide) ===== -->
-    <div class="proof reveal" aria-label="Quelques chiffres">
-      <div class="stat"><div class="n" data-target="2.1" data-dec="1" data-suffix="M">0</div><div class="l">Communauté</div></div>
-      <div class="stat"><div class="n" data-target="4.8" data-dec="1" data-suffix="★">0</div><div class="l">Note membres</div></div>
-      <div class="stat"><div class="n" data-target="3" data-suffix="×">0</div><div class="l">Contenu / semaine</div></div>
-    </div>
 
     <!-- ===== 01 · APERÇU : galerie + teaser verrouillé ===== -->
     <div class="sec-head reveal"><span class="num">01</span><span class="label">Aperçu</span><span class="rule"></span></div>

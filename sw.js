@@ -2,7 +2,7 @@
    Stratégie : network-first pour les pages (mises à jour visibles), cache-first pour les assets.
    IMPORTANT : on NE touche PAS aux médias (audio/vidéo) ni aux requêtes Range,
    sinon la lecture de la musique se casse (notamment sur Safari/iOS). */
-const CACHE = 'audace-v46';
+const CACHE = 'audace-v47';
 const ASSETS = ['./', './index.html', './img-run.webp', './img-avatar.webp', './onlyfans-logo.svg', './icon-192.png'];
 
 self.addEventListener('install', e => {

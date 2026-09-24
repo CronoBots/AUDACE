@@ -136,22 +136,21 @@ a{color:inherit;text-decoration:none}
 @keyframes ping{0%{box-shadow:0 0 0 0 rgba(70,224,138,.5),0 0 7px 1px rgba(70,224,138,.85)}70%,100%{box-shadow:0 0 0 7px rgba(70,224,138,0),0 0 7px 1px rgba(70,224,138,.85)}}
 
 /* ============ HÉRO : plein écran (toute la largeur et toute la hauteur visible) ============
-   100svh partout (héros ET photo) : hauteur du plus petit viewport possible,
-   qui NE CHANGE JAMAIS pendant le scroll (contrairement à dvh, qui suit la
-   barre d'adresse et faisait "zoomer" la photo à chaque recalcul). C'est la
-   seule valeur garantie stable — zéro redimensionnement, donc zéro zoom,
-   quel que soit le comportement de la barre d'adresse du navigateur. */
+   100dvh partout (héros ET photo), la même unité pour les deux : le héros
+   colle exactement au bas réellement visible à tout moment (plus de zone
+   morte sous la molette), et comme la photo suit exactement le même
+   redimensionnement que son conteneur (pas de calc distinct, pas de
+   transform superposé), il n'y a plus de re-mise à l'échelle visible —
+   seul le cadrage (recadrage normal, comme toute image en cover) s'ajuste,
+   sans transform ni transition dessus pour éviter tout effet de zoom. */
 .hero{position:relative;overflow:hidden;width:100%;
-  min-height:100vh;min-height:100svh;
+  min-height:100vh;min-height:100dvh;
   display:flex;flex-direction:column;justify-content:flex-end;
   padding:54px 26px 116px;isolation:isolate}
-.hero-media{position:absolute;top:-14px;left:-14px;right:-14px;
-  height:100vh;height:100svh;z-index:-1;background:var(--bg-soft)}
+.hero-media{position:absolute;inset:0;z-index:-1;background:var(--bg-soft)}
 .hero-media img,.hero-media video{position:absolute;inset:0;width:100%;height:100%;
-  object-fit:cover;object-position:62% 30%;opacity:.8;transform:scale(1.32);
-  filter:saturate(1.12) contrast(1.05) brightness(1.02);
-  transition:transform 1.1s cubic-bezier(.16,1,.3,1)}
-.hero.wow-in .hero-media img,.hero.wow-in .hero-media video{transform:scale(1.06)}
+  object-fit:cover;object-position:62% 30%;opacity:.8;
+  filter:saturate(1.12) contrast(1.05) brightness(1.02)}
 /* Assombrissement ancré au bas (en pixels, pas en %) : reste juste sous le texte
    quelle que soit la hauteur du héros (portrait mobile ou large écran) */
 .hero-veil{position:absolute;inset:0;
@@ -185,18 +184,14 @@ a{color:inherit;text-decoration:none}
 /* Cascade d'entrée du texte, synchronisée avec la fin de l'intro */
 .role-line,.scrollcue{opacity:0;transform:translateY(16px);
   transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
-.bigname{opacity:0;transform:translateY(22px) scale(.94) rotate(-5deg);
+.bigname{opacity:0;transform:translateY(22px) scale(.94);
   transition:opacity .8s ease,transform .8s cubic-bezier(.22,1.5,.36,1)}
-.hero.wow-in .bigname{opacity:1;transform:rotate(-5deg);transition-delay:.05s}
+.hero.wow-in .bigname{opacity:1;transform:none;transition-delay:.05s}
 .hero.wow-in .role-line{opacity:1;transform:none;transition-delay:.25s}
 .hero.wow-in .scrollcue{opacity:1;transform:none;transition-delay:.75s}
 .bigname{position:relative;font-weight:800;line-height:.9;letter-spacing:-.045em;
   font-size:clamp(2.2rem,13vw,5.4rem);text-transform:uppercase;max-width:100%;white-space:nowrap}
-.bigname .fill{background:linear-gradient(100deg,var(--ink) 20%,var(--coral) 45%,var(--coral-2) 55%,var(--gold) 65%,var(--ink) 85%);
-  background-size:260% 100%;background-position:80% 0;
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-  animation:nameShimmer 7s ease-in-out 3s infinite}
-@keyframes nameShimmer{0%,100%{background-position:80% 0}50%{background-position:20% 0}}
+.bigname .fill{color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.35)}
 .bigname .vf{width:.3em;height:.3em;vertical-align:middle;margin-left:.05em;flex-shrink:0}
 .role-line{margin-top:2px;color:rgba(245,239,231,.85);font-size:1.02rem;font-weight:500}
 .bio-line{margin:0;max-width:60ch;color:var(--muted);font-size:1.02rem;line-height:1.6}
@@ -377,10 +372,9 @@ footer .copy{letter-spacing:.02em}
   .hero{padding:40px 18px 84px}
   .topbar{padding:16px 18px}
   /* Plus d'espace vide au-dessus du sujet sur mobile (cadrage vertical serré
-     en portrait) : on révèle plus de haut de la photo et on dézoome un peu,
-     pour que le badge/logo du haut ne colle plus contre les cheveux. */
+     en portrait) : on révèle plus de haut de la photo, pour que le badge/logo
+     du haut ne colle plus contre les cheveux. */
   .hero-media img,.hero-media video{object-position:68% 0%}
-  .hero.wow-in .hero-media img,.hero.wow-in .hero-media video{transform:scale(1)}
   .bigname{font-size:clamp(2rem,13vw,3.6rem)}
   .bio-line{font-size:.96rem}
   .featured{padding:24px}

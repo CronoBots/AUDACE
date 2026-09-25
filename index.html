@@ -1465,6 +1465,15 @@ body.gate-on{overflow:hidden}
         if(!started){ try{ await load(); const s=ctx.createBufferSource(); s.buffer=buffer; s.loop=true; s.connect(gain); s.start(0); started=true; }catch(e){ return false; } }
         return true;
       };
+      /* Tentative de démarrage automatique dès le chargement (sans attendre de clic) :
+         ça fonctionne pour les visiteurs déjà engagés avec le site sur certains navigateurs
+         (ex. Chrome, qui autorise l'autoplay avec son après un premier engagement),
+         mais reste bloqué par défaut sur un tout premier passage sans geste — dans ce cas
+         le fallback ci-dessous (premier clic/tap/touche, dont le bouton "18 ans") prend le relais. */
+      (async()=>{
+        const ok=await ensure();
+        if(ok && ctx.state==='running'){ enabled=true; setOn(true); }
+      })();
       const turnOn=async()=>{
         enabled=true; setOn(true);
         const ok=await ensure();

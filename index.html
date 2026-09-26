@@ -531,6 +531,26 @@ footer .copy{letter-spacing:.02em}
 
 .ti-feeds+.rows{margin-top:4px}
 
+/* Bloc démo Secr3tly : visuel neutre/produit, volontairement distinct du
+   rose OnlyFans pour ne jamais se confondre avec l'offre de la créatrice */
+.demo-cta{margin-top:56px;padding:38px 26px;border-radius:var(--radius);text-align:center;
+  background:linear-gradient(165deg,var(--bg-soft),var(--bg));border:1px solid var(--line)}
+.demo-cta .kicker2{display:inline-block;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:12px}
+.demo-cta h3{font-family:'Cormorant','Georgia',serif;font-weight:700;
+  font-size:clamp(1.6rem,7vw,2.15rem);margin:0 0 10px}
+.demo-cta p{color:var(--muted);max-width:54ch;margin:0 auto 20px;line-height:1.65;font-size:.94rem}
+.demo-cta ul{list-style:none;padding:0;margin:0 0 24px;display:flex;flex-wrap:wrap;
+  justify-content:center;gap:9px 22px}
+.demo-cta ul li{font-size:.82rem;color:var(--ink);display:flex;align-items:center;gap:6px}
+.demo-cta ul li::before{content:"✓";color:var(--coral);font-weight:800}
+.demo-cta .cta-btn{display:inline-flex;align-items:center;gap:9px;padding:15px 28px;border-radius:100px;
+  background:var(--ink);color:var(--bg);font-weight:800;font-size:.98rem;text-decoration:none;
+  transition:transform .2s ease,box-shadow .2s ease}
+.demo-cta .cta-btn:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.35)}
+.demo-cta .note{display:block;margin-top:16px;font-size:.72rem;color:var(--muted);opacity:.8}
+@media(max-width:520px){.demo-cta{padding:30px 20px}.demo-cta ul{gap:8px 16px}.demo-cta ul li{font-size:.78rem}}
+
 /* Visionneuse (clic sur une publication) */
 .lbx{position:fixed;inset:0;z-index:120;display:none;align-items:center;justify-content:center;padding:18px;
   background:rgba(0,0,0,.82);backdrop-filter:blur(8px)}
@@ -1300,6 +1320,22 @@ body.gate-on{overflow:hidden}
         <span>Valentina</span><span class="on">✦</span><span>Fitness</span><span class="on">✦</span><span>Lifestyle</span><span class="on">✦</span><span>Mindset</span><span class="on">✦</span>
         <span>Valentina</span><span class="on">✦</span><span>Fitness</span><span class="on">✦</span><span>Lifestyle</span><span class="on">✦</span><span>Mindset</span><span class="on">✦</span>
       </div>
+    </div>
+
+    <!-- ===== BLOC DÉMO SECR3TLY (le vrai modèle économique : mise en place + abonnement mensuel) =====
+         ✏️ Remplace le lien mailto par le vrai contact / formulaire Secr3tly -->
+    <div class="demo-cta reveal">
+      <span class="kicker2">✦ Site de démonstration Secr3tly</span>
+      <h3>Envie du même site, pour toi&nbsp;?</h3>
+      <p>Cette page est un exemple de ce que Secr3tly peut mettre en place pour une créatrice de contenu&nbsp;: galerie, tunnel d'abonnement, codes promo, kit média… Le tout conçu sur-mesure, puis hébergé et tenu à jour pour toi.</p>
+      <ul>
+        <li>Mise en place sur-mesure</li>
+        <li>Hébergement &amp; mises à jour inclus</li>
+        <li>Design 100% personnalisable</li>
+        <li>Sans engagement</li>
+      </ul>
+      <a class="cta-btn" href="mailto:contact@secr3tly.com?subject=Je%20veux%20mon%20site">Demander mon site →</a>
+      <span class="note">Mise en place + abonnement mensuel pour garder ton site en ligne et à jour.</span>
     </div>
 
     <!-- ===== FOOTER ===== -->

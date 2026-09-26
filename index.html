@@ -232,7 +232,12 @@ a{color:inherit;text-decoration:none}
 .sec-head{display:flex;align-items:baseline;gap:14px;margin:42px 0 18px}
 .sec-head .num{font-size:.74rem;color:var(--gold);font-weight:700;letter-spacing:.05em}
 .sec-head .label{font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
-.sec-head .rule{flex:1;height:1px;background:var(--line)}
+.sec-head .rule{flex:1;height:1px;background:var(--line);transform-origin:left center;
+  transform:scaleX(0);transition:transform .9s cubic-bezier(.16,1,.3,1) .15s}
+.sec-head.in .rule{transform:scaleX(1)}
+
+/* Boutons "magnétiques" : suivent légèrement le curseur au survol (desktop uniquement) */
+.magnetic{transition:transform .25s cubic-bezier(.2,.7,.2,1)}
 
 /* ============ CARTE FEATURED ============ */
 .featured{display:block;position:relative;overflow:hidden;border-radius:var(--radius);
@@ -592,8 +597,9 @@ footer .copy{letter-spacing:.02em}
 .sp-code{font-family:ui-monospace,Menlo,Consolas,monospace;letter-spacing:.08em;padding:9px 14px;border-radius:10px;border:1.5px dashed var(--gold);color:var(--gold)}
 .promos{display:grid;gap:10px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
 @media(max-width:600px){.promos{grid-template-columns:minmax(0,1fr)}}
-.promo{background:var(--bg-soft);border:1px solid var(--line);border-radius:16px;padding:16px;transition:border-color .25s}
-.promo:hover{border-color:rgba(var(--coral-rgb),.5)}
+.promo{background:var(--bg-soft);border:1px solid var(--line);border-radius:16px;padding:16px;
+  transition:border-color .25s ease,transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s ease}
+.promo:hover{border-color:rgba(var(--coral-rgb),.5);transform:translateY(-4px);box-shadow:0 16px 36px rgba(0,0,0,.32)}
 .pr-top{display:flex;align-items:center;gap:11px}
 .pr-logo{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;color:#fff;font-weight:900;font-size:1.05rem;flex-shrink:0;
   font-family:'Cormorant','Georgia',serif;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
@@ -791,7 +797,9 @@ body.gate-on{overflow:hidden}
 .press p{color:var(--muted);font-size:.92rem;margin:6px 0 18px;max-width:56ch}
 .ps-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 @media(max-width:560px){.ps-stats{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
-.ps{padding:14px 12px;border-radius:14px;background:rgba(0,0,0,.3);border:1px solid var(--line)}
+.ps{padding:14px 12px;border-radius:14px;background:rgba(0,0,0,.3);border:1px solid var(--line);
+  transition:transform .25s cubic-bezier(.2,.7,.2,1),border-color .25s ease,background .25s ease}
+.ps:hover{transform:translateY(-3px);border-color:rgba(var(--coral-rgb),.35);background:rgba(0,0,0,.42)}
 .ps b{display:block;font-size:1.25rem;font-weight:800;letter-spacing:-.01em}
 .ps span{font-size:.72rem;color:var(--muted)}
 .ps-f{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}
@@ -936,11 +944,11 @@ body.gate-on{overflow:hidden}
         <a href="#" data-link="youtube" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i6"/></svg></a>
       </div>
       <div class="hs-stats">
-        <div class="hs-stat"><b>2M</b><span>TikTok</span></div>
-        <div class="hs-stat"><b>304K</b><span>Instagram</span></div>
-        <div class="hs-stat"><b>200+</b><span>OnlyFans</span></div>
-        <div class="hs-stat"><b>90+</b><span>MYM</span></div>
-        <div class="hs-stat"><b>22K</b><span>YouTube</span></div>
+        <div class="hs-stat"><b class="n" data-target="2" data-suffix="M">0M</b><span>TikTok</span></div>
+        <div class="hs-stat"><b class="n" data-target="304" data-suffix="K">0K</b><span>Instagram</span></div>
+        <div class="hs-stat"><b class="n" data-target="200" data-suffix="+">0+</b><span>OnlyFans</span></div>
+        <div class="hs-stat"><b class="n" data-target="90" data-suffix="+">0+</b><span>MYM</span></div>
+        <div class="hs-stat"><b class="n" data-target="22" data-suffix="K">0K</b><span>YouTube</span></div>
       </div>
     </div>
     <span class="scrollcue" role="img" aria-label="Fais défiler"><i></i></span>
@@ -999,7 +1007,7 @@ body.gate-on{overflow:hidden}
       </div>
       <!-- ===== COMPTEUR D'ANTICIPATION (prochain drop) ===== -->
       <div class="drop" id="drop" hidden><span class="dt">✦</span> Prochain contenu exclusif <b id="dropIn">…</b></div>
-      <span class="go of"><img class="of-ic" src="onlyfans-icon-white.svg" alt="" aria-hidden="true">Rejoindre sur OnlyFans <span class="circle">↗</span></span>
+      <span class="go of magnetic"><img class="of-ic" src="onlyfans-icon-white.svg" alt="" aria-hidden="true">Rejoindre sur OnlyFans <span class="circle">↗</span></span>
       <span class="reassure">🔒 Paiement sécurisé · Sans engagement · Annulation en 1 clic</span>
     </a>
     <!-- ✏️ MYM : remplace href="#" par ton lien MYM -->
@@ -1250,11 +1258,11 @@ body.gate-on{overflow:hidden}
         <div><h3>Travaillons ensemble</h3><p>Une communauté fitness &amp; lifestyle engagée, surtout en Belgique et en France. Je ne présente que des marques que j'utilise vraiment.</p></div>
       </div>
       <div class="ps-stats">
-        <div class="ps"><b>304 k</b><span>Abonnés Instagram</span></div>
-        <div class="ps"><b>2 M</b><span>Abonnés TikTok</span></div>
-        <div class="ps"><b>22 k</b><span>Abonnés YouTube</span></div>
-        <div class="ps"><b>6,2 %</b><span>Engagement moyen</span></div>
-        <div class="ps"><b>71 %</b><span>Audience 18–34 ans</span></div>
+        <div class="ps"><b class="n" data-target="304" data-suffix=" k">0 k</b><span>Abonnés Instagram</span></div>
+        <div class="ps"><b class="n" data-target="2" data-suffix=" M">0 M</b><span>Abonnés TikTok</span></div>
+        <div class="ps"><b class="n" data-target="22" data-suffix=" k">0 k</b><span>Abonnés YouTube</span></div>
+        <div class="ps"><b class="n" data-target="6.2" data-dec="1" data-suffix=" %">0 %</b><span>Engagement moyen</span></div>
+        <div class="ps"><b class="n" data-target="71" data-suffix=" %">0 %</b><span>Audience 18–34 ans</span></div>
         <div class="ps"><b>BE · FR · CH</b><span>Pays principaux</span></div>
       </div>
       <div class="ps-f"><span>Post Instagram</span><span>Story</span><span>Reel / TikTok</span><span>Code promo dédié</span><span>Ambassadrice</span></div>
@@ -1280,8 +1288,8 @@ body.gate-on{overflow:hidden}
     <div class="finalcta reveal">
       <h3>Prêt à me rejoindre&nbsp;?</h3>
       <p>Tout mon contenu exclusif t'attend, sur OnlyFans ou MYM — rien que pour toi.</p>
-      <div class="btns2"><a class="ofbtn" href="#" data-link="onlyfans" target="_blank" rel="noopener"><img src="onlyfans-icon-white.svg" alt="" aria-hidden="true">Rejoindre sur OnlyFans →</a>
-        <a class="mymbtn" href="#" data-link="mym" target="_blank" rel="noopener"><span class="mym-badge">MYM</span>Rejoindre sur MYM →</a></div>
+      <div class="btns2"><a class="ofbtn magnetic" href="#" data-link="onlyfans" target="_blank" rel="noopener"><img src="onlyfans-icon-white.svg" alt="" aria-hidden="true">Rejoindre sur OnlyFans →</a>
+        <a class="mymbtn magnetic" href="#" data-link="mym" target="_blank" rel="noopener"><span class="mym-badge">MYM</span>Rejoindre sur MYM →</a></div>
       <span class="reassure2">🔒 Paiement sécurisé · Sans engagement · 18+</span>
     </div>
 
@@ -1305,7 +1313,7 @@ body.gate-on{overflow:hidden}
         <li>Design 100% personnalisable</li>
         <li>Sans engagement</li>
       </ul>
-      <a class="cta-btn" href="mailto:contact@secr3tly.com?subject=Je%20veux%20mon%20site">Demander mon site →</a>
+      <a class="cta-btn magnetic" href="mailto:contact@secr3tly.com?subject=Je%20veux%20mon%20site">Demander mon site →</a>
       <span class="note">Mise en place + abonnement mensuel pour garder ton site en ligne et à jour.</span>
     </div>
 
@@ -1382,7 +1390,8 @@ body.gate-on{overflow:hidden}
         s.textContent=ch; s.style.animationDelay=(.25+i*.05)+'s';
         mark.appendChild(s);
       });
-      const hide=()=>{ document.getElementById('intro').classList.add('done'); var h=document.querySelector('.hero'); if(h) h.classList.add('wow-in'); };
+      const hide=()=>{ document.getElementById('intro').classList.add('done'); var h=document.querySelector('.hero'); if(h) h.classList.add('wow-in');
+        setTimeout(function(){ document.querySelectorAll('.hs-stats .n[data-target]').forEach(function(n){ if(window.__countUp) window.__countUp(n); }); },600); };
       if(reduce){hide();} else {setTimeout(hide,1600);}
     })();
 
@@ -1426,6 +1435,20 @@ body.gate-on{overflow:hidden}
       addEventListener('mousemove',e=>{
         spot.style.setProperty('--mx',e.clientX+'px');
         spot.style.setProperty('--my',e.clientY+'px');
+      });
+    }
+
+    /* Boutons "magnétiques" : suivent légèrement le curseur au survol (souris uniquement) */
+    if(!reduce && matchMedia('(hover:hover) and (pointer:fine)').matches){
+      document.querySelectorAll('.magnetic').forEach(el=>{
+        const strength=16;
+        el.addEventListener('mousemove',e=>{
+          const r=el.getBoundingClientRect();
+          const x=(e.clientX-r.left-r.width/2)/r.width*strength;
+          const y=(e.clientY-r.top-r.height/2)/r.height*strength;
+          el.style.transform=`translate(${x}px,${y}px)`;
+        });
+        el.addEventListener('mouseleave',()=>{ el.style.transform=''; });
       });
     }
 
@@ -1529,7 +1552,8 @@ body.gate-on{overflow:hidden}
       node.querySelectorAll('.n[data-target]').forEach(function(n){ if(!seen.has(n)){seen.add(n);countUp(n);} });
       node.querySelectorAll('.scarcity[data-fill]').forEach(function(s){ if(!seen.has(s)){seen.add(s);fill(s);} });
     }
-    var targets=document.querySelectorAll('.proof,.scarcity');
+    window.__countUp=countUp;
+    var targets=document.querySelectorAll('.ps-stats,.scarcity');
     if(reduce||!('IntersectionObserver' in window)){ run(document); }
     else{
       var io=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ run(e.target); io.unobserve(e.target);} });},{threshold:.35});

@@ -275,31 +275,6 @@ a{color:inherit;text-decoration:none}
   transform:skewX(-18deg);animation:sheen 4.5s ease-in-out infinite}
 @keyframes sheen{0%{left:-70%}45%,100%{left:150%}}
 
-/* ============ LIENS RÉSEAUX : grille de cartes (moderne, cohérente avec les stats) ============ */
-.social-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
-.soc-card{position:relative;display:flex;align-items:center;gap:14px;
-  padding:16px;border-radius:16px;background:var(--bg-soft);border:1px solid var(--line);
-  overflow:hidden;transition:transform .25s cubic-bezier(.2,.7,.2,1),border-color .25s ease,box-shadow .25s ease}
-.soc-card .soc-ic{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;flex-shrink:0;
-  background:var(--bg);border:1px solid var(--line);color:var(--ink);
-  transition:background .25s ease,color .25s ease,border-color .25s ease}
-.soc-card .soc-ic svg{width:20px;height:20px;fill:currentColor;display:block}
-.soc-card .soc-body{display:flex;flex-direction:column;gap:2px;min-width:0}
-.soc-card .soc-name{font-size:1.02rem;font-weight:700;letter-spacing:-.01em}
-.soc-card .soc-meta{font-size:.76rem;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.soc-card .soc-count{margin-left:auto;font-size:.92rem;font-weight:800;color:var(--ink);flex-shrink:0}
-.soc-card .soc-arrow{font-size:1.05rem;color:var(--muted);flex-shrink:0;transition:transform .3s ease,color .3s ease}
-.soc-card:hover{transform:translateY(-3px);border-color:rgba(var(--coral-rgb),.4);
-  box-shadow:0 14px 34px rgba(0,0,0,.28)}
-.soc-card:hover .soc-ic{background:linear-gradient(135deg,var(--coral),var(--coral-2));color:#fff;border-color:transparent}
-.soc-card:hover .soc-arrow{transform:translateX(4px);color:var(--coral)}
-@media(max-width:520px){.social-grid{grid-template-columns:repeat(3,1fr);gap:8px}
-  .soc-card{flex-direction:column;text-align:center;padding:14px 6px;gap:7px}
-  .soc-card .soc-body{align-items:center}
-  .soc-card .soc-meta{display:none}
-  .soc-card .soc-name{font-size:.76rem}
-  .soc-card .soc-count{margin-left:0;font-size:.76rem}
-  .soc-card .soc-arrow{display:none}}
 
 /* ============ GALERIE (mosaïque asymétrique) ============ */
 .gallery{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
@@ -519,8 +494,6 @@ footer .copy{letter-spacing:.02em}
 .finalcta .ofbtn img{width:23px;height:23px}
 .finalcta .reassure2{display:block;margin-top:14px;font-size:.78rem;color:var(--muted)}
 
-.ti-feeds+.social-grid{margin-top:4px}
-
 /* Bloc démo Secr3tly : visuel neutre/produit, volontairement distinct du
    rose OnlyFans pour ne jamais se confondre avec l'offre de la créatrice */
 .demo-cta{margin-top:56px;padding:38px 26px;border-radius:var(--radius);text-align:center;
@@ -685,72 +658,48 @@ body.gate-on{overflow:hidden}
 .cu-open.of{background:linear-gradient(92deg,#00AFF0,#0093d6)}
 .cu-note{text-align:center;font-size:.74rem;color:var(--muted);margin-top:14px}
 
-/* ---- Aperçus façon widgets Trustindex (Instagram, TikTok) ---- */
-.ti-feeds{display:grid;gap:18px;margin-bottom:18px}
-.ti-slot{min-width:0}
-.ti-demo{position:relative;background:#fff;color:#1c1e21;border-radius:14px;padding:18px;
-  border:1px solid rgba(var(--gold-rgb),.35);box-shadow:0 20px 50px rgba(0,0,0,.4);
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.35}
-.ti-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-.ti-av{width:54px;height:54px;border-radius:50%;padding:2px;flex-shrink:0}
-.ti-av img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 18%;border:2px solid #fff}
-.ti-ig .ti-av{background:conic-gradient(from 200deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75)}
-.ti-tt .ti-av{background:linear-gradient(135deg,#25f4ee,#fe2c55)}
-.ti-id{flex:1;min-width:0}
-.ti-id b{display:flex;align-items:center;gap:5px;font-size:16px}
-.ti-id b .vf{width:15px;height:15px;flex-shrink:0}
-.ti-id small{display:block;color:#65676b;font-size:13px}
-.ti-st{display:flex;flex-wrap:wrap;gap:2px 12px;font-size:13px;color:#65676b;margin-top:2px}
-.ti-st strong{color:#1c1e21}
-.ti-follow{display:inline-flex;align-items:center;justify-content:center;gap:7px;flex-shrink:0;color:#fff;font-weight:700;font-size:14px;min-height:40px;padding:9px 15px;border-radius:8px;transition:filter .2s}
-.ti-follow:hover{filter:brightness(1.08)}
-.ti-follow i{display:flex}.ti-follow svg{width:16px;height:16px;fill:#fff}
-.ti-ig .ti-follow{background:linear-gradient(45deg,#f58529,#dd2a7b 55%,#8134af)}
-.ti-tt .ti-follow{background:#fe2c55}
-.ti-net{position:absolute;top:8px;right:8px;z-index:2;width:22px;height:22px;border-radius:6px;display:grid;place-items:center;background:rgba(255,255,255,.92)}
-.ti-net svg{width:13px;height:13px;fill:#000}
-.ti-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
-.ti-post{position:relative;aspect-ratio:1/1;overflow:hidden;border:0;padding:0;cursor:pointer;border-radius:6px;background:#eee}
-.ti-post img,.ti-vid img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;transition:transform .5s ease}
-.ti-post:hover img,.ti-vid:hover img{transform:scale(1.06)}
-.ti-ov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:14px;background:rgba(0,0,0,.45);
-  color:#fff;font-weight:700;font-size:14px;opacity:0;transition:opacity .25s}
-.ti-post:hover .ti-ov,.ti-post:focus-visible .ti-ov{opacity:1}
-.ti-more{display:block;width:max-content;margin:14px auto 0;min-height:40px;padding:9px 22px;border-radius:8px;border:1px solid #ccd0d5;font-weight:600;color:#1c1e21}
-.ti-more:hover{background:#f2f3f5}
-.ti-slider{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 32px)/5);gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
-.ti-slider::-webkit-scrollbar{display:none}
-.ti-vid{position:relative;aspect-ratio:9/16;overflow:hidden;border:0;padding:0;cursor:pointer;border-radius:8px;background:#000;color:#fff;text-align:left;scroll-snap-align:start}
-.ti-vid::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.8))}
-.ti-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;width:40px;height:40px;border-radius:50%;
-  background:rgba(0,0,0,.35);display:grid;place-items:center}
-.ti-play svg{width:15px;height:15px;fill:#fff;margin-left:2px}
-.ti-cap{position:absolute;left:8px;right:8px;bottom:8px;z-index:1;font-size:12px;line-height:1.3}
-.ti-cap b{display:block;font-size:12px;margin-bottom:2px}
-@media(max-width:700px){
-  .ti-demo{padding:16px 12px 14px}
-  .ti-head{flex-wrap:wrap}
-  .ti-follow{order:3;width:100%;justify-content:center}
-  .ti-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
-  .ti-grid .ti-post:nth-child(n+7){display:none}
-  .ti-slider{grid-auto-columns:42%}
-}
+/* ============ RÉSEAUX : grille unifiée, un seul langage visuel (fini le clone blanc IG/TikTok) ============ */
+.platforms{display:flex;flex-direction:column;gap:14px}
+.plat-feat{display:block;padding:20px;border-radius:20px;background:var(--bg-soft);border:1px solid var(--line);
+  transition:transform .25s cubic-bezier(.2,.7,.2,1),border-color .25s ease,box-shadow .25s ease}
+.plat-feat:hover{transform:translateY(-4px);border-color:rgba(var(--coral-rgb),.4);box-shadow:0 18px 42px rgba(0,0,0,.32)}
+.plat-top{display:flex;align-items:center;gap:14px;color:inherit;text-decoration:none}
+.plat-ic{width:48px;height:48px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;
+  background:var(--bg);border:1px solid var(--line);color:#fff;transition:background .25s ease,border-color .25s ease}
+.plat-ic svg{width:22px;height:22px;fill:currentColor}
+.plat-feat:hover .plat-ic,.plat-card:hover .plat-ic{background:linear-gradient(135deg,var(--coral),var(--coral-2));border-color:transparent}
+.plat-info{display:flex;flex-direction:column;gap:1px;min-width:0}
+.plat-info b{font-size:1.05rem;font-weight:800;letter-spacing:-.01em}
+.plat-info span{font-size:.78rem;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.plat-count{margin-left:auto;text-align:right;flex-shrink:0}
+.plat-count b{display:block;font-size:1.15rem;font-weight:800}
+.plat-count small{display:block;font-size:.62rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.plat-preview{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:16px}
+.pv{position:relative;aspect-ratio:1/1;border-radius:12px;overflow:hidden;border:0;padding:0;cursor:pointer;background:#111}
+.pv picture{position:absolute;inset:0;display:block}
+.pv img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block;transition:transform .5s ease}
+.pv:hover img{transform:scale(1.08)}
+.pv i{position:absolute;bottom:6px;right:6px;font-style:normal;font-size:.62rem;line-height:1;color:#fff;
+  background:rgba(0,0,0,.55);border-radius:50%;width:20px;height:20px;display:grid;place-items:center}
+.plat-cta{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:.86rem;font-weight:700;color:var(--ink);text-decoration:none}
+.plat-cta .arrow{color:var(--coral);transition:transform .3s ease}
+.plat-feat:hover .plat-cta .arrow{transform:translateX(4px)}
+@media(max-width:520px){.plat-preview{gap:5px}.plat-feat{padding:16px}}
 
-/* Bandeaux aux couleurs de chaque plateforme (en tête des flux) */
-.ti-demo{--pad:18px;padding:var(--pad)}
-.ti-band{display:flex;align-items:center;gap:10px;margin:calc(-1*var(--pad)) calc(-1*var(--pad)) 16px;padding:11px var(--pad);
-  border-radius:14px 14px 0 0;color:#fff}
-.ti-band-ic{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:rgba(255,255,255,.18)}
-.ti-band-ic svg{width:16px;height:16px;fill:#fff}
-.ti-band b{font-size:17px;font-weight:800;letter-spacing:-.01em}
-.ti-band-h{margin-left:auto;font-size:13px;font-weight:600;opacity:.9}
-.ti-band-ig{background:linear-gradient(90deg,#feda75 0%,#fa7e1e 22%,#d62976 50%,#962fbf 75%,#4f5bd5 100%)}
-.ti-band-ig b{font-family:'Cormorant','Georgia',serif;font-style:italic;font-size:22px;font-weight:700;letter-spacing:.01em}
-.ti-band-tt{background:#000}
-.ti-band-tt .ti-band-ic{background:none}
-.ti-band-tt .ti-band-ic svg{fill:#fff;filter:drop-shadow(1.5px 1px 0 #fe2c55) drop-shadow(-1.5px -1px 0 #25f4ee)}
-.ti-band-tt b{text-shadow:1.5px 1px 0 #fe2c55,-1.5px -1px 0 #25f4ee}
-@media(max-width:700px){.ti-demo{--pad:12px;padding:16px 12px 14px}.ti-band{margin-top:-16px}}
+.plat-more{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.plat-card{position:relative;display:flex;align-items:center;gap:14px;padding:16px;border-radius:16px;
+  background:var(--bg-soft);border:1px solid var(--line);
+  transition:transform .25s cubic-bezier(.2,.7,.2,1),border-color .25s ease,box-shadow .25s ease}
+.plat-card:hover{transform:translateY(-3px);border-color:rgba(var(--coral-rgb),.4);box-shadow:0 14px 34px rgba(0,0,0,.28)}
+.plat-card .plat-ic{width:44px;height:44px}
+.plat-card .plat-count{font-size:.92rem;font-weight:800}
+.plat-card .arrow{font-size:1.05rem;color:var(--muted);flex-shrink:0;transition:transform .3s ease,color .3s ease}
+.plat-card:hover .arrow{transform:translateX(4px);color:var(--coral)}
+@media(max-width:520px){.plat-more{grid-template-columns:repeat(3,1fr);gap:8px}
+  .plat-card{flex-direction:column;text-align:center;padding:14px 6px;gap:7px}
+  .plat-card .plat-info{align-items:center}.plat-card .plat-info span{display:none}
+  .plat-card .plat-count{margin-left:0}.plat-card .plat-count b{font-size:.8rem}
+  .plat-card .arrow{display:none}}
 
 /* ============ OFFRES GROUPÉES ============ */
 .bundles{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 2px}
@@ -1027,93 +976,74 @@ body.gate-on{overflow:hidden}
       </div>
     </div>
 
-    <!-- ===== 03 · RETROUVE-MOI : flux Instagram / TikTok (Trustindex) + autres réseaux ===== -->
+    <!-- ===== 03 · RETROUVE-MOI : une seule grille, un seul style, pour toutes les plateformes ===== -->
     <div class="sec-head reveal"><span class="num">03</span><span class="label">Retrouve-moi</span><span class="rule"></span></div>
-    <!-- =================================================================
-         ✏️ FLUX INSTAGRAM / TIKTOK — widgets Trustindex
-         1. Crée un « Social feed widget » par réseau sur admin.trustindex.io
-         2. Trustindex te donne un code : <script ... src='https://cdn.trustindex.io/loader-feed.js?XXXX'></script>
-         3. Copie uniquement la partie après le « ? » (XXXX) dans TRUSTINDEX, en bas de la page.
-         Tant qu'un identifiant est vide, l'aperçu ci-dessous est affiché à la place.
-         ================================================================= -->
-    <div class="ti-feeds reveal">
-      <div class="ti-slot" data-ti="tiktok">
-        <div class="ti-demo ti-tt">
-          <div class="ti-band ti-band-tt"><span class="ti-band-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i2"/></svg></span><b>TikTok</b><span class="ti-band-h">@valentina</span></div>
-          <div class="ti-head">
-            <span class="ti-av"><picture><source srcset="img-avatar.webp" type="image/webp"><img src="img-avatar.jpg" width="120" height="120" alt="" loading="lazy" decoding="async"></picture></span>
-            <span class="ti-id"><b>Valentina <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0095f6"/><path d="M10.3 15.6l-3.2-3.2 1.3-1.3 1.9 1.9 5.1-5.1 1.3 1.3z" fill="#fff"/></svg></b><small>@valentina</small><span class="ti-st"><span><strong>2 M</strong> abonnés</span><span><strong>48,6 M</strong> j’aime</span></span></span>
-            <a class="ti-follow" href="#" data-link="tiktok" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i2"/></svg></i>Suivre</a>
-          </div>
-          <div class="ti-slider">
-            <button class="ti-vid tt-vid" type="button" data-src="img-gym" data-net="tt" data-cap="Ma routine fessiers en 4 exos 🍑" data-likes="128,4 k" aria-label="Vidéo TikTok : Ma routine fessiers en 4 exos 🍑"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i2"/></svg></span><span class="ti-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span><span class="ti-cap"><b>▶ 128,4 k</b>Ma routine fessiers en 4 exos 🍑</span></button>
-            <button class="ti-vid tt-vid" type="button" data-src="img-volley" data-net="tt" data-cap="Quand le smash part tout seul 😂" data-likes="214,9 k" aria-label="Vidéo TikTok : Quand le smash part tout seul 😂"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i2"/></svg></span><span class="ti-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span><span class="ti-cap"><b>▶ 214,9 k</b>Quand le smash part tout seul 😂</span></button>
-            <button class="ti-vid tt-vid" type="button" data-src="img-run" data-net="tt" data-cap="5 km avant le café ☕" data-likes="86,1 k" aria-label="Vidéo TikTok : 5 km avant le café ☕"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i2"/></svg></span><span class="ti-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span><span class="ti-cap"><b>▶ 86,1 k</b>5 km avant le café ☕</span></button>
-            <button class="ti-vid tt-vid" type="button" data-src="img-pool" data-net="tt" data-cap="Get ready with me · piscine" data-likes="97,3 k" aria-label="Vidéo TikTok : Get ready with me · piscine"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i2"/></svg></span><span class="ti-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span><span class="ti-cap"><b>▶ 97,3 k</b>Get ready with me · piscine</span></button>
-            <button class="ti-vid tt-vid" type="button" data-src="img-cycle" data-net="tt" data-cap="Vlog vélo sur la côte" data-likes="41,6 k" aria-label="Vidéo TikTok : Vlog vélo sur la côte"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i2"/></svg></span><span class="ti-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span><span class="ti-cap"><b>▶ 41,6 k</b>Vlog vélo sur la côte</span></button>
-          </div>
+    <div class="platforms reveal">
+      <!-- ✏️ TikTok : remplace le lien et les aperçus par tes vraies vidéos -->
+      <div class="plat-feat">
+        <a class="plat-top" href="#" data-link="tiktok" target="_blank" rel="noopener">
+          <span class="plat-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i2"/></svg></span>
+          <span class="plat-info"><b>TikTok</b><span>@valentina</span></span>
+          <span class="plat-count"><b class="n" data-target="2" data-suffix=" M">0 M</b><small>abonnés</small></span>
+        </a>
+        <div class="plat-preview">
+          <button class="pv tt-vid" type="button" data-src="img-gym" data-net="tt" data-cap="Ma routine fessiers en 4 exos 🍑" data-likes="128,4 k" aria-label="Vidéo TikTok : Ma routine fessiers en 4 exos 🍑"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture><i>▶</i></button>
+          <button class="pv tt-vid" type="button" data-src="img-volley" data-net="tt" data-cap="Quand le smash part tout seul 😂" data-likes="214,9 k" aria-label="Vidéo TikTok : Quand le smash part tout seul 😂"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture><i>▶</i></button>
+          <button class="pv tt-vid" type="button" data-src="img-run" data-net="tt" data-cap="5 km avant le café ☕" data-likes="86,1 k" aria-label="Vidéo TikTok : 5 km avant le café ☕"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture><i>▶</i></button>
+          <button class="pv tt-vid" type="button" data-src="img-cycle" data-net="tt" data-cap="Vlog vélo sur la côte" data-likes="41,6 k" aria-label="Vidéo TikTok : Vlog vélo sur la côte"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy" decoding="async"></picture><i>▶</i></button>
         </div>
+        <a class="plat-cta" href="#" data-link="tiktok" target="_blank" rel="noopener">Suivre sur TikTok <span class="arrow">↗</span></a>
       </div>
 
-      <div class="ti-slot" data-ti="instagram">
-        <div class="ti-demo ti-ig">
-          <div class="ti-band ti-band-ig"><span class="ti-band-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i1"/></svg></span><b>Instagram</b><span class="ti-band-h">@valentina</span></div>
-          <div class="ti-head">
-            <span class="ti-av"><picture><source srcset="img-avatar.webp" type="image/webp"><img src="img-avatar.jpg" width="120" height="120" alt="" loading="lazy" decoding="async"></picture></span>
-            <span class="ti-id"><b>valentina <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0095f6"/><path d="M10.3 15.6l-3.2-3.2 1.3-1.3 1.9 1.9 5.1-5.1 1.3 1.3z" fill="#fff"/></svg></b><small>@valentina</small><span class="ti-st"><span><strong>214</strong> publications</span><span><strong>304 k</strong> abonnés</span></span></span>
-            <a class="ti-follow" href="#" data-link="instagram" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i1"/></svg></i>Suivre</a>
-          </div>
-          <div class="ti-grid">
-            <button class="ti-post ig-post" type="button" data-src="img-run" data-net="ig" data-cap="Sortie du matin au bord de mer 🌊" data-likes="2 481" data-com="96" aria-label="Publication Instagram : Sortie du matin au bord de mer 🌊"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i1"/></svg></span><span class="ti-ov"><span>♥ 2 481</span><span>💬 96</span></span></button>
-            <button class="ti-post ig-post" type="button" data-src="img-pool" data-net="ig" data-cap="Pause soleil bien méritée ☀️" data-likes="3 912" data-com="184" aria-label="Publication Instagram : Pause soleil bien méritée ☀️"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i1"/></svg></span><span class="ti-ov"><span>♥ 3 912</span><span>💬 184</span></span></button>
-            <button class="ti-post ig-post" type="button" data-src="img-gym" data-net="ig" data-cap="Leg day, pas de négociation 💪" data-likes="1 876" data-com="73" aria-label="Publication Instagram : Leg day, pas de négociation 💪"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i1"/></svg></span><span class="ti-ov"><span>♥ 1 876</span><span>💬 73</span></span></button>
-            <button class="ti-post ig-post" type="button" data-src="img-volley" data-net="ig" data-cap="Beach-volley entre copines 🏐" data-likes="2 204" data-com="88" aria-label="Publication Instagram : Beach-volley entre copines 🏐"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i1"/></svg></span><span class="ti-ov"><span>♥ 2 204</span><span>💬 88</span></span></button>
-            <button class="ti-post ig-post" type="button" data-src="img-cycle" data-net="ig" data-cap="60 km sur la côte ce week-end 🚴‍♀️" data-likes="1 540" data-com="61" aria-label="Publication Instagram : 60 km sur la côte ce week-end 🚴‍♀️"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i1"/></svg></span><span class="ti-ov"><span>♥ 1 540</span><span>💬 61</span></span></button>
-            <button class="ti-post ig-post" type="button" data-src="img-run" data-net="ig" data-cap="Golden hour après l'entraînement ✨" data-likes="2 012" data-com="77" aria-label="Publication Instagram : Golden hour après l'entraînement ✨"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i1"/></svg></span><span class="ti-ov"><span>♥ 2 012</span><span>💬 77</span></span></button>
-            <button class="ti-post ig-post" type="button" data-src="img-pool" data-net="ig" data-cap="Summer mood 🌴" data-likes="3 108" data-com="142" aria-label="Publication Instagram : Summer mood 🌴"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i1"/></svg></span><span class="ti-ov"><span>♥ 3 108</span><span>💬 142</span></span></button>
-            <button class="ti-post ig-post" type="button" data-src="img-gym" data-net="ig" data-cap="Nouveau record au squat 🏋️‍♀️" data-likes="1 694" data-com="58" aria-label="Publication Instagram : Nouveau record au squat 🏋️‍♀️"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture><span class="ti-net"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i1"/></svg></span><span class="ti-ov"><span>♥ 1 694</span><span>💬 58</span></span></button>
-          </div>
-          <a class="ti-more" href="#" data-link="instagram" target="_blank" rel="noopener">Charger plus</a>
+      <!-- ✏️ Instagram : remplace le lien et les aperçus par tes vraies publications -->
+      <div class="plat-feat">
+        <a class="plat-top" href="#" data-link="instagram" target="_blank" rel="noopener">
+          <span class="plat-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i1"/></svg></span>
+          <span class="plat-info"><b>Instagram</b><span>@valentina</span></span>
+          <span class="plat-count"><b class="n" data-target="304" data-suffix=" k">0 k</b><small>abonnés</small></span>
+        </a>
+        <div class="plat-preview">
+          <button class="pv ig-post" type="button" data-src="img-run" data-net="ig" data-cap="Sortie du matin au bord de mer 🌊" data-likes="2 481" data-com="96" aria-label="Publication Instagram : Sortie du matin au bord de mer 🌊"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="" loading="lazy" decoding="async"></picture></button>
+          <button class="pv ig-post" type="button" data-src="img-pool" data-net="ig" data-cap="Pause soleil bien méritée ☀️" data-likes="3 912" data-com="184" aria-label="Publication Instagram : Pause soleil bien méritée ☀️"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture></button>
+          <button class="pv ig-post" type="button" data-src="img-gym" data-net="ig" data-cap="Leg day, pas de négociation 💪" data-likes="1 876" data-com="73" aria-label="Publication Instagram : Leg day, pas de négociation 💪"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture></button>
+          <button class="pv ig-post" type="button" data-src="img-volley" data-net="ig" data-cap="Beach-volley entre copines 🏐" data-likes="2 204" data-com="88" aria-label="Publication Instagram : Beach-volley entre copines 🏐"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture></button>
         </div>
+        <a class="plat-cta" href="#" data-link="instagram" target="_blank" rel="noopener">Suivre sur Instagram <span class="arrow">↗</span></a>
       </div>
 
-      
-
-
-    </div>
-
-    <!-- ✏️ Réseaux : remplace chaque href="#" et les chiffres par tes vrais liens/abonnés -->
-    <div class="social-grid reveal">
-      <a class="soc-card" href="#" data-link="facebook" target="_blank" rel="noopener">
-        <span class="soc-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i3"/></svg></span>
-        <span class="soc-body"><span class="soc-name">Facebook</span><span class="soc-meta">Ma page</span></span>
-        <span class="soc-count">18 k</span>
-        <span class="soc-arrow">↗</span>
-      </a>
-      <a class="soc-card" href="#" data-link="youtube" target="_blank" rel="noopener">
-        <span class="soc-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i6"/></svg></span>
-        <span class="soc-body"><span class="soc-name">YouTube</span><span class="soc-meta">Vlogs &amp; entraînements</span></span>
-        <span class="soc-count">22 k</span>
-        <span class="soc-arrow">↗</span>
-      </a>
-      <a class="soc-card" href="#" data-link="x" target="_blank" rel="noopener">
-        <span class="soc-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zM17.6 20.65h2.04L6.49 3.24H4.3z"/></svg></span>
-        <span class="soc-body"><span class="soc-name">Twitter / X</span><span class="soc-meta">Actus &amp; teasers</span></span>
-        <span class="soc-count">9 k</span>
-        <span class="soc-arrow">↗</span>
-      </a>
-      <a class="soc-card" href="#" data-link="telegram" target="_blank" rel="noopener">
-        <span class="soc-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i5"/></svg></span>
-        <span class="soc-body"><span class="soc-name">Telegram</span><span class="soc-meta">Communauté privée</span></span>
-        <span class="soc-count">3,4 k</span>
-        <span class="soc-arrow">↗</span>
-      </a>
-      <a class="soc-card" href="#" data-link="snapchat" target="_blank" rel="noopener">
-        <span class="soc-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i7"/></svg></span>
-        <span class="soc-body"><span class="soc-name">Snapchat</span><span class="soc-meta">Stories du jour</span></span>
-        <span class="soc-count">12 k</span>
-        <span class="soc-arrow">↗</span>
-      </a>
+      <!-- ✏️ Autres réseaux : remplace chaque href="#" et les chiffres par tes vrais liens/abonnés -->
+      <div class="plat-more">
+        <a class="plat-card" href="#" data-link="facebook" target="_blank" rel="noopener">
+          <span class="plat-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i3"/></svg></span>
+          <span class="plat-info"><b>Facebook</b><span>Ma page</span></span>
+          <span class="plat-count"><b class="n" data-target="18" data-suffix=" k">0 k</b></span>
+          <span class="arrow">↗</span>
+        </a>
+        <a class="plat-card" href="#" data-link="youtube" target="_blank" rel="noopener">
+          <span class="plat-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i6"/></svg></span>
+          <span class="plat-info"><b>YouTube</b><span>Vlogs &amp; entraînements</span></span>
+          <span class="plat-count"><b class="n" data-target="22" data-suffix=" k">0 k</b></span>
+          <span class="arrow">↗</span>
+        </a>
+        <a class="plat-card" href="#" data-link="x" target="_blank" rel="noopener">
+          <span class="plat-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zM17.6 20.65h2.04L6.49 3.24H4.3z"/></svg></span>
+          <span class="plat-info"><b>X</b><span>Actus &amp; teasers</span></span>
+          <span class="plat-count"><b class="n" data-target="9" data-suffix=" k">0 k</b></span>
+          <span class="arrow">↗</span>
+        </a>
+        <a class="plat-card" href="#" data-link="telegram" target="_blank" rel="noopener">
+          <span class="plat-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i5"/></svg></span>
+          <span class="plat-info"><b>Telegram</b><span>Communauté privée</span></span>
+          <span class="plat-count"><b class="n" data-target="3.4" data-dec="1" data-suffix=" k">0 k</b></span>
+          <span class="arrow">↗</span>
+        </a>
+        <a class="plat-card" href="#" data-link="snapchat" target="_blank" rel="noopener">
+          <span class="plat-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i7"/></svg></span>
+          <span class="plat-info"><b>Snapchat</b><span>Stories du jour</span></span>
+          <span class="plat-count"><b class="n" data-target="12" data-suffix=" k">0 k</b></span>
+          <span class="arrow">↗</span>
+        </a>
+      </div>
     </div>
 
     <!-- Visionneuse des publications -->
@@ -1553,7 +1483,7 @@ body.gate-on{overflow:hidden}
       node.querySelectorAll('.scarcity[data-fill]').forEach(function(s){ if(!seen.has(s)){seen.add(s);fill(s);} });
     }
     window.__countUp=countUp;
-    var targets=document.querySelectorAll('.ps-stats,.scarcity');
+    var targets=document.querySelectorAll('.platforms,.ps-stats,.scarcity');
     if(reduce||!('IntersectionObserver' in window)){ run(document); }
     else{
       var io=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ run(e.target); io.unobserve(e.target);} });},{threshold:.35});
@@ -1602,10 +1532,10 @@ body.gate-on{overflow:hidden}
       var vip=document.getElementById('magnet');
       if(vip) vip.addEventListener('click',function(){ev('contenu-exclusif','Clic contenu exclusif');});
       // Liens réseaux (section 02) + logos du footer
-      document.querySelectorAll('.social-grid .soc-card, footer .socials a').forEach(function(a){
+      document.querySelectorAll('.platforms .plat-top, .platforms .plat-cta, .platforms .plat-card, footer .socials a').forEach(function(a){
         a.addEventListener('click',function(){
-          var n=(a.querySelector('.soc-name')||a).getAttribute('aria-label')
-                || (a.querySelector('.soc-name')&&a.querySelector('.soc-name').textContent)
+          var n=(a.querySelector('.plat-info b')||a).getAttribute('aria-label')
+                || (a.querySelector('.plat-info b')&&a.querySelector('.plat-info b').textContent)
                 || a.getAttribute('aria-label') || 'lien';
           ev(n.trim().toLowerCase().replace(/\s+/g,'-'),'Clic '+n.trim());
         });
@@ -1646,22 +1576,6 @@ body.gate-on{overflow:hidden}
     document.getElementById('lbxClose').addEventListener('click',hide);
     box.addEventListener('click',function(e){ if(e.target===box) hide(); });
     addEventListener('keydown',function(e){ if(e.key==='Escape'&&box.classList.contains('open')) hide(); });
-  })();
-  </script>
-  <!-- ===== ✏️ TRUSTINDEX — colle ici l'identifiant de chaque widget (la partie après « ? » dans le code fourni) ===== -->
-  <script>
-  var TRUSTINDEX = {
-    instagram: '',   // ex. 'a1b2c3d4e5f6g7h8i9j0'
-    tiktok:    ''
-  };
-  (function(){
-    document.querySelectorAll('.ti-slot').forEach(function(slot){
-      var id=(TRUSTINDEX[slot.dataset.ti]||'').trim(); if(!id) return;   // pas d'identifiant : on garde l'aperçu
-      var demo=slot.querySelector('.ti-demo'); if(demo) demo.remove();
-      var sc=document.createElement('script'); sc.defer=true; sc.async=true;
-      sc.src='https://cdn.trustindex.io/loader-feed.js?'+encodeURIComponent(id);
-      slot.appendChild(sc);
-    });
   })();
   </script>
   <!-- Codes promo : copie en un clic -->

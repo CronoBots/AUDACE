@@ -458,7 +458,7 @@ footer .copy{letter-spacing:.02em}
 .cell.reveal{opacity:0;transform:none}
 .cell.reveal>picture img{transition:transform .6s cubic-bezier(.2,.7,.2,1),filter .6s ease}
 .cell.reveal.in{opacity:1;animation:cellIn .85s cubic-bezier(.16,1,.3,1) backwards}
-.cell.reveal.in>picture img{animation:cellImgIn 1.05s cubic-bezier(.16,1,.3,1) backwards}
+.cell.reveal.in:not(.lock)>picture img{animation:cellImgIn 1.05s cubic-bezier(.16,1,.3,1) backwards}
 /* léger décalage entre les deux photos d'une même rangée, qui entrent en vue ensemble */
 .cell.reveal.land:nth-child(odd){animation-delay:.12s}
 .cell.reveal.land:nth-child(odd)>picture img{animation-delay:.12s}
@@ -667,7 +667,7 @@ body.gate-on{overflow:hidden}
 .plat-ic{width:48px;height:48px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;
   background:var(--bg);border:1px solid var(--line);color:#fff;transition:background .25s ease,border-color .25s ease}
 .plat-ic svg{width:22px;height:22px;fill:currentColor}
-.plat-feat:hover .plat-ic,.plat-card:hover .plat-ic{background:linear-gradient(135deg,var(--coral),var(--coral-2));border-color:transparent}
+.plat-feat:hover .plat-ic{background:linear-gradient(135deg,var(--coral),var(--coral-2));border-color:transparent}
 .plat-info{display:flex;flex-direction:column;gap:1px;min-width:0}
 .plat-info b{font-size:1.05rem;font-weight:800;letter-spacing:-.01em}
 .plat-info span{font-size:.78rem;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -685,21 +685,6 @@ body.gate-on{overflow:hidden}
 .plat-cta .arrow{color:var(--coral);transition:transform .3s ease}
 .plat-feat:hover .plat-cta .arrow{transform:translateX(4px)}
 @media(max-width:520px){.plat-preview{gap:5px}.plat-feat{padding:16px}}
-
-.plat-more{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-.plat-card{position:relative;display:flex;align-items:center;gap:14px;padding:16px;border-radius:16px;
-  background:var(--bg-soft);border:1px solid var(--line);
-  transition:transform .25s cubic-bezier(.2,.7,.2,1),border-color .25s ease,box-shadow .25s ease}
-.plat-card:hover{transform:translateY(-3px);border-color:rgba(var(--coral-rgb),.4);box-shadow:0 14px 34px rgba(0,0,0,.28)}
-.plat-card .plat-ic{width:44px;height:44px}
-.plat-card .plat-count{font-size:.92rem;font-weight:800}
-.plat-card .arrow{font-size:1.05rem;color:var(--muted);flex-shrink:0;transition:transform .3s ease,color .3s ease}
-.plat-card:hover .arrow{transform:translateX(4px);color:var(--coral)}
-@media(max-width:520px){.plat-more{grid-template-columns:repeat(3,1fr);gap:8px}
-  .plat-card{flex-direction:column;text-align:center;padding:14px 6px;gap:7px}
-  .plat-card .plat-info{align-items:center}.plat-card .plat-info span{display:none}
-  .plat-card .plat-count{margin-left:0}.plat-card .plat-count b{font-size:.8rem}
-  .plat-card .arrow{display:none}}
 
 /* ============ OFFRES GROUPÉES ============ */
 .bundles{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 2px}
@@ -1009,40 +994,6 @@ body.gate-on{overflow:hidden}
           <button class="pv ig-post" type="button" data-src="img-volley" data-net="ig" data-cap="Beach-volley entre copines 🏐" data-likes="2 204" data-com="88" aria-label="Publication Instagram : Beach-volley entre copines 🏐"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="" loading="lazy" decoding="async"></picture></button>
         </div>
         <a class="plat-cta" href="#" data-link="instagram" target="_blank" rel="noopener">Suivre sur Instagram <span class="arrow">↗</span></a>
-      </div>
-
-      <!-- ✏️ Autres réseaux : remplace chaque href="#" et les chiffres par tes vrais liens/abonnés -->
-      <div class="plat-more">
-        <a class="plat-card" href="#" data-link="facebook" target="_blank" rel="noopener">
-          <span class="plat-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i3"/></svg></span>
-          <span class="plat-info"><b>Facebook</b><span>Ma page</span></span>
-          <span class="plat-count"><b class="n" data-target="18" data-suffix=" k">0 k</b></span>
-          <span class="arrow">↗</span>
-        </a>
-        <a class="plat-card" href="#" data-link="youtube" target="_blank" rel="noopener">
-          <span class="plat-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i6"/></svg></span>
-          <span class="plat-info"><b>YouTube</b><span>Vlogs &amp; entraînements</span></span>
-          <span class="plat-count"><b class="n" data-target="22" data-suffix=" k">0 k</b></span>
-          <span class="arrow">↗</span>
-        </a>
-        <a class="plat-card" href="#" data-link="x" target="_blank" rel="noopener">
-          <span class="plat-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zM17.6 20.65h2.04L6.49 3.24H4.3z"/></svg></span>
-          <span class="plat-info"><b>X</b><span>Actus &amp; teasers</span></span>
-          <span class="plat-count"><b class="n" data-target="9" data-suffix=" k">0 k</b></span>
-          <span class="arrow">↗</span>
-        </a>
-        <a class="plat-card" href="#" data-link="telegram" target="_blank" rel="noopener">
-          <span class="plat-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i5"/></svg></span>
-          <span class="plat-info"><b>Telegram</b><span>Communauté privée</span></span>
-          <span class="plat-count"><b class="n" data-target="3.4" data-dec="1" data-suffix=" k">0 k</b></span>
-          <span class="arrow">↗</span>
-        </a>
-        <a class="plat-card" href="#" data-link="snapchat" target="_blank" rel="noopener">
-          <span class="plat-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i7"/></svg></span>
-          <span class="plat-info"><b>Snapchat</b><span>Stories du jour</span></span>
-          <span class="plat-count"><b class="n" data-target="12" data-suffix=" k">0 k</b></span>
-          <span class="arrow">↗</span>
-        </a>
       </div>
     </div>
 
@@ -1532,7 +1483,7 @@ body.gate-on{overflow:hidden}
       var vip=document.getElementById('magnet');
       if(vip) vip.addEventListener('click',function(){ev('contenu-exclusif','Clic contenu exclusif');});
       // Liens réseaux (section 02) + logos du footer
-      document.querySelectorAll('.platforms .plat-top, .platforms .plat-cta, .platforms .plat-card, footer .socials a').forEach(function(a){
+      document.querySelectorAll('.platforms .plat-top, .platforms .plat-cta, footer .socials a').forEach(function(a){
         a.addEventListener('click',function(){
           var n=(a.querySelector('.plat-info b')||a).getAttribute('aria-label')
                 || (a.querySelector('.plat-info b')&&a.querySelector('.plat-info b').textContent)

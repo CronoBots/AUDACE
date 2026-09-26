@@ -270,25 +270,31 @@ a{color:inherit;text-decoration:none}
   transform:skewX(-18deg);animation:sheen 4.5s ease-in-out infinite}
 @keyframes sheen{0%{left:-70%}45%,100%{left:150%}}
 
-/* ============ LIENS RÉSEAUX (style index éditorial) ============ */
-.rows{border-top:1px solid var(--line)}
-.row{position:relative;display:flex;align-items:center;gap:18px;
-  padding:20px 4px;border-bottom:1px solid var(--line);overflow:hidden;
-  transition:padding-left .3s ease,color .3s ease}
-.row .ic{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;flex-shrink:0;
-  background:var(--bg-soft);border:1px solid var(--line);color:var(--ink);
+/* ============ LIENS RÉSEAUX : grille de cartes (moderne, cohérente avec les stats) ============ */
+.social-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.soc-card{position:relative;display:flex;align-items:center;gap:14px;
+  padding:16px;border-radius:16px;background:var(--bg-soft);border:1px solid var(--line);
+  overflow:hidden;transition:transform .25s cubic-bezier(.2,.7,.2,1),border-color .25s ease,box-shadow .25s ease}
+.soc-card .soc-ic{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;flex-shrink:0;
+  background:var(--bg);border:1px solid var(--line);color:var(--ink);
   transition:background .25s ease,color .25s ease,border-color .25s ease}
-.row .ic svg{width:20px;height:20px;fill:currentColor;display:block}
-.row:hover .ic{background:linear-gradient(135deg,var(--coral),var(--coral-2));color:#fff;border-color:transparent}
-.row .name{font-size:1.3rem;font-weight:700;letter-spacing:-.01em}
-.row .meta{margin-left:auto;font-size:.8rem;color:var(--muted);text-align:right}
-.row .arrow{margin-left:14px;font-size:1.1rem;color:var(--muted);transition:transform .3s ease,color .3s ease}
-.row::before{content:"";position:absolute;left:0;top:0;height:100%;width:0;
-  background:linear-gradient(90deg,rgba(var(--coral-rgb),.12),transparent);transition:width .35s ease;z-index:-1}
-.row:hover{padding-left:20px}
-.row:hover::before{width:100%}
-.row:hover .arrow{transform:translateX(5px);color:var(--coral)}
-.row:hover .name{color:var(--ink)}
+.soc-card .soc-ic svg{width:20px;height:20px;fill:currentColor;display:block}
+.soc-card .soc-body{display:flex;flex-direction:column;gap:2px;min-width:0}
+.soc-card .soc-name{font-size:1.02rem;font-weight:700;letter-spacing:-.01em}
+.soc-card .soc-meta{font-size:.76rem;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.soc-card .soc-count{margin-left:auto;font-size:.92rem;font-weight:800;color:var(--ink);flex-shrink:0}
+.soc-card .soc-arrow{font-size:1.05rem;color:var(--muted);flex-shrink:0;transition:transform .3s ease,color .3s ease}
+.soc-card:hover{transform:translateY(-3px);border-color:rgba(var(--coral-rgb),.4);
+  box-shadow:0 14px 34px rgba(0,0,0,.28)}
+.soc-card:hover .soc-ic{background:linear-gradient(135deg,var(--coral),var(--coral-2));color:#fff;border-color:transparent}
+.soc-card:hover .soc-arrow{transform:translateX(4px);color:var(--coral)}
+@media(max-width:520px){.social-grid{grid-template-columns:repeat(3,1fr);gap:8px}
+  .soc-card{flex-direction:column;text-align:center;padding:14px 6px;gap:7px}
+  .soc-card .soc-body{align-items:center}
+  .soc-card .soc-meta{display:none}
+  .soc-card .soc-name{font-size:.76rem}
+  .soc-card .soc-count{margin-left:0;font-size:.76rem}
+  .soc-card .soc-arrow{display:none}}
 
 /* ============ GALERIE (mosaïque asymétrique) ============ */
 .gallery{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
@@ -383,8 +389,6 @@ footer .copy{letter-spacing:.02em}
   .hero-bio{font-size:.78rem}
   .featured{padding:24px}
   .sec-head{margin:34px 0 16px}
-  .row .name{font-size:1.15rem}
-  .row .meta{display:none}
   .cell.land,.cell.full{grid-column:span 6}
   .cell.land,.cell.full{aspect-ratio:4/3}   /* plein écran, format qui ne coupe pas le visage */
   footer{margin-top:38px}
@@ -417,25 +421,6 @@ footer .copy{letter-spacing:.02em}
   background:linear-gradient(90deg,var(--coral),var(--gold));transition:width 1.5s cubic-bezier(.2,.7,.2,1)}
 .scarcity .txt{font-size:.77rem;color:rgba(245,239,231,.78);margin-top:9px}
 .scarcity .txt b{color:var(--gold)}
-.microquote{display:flex;gap:12px;align-items:center;margin-top:18px;padding:14px;
-  background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);border-radius:14px}
-.microquote .av{width:40px;height:40px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;
-  font-weight:800;color:#fff;background:linear-gradient(135deg,var(--coral),var(--coral-2))}
-.microquote p{font-size:.86rem;color:rgba(245,239,231,.92);margin:0;font-style:italic}
-.microquote .who{font-size:.72rem;color:var(--muted);margin-top:3px;font-style:normal}
-
-/* Section témoignages */
-.testi{display:grid;gap:12px}
-@media(min-width:560px){.testi{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
-.tcard{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
-.tcard .stars{margin-bottom:10px}
-.tcard p{font-size:.92rem;color:var(--ink)}
-.tcard .who{display:flex;align-items:center;gap:10px;margin-top:14px}
-.tcard .who .av{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:800;
-  font-size:.82rem;color:#fff;background:linear-gradient(135deg,var(--coral),var(--coral-2))}
-.tcard .who b{font-size:.84rem;display:block}
-.tcard .who span{font-size:.74rem;color:var(--muted)}
-
 /* ============ OnlyFans ============ */
 :root{--of:#00AFF0}
 .featured .go.of{background:var(--of);color:#fff}
@@ -529,7 +514,7 @@ footer .copy{letter-spacing:.02em}
 .finalcta .ofbtn img{width:23px;height:23px}
 .finalcta .reassure2{display:block;margin-top:14px;font-size:.78rem;color:var(--muted)}
 
-.ti-feeds+.rows{margin-top:4px}
+.ti-feeds+.social-grid{margin-top:4px}
 
 /* Bloc démo Secr3tly : visuel neutre/produit, volontairement distinct du
    rose OnlyFans pour ne jamais se confondre avec l'offre de la créatrice */
@@ -1014,11 +999,6 @@ body.gate-on{overflow:hidden}
       </div>
       <!-- ===== COMPTEUR D'ANTICIPATION (prochain drop) ===== -->
       <div class="drop" id="drop" hidden><span class="dt">✦</span> Prochain contenu exclusif <b id="dropIn">…</b></div>
-      <!-- ✏️ Témoignage : remplace par un vrai avis -->
-      <div class="microquote">
-        <span class="av">L</span>
-        <div><p>« Du contenu exclusif vraiment unique, et un contact direct en privé. »</p><div class="who">— Lucas, membre depuis 6 mois</div></div>
-      </div>
       <span class="go of"><img class="of-ic" src="onlyfans-icon-white.svg" alt="" aria-hidden="true">Rejoindre sur OnlyFans <span class="circle">↗</span></span>
       <span class="reassure">🔒 Paiement sécurisé · Sans engagement · Annulation en 1 clic</span>
     </a>
@@ -1094,32 +1074,37 @@ body.gate-on{overflow:hidden}
 
     </div>
 
-    <div class="rows reveal">
-      <!-- ✏️ Réseaux : remplace chaque href="#" -->
-      <a class="row" href="#" data-link="facebook" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i3"/></svg></span>
-        <span class="name">Facebook</span>
-        <span class="meta">Ma page</span><span class="arrow">↗</span>
+    <!-- ✏️ Réseaux : remplace chaque href="#" et les chiffres par tes vrais liens/abonnés -->
+    <div class="social-grid reveal">
+      <a class="soc-card" href="#" data-link="facebook" target="_blank" rel="noopener">
+        <span class="soc-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i3"/></svg></span>
+        <span class="soc-body"><span class="soc-name">Facebook</span><span class="soc-meta">Ma page</span></span>
+        <span class="soc-count">18 k</span>
+        <span class="soc-arrow">↗</span>
       </a>
-      <a class="row" href="#" data-link="youtube" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i6"/></svg></span>
-        <span class="name">YouTube</span>
-        <span class="meta">Vlogs &amp; entraînements</span><span class="arrow">↗</span>
+      <a class="soc-card" href="#" data-link="youtube" target="_blank" rel="noopener">
+        <span class="soc-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i6"/></svg></span>
+        <span class="soc-body"><span class="soc-name">YouTube</span><span class="soc-meta">Vlogs &amp; entraînements</span></span>
+        <span class="soc-count">22 k</span>
+        <span class="soc-arrow">↗</span>
       </a>
-      <a class="row" href="#" data-link="x" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zM17.6 20.65h2.04L6.49 3.24H4.3z"/></svg></span>
-        <span class="name">Twitter / X</span>
-        <span class="meta">Actus &amp; teasers</span><span class="arrow">↗</span>
+      <a class="soc-card" href="#" data-link="x" target="_blank" rel="noopener">
+        <span class="soc-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93zM17.6 20.65h2.04L6.49 3.24H4.3z"/></svg></span>
+        <span class="soc-body"><span class="soc-name">Twitter / X</span><span class="soc-meta">Actus &amp; teasers</span></span>
+        <span class="soc-count">9 k</span>
+        <span class="soc-arrow">↗</span>
       </a>
-      <a class="row" href="#" data-link="telegram" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i5"/></svg></span>
-        <span class="name">Telegram</span>
-        <span class="meta">Communauté privée</span><span class="arrow">↗</span>
+      <a class="soc-card" href="#" data-link="telegram" target="_blank" rel="noopener">
+        <span class="soc-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i5"/></svg></span>
+        <span class="soc-body"><span class="soc-name">Telegram</span><span class="soc-meta">Communauté privée</span></span>
+        <span class="soc-count">3,4 k</span>
+        <span class="soc-arrow">↗</span>
       </a>
-      <a class="row" href="#" data-link="snapchat" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i7"/></svg></span>
-        <span class="name">Snapchat</span>
-        <span class="meta">Stories du jour</span><span class="arrow">↗</span>
+      <a class="soc-card" href="#" data-link="snapchat" target="_blank" rel="noopener">
+        <span class="soc-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i7"/></svg></span>
+        <span class="soc-body"><span class="soc-name">Snapchat</span><span class="soc-meta">Stories du jour</span></span>
+        <span class="soc-count">12 k</span>
+        <span class="soc-arrow">↗</span>
       </a>
     </div>
 
@@ -1280,22 +1265,8 @@ body.gate-on{overflow:hidden}
     </div>
 
     <!-- ===== 07 · TÉMOIGNAGES ✏️ Remplace par de VRAIS avis ===== -->
-    <div class="sec-head reveal"><span class="num">07</span><span class="label">Ils ont rejoint</span><span class="rule"></span></div>
-    <div class="testi reveal">
-      <div class="tcard">
-        <span class="stars">★★★★★</span>
-        <p>« Des photos et vidéos exclusives au top, et elle répond vraiment en privé. »</p>
-        <div class="who"><span class="av">M</span><span><b>Maxime D.</b><span>Membre VIP</span></span></div>
-      </div>
-      <div class="tcard">
-        <span class="stars">★★★★★</span>
-        <p>« Du nouveau contenu privé chaque semaine, je ne suis jamais déçu. »</p>
-        <div class="who"><span class="av">T</span><span><b>Thomas R.</b><span>Membre depuis 1 an</span></span></div>
-      </div>
-    </div>
-
-    <!-- ===== 08 · FAQ ===== -->
-    <div class="sec-head reveal"><span class="num">08</span><span class="label">Questions fréquentes</span><span class="rule"></span></div>
+    <!-- ===== 07 · FAQ ===== -->
+    <div class="sec-head reveal"><span class="num">07</span><span class="label">Questions fréquentes</span><span class="rule"></span></div>
     <div class="faq reveal">
       <details><summary>Qu'est-ce que je reçois en m'abonnant&nbsp;?</summary><div class="a">Un accès privé à mes photos et vidéos exclusives, du nouveau contenu chaque semaine, et la possibilité de m'écrire en direct.</div></details>
       <details><summary>La facturation est-elle discrète&nbsp;?</summary><div class="a">Oui — le paiement passe par OnlyFans ou MYM, de façon sécurisée et discrète. Rien d'explicite n'apparaît sur ton relevé.</div></details>
@@ -1607,10 +1578,10 @@ body.gate-on{overflow:hidden}
       var vip=document.getElementById('magnet');
       if(vip) vip.addEventListener('click',function(){ev('contenu-exclusif','Clic contenu exclusif');});
       // Liens réseaux (section 02) + logos du footer
-      document.querySelectorAll('.rows .row, footer .socials a').forEach(function(a){
+      document.querySelectorAll('.social-grid .soc-card, footer .socials a').forEach(function(a){
         a.addEventListener('click',function(){
-          var n=(a.querySelector('.name')||a).getAttribute('aria-label')
-                || (a.querySelector('.name')&&a.querySelector('.name').textContent)
+          var n=(a.querySelector('.soc-name')||a).getAttribute('aria-label')
+                || (a.querySelector('.soc-name')&&a.querySelector('.soc-name').textContent)
                 || a.getAttribute('aria-label') || 'lien';
           ev(n.trim().toLowerCase().replace(/\s+/g,'-'),'Clic '+n.trim());
         });

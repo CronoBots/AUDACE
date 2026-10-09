@@ -130,6 +130,7 @@ a{color:inherit;text-decoration:none}
 .status{display:inline-flex;align-items:center;gap:8px;color:#fff;
   background:rgba(0,0,0,.45);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
   border:1px solid rgba(255,255,255,.2);padding:7px 13px;border-radius:100px;text-shadow:none}
+.status.demo-status{color:var(--gold);border-color:rgba(var(--gold-rgb),.45)}
 .status .dot{width:8px;height:8px;border-radius:50%;background:#46e08a;
   box-shadow:0 0 0 0 rgba(70,224,138,.6),0 0 7px 1px rgba(70,224,138,.85);animation:ping 2.2s ease-out infinite}
 @keyframes ping{0%{box-shadow:0 0 0 0 rgba(70,224,138,.5),0 0 7px 1px rgba(70,224,138,.85)}70%,100%{box-shadow:0 0 0 7px rgba(70,224,138,0),0 0 7px 1px rgba(70,224,138,.85)}}
@@ -215,6 +216,8 @@ a{color:inherit;text-decoration:none}
 .hs-icons a.mym img{width:26px;height:auto}
 .hs-icons a:hover{transform:translateY(-3px);border-color:var(--coral);background:rgba(0,0,0,.55)}
 .hs-stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin-top:10px;max-width:520px}
+.demo-data-note{display:block;width:max-content;max-width:100%;margin:12px auto 0;padding:6px 11px;border:1px solid rgba(var(--gold-rgb),.38);border-radius:100px;
+  color:var(--gold);background:rgba(10,9,8,.62);font-size:.68rem;line-height:1.35;letter-spacing:.04em;text-align:center}
 .hs-stat{background:rgba(0,0,0,.4);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
   border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:10px 5px;text-align:center}
 .hs-stat b{display:block;color:#fff;font-size:1.05rem;font-weight:800;letter-spacing:-.01em}
@@ -845,7 +848,7 @@ body.gate-on{overflow:hidden}
     <!-- ===== BARRE HAUTE (en surimpression sur le héros) ===== -->
     <header class="topbar">
       <span class="mono">✦ Valentina</span>
-      <span class="status"><span class="dot"></span> En ligne · <span id="clock">--:--</span></span>
+      <span class="status demo-status">Démo · données fictives</span>
     </header>
 
     <!-- ===== FOND DU HÉRO (image : au bord de la piscine) =====
@@ -863,7 +866,7 @@ body.gate-on{overflow:hidden}
     <span class="hero-sparks" aria-hidden="true"><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i></span>
 
     <!-- ✏️ Le grand nom -->
-    <h1 class="bigname"><span class="fill">Valentina</span> <svg class="vf" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0095f6"/><path d="M10.3 15.6l-3.2-3.2 1.3-1.3 1.9 1.9 5.1-5.1 1.3 1.3z" fill="#fff"/></svg></h1>
+    <h1 class="bigname"><span class="fill">Valentina</span></h1>
     <p class="role-line">Coach fitness &amp; créatrice de contenu</p>
     <p class="hero-bio">
       Je te partage mon quotidien, <span class="rotator" id="rotator">mon énergie</span>… et mon côté plus intime, rien que pour toi 😏
@@ -877,6 +880,7 @@ body.gate-on{overflow:hidden}
         <a href="#" data-link="mym" target="_blank" rel="noopener" aria-label="MYM" class="mym"><img src="mym-logo-white.svg" alt="" aria-hidden="true"></a>
         <a href="#" data-link="youtube" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i6"/></svg></a>
       </div>
+      <p class="demo-data-note">Chiffres d’audience fictifs · exemple de démonstration</p>
       <div class="hs-stats">
         <div class="hs-stat"><b class="n" data-target="2" data-suffix="M">0M</b><span>TikTok</span></div>
         <div class="hs-stat"><b class="n" data-target="304" data-suffix="K">0K</b><span>Instagram</span></div>
@@ -1066,9 +1070,10 @@ body.gate-on{overflow:hidden}
       <div class="cu-err" id="cuErr" role="alert"></div>
       <button class="cu-send" type="submit">Préparer ma demande →</button>
       <div class="cu-done" id="cuDone" hidden>
-        <b>✓ Ta demande est prête et copiée</b>
+        <b>✓ Ta demande est prête</b>
         <p>Colle-la dans un message privé sur <span id="cuPlat">MYM</span> : je te réponds avec le tarif.</p>
         <pre id="cuPreview"></pre>
+        <p id="cuCopyStatus" class="cu-note" role="status" aria-live="polite"></p>
         <a class="cu-open" id="cuOpen" href="#" target="_blank" rel="noopener">Ouvrir MYM →</a>
       </div>
       <p class="cu-note">🔒 Rien n'est envoyé ni enregistré depuis cette page.</p>
@@ -1084,59 +1089,60 @@ body.gate-on{overflow:hidden}
          ✏️ Exemples : remplace les marques, les codes et les liens (href="#") par tes vrais partenariats.
          Les liens gardent rel="sponsored" (bonne pratique pour les liens payants / affiliés). -->
     <div class="sec-head reveal"><span class="num">05</span><span class="label">Codes promo &amp; partenaires</span><span class="rule"></span></div>
-    <p class="essentials-intro reveal">Les marques que j'utilise vraiment — avec des réductions rien que pour toi.</p>
+    <p class="essentials-intro reveal">Exemples fictifs de blocs partenaires et d’offres, pour illustrer la démo.</p>
 
     <!-- Sponsor mis en avant -->
     <a class="sponsor reveal" href="#" data-link="sponsor" target="_blank" rel="noopener sponsored">
       <span class="sp-bg" aria-hidden="true"><picture><source srcset="img-gym.webp" type="image/webp"><img src="img-gym.jpg" alt="" loading="lazy" decoding="async"></picture></span>
-      <span class="sp-tag">Partenariat rémunéré</span>
-      <span class="sp-k">En collaboration avec</span>
-      <span class="sp-brand">IRONLAB <em>Gym Club</em></span>
-      <span class="sp-tx">1 mois d'abonnement offert dans toutes les salles, avec mon code</span>
-      <span class="sp-cta"><span class="sp-code">VALENTINAGYM</span><span>J'en profite →</span></span>
+      <span class="sp-tag">Exemple fictif · partenariat</span>
+      <span class="sp-k">Marque partenaire — exemple</span>
+      <span class="sp-brand">Marque <em>exemple</em></span>
+      <span class="sp-tx">Exemple de mise en avant d’une offre partenaire à configurer.</span>
+      <span class="sp-cta"><span class="sp-code">EXEMPLE15</span><span>Voir l’exemple →</span></span>
     </a>
 
     <div class="promos reveal">
       <div class="promo">
-        <div class="pr-top"><span class="pr-logo" style="background:#2f6d4f">N</span><span class="pr-nm"><b>NOVA Nutrition</b><small>Protéines &amp; compléments</small></span><span class="pr-tag">Code promo</span></div>
-        <div class="pr-deal">-15 % sur tout le site</div>
+        <div class="pr-top"><span class="pr-logo" style="background:#2f6d4f">A</span><span class="pr-nm"><b>Marque exemple A</b><small>Catégorie à personnaliser</small></span><span class="pr-tag">Exemple</span></div>
+        <div class="pr-deal">Exemple de remise à configurer</div>
         <div class="pr-row">
-          <button class="pr-code" type="button" data-code="VALENTINA15" aria-label="Copier le code VALENTINA15"><span>VALENTINA15</span><i>Copier</i></button>
+          <button class="pr-code" type="button" data-code="EXEMPLE15" aria-label="Copier le code exemple EXEMPLE15"><span>EXEMPLE15</span><i>Copier</i></button>
           <a class="pr-go" href="#" data-link="promo1" target="_blank" rel="noopener sponsored">Voir l'offre →</a>
         </div>
       </div>
       <div class="promo">
-        <div class="pr-top"><span class="pr-logo" style="background:#1d1d1f">É</span><span class="pr-nm"><b>Élan Activewear</b><small>Leggings &amp; brassières</small></span><span class="pr-tag">Lien affilié</span></div>
-        <div class="pr-deal">-20 % sur ta 1ʳᵉ commande</div>
+        <div class="pr-top"><span class="pr-logo" style="background:#1d1d1f">B</span><span class="pr-nm"><b>Marque exemple B</b><small>Catégorie à personnaliser</small></span><span class="pr-tag">Exemple</span></div>
+        <div class="pr-deal">Exemple de remise à configurer</div>
         <div class="pr-row">
-          <button class="pr-code" type="button" data-code="VALENTINA20" aria-label="Copier le code VALENTINA20"><span>VALENTINA20</span><i>Copier</i></button>
+          <button class="pr-code" type="button" data-code="EXEMPLE20" aria-label="Copier le code exemple EXEMPLE20"><span>EXEMPLE20</span><i>Copier</i></button>
           <a class="pr-go" href="#" data-link="promo2" target="_blank" rel="noopener sponsored">Voir l'offre →</a>
         </div>
       </div>
       <div class="promo">
-        <div class="pr-top"><span class="pr-logo" style="background:#b5654a">L</span><span class="pr-nm"><b>Lumière Skin</b><small>Soins &amp; routine beauté</small></span><span class="pr-tag">Code promo</span></div>
-        <div class="pr-deal">1 soin offert dès 40 €</div>
+        <div class="pr-top"><span class="pr-logo" style="background:#b5654a">C</span><span class="pr-nm"><b>Marque exemple C</b><small>Catégorie à personnaliser</small></span><span class="pr-tag">Exemple</span></div>
+        <div class="pr-deal">Exemple d’offre à configurer</div>
         <div class="pr-row">
-          <button class="pr-code" type="button" data-code="GLOWVALENTINA" aria-label="Copier le code GLOWVALENTINA"><span>GLOWVALENTINA</span><i>Copier</i></button>
+          <button class="pr-code" type="button" data-code="EXEMPLEC" aria-label="Copier le code exemple EXEMPLEC"><span>EXEMPLEC</span><i>Copier</i></button>
           <a class="pr-go" href="#" data-link="promo3" target="_blank" rel="noopener sponsored">Voir l'offre →</a>
         </div>
       </div>
       <div class="promo">
-        <div class="pr-top"><span class="pr-logo" style="background:#6b4bb8">S</span><span class="pr-nm"><b>Sillage Paris</b><small>Mon parfum signature</small></span><span class="pr-tag">Lien affilié</span></div>
-        <div class="pr-deal">Livraison offerte + échantillons</div>
+        <div class="pr-top"><span class="pr-logo" style="background:#6b4bb8">D</span><span class="pr-nm"><b>Marque exemple D</b><small>Catégorie à personnaliser</small></span><span class="pr-tag">Exemple</span></div>
+        <div class="pr-deal">Exemple d’offre à configurer</div>
         <div class="pr-row">
-          <button class="pr-code" type="button" data-code="VALENTINA" aria-label="Copier le code VALENTINA"><span>VALENTINA</span><i>Copier</i></button>
+          <button class="pr-code" type="button" data-code="EXEMPLE" aria-label="Copier le code exemple EXEMPLE"><span>EXEMPLE</span><i>Copier</i></button>
           <a class="pr-go" href="#" data-link="promo4" target="_blank" rel="noopener sponsored">Voir l'offre →</a>
         </div>
       </div>
     </div>
-    <p class="pr-disc reveal">#pub · Certains liens sont affiliés ou sponsorisés : je peux toucher une commission, sans surcoût pour toi.</p>
+    <p class="pr-disc reveal">Aucune offre ni aucun partenariat réel n’est représenté ici. Les marques, codes et avantages sont fictifs.</p>
 
     <!-- ===== 06 · POUR LES MARQUES (kit presse) ✏️ mets tes vrais chiffres ===== -->
     <div class="sec-head reveal"><span class="num">06</span><span class="label">Pour les marques</span><span class="rule"></span></div>
+    <p class="demo-data-note reveal">Exemple de média kit · profil et statistiques fictifs, à remplacer par des données vérifiées</p>
     <div class="press reveal">
       <div class="ps-top">
-        <div><h3>Travaillons ensemble</h3><p>Une communauté fitness &amp; lifestyle engagée, surtout en Belgique et en France. Je ne présente que des marques que j'utilise vraiment.</p></div>
+        <div><h3>Exemple de profil partenaire</h3><p>Cette section illustre un média kit créatrice. Les chiffres, l’audience et le profil sont fictifs.</p></div>
       </div>
       <div class="ps-stats">
         <div class="ps"><b class="n" data-target="304" data-suffix=" k">0 k</b><span>Abonnés Instagram</span></div>
@@ -1242,7 +1248,7 @@ body.gate-on{overflow:hidden}
       </div>
       <span class="copy">© <span id="year"></span> Valentina — Tous droits réservés</span>
       <a class="powered" href="https://cronobots.github.io/AUDACE/" target="_blank" rel="noopener">Powered by <b>Secr3tly</b></a>
-      <span class="demo-note">Page d'exemple réalisée par Valentina<br>noms, photos, chiffres et avis fictifs.</span>
+      <span class="demo-note">Démo Secr3tly : nom, photos, chiffres, marques, offres et partenariats fictifs.</span>
       <span class="viewcount" id="viewcount" hidden>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5C6.5 5 2.7 8.3 1 12c1.7 3.7 5.5 7 11 7s9.3-3.3 11-7c-1.7-3.7-5.5-7-11-7zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-8a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>
         <span><b id="viewcount-n">—</b> visites</span>
@@ -1276,15 +1282,8 @@ body.gate-on{overflow:hidden}
       if(reduce){hide();} else {setTimeout(hide,1600);}
     })();
 
-    /* Année + horloge live (Knokke, heure de Bruxelles) */
+    /* Année du pied de page */
     document.getElementById('year').textContent = new Date().getFullYear();
-    function tick(){
-      try{
-        document.getElementById('clock').textContent =
-          new Intl.DateTimeFormat('fr-BE',{hour:'2-digit',minute:'2-digit',timeZone:'Europe/Brussels'}).format(new Date());
-      }catch(e){}
-    }
-    tick(); setInterval(tick,10000);
 
     /* Mot qui tourne dans la phrase d'accroche */
     (function(){
@@ -1587,7 +1586,12 @@ body.gate-on{overflow:hidden}
       open.href=plat==='MYM'?f.dataset.mym:f.dataset.of; open.className='cu-open'+(plat==='MYM'?'':' of');
       open.textContent='Ouvrir '+plat+' →';
       document.getElementById('cuDone').hidden=false;
-      if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).catch(function(){}); }
+      var copyStatus=document.getElementById('cuCopyStatus');
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(txt).then(function(){ copyStatus.textContent='Texte copié. Colle-le dans ton message privé.'; },function(){ copyStatus.textContent='La copie automatique a échoué. Sélectionne le texte ci-dessus pour le copier.'; });
+      }else{
+        copyStatus.textContent='La copie automatique n’est pas disponible. Sélectionne le texte ci-dessus pour le copier.';
+      }
       if(window.goatcounter&&window.goatcounter.count){ window.goatcounter.count({path:'demande-perso-'+plat.toLowerCase(),title:'Demande perso '+plat,event:true}); }
       document.getElementById('cuDone').scrollIntoView({behavior:'smooth',block:'nearest'});
     });
@@ -1606,3 +1610,4 @@ body.gate-on{overflow:hidden}
   </script>
 </body>
 </html>
+

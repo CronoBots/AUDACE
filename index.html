@@ -1360,30 +1360,21 @@ body.gate-on{overflow:hidden}
       const setOn=on=>{ btn.classList.toggle('playing',on);
         btn.setAttribute('aria-pressed',on?'true':'false');
         btn.setAttribute('aria-label',on?'Couper la musique':'Activer la musique'); };
-      /* Le contexte peut être créé sans geste (il démarre "suspended", c'est autorisé) :
-         on précharge et décode le fichier tout de suite pour que le premier geste n'ait
-         plus qu'à faire resume()+start(), sans attendre le réseau/décodage (sinon, sur
-         mobile/connexion lente, la fenêtre d'activation du navigateur expire avant que
-         le son ne soit prêt, et la musique ne démarre jamais). */
-      if(!ctx){ ctx=new AC(); gain=ctx.createGain(); gain.gain.value=0.32; gain.connect(ctx.destination); }
+      /* La musique ne se charge et ne démarre qu'après activation explicite. */
+      const prepare=()=>{
+        if(ctx) return;
+        ctx=new AC(); gain=ctx.createGain(); gain.gain.value=0.32; gain.connect(ctx.destination);
+      };
       const load=()=>{ if(buffer) return Promise.resolve();
+        prepare();
         if(!fetching) fetching=fetch('audace.mp3').then(r=>r.arrayBuffer()).then(a=>ctx.decodeAudioData(a)).then(b=>{buffer=b;});
         return fetching; };
-      load();
       const ensure=async()=>{
+        prepare();
         try{ if(ctx.state==='suspended') await ctx.resume(); }catch(e){}
         if(!started){ try{ await load(); const s=ctx.createBufferSource(); s.buffer=buffer; s.loop=true; s.connect(gain); s.start(0); started=true; }catch(e){ return false; } }
         return true;
       };
-      /* Tentative de démarrage automatique dès le chargement (sans attendre de clic) :
-         ça fonctionne pour les visiteurs déjà engagés avec le site sur certains navigateurs
-         (ex. Chrome, qui autorise l'autoplay avec son après un premier engagement),
-         mais reste bloqué par défaut sur un tout premier passage sans geste — dans ce cas
-         le fallback ci-dessous (premier clic/tap/touche, dont le bouton "18 ans") prend le relais. */
-      (async()=>{
-        const ok=await ensure();
-        if(ok && ctx.state==='running'){ enabled=true; setOn(true); }
-      })();
       const turnOn=async()=>{
         enabled=true; setOn(true);
         const ok=await ensure();
@@ -1394,12 +1385,6 @@ body.gate-on{overflow:hidden}
       const turnOff=()=>{ enabled=false; if(ctx && ctx.state==='running') ctx.suspend(); setOn(false); };
       /* Bouton : bascule fiable marche/arrêt */
       btn.addEventListener('click',e=>{ e.stopPropagation(); enabled ? turnOff() : turnOn(); });
-      /* Démarrage au premier vrai geste (clic/tap/touche) — mousemove/scroll ne comptent
-         pas comme un geste utilisateur valide pour débloquer l'audio sur la plupart des
-         navigateurs, ce qui empêchait le démarrage automatique pour les visiteurs de retour
-         (qui ne passent plus par le bouton "18 ans"). */
-      const first=()=>{ if(!enabled) turnOn(); };
-      ['pointerdown','touchend','keydown','click'].forEach(ev=>addEventListener(ev,first,{once:true,passive:true}));
       /* Pause auto quand la page n'est plus visible/active ; reprise si l'utilisateur ne l'a pas coupée */
       const autoSuspend=()=>{ if(ctx && ctx.state==='running'){ ctx.suspend(); setOn(false); } };
       const autoResume=()=>{ if(enabled && ctx && ctx.state==='suspended'){ ctx.resume(); setOn(true); } };
@@ -1600,7 +1585,17 @@ body.gate-on{overflow:hidden}
   <!-- Applique LINKS à tous les liens marqués data-link -->
   <script>
   (function(){
-    document.querySelectorAll('[data-link]').forEach(function(a){ var u=LINKS[a.dataset.link]; if(u) a.href=u; });
+    document.querySelectorAll('[data-link]').forEach(function(a){
+      var u=LINKS[a.dataset.link];
+      if(u && u!=='#') a.href=u;
+      else {
+        a.removeAttribute('href');
+        a.removeAttribute('target');
+        a.setAttribute('aria-disabled','true');
+        a.setAttribute('tabindex','-1');
+        a.addEventListener('click',function(e){ e.preventDefault(); });
+      }
+    });
     document.querySelectorAll('a[href^="mailto:"]').forEach(function(a){ var q=a.getAttribute('href').split('?')[1]; a.href='mailto:'+LINKS.email+(q?'?'+q:''); if(a.textContent.indexOf('@')>-1) a.textContent=LINKS.email; });
     document.querySelectorAll('.themes button').forEach(function(b){ b.addEventListener('click',function(){ applyTheme(b.dataset.theme); }); });
     var today=new Date().getDay(); document.querySelectorAll('.wk').forEach(function(d){ if(+d.dataset.d===today) d.classList.add('today'); });
@@ -1610,4 +1605,5 @@ body.gate-on{overflow:hidden}
   </script>
 </body>
 </html>
+
 

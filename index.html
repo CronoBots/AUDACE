@@ -384,6 +384,27 @@ footer .copy{letter-spacing:.02em}
   .reveal{opacity:1;transform:none}
   #intro{display:none}
 }
+/* Éditeur visuel */
+.editor-launch{position:fixed;right:18px;bottom:18px;z-index:180;width:auto;min-height:46px;padding:0 16px;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:#171311;color:#fff;font:700 .78rem var(--font);cursor:pointer;box-shadow:0 8px 28px #0008}
+.editor-launch:hover,.editor-launch:focus-visible{border-color:var(--coral);outline:2px solid var(--coral);outline-offset:2px}
+.editor{position:fixed;inset:0 0 0 auto;z-index:200;width:min(440px,100%);height:100dvh;overflow:auto;padding:20px;background:#11100f;color:#f4efe7;box-shadow:-20px 0 60px #0009;border-left:1px solid rgba(255,255,255,.12);font:14px/1.45 var(--font)}
+.editor[hidden]{display:none}
+.editor-head{position:sticky;top:-20px;z-index:2;margin:-20px -20px 16px;padding:17px 20px;background:#11100f;border-bottom:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.editor-head h2{margin:0;font-size:1.05rem}.editor-head p{margin:3px 0 0;color:#b8b0a7;font-size:.78rem}
+.editor button,.editor input,.editor textarea,.editor select{font:inherit}
+.editor button{min-height:40px;padding:7px 11px;border:1px solid #49433e;border-radius:9px;background:#211e1b;color:#fff;cursor:pointer}
+.editor button:hover,.editor button:focus-visible{border-color:var(--coral);outline:2px solid var(--coral);outline-offset:1px}
+.editor-close{font-size:1.2rem!important;width:42px;padding:0!important}
+.editor label{display:block;margin:12px 0 5px;color:#e7dfd6;font-weight:650;font-size:.8rem}
+.editor input:not([type=checkbox]),.editor textarea,.editor select{width:100%;min-height:40px;padding:9px 10px;border:1px solid #514a43;border-radius:8px;background:#1b1917;color:#fff}
+.editor textarea{min-height:76px;resize:vertical}
+.editor-field{padding:12px 0;border-bottom:1px solid #36312d}
+.editor-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:6px}
+.editor-row strong{font-size:.88rem}.editor-row button{min-width:40px;padding:5px}
+.editor-module{display:flex;align-items:center;gap:9px}.editor-module input{width:18px;height:18px;accent-color:var(--coral)}
+.editor-note,.editor-status{font-size:.78rem;color:#c3b9ae}.editor-actions{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.editor-primary{background:var(--coral)!important;color:#17100e!important;border:0!important;font-weight:750!important}
+body.editor-open{overflow:hidden}
 
 /* ============ ✦ PREMIUM ============ */
 /* Étoiles */
@@ -844,7 +865,7 @@ body.gate-on{overflow:hidden}
   </div>
 
   <!-- ===== HÉRO : plein écran (toute la largeur et toute la hauteur visible) ===== -->
-  <section class="hero">
+  <section class="hero" data-module="hero" data-module-label="En-tête">
     <!-- ===== BARRE HAUTE (en surimpression sur le héros) ===== -->
     <header class="topbar">
       <span class="mono">✦ Valentina</span>
@@ -866,13 +887,13 @@ body.gate-on{overflow:hidden}
     <span class="hero-sparks" aria-hidden="true"><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i></span>
 
     <!-- ✏️ Le grand nom -->
-    <h1 class="bigname"><span class="fill">Valentina</span></h1>
-    <p class="role-line">Coach fitness &amp; créatrice de contenu</p>
-    <p class="hero-bio">
+    <h1 class="bigname"><span class="fill" data-edit="name">Valentina</span></h1>
+    <p class="role-line" data-edit="tagline">Coach fitness &amp; créatrice de contenu</p>
+    <p class="hero-bio" data-edit="bio">
       Je te partage mon quotidien, <span class="rotator" id="rotator">mon énergie</span>… et mon côté plus intime, rien que pour toi 😏
     </p>
     <!-- ✏️ Réseaux + compteurs : remplace les data-link (réglés dans LINKS) et les chiffres -->
-    <div class="hero-socials">
+    <div class="hero-socials" data-module="socials" data-module-label="Réseaux sociaux du profil">
       <div class="hs-icons">
         <a href="#" data-link="tiktok" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i2"/></svg></a>
         <a href="#" data-link="instagram" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i1"/></svg></a>
@@ -895,9 +916,9 @@ body.gate-on{overflow:hidden}
   <main class="wrap">
 
     <!-- ===== 01 · APERÇU : galerie + teaser verrouillé ===== -->
-    <div class="sec-head reveal"><span class="num">01</span><span class="label">Aperçu</span><span class="rule"></span></div>
+    <div class="sec-head reveal" data-module="gallery" data-module-label="Titre · Aperçu"><span class="num">01</span><span class="label">Aperçu</span><span class="rule"></span></div>
     <!-- ✏️ Galerie : tes photos. Pour en changer, remplace le src de chaque <img>. -->
-    <div class="gallery">
+    <div class="gallery" id="gallery" data-module="gallery" data-module-label="Galerie photos">
       <div class="cell reveal full"><picture><source srcset="img-run.webp" type="image/webp"><img src="img-run.jpg" alt="Course au bord de mer" loading="lazy" decoding="async"></picture></div>
       <div class="cell reveal land"><picture><source srcset="img-volley.webp" type="image/webp"><img src="img-volley.jpg" alt="Beach-volley" loading="lazy" decoding="async"></picture></div>
       <div class="cell reveal land"><picture><source srcset="img-cycle.webp" type="image/webp"><img src="img-cycle.jpg" alt="Cyclisme sur la côte" loading="lazy" decoding="async"></picture></div>
@@ -917,9 +938,9 @@ body.gate-on{overflow:hidden}
 
 
     <!-- ===== 02 · ACCÈS VIP ===== -->
-    <div class="sec-head reveal"><span class="num">02</span><span class="label">L'accès privé</span><span class="rule"></span></div>
+    <div class="sec-head reveal" data-module="vip" data-module-label="Titre · Abonnement VIP"><span class="num">02</span><span class="label">L'accès privé</span><span class="rule"></span></div>
     <!-- ✏️ Lien principal : remplace le href="#" par le lien de ton abonnement -->
-    <a class="featured reveal" id="magnet" href="#" data-link="onlyfans" target="_blank" rel="noopener">
+    <a class="featured reveal" id="magnet" data-module="vip" data-module-label="Abonnement VIP" href="#" data-link="onlyfans" target="_blank" rel="noopener">
       <span class="fbg" aria-hidden="true"><picture><source srcset="img-pool.webp" type="image/webp"><img src="img-pool.jpg" alt="" loading="lazy" decoding="async"></picture></span>
       <span class="sheen"></span>
       <span class="badge-vip">🔥 Le plus demandé</span>
@@ -949,10 +970,10 @@ body.gate-on{overflow:hidden}
       <span class="reassure">🔒 Paiement sécurisé · Sans engagement · Annulation en 1 clic</span>
     </a>
     <!-- ✏️ MYM : remplace href="#" par ton lien MYM -->
-    <a class="alt-mym reveal" id="alt-mym" href="#" data-link="mym" target="_blank" rel="noopener"><span class="mym-badge">MYM</span> Aussi disponible sur MYM <small>→</small></a>
+    <a class="alt-mym reveal" id="alt-mym" data-module="vip" data-module-label="Alternative MYM" href="#" data-link="mym" target="_blank" rel="noopener"><span class="mym-badge">MYM</span> Aussi disponible sur MYM <small>→</small></a>
 
     <!-- ===== PROGRAMME DE LA SEMAINE ✏️ adapte les jours et les contenus ===== -->
-    <div class="week reveal" aria-label="Programme de la semaine">
+    <div class="week reveal" data-module="schedule" data-module-label="Programme hebdomadaire" aria-label="Programme de la semaine">
       <div class="wk-h"><span>✦ Mon programme</span><small>Le jour en cours est surligné</small></div>
       <div class="wk-days">
         <div class="wk" data-d="1"><b>Lun</b><i>📸</i><span>Shooting</span></div>
@@ -966,8 +987,8 @@ body.gate-on{overflow:hidden}
     </div>
 
     <!-- ===== 03 · RETROUVE-MOI : une seule grille, un seul style, pour toutes les plateformes ===== -->
-    <div class="sec-head reveal"><span class="num">03</span><span class="label">Retrouve-moi</span><span class="rule"></span></div>
-    <div class="platforms reveal">
+    <div class="sec-head reveal" data-module="platforms" data-module-label="Titre · Publications sociales"><span class="num">03</span><span class="label">Retrouve-moi</span><span class="rule"></span></div>
+    <div class="platforms reveal" data-module="platforms" data-module-label="Publications sociales">
       <!-- ✏️ TikTok : remplace le lien et les aperçus par tes vraies vidéos -->
       <div class="plat-feat">
         <a class="plat-top" href="#" data-link="tiktok" target="_blank" rel="noopener">
@@ -1018,8 +1039,8 @@ body.gate-on{overflow:hidden}
     <!-- ===== 04 · DEMANDE PERSONNALISÉE =====
          ✏️ Pas de serveur : la demande est mise en forme puis copiée, la fan la colle en message privé sur MYM ou OnlyFans.
          Remplace les liens href="#" (data-of / data-mym) par tes vrais liens. -->
-    <div class="sec-head reveal"><span class="num">04</span><span class="label">Demande personnalisée</span><span class="rule"></span></div>
-    <form class="custom reveal" id="customForm" novalidate data-of="#" data-mym="#">
+    <div class="sec-head reveal" data-module="custom" data-module-label="Titre · Demandes personnalisées"><span class="num">04</span><span class="label">Demande personnalisée</span><span class="rule"></span></div>
+    <form class="custom reveal" id="customForm" data-module="custom" data-module-label="Demandes personnalisées" novalidate data-of="#" data-mym="#">
       <div class="cu-head">
         <h3>Un contenu rien que pour toi</h3>
         <p>Photo, vidéo, audio ou petit mot perso : décris ton envie, je te réponds en privé avec le tarif.</p>
@@ -1080,7 +1101,7 @@ body.gate-on{overflow:hidden}
     </form>
 
     <!-- ✏️ Pourboire & wishlist : liens dans LINKS.tip et LINKS.wishlist -->
-    <div class="extras reveal">
+    <div class="extras reveal" data-module="extras" data-module-label="Pourboires et wishlist">
       <a class="xtra tip" href="#" data-link="tip" target="_blank" rel="noopener"><i>☕</i><span><b>Offre-moi un café</b><small>Un petit pourboire pour me soutenir</small></span><em>→</em></a>
       <a class="xtra wish" href="#" data-link="wishlist" target="_blank" rel="noopener"><i>🎁</i><span><b>Ma wishlist</b><small>Les petits cadeaux qui me font plaisir</small></span><em>→</em></a>
     </div>
@@ -1088,7 +1109,7 @@ body.gate-on{overflow:hidden}
     <!-- ===== 05 · CODES PROMO & PARTENAIRES =====
          ✏️ Exemples : remplace les marques, les codes et les liens (href="#") par tes vrais partenariats.
          Les liens gardent rel="sponsored" (bonne pratique pour les liens payants / affiliés). -->
-    <div class="sec-head reveal"><span class="num">05</span><span class="label">Codes promo &amp; partenaires</span><span class="rule"></span></div>
+    <div class="sec-head reveal" data-module="promos" data-module-label="Titre · Partenariats et codes promo"><span class="num">05</span><span class="label">Codes promo &amp; partenaires</span><span class="rule"></span></div>
     <p class="essentials-intro reveal">Exemples fictifs de blocs partenaires et d’offres, pour illustrer la démo.</p>
 
     <!-- Sponsor mis en avant -->
@@ -1101,7 +1122,7 @@ body.gate-on{overflow:hidden}
       <span class="sp-cta"><span class="sp-code">EXEMPLE15</span><span>Voir l’exemple →</span></span>
     </a>
 
-    <div class="promos reveal">
+    <div class="promos reveal" id="promoGrid" data-module="promos" data-module-label="Partenariats et codes promo">
       <div class="promo">
         <div class="pr-top"><span class="pr-logo" style="background:#2f6d4f">A</span><span class="pr-nm"><b>Marque exemple A</b><small>Catégorie à personnaliser</small></span><span class="pr-tag">Exemple</span></div>
         <div class="pr-deal">Exemple de remise à configurer</div>
@@ -1135,12 +1156,12 @@ body.gate-on{overflow:hidden}
         </div>
       </div>
     </div>
-    <p class="pr-disc reveal">Aucune offre ni aucun partenariat réel n’est représenté ici. Les marques, codes et avantages sont fictifs.</p>
+    <p class="pr-disc reveal" id="promoNote" data-module="promos" data-module-label="Note sur les offres">Aucune offre ni aucun partenariat réel n’est représenté ici. Les marques, codes et avantages sont fictifs.</p>
 
     <!-- ===== 06 · POUR LES MARQUES (kit presse) ✏️ mets tes vrais chiffres ===== -->
-    <div class="sec-head reveal"><span class="num">06</span><span class="label">Pour les marques</span><span class="rule"></span></div>
+    <div class="sec-head reveal" data-module="press" data-module-label="Titre · Kit média"><span class="num">06</span><span class="label">Pour les marques</span><span class="rule"></span></div>
     <p class="demo-data-note reveal">Exemple de média kit · profil et statistiques fictifs, à remplacer par des données vérifiées</p>
-    <div class="press reveal">
+    <div class="press reveal" data-module="press" data-module-label="Kit média et partenariats">
       <div class="ps-top">
         <div><h3>Exemple de profil partenaire</h3><p>Cette section illustre un média kit créatrice. Les chiffres, l’audience et le profil sont fictifs.</p></div>
       </div>
@@ -1161,8 +1182,8 @@ body.gate-on{overflow:hidden}
 
     <!-- ===== 07 · TÉMOIGNAGES ✏️ Remplace par de VRAIS avis ===== -->
     <!-- ===== 07 · FAQ ===== -->
-    <div class="sec-head reveal"><span class="num">07</span><span class="label">Questions fréquentes</span><span class="rule"></span></div>
-    <div class="faq reveal">
+    <div class="sec-head reveal" data-module="faq" data-module-label="Titre · Questions fréquentes"><span class="num">07</span><span class="label">Questions fréquentes</span><span class="rule"></span></div>
+    <div class="faq reveal" data-module="faq" data-module-label="Questions fréquentes">
       <details><summary>Qu'est-ce que je reçois en m'abonnant&nbsp;?</summary><div class="a">Un accès privé à mes photos et vidéos exclusives, du nouveau contenu chaque semaine, et la possibilité de m'écrire en direct.</div></details>
       <details><summary>La facturation est-elle discrète&nbsp;?</summary><div class="a">Oui — le paiement passe par OnlyFans ou MYM, de façon sécurisée et discrète. Rien d'explicite n'apparaît sur ton relevé.</div></details>
       <details><summary>Puis-je annuler quand je veux&nbsp;?</summary><div class="a">Sans engagement : tu peux résilier en un clic à tout moment, directement depuis OnlyFans ou MYM.</div></details>
@@ -1172,7 +1193,7 @@ body.gate-on{overflow:hidden}
     </div>
 
     <!-- ===== APPEL FINAL (conversion) ✏️ Remplace href="#" par ton lien OnlyFans ===== -->
-    <div class="finalcta reveal">
+    <div class="finalcta reveal" data-module="finalcta" data-module-label="Appel à l’action final">
       <h3>Prêt à me rejoindre&nbsp;?</h3>
       <p>Tout mon contenu exclusif t'attend, sur OnlyFans ou MYM — rien que pour toi.</p>
       <div class="btns2"><a class="ofbtn magnetic" href="#" data-link="onlyfans" target="_blank" rel="noopener"><img src="onlyfans-icon-white.svg" alt="" aria-hidden="true">Rejoindre sur OnlyFans →</a>
@@ -1181,7 +1202,7 @@ body.gate-on{overflow:hidden}
     </div>
 
     <!-- ===== MARQUEE ===== -->
-    <div class="marquee" aria-hidden="true">
+    <div class="marquee" data-module="marquee" data-module-label="Bandeau animé" aria-hidden="true">
       <div class="track">
         <span>Valentina</span><span class="on">✦</span><span>Fitness</span><span class="on">✦</span><span>Lifestyle</span><span class="on">✦</span><span>Mindset</span><span class="on">✦</span>
         <span>Valentina</span><span class="on">✦</span><span>Fitness</span><span class="on">✦</span><span>Lifestyle</span><span class="on">✦</span><span>Mindset</span><span class="on">✦</span>
@@ -1190,7 +1211,7 @@ body.gate-on{overflow:hidden}
 
     <!-- ===== BLOC DÉMO SECR3TLY (le vrai modèle économique : mise en place + abonnement mensuel) =====
          ✏️ Remplace le lien mailto par le vrai contact / formulaire Secr3tly -->
-    <div class="demo-cta reveal">
+    <div class="demo-cta reveal" data-module="demo" data-module-label="Présentation Secr3tly">
       <span class="kicker2">✦ Site de démonstration Secr3tly</span>
       <h3>Envie du même site, pour toi&nbsp;?</h3>
       <p>Cette page est un exemple de ce que Secr3tly peut mettre en place pour une créatrice de contenu&nbsp;: galerie, tunnel d'abonnement, codes promo, kit média… Le tout conçu sur-mesure, puis hébergé et tenu à jour pour toi.</p>
@@ -1260,10 +1281,66 @@ body.gate-on{overflow:hidden}
 
 
   <!-- ===== MUSIQUE DE FOND ===== -->
+  <button class="editor-launch" id="editorLaunch" type="button">✦ Personnaliser</button>
   <button class="sound" id="soundBtn" type="button" aria-pressed="false" aria-label="Activer la musique">
     <span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
   </button>
   <!-- Musique de fond : gérée via l'API Web Audio (voir script) — sans élément média pour éviter les contrôles du téléphone -->
+
+  <aside class="editor" id="editor" role="dialog" aria-modal="true" aria-labelledby="editorTitle" hidden>
+    <div class="editor-head"><div><h2 id="editorTitle">Personnaliser ma page</h2><p>Réglages conservés sur cet appareil.</p></div><button class="editor-close" id="editorClose" type="button" aria-label="Fermer l’éditeur">×</button></div>
+    <p id="editorStatus" class="editor-status" role="status" aria-live="polite"></p>
+    <div id="editorTools">
+      <div class="editor-field"><label for="editName">Nom affiché</label><input id="editName" data-setting="name" maxlength="40"></div>
+      <div class="editor-field"><label for="editTagline">Activité / titre</label><input id="editTagline" data-setting="tagline" maxlength="90"></div>
+      <div class="editor-field"><label for="editBio">Présentation</label><textarea id="editBio" data-setting="bio" maxlength="300"></textarea></div>
+      <div class="editor-field"><label for="editInstagram">Lien Instagram</label><input id="editInstagram" data-setting="link-instagram" type="url" placeholder="https://instagram.com/..."></div>
+      <div class="editor-field"><label for="editTiktok">Lien TikTok</label><input id="editTiktok" data-setting="link-tiktok" type="url" placeholder="https://tiktok.com/@..."></div>
+      <div class="editor-field"><label for="editOnlyfans">Lien OnlyFans</label><input id="editOnlyfans" data-setting="link-onlyfans" type="url" placeholder="https://onlyfans.com/..."></div>
+      <div class="editor-field"><label for="editMym">Lien MYM</label><input id="editMym" data-setting="link-mym" type="url" placeholder="https://mym.fans/..."></div>
+      <div class="editor-field"><label for="editAccent">Couleur d’accent</label><input id="editAccent" type="color" data-setting="accent"></div>
+      <h3>Sections de la page</h3><p class="editor-note">Déplace les sections avec les flèches ou glisse-les avec la poignée. Décoche une section pour la masquer.</p>
+      <div id="moduleList"></div>
+      <div class="editor-actions"><button id="exportPage" type="button" class="editor-primary">Télécharger ma page configurée</button><button id="exportSettings" type="button">Sauvegarder les réglages</button><button id="importSettings" type="button">Importer</button><input id="importFile" type="file" accept="application/json,.json" hidden><button id="resetSettings" type="button">Réinitialiser</button></div>
+      <p class="editor-note">Pour publier les changements à tous, remplace index.html sur ton hébergement avec la page téléchargée et garde les autres fichiers du site.</p>
+    </div>
+  </aside>
+
+  <script>
+  (function(){
+    var KEY='audace-page-editor-v1', editor=document.getElementById('editor'), tools=document.getElementById('editorTools'), status=document.getElementById('editorStatus'), list=document.getElementById('moduleList');
+    var modules=[['hero','En-tête'],['socials','Réseaux sociaux du profil'],['gallery','Galerie photos'],['vip','Abonnement VIP'],['schedule','Programme hebdomadaire'],['platforms','Publications sociales'],['custom','Demandes personnalisées'],['extras','Pourboires et wishlist'],['promos','Partenariats et codes promo'],['press','Kit média et partenariats'],['faq','Questions fréquentes'],['finalcta','Appel à l’action final'],['marquee','Bandeau animé'],['demo','Présentation Secr3tly']];
+    var groups={hero:['hero'],gallery:['gallery'],vip:['magnet','alt-mym'],schedule:['week'],platforms:['platforms'],custom:['customForm'],extras:['extras'],promos:['promoGrid','promoNote'],press:['press'],faq:['faq'],finalcta:['finalcta'],marquee:['marquee'],demo:['demo']};
+    var defaults={order:modules.map(function(m){return m[0]}),hidden:[],text:{},links:{},accent:''};
+    function read(){try{return Object.assign({},defaults,JSON.parse(localStorage.getItem(KEY)||'{}'));}catch(e){return JSON.parse(JSON.stringify(defaults));}}
+    var state=read();
+    function targets(id){var list=Array.from(document.querySelectorAll('[data-module="'+id+'"]'));(groups[id]||[]).forEach(function(x){var el=document.getElementById(x);if(el&&!list.includes(el))list.push(el);});return list;}
+    function save(){try{localStorage.setItem(KEY,JSON.stringify(state));status.textContent='Modifications enregistrées sur cet appareil.';}catch(e){status.textContent='Le stockage local est indisponible sur cet appareil.';}}
+    function apply(){
+      Object.keys(state.text||{}).forEach(function(k){var el=document.querySelector('[data-edit="'+k+'"]');if(el)el.textContent=state.text[k];});
+      var name=document.querySelector('[data-edit="name"]');if(name)document.title=(state.text.name||name.textContent.trim())+' — Fitness · Lifestyle';
+      Object.keys(state.links||{}).forEach(function(k){if(Object.prototype.hasOwnProperty.call(LINKS,k))LINKS[k]=state.links[k]||'#';});
+      document.querySelectorAll('[data-link]').forEach(function(a){var u=LINKS[a.dataset.link]||'#';if(u!=='#'){a.href=u;a.removeAttribute('aria-disabled');a.removeAttribute('tabindex');}else{a.removeAttribute('href');a.setAttribute('aria-disabled','true');a.setAttribute('tabindex','-1');}});
+      var form=document.getElementById('customForm');if(form){form.dataset.of=LINKS.onlyfans;form.dataset.mym=LINKS.mym;}
+      if(state.accent)document.documentElement.style.setProperty('--coral',state.accent);
+      var container=document.querySelector('main.wrap');
+      state.order.forEach(function(id){targets(id).forEach(function(el){if(el.parentNode===container)container.appendChild(el);});});
+      state.order.forEach(function(id){targets(id).forEach(function(el){el.hidden=state.hidden.includes(id);});});
+    }
+    function renderModules(){list.textContent='';state.order.forEach(function(id,index){var meta=modules.find(function(m){return m[0]===id;});if(!meta)return;var row=document.createElement('div');row.className='editor-field editor-row';row.draggable=true;row.dataset.id=id;var title=document.createElement('strong');title.textContent='☰ '+meta[1];row.append(title);[-1,1].forEach(function(dir){var b=document.createElement('button');b.type='button';b.textContent=dir<0?'↑':'↓';b.setAttribute('aria-label',(dir<0?'Monter ':'Descendre ')+meta[1]);b.addEventListener('click',function(){var to=index+dir;if(to<0||to>=state.order.length)return;var a=state.order.slice();a.splice(index,1);a.splice(to,0,id);state.order=a;apply();save();renderModules();});row.append(b);});var toggle=document.createElement('label');toggle.className='editor-module';var cb=document.createElement('input');cb.type='checkbox';cb.checked=!state.hidden.includes(id);cb.setAttribute('aria-label','Afficher '+meta[1]);cb.addEventListener('change',function(){state.hidden=cb.checked?state.hidden.filter(function(x){return x!==id;}):state.hidden.concat(id);apply();save();});toggle.append(cb,document.createTextNode('Afficher'));row.append(toggle);row.addEventListener('dragstart',function(e){e.dataTransfer.setData('text/plain',id);});row.addEventListener('dragover',function(e){e.preventDefault();});row.addEventListener('drop',function(e){e.preventDefault();var from=e.dataTransfer.getData('text/plain'),a=state.order.slice();if(from===id)return;a.splice(a.indexOf(from),1);a.splice(a.indexOf(id),0,from);state.order=a;apply();save();renderModules();});list.append(row);});}
+    document.querySelectorAll('[data-setting]').forEach(function(input){var key=input.dataset.setting;if(key.indexOf('link-')===0)input.value=state.links[key.slice(5)]||'';else if(key==='accent')input.value=state.accent||THEMES[THEME].coral;else input.value=state.text[key]||((document.querySelector('[data-edit="'+key+'"]')||{}).textContent||'').trim();input.addEventListener('input',function(){if(key.indexOf('link-')===0){var name=key.slice(5),value=input.value.trim(),hosts={instagram:/^https:\/\/(www\.)?instagram\.com\//i,tiktok:/^https:\/\/(www\.)?tiktok\.com\//i,onlyfans:/^https:\/\/(www\.)?onlyfans\.com\//i,mym:/^https:\/\/(www\.)?mym\.fans\//i};if(value&&(!hosts[name]||!hosts[name].test(value))){input.setCustomValidity('Entre une adresse HTTPS valide pour cette plateforme.');return;}input.setCustomValidity('');state.links[name]=value;}else if(key==='accent')state.accent=input.value;else state.text[key]=input.value;apply();save();});});
+    document.getElementById('editorLaunch').addEventListener('click',function(){editor.hidden=false;document.body.classList.add('editor-open');document.getElementById('editorClose').focus();renderModules();});
+    function close(){editor.hidden=true;document.body.classList.remove('editor-open');document.getElementById('editorLaunch').focus();}
+    document.getElementById('editorClose').addEventListener('click',close);document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!editor.hidden)close();});
+    function download(name,content,type){var blob=new Blob([content],{type:type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(function(){URL.revokeObjectURL(url);},1000);}
+    document.getElementById('exportSettings').addEventListener('click',function(){download('audace-configuration.json',JSON.stringify(state,null,2),'application/json');});
+    document.getElementById('exportPage').addEventListener('click',function(){var html='<!DOCTYPE html>\n'+document.documentElement.outerHTML;html=html.replace('var state=read();','var state=JSON.parse('+JSON.stringify(JSON.stringify(state))+');');download('index-personnalise.html',html,'text/html;charset=utf-8');status.textContent='Page téléchargée. Garde les ressources du site lors de la publication.';});
+    document.getElementById('importSettings').addEventListener('click',function(){document.getElementById('importFile').click();});
+    document.getElementById('importFile').addEventListener('change',function(e){var f=e.target.files[0];if(!f)return;var reader=new FileReader();reader.onload=function(){try{var v=JSON.parse(reader.result);if(!Array.isArray(v.order)||!Array.isArray(v.hidden)||!v.text||!v.links)throw new Error();state=Object.assign({},defaults,v);state.order=modules.map(function(m){return m[0];}).filter(function(id){return state.order.includes(id);}).concat(modules.map(function(m){return m[0];}).filter(function(id){return !state.order.includes(id);}));save();apply();renderModules();status.textContent='Configuration importée.';}catch(err){status.textContent='Fichier de configuration invalide.';}};reader.readAsText(f);});
+    document.getElementById('resetSettings').addEventListener('click',function(){state=JSON.parse(JSON.stringify(defaults));localStorage.removeItem(KEY);apply();renderModules();status.textContent='Configuration réinitialisée.';});
+    apply();
+  })();
+  </script>
 
   <script>
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
